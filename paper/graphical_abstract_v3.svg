@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1140" viewBox="0 0 1600 1140" role="img" aria-labelledby="title desc">
+  <title id="title">Two CPT-related branches and one retained quantum algebra</title>
+  <desc id="desc">A spacious conceptual schematic of two CPT-related cosmological branches meeting at a central boundary. A separate lower card states the demonstrated free-field average and difference algebra.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbfcfd"/>
+      <stop offset="1" stop-color="#f1f4f7"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#f3ead8" stop-opacity=".24"/>
+      <stop offset=".42" stop-color="#c98b36" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#9b5d12" stop-opacity=".52"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dfeaf4" stop-opacity=".24"/>
+      <stop offset=".42" stop-color="#4b83ad" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#155a86" stop-opacity=".54"/>
+    </linearGradient>
+    <radialGradient id="seam" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#fff8d9"/>
+      <stop offset=".55" stop-color="#d9ae3a"/>
+      <stop offset="1" stop-color="#725206"/>
+    </radialGradient>
+    <radialGradient id="white" cx="42%" cy="38%" r="65%">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".38" stop-color="#fff5c9"/>
+      <stop offset="1" stop-color="#d6972f"/>
+    </radialGradient>
+    <marker id="arrowInk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#25313b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#155a86"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#9b5d12"/>
+    </marker>
+    <style>
+      .sans{font-family:"DejaVu Sans",Arial,sans-serif;fill:#1f2b33}.serif{font-family:"DejaVu Serif",Georgia,serif;fill:#18232b}.bold{font-weight:700}.mid{font-weight:600}.note{fill:#4d5a64}.inverse{fill:#fff}
+    </style>
+  </defs>
+  <rect width="1600" height="1140" fill="url(#bg)"/>
+  <text x="70" y="62" class="sans bold" font-size="42">Two CPT-related branches, one retained quantum algebra</text>
+  <rect x="1100" y="74" width="455" height="44" rx="12" fill="#fff" stroke="#9b7716" stroke-width="3"/>
+  <text x="1327.5" y="105" text-anchor="middle" class="sans bold" font-size="28" fill="#755a10" font-weight="700">INTERPRETIVE SCHEMATIC</text>
+  <!-- Spacious branch field. -->
+  <path d="M800 395 C675 332 535 260 150 180 L150 640 C530 595 675 500 800 445Z" fill="url(#amber)" stroke="#9b5d12" stroke-width="5"/>
+  <path d="M800 395 C925 332 1065 260 1450 180 L1450 640 C1070 595 925 500 800 445Z" fill="url(#blue)" stroke="#155a86" stroke-width="5"/>
+  <g fill="none" stroke-width="2.5" opacity=".78">
+    <ellipse cx="150" cy="410" rx="44" ry="230" stroke="#9b5d12"/>
+    <ellipse cx="330" cy="407" rx="34" ry="179" stroke="#9b5d12"/>
+    <ellipse cx="525" cy="420" rx="25" ry="122" stroke="#9b5d12"/>
+    <ellipse cx="1450" cy="410" rx="44" ry="230" stroke="#155a86"/>
+    <ellipse cx="1270" cy="407" rx="34" ry="179" stroke="#155a86"/>
+    <ellipse cx="1075" cy="420" rx="25" ry="122" stroke="#155a86"/>
+  </g>
+  <line x1="112" y1="420" x2="1488" y2="420" stroke="#7d8a93" stroke-width="2" stroke-dasharray="10 12" opacity=".6"/>
+  <!-- Time orientation and central boundary. -->
+  <text x="345" y="150" text-anchor="middle" class="sans bold" font-size="31" fill="#7b4a0b">CPT-related branch</text>
+  <text x="1255" y="150" text-anchor="middle" class="sans bold" font-size="31" fill="#104f79">our branch</text>
+  <line x1="650" y1="205" x2="270" y2="205" stroke="#9b5d12" stroke-width="6" marker-end="url(#arrowAmber)"/>
+  <text x="455" y="188" text-anchor="middle" class="sans mid" font-size="29" fill="#7b4a0b">local future</text>
+  <line x1="950" y1="205" x2="1330" y2="205" stroke="#155a86" stroke-width="6" marker-end="url(#arrowBlue)"/>
+  <text x="1145" y="188" text-anchor="middle" class="sans mid" font-size="29" fill="#104f79">local future</text>
+  <text x="800" y="142" text-anchor="middle" class="sans bold" font-size="31">CPT-symmetric boundary</text>
+  <line x1="800" y1="155" x2="800" y2="232" stroke="#6e5a25" stroke-width="3"/>
+  <line x1="800" y1="348" x2="800" y2="360" stroke="#6e5a25" stroke-width="3"/>
+  <rect x="690" y="240" width="220" height="46" rx="20" fill="#fff" fill-opacity=".9" stroke="#687783" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <text x="800" y="272" text-anchor="middle" class="sans bold" font-size="29">Θ = CPT</text>
+  <text x="800" y="315" text-anchor="middle" class="sans mid" font-size="28">fixed reference future</text>
+  <line x1="690" y1="335" x2="910" y2="335" stroke="#25313b" stroke-width="4" marker-end="url(#arrowInk)"/>
+  <!-- Central waist, drawn as a relation rather than a physical layer. -->
+  <ellipse cx="800" cy="420" rx="122" ry="58" fill="#d9ae3a" opacity=".08"/>
+  <ellipse cx="800" cy="420" rx="102" ry="48" fill="#d9ae3a" opacity=".12"/>
+  <ellipse cx="800" cy="420" rx="82" ry="37" fill="url(#seam)" stroke="#684c08" stroke-width="5"/>
+  <ellipse cx="800" cy="420" rx="52" ry="18" fill="#fff8d9" opacity=".9"/>
+  <!-- Horizon-orientation icons stay subordinate. -->
+  <g>
+    <circle cx="360" cy="404" r="31" fill="url(#white)" stroke="#bd7d20" stroke-width="7"/>
+    <ellipse cx="360" cy="404" rx="58" ry="19" fill="none" stroke="#bd7d20" stroke-width="5" transform="rotate(12 360 404)"/>
+    <rect x="120" y="468" width="480" height="88" rx="13" fill="#fff" fill-opacity=".88"/>
+    <text x="360" y="505" text-anchor="middle" class="sans mid" font-size="28">time-reversed portrait</text>
+    <text x="360" y="538" text-anchor="middle" class="sans" font-size="28">white-hole orientation (global)</text>
+    <circle cx="1240" cy="404" r="31" fill="#111820" stroke="#155a86" stroke-width="7"/>
+    <ellipse cx="1240" cy="404" rx="58" ry="19" fill="none" stroke="#427fa7" stroke-width="5" transform="rotate(-12 1240 404)"/>
+    <rect x="1045" y="468" width="390" height="88" rx="13" fill="#fff" fill-opacity=".88"/>
+    <text x="1240" y="505" text-anchor="middle" class="sans mid" font-size="28">future-absorbing horizon</text>
+    <text x="1240" y="538" text-anchor="middle" class="sans" font-size="28">black-hole orientation</text>
+  </g>
+  <!-- Matter orientation. -->
+  <circle cx="314" cy="600" r="25" fill="#fff" stroke="#9b5d12" stroke-width="3"/>
+  <text x="314" y="610" text-anchor="middle" class="serif" font-size="31">q̄</text>
+  <text x="270" y="610" text-anchor="end" class="sans bold" font-size="28">P ←</text>
+  <circle cx="1286" cy="600" r="25" fill="#fff" stroke="#155a86" stroke-width="3"/>
+  <text x="1286" y="610" text-anchor="middle" class="serif" font-size="31">q</text>
+  <text x="1330" y="610" class="sans bold" font-size="28">→ P</text>
+  <text x="360" y="662" text-anchor="middle" class="sans mid" font-size="29" fill="#6d4a1e">charge-conjugate, parity-reflected</text>
+  <text x="1240" y="662" text-anchor="middle" class="sans mid" font-size="29" fill="#34566c">ordinary matter orientation</text>
+  <!-- Separate proof card: no longer overlaid on the cosmological drawing. -->
+  <rect x="120" y="710" width="1360" height="360" rx="25" fill="#fff" stroke="#223b4c" stroke-width="5"/>
+  <rect x="155" y="740" width="160" height="43" rx="11" fill="#223b4c"/>
+  <text x="235" y="771" text-anchor="middle" class="sans bold inverse" font-size="28" font-weight="700" fill="#ffffff">DERIVED</text>
+  <text x="345" y="771" class="sans bold" font-size="34">Shared average/difference algebra</text>
+  <text x="345" y="806" class="sans note" font-size="28">stated causally disjoint free-field pairing</text>
+  <line x1="800" y1="832" x2="800" y2="950" stroke="#d5dce1" stroke-width="3"/>
+  <text x="460" y="862" text-anchor="middle" class="sans bold" font-size="30">average field</text>
+  <text x="460" y="908" text-anchor="middle" class="serif" font-size="36">Φ<tspan baseline-shift="-22%" font-size="30">c</tspan> = ½(Φ + ΘΦ)</text>
+  <text x="460" y="948" text-anchor="middle" class="sans note" font-size="29">classical Gaussian marginal</text>
+  <text x="1140" y="862" text-anchor="middle" class="sans bold" font-size="30">difference field</text>
+  <text x="1140" y="908" text-anchor="middle" class="serif" font-size="36">Φ<tspan baseline-shift="-22%" font-size="30">q</tspan> = Φ − ΘΦ</text>
+  <text x="1140" y="948" text-anchor="middle" class="sans note" font-size="29">retains the quantum conjugate</text>
+  <rect x="155" y="980" width="940" height="55" rx="12" fill="#f1f4f7"/>
+  <text x="625" y="1018" text-anchor="middle" class="serif" font-size="31">[Φ<tspan baseline-shift="-22%" font-size="28">c</tspan>, Φ<tspan baseline-shift="-22%" font-size="28">c</tspan>] = [Φ<tspan baseline-shift="-22%" font-size="28">q</tspan>, Φ<tspan baseline-shift="-22%" font-size="28">q</tspan>] = 0  [Φ<tspan baseline-shift="-22%" font-size="28">c</tspan>, Φ<tspan baseline-shift="-22%" font-size="28">q</tspan>] = iΔ</text>
+  <rect x="1130" y="985" width="315" height="46" rx="12" fill="#fff5f2" stroke="#b94f43" stroke-width="2.5"/>
+  <text x="1287.5" y="1017" text-anchor="middle" class="sans bold" font-size="28" fill="#8b2f28" font-weight="700">OPEN · interactions</text>
+  <text x="800" y="1120" text-anchor="middle" class="sans note" font-size="28">The drawing is interpretive; the lower algebra card states the demonstrated free result.</text>
+</svg>

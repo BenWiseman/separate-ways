@@ -1,0 +1,19 @@
+{
+  "upstream_commit": "c447f0fea703fcd0fff57de5000947b5ca81286b",
+  "checked_utc": "2026-09-18",
+  "license": "No repository license detected by GitHub API; no license file identified in recursive tree. No data redistribution included.",
+  "files": [
+    {
+      "filename": "PantheonPlusSH0ES.dat",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/Pantheon%2B_Data/4_DISTANCES_AND_COVAR/Pantheon%2BSH0ES.dat",
+      "sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+      "bytes": 579283
+    },
+    {
+      "filename": "PantheonPlusSH0ES_STAT+SYS.cov",
+      "url": "https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/c447f0fea703fcd0fff57de5000947b5ca81286b/Pantheon%2B_Data/4_DISTANCES_AND_COVAR/Pantheon%2BSH0ES_STAT%2BSYS.cov",
+      "sha256": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
+      "bytes": 33284960
+    }
+  ]
+}

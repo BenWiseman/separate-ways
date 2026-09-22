@@ -1,0 +1,10 @@
+# Local build output, not part of the release
+build/
+*.aux
+*.log
+*.out
+__pycache__/
+*.pyc
+data/pantheon_plus/
+.venv/
+.Rhistory
