@@ -10,12 +10,22 @@ Mpc <- 3.0857e22; Gyr <- 3.1557e16
 tz <- function(z) (2/(3*H0*sqrt(OL)))*asinh(sqrt(OL/Om)*(1+z)^(-1.5)) * (Mpc/1e3) / Gyr
 
 cat("=== 1. how much growth time is there, and what seed does it demand?\n\n")
-cat("   Salpeter time t_S = 45 Myr (eps/0.1) / lambda_Edd. e-folds N = dt/t_S.\n\n")
+# The Salpeter time has two conventions in circulation and they differ by 1/(1-eps),
+# which is a factor of 3.6 in final mass over the window below. The hole gains
+# Mdot_BH = (1-eps) Mdot_inflow while the Eddington limit caps L = eps Mdot_inflow c^2,
+# so the e-folding time for the HOLE'"'"'S MASS is
+#     t_S = (eps/(1-eps)) sigma_T c / (4 pi G m_p) = 50.1 Myr at eps = 0.1,
+# not the 45 Myr shorthand. We use 50.1 and report both.
+tS_short <- 45.0                      # the (1-eps)-free shorthand, still common
+tS_full  <- 45.0/0.9                  # 50.1 Myr, correct for black-hole mass growth
+cat(sprintf("   Salpeter time t_S = %.1f Myr at eps=0.1 (the 1/(1-eps) form) / lambda_Edd.\n", tS_full))
+cat(sprintf("   The 45 Myr shorthand omits (1-eps) and overstates the growth by %.1fx over z=20 to 7.\n\n",
+            exp((tz(7)-tz(20))*1000*(1/tS_short - 1/tS_full))))
 cat("        z_seed  z_obs    t(z_seed)   t(z_obs)   dt (Myr)   N e-folds   seed for 1e7 Msun\n")
 for (zs in c(20, 15, 10)) for (zo in c(7, 5)) {
   dt <- (tz(zo)-tz(zs))*1000
   for (lam in c(1)) {
-    N <- dt/45*lam
+    N <- dt/tS_full*lam
     cat(sprintf("   %8.0f %6.0f %11.4f %10.4f %10.1f %11.2f %19.3g\n",
         zs, zo, tz(zs), tz(zo), dt, N, 1e7/exp(N)))
   }
