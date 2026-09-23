@@ -41,7 +41,11 @@ d <- sapply(c(0.25,0.50,0.619), function(xc){
   (num/den)/R0 })
 cat(sprintf("  Over the range KM3NeT already allows (x_c up to 0.619), R/R_0 runs %.4f to %.4f,\n",
     min(d), max(d)))
-cat(sprintf("  so R^(-2/3) moves t_dec by at most %.1f per cent.\n", 100*abs(max(d)^(-2/3)-1)))
+# The largest effect sits at the SMALLEST R/R_0, not the largest: R^(-2/3) is decreasing
+# in R. Taking max(d) here reported 0.5 per cent where the true figure is 17.4.
+sw <- 100*(min(d)^(-2/3) - 1)
+cat(sprintf("  so R^(-2/3) moves t_dec by up to %.1f per cent, at the small-R end of that range.\n", sw))
+stopifnot(sw > 10)   # the wrong extreme gives 0.5; this must not pass if it comes back
 cat("  The 2/3 POWER itself is untouched: it comes from eliminating I and does not involve R.\n")
 cat("  What acquires a dependence is the PREFACTOR. So 4.2's scaling law survives and its\n")
 cat("  normalisation carries a state-dependence the section does not currently flag.\n")
