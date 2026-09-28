@@ -1,0 +1,8 @@
+# What the 22 Python scripts under checks/calc/ import. The 147 R scripts load nothing.
+# Versions are not pinned: every one of these is used for standard numerics and the
+# results do not turn on a minor version. The checking pass is what decides whether a
+# number still reproduces.
+numpy
+scipy
+sympy
+mpmath

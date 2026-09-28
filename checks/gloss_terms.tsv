@@ -1,0 +1,13 @@
+# manuscript	term	gloss snippet that must sit beside the FIRST body use	window (chars after)
+# A term of art gets one plain-English gloss where the reader first meets it. This file pins the
+# gloss to the first use, so an edit that introduces an earlier, bare use of the term fails here.
+PAPER2_v4_draft.md	thermofield double	pure taken whole and thermal to either side alone	400
+PAPER2_v4_draft.md	antilinear	conjugates the numbers as it	300
+PAPER2_v4_draft.md	avoided crossing	two-level problem a solid-state physicist meets	400
+PAPER2_v4_draft.md	KMS	what being thermal means	300
+PAPER2_v4_draft.md	Raychaudhuri	tracks how a bundle of null rays converges	300
+PAPER2_v4_draft.md	conjugate locus	where a whole family of rays leaving one point refocuses	300
+PAPER2_v4_draft.md	Hadamard parametrix	singular part is fixed by the geometry alone	600
+PAPER2_v4_draft.md	Landau-Zener	with the momentum as the gap	400
+COMPANION_v1.md	conjugate point	family of great circles refocuses there	400
+PAPER2_v4_draft.md	bifurcate Killing horizon	one whose generator vanishes on a surface	300

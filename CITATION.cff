@@ -1,18 +1,18 @@
 cff-version: 1.2.0
 message: If you use this material, please cite the paper and this release.
-title: 'Separate Ways and the Upside Down: a CPT fold, a ceiling on the dark matter, and the neutrino line that would break it'
+title: 'Separate Ways and the Upside Down: the classical world and the field equations from a CPT fold, and the neutrino line that would break it'
 authors:
   - family-names: Wiseman
     given-names: B. H.
     affiliation: Linnet Labs, Sydney, Australia
 type: software
-version: 4.2
-date-released: '2026-09-22'
+version: 4.5
+date-released: '2026-09-28'
 license: MIT
 repository-code: 'https://github.com/BenWiseman/separate-ways'
 preferred-citation:
   type: unpublished
-  title: 'Separate Ways and the Upside Down: a CPT fold, a ceiling on the dark matter, and the neutrino line that would break it'
+  title: 'Separate Ways and the Upside Down: the classical world and the field equations from a CPT fold, and the neutrino line that would break it'
   authors:
     - family-names: Wiseman
       given-names: B. H.

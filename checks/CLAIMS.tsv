@@ -1,0 +1,154 @@
+# Provenance for a manuscript that carries no script paths. One row per passage.
+# script	anchor: the first words of the passage it backs	numbers it must reproduce
+tangents/info/wdw_weights.R	$A$ asymptote $-(\pi/12)N_fA^3$. Appendix A.7 derives the sum. Summed over all harmonics, for one minimally c	1.95376;1.28984
+checks/calc/restricted_exponent_ratio.R	Recorded for	0.4999;0.4998
+checks/fig_reciprocal_law.R	The even bars are drawn at the panel floor because they are zero, the	3\times10^{-17};0.52
+checks/calc/half_period_match.R	Away from $B$ the boost separation has not yet dropped out, and there, requiring the geometric image kernel to	ten per cent;4\times10^{-17};2.6\times10^{15};0.115
+checks/calc/horizon_reflectivity_spin.R	$0.444$ at $a=0.9$, where the horizon returns about a fifth of the incident energy, against the $10^{-6}$ of [13]	0.444;0.9;0.662;0.95;0.372;0.99
+checks/fig_reflectivity_spin.R	$\delta\hat\tau_{220}=0.14$ would need under the most generous model, in which all ringdown damping is hor	
+checks/calc/optical_depth_independent.R	$, the reaction rate falls as $1/M$, and the rate multiplied by the time is flat. The computed slope of optica	9.6\times10^{-17};0.50
+checks/calc/two_sided_growth.R	Between $z=20$ and $z=7$, a window of $0.582$ Gyr in the Planck cosmology, a hole at radiative	1.1\times10^5;0.582;0.1;50.1;11.63;23.3
+checks/calc/tail_from_lrd.R	Xiv:2401.06329's profiles imply, a Gaussian curvature field	twenty per cent;one per cent;eleven per cent;7\times10^{-4};2401.06329;1.5;0.5
+checks/calc/nariai_size.R	So the second class has exactly one member in the uncharged family, and it is the largest hole that family hol	2.2\times10^{22}
+checks/fig_spin_branch.R	At $\alpha=0$ it is $\rho^3(\rho-3)$, so $\rho=3$ and $9\Lambda M^2=1$, which	7\times10^{-16};1.1009173688
+checks/fig_spin_branch.R	Sitter background because both $a/M$ and $9\Lambd	1.3756
+checks/calc/contact_charged.R	The second is that two other calculations, run for different reasons and neither looking for the other, single	0.991;0.9999
+checks/fig_neutrino_floor.R	Right, the same spectrum on a linear scale in meV. With $m_1$ at zero the two split	58.78
+checks/calc/weak_breaking_neutrino_bound.R	$10^{27}$ s for very-high-energy Cherenkov telescopes and $10^{30}$ s for neutrino telescopes. T	1.8\times10^{-30};2.1\times10^{-55}
+checks/calc/neff_silence_test.R	Planck measures $N_{\rm eff}=2.99\pm0.17$. The copy reading sits $0.3$ standard deviations from that; the plac	2.99;0.3
+checks/calc/neff_silence_test.R	our last-scattering surface is sourced by the stress tensor at our events, and a sheet occupying other events 	3.044
+checks/fig_two_sided_growth.R	supply multiplier does not add to the mass, it multiplies the exponent, so $11.6$ e-folds become	11.6;23.3
+checks/calc/half_period_match.R	$F_{\rm img}=e^{\beta E/2}F_{\rm BD}$. These are implementation checks of the stated analytic conformal	four times;ten per cent;4\times10^{-17};0.115
+checks/calc/a10_boost_dependence.R	Referred to the fold kernel it is $r^2/[(1-r^2)\cosh^2(\Delta t/2)]$, which is 9	9.9
+checks/calc/first_tick_sum.R	A*, so the sum becomes $A^3\int_0^\infty u^2\ln(1+u^{-6})\,du=\pi A^3/3$, and the asymptote is a	2\times10^{-16};0.07;0.066
+checks/calc/half_period_match.R	Davies kernel then fixes $\beta$. The match holds to $4\times10^{-17}$ at $\beta=2\pi/H$ and fails by $0.115$ 	ten per cent;4\times10^{-17};2.6\times10^{15};0.115;6.2831853072
+checks/calc/reduction_no_diagonality.R	Checked on a dense random kernel with more than half its weight off the diagonal: the reciprocal law h	2\times10^{-16}
+checks/calc/a10_boost_dependence.R	P_\ell(x)$, so the two signs are the same sign and cancel term by term: the reflected sum at $\gamma$ is t	9\times10^{-15}
+checks/calc/a10_boost_dependence.R	It is a limit and not an identity, and the boost dependence does not cancel away from $B$. At $\gamma=110^\cir	3.1\times10^{-4};0.9999
+checks/calc/a10_boost_dependence.R	$|\cos\gamma|/\sin^2\gamma$ is even about a right angle; $61.8$ at $150^\circ$; $517$ at $170^\circ$, where $\	three per cent;61.8
+checks/calc/bform_accuracy.R	With $N^2\simeq d^2/16M^2$ for a proper distance $d$ above a Schwarzschild horizon, a per cent needs	0.4;0.058;0.025;0.009
+checks/calc/defect_entropy_coefficient.R	$0.63$ per cent, at	0.63;0.95;0.88;0.64;0.30;0.15363;0.15460
+checks/calc/a12_algebraic_law.R	R(A,B)$, needing only $\sigma^2={\rm id}$. Checked on random density matrices with random involutive automorph	4\times10^{-14}
+checks/calc/a13_parity_mixing.R	$4\times10^{-15}$ and does not move whether the cut-off is $\ell=6$ or $\ell=12$, which is th	4\times10^{-15};0.21
+checks/calc/a13_parity_mixing.R	$c_2/c_0$, where $c_\ell=\tfrac{2\ell+1}{2}\int_{-1}^{1} A(x)P_\ell(x)\,dx$ with $x=\cos\th	0.00167;0.01552;0.04614;0.21875;0.36711;0.1;0.3;0.5;0.9;0.99
+checks/calc/leaver_qnm.R	the independent Leaver solver used to seed that root returns the standard values for five other	0.373672;0.088962
+checks/calc/second_branch_prefactor.R	$A=-\rho$ and needs $B=0$, no power of $r$ at all. Over six decades of $r$ the ratio to $e^{-\r	1.9;3.7
+checks/calc/nariai_branch_charged.R	X$, so consistency forces $\ell_2^2=r_0^2/(2\Lambda r_0^2-1)$, while $\ell_2$ was already fixed by the metric 	6\times10^{-15}
+checks/calc/pinch_4d_exact.R	$\pi M$, and the part of it lying inside $r=M$, which is where contact i	eighteen per cent;6.5\times10^{9};8.4
+checks/calc/maximiser_charge_threshold.R	$C(r_-)=2\kappa r_-+2\sqrt{M^2-Q^2}/r_-$ is positive at every nonzero charge, with no	0.9548
+checks/calc/contact_charged.R	It moves outward, monotonically: at $9\Lambda M^2=0.1$ the con	0.1;1.047;0.515;0.5;1.311;0.597;0.9;1.990;0.778;4.21
+checks/calc/kerr_fold_map.R	Kerr at every spin because the metric functions depend on $\theta$ through $\cos^2\theta$ alone and on $\phi$ 	5.41;0.6;37.15;0.998
+checks/calc/horizon_reflectivity_derivative.py	physical reflectivity reads $\mathcal R_{\rm wave}=e^{2\rho}\mathcal R_h$, because	0.1085;1.4233
+checks/calc/outgoing_branch_recursion.py	series it generates satisfies the original Regge-Wheeler equation to	5\times10^{-41};2\times10^{-7};7\times10^{-6};0.8
+checks/calc/horizon_reflectivity_derivative.py	in the tortoise normalisation. The same machinery returns	0.0928510;0.0034534;0.00735845;0.0646771;0.3736716844;0.0889623157
+checks/calc/horizon_reflectivity_derivative.py	Neither number moves by more than	5\times10^{-41};300;120;45;60
+checks/calc/horizon_reflectivity_derivative.py	moves $|\mathcal S(\omega_0)|$ from	5\times10^{-48}
+checks/calc/horizon_reflectivity_derivative.py	A reflectivity of one per cent moves the real frequency by two parts in ten	37
+checks/calc/horizon_reflectivity_derivative.py	is exactly zero at $\mathcal R=0.001$ and at $\mathcal R=0.01$, zero rather	2.604\times10^{-4};2.604\times10^{-3};0.001;0.01
+checks/calc/two_sheet_accretion.py	Ingoing Vaidya has $8\pi T_{vv}=2\dot m/r^2$ with every other component	
+checks/calc/gl_crossover.R	threshold wavenumber is $k_{\rm GL}r_h\simeq0.876$ [35], so a periodic unstable mode fits once the	0.876;7.17
+checks/calc/horizon_reflectivity_derivative.py	of $-0.727\,\mathcal R_h$ in the damping time against $+0.0197\,\mathcal R_h$ in the real	0.727;0.0197
+checks/calc/horizon_reflectivity_derivative.py	one and at $0.01$ it is $73$. Reproducing	7.2;73;0.19;0.35;1.8
+checks/calc/horizon_reflectivity_derivative.py	R_h$ and the real frequency by $+0.0197\,\mathcal R_h$: thirty-seven times harder on the decay	0.727;0.0197
+checks/calc/modular_twist.py	defines the conjugation, $S(A\Omega)=A^{\dagger}\Omega$ with $S=J\Delta^{1/2}$, fails by	1.7889;0.8;0.2
+checks/calc/modular_twist.py	the old one at $0.6$, and a cross-sheet correlation has changed sign from $+0.4$ to $-0.4$	0.6;0.4
+checks/calc/seam_symmetry.py	Those two flips cancel for any coefficient, which is checked directly on profiles with no parity	
+checks/calc/seam_selection.py	so for general data the seam pushes, and the push vanishes for arbitrary data at exactly	1
+checks/calc/fold_reach.py	separation is $\pi$ at the horizon, $6.054$ at $r=2$, $8.519$ at $r=3$ and $23.80$ at $r=10$	6.054;8.519;23.80
+checks/calc/fold_reach.py	The coefficient is a pure number with no mass in it, and it is a limit rather than a fit	3.51656
+checks/calc/massless_zero_mode.py	carries unit Klein-Gordon norm for every $\alpha>0$, the $\cosh t$ of the circle cancelling	
+checks/calc/theta_selects_where.py	The fold selects where it exchanges and not where it fixes	
+checks/calc/theta_selects_where.py	the cosmology paper's floor; and since	0.65848
+checks/calc/horizon_squeeze.py	the two agree to $8\times10^{-22}$. The agreement is not a	8\times10^{-22};0.65848
+checks/fig_fold_reach.R	floor divided by $f=1-r_h/r$, the square of the local clock rate, flattening onto	3.5166
+checks/fig_two_ends.R	topping out at $\mathrm{arcsinh}(1/\sqrt2)=0.6585$ when	0.6585
+checks/calc/caustic_image_power.py	the antipodal map are one operation, by $P_\ell(-x)=(-1)^{\ell}P_\ell(x)$, which holds to	4.6\times10^{-14}
+checks/calc/caustic_image_power.py	taken at a fortieth of the offset and varied over a factor of four it	1.8\times10^{-3}
+checks/calc/caustic_image_power.py	pair, no caustic, returns a fitted power	1.0095
+checks/calc/caustic_image_power.py	The image pair returns $-1.4920$	1.4920;1.49674;1.49874;2.6\times10^{-3};4\times10^{-4}
+checks/calc/caustic_image_power.py	divergence altogether at	0.0004
+checks/calc/caustic_image_power.py	regulator constant to	3\times10^{-3};502
+checks/fig_splittings_cross.R	The conformal four-volume divides	0.500
+checks/calc/image_stress_sign.py	The three pieces run to	1.9\times10^{9};2\times10^{-12}
+checks/calc/image_stress_sign.py	sum by exactly the piece flipped, to one part in	10^{6};6.7\times10^{6}
+checks/calc/image_stress_sign.py	which the assembled sum reproduces to	2.6\times10^{-6};0.5;6.0\times10^{-8};2
+checks/calc/image_stress_sign.py	so it is checked by differencing on the sphere rather than by the projection argument alone, and agrees for $\ell$ up to twelve to	3.9\times10^{-5}
+checks/calc/image_stress_flat.py	the image energy density there is $(8r^2+6\xi^2)/4\pi^2D^3$ with $D=4r^2-\xi^2$, positive everywhere and diverging positively at contact. The exponent is the generic	8;6;4;2;3
+checks/calc/image_stress_flat.py	at a fitted power of	3.000052;31.994;32
+checks/calc/port_cutoff_ratio.py	it falls steadily as the cutoff is lifted, running	0.958;0.603;0.497;0.441;0.371;0.315;0.02
+checks/calc/horizon_reflectivity_spin.R	vanishes and the two expressions agree, then	0.148;0.7;0.444;0.9
+checks/calc/contact_charged.R	runs from $0.250$ at $Q=0$ to	0.250;0.768;0.99
+checks/calc/fold_map_classification.R	The contact radius of Section 5, swept against $\Lambda$, runs from half the horizon radius	0.778;0.919;0.991
+checks/fig_overlap_threshold.R	So the threshold is the ungauged one,	1.95376;1.28984
+checks/fig_overlap_threshold.R	Deleting the odd-parity	2.43912;1.53984
+checks/calc/a12_algebraic_law.R	the log-log slope running	1.913;1.953;1.980;1.993;1.998
+checks/calc/world_function_zero.R	The deepest loop, at $r\to0$, has proper length	5.8839;5.4414
+checks/calc/half_period_match.R	condition instead returns	6.2832000828
+checks/calc/first_tick_sum.R	at *A* = 10: the sum is	261.627;261.799;0.0657
+checks/calc/horizon_reflectivity_derivative.py	Ringdown sits at	0.374
+checks/calc/kerr_de_sitter_nariai.R	It ends at $a/M=3/(4\sqrt{2\sqrt3-3})=1.10092$, where the double root	3;4;2;3;1.10092
+checks/calc/pinch_4d_exact.R	is confined to $|UV|\leq UV(r)\leq1$, while at $r=3M$, $|UV|=	2.241;3
+checks/calc/contact_curve_holonomy.py	The contact boundary sits at $UV=\sqrt e/2=	0.824361
+checks/calc/contact_curve_holonomy.py	the ray turns the angle by $\pi$ to	1.3\times10^{-13}
+checks/calc/contact_curve_holonomy.py	transporting only as far as the bifurcation surface departs from it by	1.04
+checks/calc/contact_vanvleck.R	the spreading partner integrates to	47.561945
+checks/calc/contact_vanvleck.R	affine length $3\pi/2+4=	8.712389
+checks/calc/contact_vanvleck.R	and $\Delta\to	0.183180
+checks/calc/contact_vanvleck.R	the two Jacobi fields satisfy their branch equations to	9\times10^{-16}
+checks/calc/image_stress_conformal.R	The Abel-summed series matches that to	1.2\times10^{-5};5
+checks/calc/image_stress_conformal.R	On a single Dirichlet mirror in flat space it gives	16;4;6
+checks/calc/image_stress_conformal.R	appendix's own flat inversion it gives	32;4;96;4
+checks/calc/image_stress_conformal.R	both reproducing the assembled operator at	6
+checks/calc/contact_conjugacy_general.R	numerically built Riemann tensor to	3\times10^{-8};3
+checks/calc/contact_conjugacy_general.R	area ratio $A_c/A_+$ runs from	0.25;0.77
+checks/calc/jacobson_ledger.R	random boosts and orientations to	3\times10^{-14}
+checks/calc/jacobson_ledger.R	sits a proper time $(\pi/2+1)M$ inside the	2;1
+checks/calc/contact_world_function.py	reproduced to	1.1\times10^{-9};2.1\times10^{-14}
+checks/calc/contact_world_function.py	control pair with no caustic returns	1.0095;1
+checks/calc/contact_world_function.py	its image pair returns	1.49874
+checks/calc/antipodal_sphere_family.R	Abel-summed modes match that to	8\times10^{-4};12
+checks/calc/caustic_amplitude.R	heat kernel at the antipode agree on it to	3\times10^{-6};1;2;3;4
+checks/calc/caustic_amplitude_form.R	running over	2;4;2;8;3
+checks/calc/caustic_amplitude_profile.R	would need between	0.73;1.50
+checks/calc/universality_local_fold.R	Measured by geodesic shooting on a surface with	2.9994;0.168936;0.168939;5.0406;1.4435
+checks/calc/desitter_contact_budget.R	The same budget answers a different question at the other horizon	27.47;50.08
+checks/calc/bang_image_scale.R	Rescaling $\eta=s/\sqrt\gamma$, $p=q\sqrt\gamma$ removes	81.4
+checks/calc/perp_is_unique.R	A free involutive isometry of a round $B$ is an element of	0.998
+checks/calc/eta_is_universal.R	Both halves of that input, since Jacobson needs the	251;0.025
+checks/calc/derivation_is_acyclic.R	That the argument does not assume its own conclusion is a graph property	24
+checks/calc/equivalence_from_one_metric.R	not assumed, because the eikonal characteristics of a field on a metric are that metric's	0.5
+checks/calc/bianchi_is_a_theorem.R	Bianchi identity, is a theorem about the Levi-Civita connection of any metric, measured at	0.05
+checks/calc/signature_or_the_fold_is_nothing.R	The signature entry is not indifferent either	1.0000001;4969
+checks/calc/eta_is_universal.R	One condition comes with it: because of that	52;2.137;1.629;1.931
+checks/calc/opposite_orientation.R	That reversal is a theorem of the construction rather than a posit	4000
+checks/calc/one_time_direction.R	Counted over all five four-dimensional signatures the rule is	4
+checks/calc/sign_through_the_mass_slot.R	The sign of that stress no longer rests on a single slot	2.005;1.018
+checks/calc/one_metric_is_forced.R	Two metrics differing by a constant factor share a connection	1.7
+checks/calc/contour_shift_is_forced.R	The superscript on $G_{+-}$ is not a convention here	0.216;0.256;0.496;0.0259;0.2872;0.905
+checks/calc/equilibrium_is_leading_order.R	And equilibrium at the horizon is not a theorem about every state	3.2898681;2.000000;1.999972;3.57\times10^{6}
+checks/calc/alpha_is_total_inversion.R	and the embedding settles that: on the de Sitter hyperboloid	0.210;1.1
+checks/calc/interior_focusing_threshold.R	The negative null-null component has a second consequence and it is larger than the first	1.1997;1.439;11.5138
+checks/calc/caustic_amplitude_profile.R	because A.19 closes the larger part	3.9004
+checks/calc/image_stress_shell.R	Both of those are requirements on a constant stress and the stress is not constant	11.5138
+checks/calc/caustic_power_at_a_hole.R	The power decides the answer and $\kappa$ barely enters it, and the power is $5/2$	0.956;0.976;0.968;0.33018;0.16746
+checks/calc/mass_softening_is_one_sigma.R	One power of $\sigma$ is one power of the distance here and two in flat space	34.85;3.14158765
+checks/calc/image_stress_coefficient.R	At $p=5/2$, $\kappa$ is no longer open either	3.9004;17.425;0.030956;0.0039329;0.1091
+checks/calc/radial_sign_reduction.R	The reduction that sign goes through is worth stating	1.4;0.0014423
+checks/calc/contact_and_radial_are_orthogonal.R	Following that through changes the reading of the sign	1.056;1.005;1.0005;1.00005
+checks/calc/which_combination_the_esu_measures.R	Which combination the computed sign belongs to is settled by a symmetry	1.3333333333;0.50000
+checks/calc/image_stress_components.R	The same sum gives the components	1.9997;0.0003;1.5003;4.8;501.9;1.4916;0.9934;2.999;0.059525
+checks/calc/caustic_multiplicity.R	A hole would have a second if a second direction refocused	2.268;0.0777
+checks/calc/seam_image_cancellation.R	The route argues that a constant reflectivity	0.5;0.2785
+checks/calc/interior_radial_is_jacobi.R	Its hardest ingredient is now in hand	0.0040;1.9991
+checks/calc/amplitude_rule_meets_the_mode_sum.R	And it carries, because the quantity whose phase	2.773;0.428;0.564
+checks/calc/the_shell_has_a_floor.R	That reading has a limit, and it is the parametrix's own	0.0592;3.19;1.1;7.8
+checks/calc/kappa_is_not_order_unity.R	The order-unity factor that used to stand beside	1.012649;1.002214
+checks/calc/the_pattern_is_rank_one.R	What does not carry over is the component pattern	5.8;5.7
+checks/calc/outside_is_suppressed_not_zero.R	Outside the horizon the pair is spacelike too	1.53;1.50;2.7;2.0
+checks/calc/the_bang_term_is_radiation.R	That form is worth reading the other way round	7.5
+checks/calc/the_band_excludes_a_thermal_profile.R	The band is doing work here, though, and the rival the fold itself suggests is where that shows	0.3898;1.81;1.11;31;0.02284;389.5;194.7
+checks/calc/the_phase_freedom_has_a_price.R	The residual phase is the falsifier a reader should press, and what pressing it buys is bounded on one side only	3.75;289.7;1.14
+checks/calc/the_in_vacuum_leaves_the_band.R	$\Theta$-invariance settles it before any integral is done	0.5364
+checks/calc/conservation_admits_one_scaling.R	Nothing in that is chosen. Writing the three as powers of $D$, conservation matches them as	1.1
+checks/calc/the_phase_freedom_has_a_price.R	the release retains $I=0.0127596673634$ as a quadrature check	0.0127596673634
+checks/calc/decoherence_power_is_exact.R	a power carrying no free parameter, and exact rather than fitted	1e-15
