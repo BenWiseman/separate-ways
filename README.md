@@ -42,13 +42,12 @@ Four observations would end it: a securely measured variation in Newton's consta
 level, a robust detection of evolving dark energy, a cosmological neutrino-mass sum below
 58.8 meV, and an identified decay above the two-body endpoint.
 
-## The three documents
+## The two documents
 
 | Document | What it is |
 |---|---|
 | `paper/Separate_Ways_and_the_Upside_Down_v4.5.pdf` | The main paper. The fold, the field equations, the matter sector, and the tests. |
 | `paper/Somewhere_Over_the_Horizon_v1.pdf` | The companion. Where the two halves can touch, why only in four dimensions, and where the classical world comes from. It carries the interior results the main paper cites. |
-| `paper/Letter_Einstein_from_CPT_v1.pdf` | A Letter-length version of the field-equation result alone, for a venue with a hard length limit. Everything in it is in the main paper. |
 
 Markdown sources sit beside each PDF. The arXiv metadata actually deposited is in
 `paper/ARXIV_METADATA.txt` and `paper/ARXIV_METADATA_COMPANION.txt`.
@@ -66,7 +65,7 @@ all. The remaining <!--N:calcpy-->22<!--/N--> are Python and do use numerical li
 python3 -m pip install -r checks/requirements.txt
 ```
 
-The pass itself runs <!--N:gates-->26<!--/N--> gates over both manuscripts and the Letter:
+The pass itself runs <!--N:gates-->28<!--/N--> gates over both manuscripts:
 
 ```bash
 bash checks/check_all.sh
@@ -84,7 +83,7 @@ check that reports success while matching nothing is worse than no check.
 
 | Path | What it is |
 |---|---|
-| `paper/` | Both manuscripts and the Letter, as PDF and as Markdown source, with their arXiv metadata |
+| `paper/` | Both manuscripts, as PDF and as Markdown source, with their arXiv metadata |
 | `paper/fig_*.pdf`, `paper/fig_*.png` | Figure masters. Re-running the pass regenerates them in place |
 | `checks/` | The checking pass and the prose measures it runs |
 | `checks/calc/` | One script per claim, named for the claim it supports |

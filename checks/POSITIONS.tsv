@@ -20,7 +20,7 @@ no-unreleased-supplement	PAPER2	-	the Supplement|Supplement S[0-9]
 no-script-paths	COMPANION	-	checks/|[a-z_]+\.R\b|compute_figs
 no-script-paths	PAPER2	-	checks/|[a-z_]+\.R\b|compute_figs
 contact-leg-is-outward	COMPANION	2\\pi-4\\arcsin\\sqrt{r/2M}	the contact geodesic is the \$E=0\$ family and its tangent has no \$t\$ component: for a null geodesic with \$E=0\$, [^.]*whose two legs deliver \$4\\arcsin
-penrose-settled-once	PAPER2	which way that departure runs is settled rather than	a question with an answer rather than a rhetorical one|§4.2 carries what that leaves
+penrose-settled-once	PAPER2	which way that departure runs is settled	a question with an answer rather than a rhetorical one|§4.2 carries what that leaves
 state-phase-is-the-open-one	PAPER2	the state's residual phase	the seam coefficient and the residual phase, and §4.2 prices both
 caustic-coupling-cancels	PAPER2	Away from a caustic its size is fixed by the matter's	it vanishes identically for conformally invariant matter|(?<!a caustic the )image stress\s+vanishes for conformally
 caustic-coupling-cancels	COMPANION	a massless conformal field does feel a contact divergence at a hole	a massless conformal field feels no contact divergence there at all
@@ -30,11 +30,11 @@ no-bare-section-5-possessive	PAPER2	-	§5's
 silence-is-about-commutators	PAPER2	-	silence theorem\s+puts it to zero outside|silence theorem then puts it to zero|identically zero outside every horizon|extra term is zero throughout|identically\s+zero everywhere an observation|extra term\s+is zero everywhere the universe|extra term is identically zero outside
 silence-is-about-commutators	COMPANION	-	the term is exactly zero by the silence theorem|the term is zero throughout the observable
 thermal-rival-priced	PAPER2	the thermal family admissible exactly for	no thermal state is admissible|the thermal occupation is excluded outright
-abstract-lands-on-quantum-gravity	PAPER2	as a consequence of the symmetry (and not|rather than) as something a quantum theory of gravity still owes	-
+abstract-lands-on-quantum-gravity	PAPER2	as a consequence of the symmetry (and not|rather than) as something a quantum theory of gravity still needs	-
 conclusions-land-on-quantum-gravity	PAPER2	the field equations were never (the thing )?waiting on a quantum theory of gravity	-
 companion-lands-on-quantum-gravity	COMPANION	gravity did not have to be quantised for any of it	-
 entropy-coefficient-not-derived	PAPER2	no argument from a symmetry could ever have returned it	derives the entropy coefficient|entropy coefficient is derived|1/4G is derived
-graphical-abstract-states-the-claim	PAPER2	One postulate goes in, that CPT holds of the universe and not only of its laws	it marks an algebraic relation and not a physical layer|INTERPRETIVE SCHEMATIC|The drawing is interpretive
+graphical-abstract-states-the-claim	PAPER2	One postulate goes in: CPT is a symmetry of the universe itself	it marks an algebraic relation and not a physical layer|INTERPRETIVE SCHEMATIC|The drawing is interpretive
 ledger-lines-name-their-file	PAPER2	Each of the nineteen names the file in the release that produces it	-
 field-equations-need-neither-constant	PAPER2	neither measured constant is among them	-
 no-doubled-accretion	PAPER2	-	the doubled\s+accretion rate|a doubled accretion rate|doubled accretion

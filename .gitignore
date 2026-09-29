@@ -1,10 +1,23 @@
-# Local build output, not part of the release
-build/
-*.aux
-*.log
-*.out
+# Build and tooling junk
 __pycache__/
 *.pyc
-data/pantheon_plus/
-.venv/
 .Rhistory
+.DS_Store
+
+# Not for publication. The PRL Letter is a submission in preparation and carries no result the
+# main paper does not; the rest are strategy, outreach and review-preparation documents that
+# live only in the authoring repository. tools/export_to_separate_ways.sh refuses to finish if
+# any of them reaches this tree.
+LETTER_PRL_v1.md
+Letter_Einstein_from_CPT_v1.pdf
+VENUES.md
+COVER_LETTER_DRAFT.md
+REFEREE_RESPONSE_PREP.md
+PRESUBMISSION_ENQUIRY.md
+RELEASE_PACKET_*.md
+ZENODO_DEPOSIT_*.md
+BLIND_PANEL_*.md
+CONTACT_LEDGER_*.md
+SUBMIT_NOW_*.md
+SUBMISSION_CHECKLIST*.md
+NOMINATOR_BRIEF*.md

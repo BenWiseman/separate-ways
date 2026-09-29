@@ -59,7 +59,7 @@ checks/calc/fold_reach.py	The coefficient is a pure number with no mass in it, a
 checks/calc/massless_zero_mode.py	carries unit Klein-Gordon norm for every $\alpha>0$, the $\cosh t$ of the circle cancelling	
 checks/calc/theta_selects_where.py	The fold selects where it exchanges and not where it fixes	
 checks/calc/theta_selects_where.py	the cosmology paper's floor; and since	0.65848
-checks/calc/horizon_squeeze.py	the two agree to $8\times10^{-22}$. The agreement is not a	8\times10^{-22};0.65848
+checks/calc/horizon_squeeze.py	the two agree to $8\times10^{-22}$. That agreement is no	8\times10^{-22};0.65848
 checks/fig_fold_reach.R	floor divided by $f=1-r_h/r$, the square of the local clock rate, flattening onto	3.5166
 checks/fig_two_ends.R	topping out at $\mathrm{arcsinh}(1/\sqrt2)=0.6585$ when	0.6585
 checks/calc/caustic_image_power.py	the antipodal map are one operation, by $P_\ell(-x)=(-1)^{\ell}P_\ell(x)$, which holds to	4.6\times10^{-14}
@@ -120,7 +120,7 @@ checks/calc/equivalence_from_one_metric.R	not assumed, because the eikonal chara
 checks/calc/bianchi_is_a_theorem.R	Bianchi identity, is a theorem about the Levi-Civita connection of any metric, measured at	0.05
 checks/calc/signature_or_the_fold_is_nothing.R	The signature entry is not indifferent either	1.0000001;4969
 checks/calc/eta_is_universal.R	One condition comes with it: because of that	52;2.137;1.629;1.931
-checks/calc/opposite_orientation.R	That reversal is a theorem of the construction rather than a posit	4000
+checks/calc/opposite_orientation.R	That reversal is a theorem of the fold rather than a posit	4000
 checks/calc/one_time_direction.R	Counted over all five four-dimensional signatures the rule is	4
 checks/calc/sign_through_the_mass_slot.R	The sign of that stress no longer rests on a single slot	2.005;1.018
 checks/calc/one_metric_is_forced.R	Two metrics differing by a constant factor share a connection	1.7
@@ -128,12 +128,12 @@ checks/calc/contour_shift_is_forced.R	The superscript on $G_{+-}$ is not a conve
 checks/calc/equilibrium_is_leading_order.R	And equilibrium at the horizon is not a theorem about every state	3.2898681;2.000000;1.999972;3.57\times10^{6}
 checks/calc/alpha_is_total_inversion.R	and the embedding settles that: on the de Sitter hyperboloid	0.210;1.1
 checks/calc/interior_focusing_threshold.R	The negative null-null component has a second consequence and it is larger than the first	1.1997;1.439;11.5138
-checks/calc/caustic_amplitude_profile.R	because A.19 closes the larger part	3.9004
+checks/calc/caustic_amplitude_profile.R	A.19 closes the larger part of that coefficient	3.9004
 checks/calc/image_stress_shell.R	Both of those are requirements on a constant stress and the stress is not constant	11.5138
 checks/calc/caustic_power_at_a_hole.R	The power decides the answer and $\kappa$ barely enters it, and the power is $5/2$	0.956;0.976;0.968;0.33018;0.16746
 checks/calc/mass_softening_is_one_sigma.R	One power of $\sigma$ is one power of the distance here and two in flat space	34.85;3.14158765
 checks/calc/image_stress_coefficient.R	At $p=5/2$, $\kappa$ is no longer open either	3.9004;17.425;0.030956;0.0039329;0.1091
-checks/calc/radial_sign_reduction.R	The reduction that sign goes through is worth stating	1.4;0.0014423
+checks/calc/radial_sign_reduction.R	The reduction that sign goes through is pure algebra	1.4;0.0014423
 checks/calc/contact_and_radial_are_orthogonal.R	Following that through changes the reading of the sign	1.056;1.005;1.0005;1.00005
 checks/calc/which_combination_the_esu_measures.R	Which combination the computed sign belongs to is settled by a symmetry	1.3333333333;0.50000
 checks/calc/image_stress_components.R	The same sum gives the components	1.9997;0.0003;1.5003;4.8;501.9;1.4916;0.9934;2.999;0.059525
@@ -145,9 +145,9 @@ checks/calc/the_shell_has_a_floor.R	That reading has a limit, and it is the para
 checks/calc/kappa_is_not_order_unity.R	The order-unity factor that used to stand beside	1.012649;1.002214
 checks/calc/the_pattern_is_rank_one.R	What does not carry over is the component pattern	5.8;5.7
 checks/calc/outside_is_suppressed_not_zero.R	Outside the horizon the pair is spacelike too	1.53;1.50;2.7;2.0
-checks/calc/the_bang_term_is_radiation.R	That form is worth reading the other way round	7.5
+checks/calc/the_bang_term_is_radiation.R	Read the other way round, an $a^{-4}$ density is radiation	7.5
 checks/calc/the_band_excludes_a_thermal_profile.R	The band is doing work here, though, and the rival the fold itself suggests is where that shows	0.3898;1.81;1.11;31;0.02284;389.5;194.7
-checks/calc/the_phase_freedom_has_a_price.R	The residual phase is the falsifier a reader should press, and what pressing it buys is bounded on one side only	3.75;289.7;1.14
+checks/calc/the_phase_freedom_has_a_price.R	The residual phase is the falsifier, and its effect is bounded on one side only	3.75;289.7;1.14
 checks/calc/the_in_vacuum_leaves_the_band.R	$\Theta$-invariance settles it before any integral is done	0.5364
 checks/calc/conservation_admits_one_scaling.R	Nothing in that is chosen. Writing the three as powers of $D$, conservation matches them as	1.1
 checks/calc/the_phase_freedom_has_a_price.R	the release retains $I=0.0127596673634$ as a quadrature check	0.0127596673634

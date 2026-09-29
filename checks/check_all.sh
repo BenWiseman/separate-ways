@@ -6,7 +6,20 @@ set -u
 PAPER="${1:-paper/COMPANION_v1.md}"
 BENLM="${BENLM:-/home/ben/benlm}"
 fail=0
-hdr () { printf '\n\033[1m== %s ==\033[0m\n' "$1"; }
+# About a third of the fail=1 assignments below are bare shell comparisons that print nothing
+# distinctive, so a failing run showed only self-test plants and the gate had to be found by
+# sweeping every checker's exit code by hand. That cost an hour on 2026-09-29. hdr now compares
+# the flag against its value at the previous gate and names whichever gate raised it.
+_prev_fail=0
+_gate="(startup)"
+hdr () {
+  if [ "$fail" != "$_prev_fail" ]; then
+    printf '\033[1m   ^^ GATE RAISED THE FAILURE: %s\033[0m\n' "$_gate"
+    _prev_fail=$fail
+  fi
+  _gate="$1"
+  printf '\n\033[1m== %s ==\033[0m\n' "$1"
+}
 
 hdr "1. arXiv abstract cap"
 python3 checks/calc/abstract_len.py "$PAPER" || fail=1
@@ -323,7 +336,9 @@ def last_para(c, head, nxt):
 
 cases = [("the abstract's last sentence",
           re.split(r"(?<=[.!?]) +", abstract(cos))[-1],
-          "a quantum theory of gravity still owes"),
+          # "owes" was Ben's word to cut on 2026-09-28: a thing a theory "owes" is Claude-ish
+          # and the plain verb is "needs". The position this gate defends is unchanged.
+          "a quantum theory of gravity still needs"),
          ("section 5's last paragraph",
           last_para(cos, "## 5. Conclusions", "## Appendix A"),
           "waiting on a quantum theory of gravity"),
@@ -728,6 +743,27 @@ echo "   runs of 3+ sentences opening on the same word: ${lr:-?} (0 allowed)"
 [ "${lr:-9}" -gt 0 ] && { python3 "$BENLM/tools/opener_runs.py" "$LETTER" | sed -n '3,14p'; fail=1; }
 python3 checks/repeat_check.py "$LETTER" || fail=1
 
+hdr "27. the paper does not narrate its own rhetoric, and every figure is cited first"
+# Ben, 2026-09-29, on finding "One separation is worth stating before that list, because a referee
+# will want it." still in 4.1 after a paragraph-by-paragraph pass: that sentence alone gets a paper
+# desk-rejected. It was not one slip. Forty-one sentences across the two manuscripts addressed a
+# referee, told the reader how to read, or explained why the paper is arranged as it is. Nothing
+# measured any of it. The same pass found three of five figures never cited before they appeared,
+# two never cited at all.
+python3 checks/editorial_voice.py --selftest || fail=1
+python3 checks/editorial_voice.py || fail=1
+python3 checks/figure_order_check.py --selftest || fail=1
+python3 checks/figure_order_check.py || fail=1
+
+hdr "28. the exported repository is not behind this one"
+# Ben, 2026-09-29: "The PDF in seperate_ways says it hasn't been updated since yesterday and it
+# doesn't appear to have the refinements in it." It was a 49-page build from the previous
+# afternoon against a working tree at 47, so a night's work was missing from the repository both
+# manuscripts print on their own pages. Nothing watched it, the same gap that left the Zenodo
+# record two versions behind. This is the half that can be closed mechanically.
+python3 checks/export_freshness.py --selftest || fail=1
+python3 checks/export_freshness.py || fail=1
+
 hdr "13. the checkers can still fail"
 python3 checks/calc/xref_check.py --validate-external >/dev/null 2>&1 \
   && echo "  xref_check --external: both directions catch their plant" \
@@ -766,5 +802,6 @@ Rscript checks/label_ink_check.R --selftest || fail=1
 # and both exit non-zero if one fails to fire, so nothing more is needed here.
 
 printf '\n'
+[ "$fail" != "$_prev_fail" ] && printf '\033[1m   ^^ GATE RAISED THE FAILURE: %s\033[0m\n' "$_gate"
 [ $fail -eq 0 ] && echo "ALL GATES PASSED" || echo "SOMETHING FAILED, see above"
 exit $fail

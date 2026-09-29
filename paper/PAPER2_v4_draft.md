@@ -2,7 +2,7 @@
 
 **B. H. Wiseman**
 
-*Linnet Labs, Sydney, Australia*
+*Linnet Labs, Sydney, Australia (independent researcher; no external funding)*
 
 *gr-qc (primary); astro-ph.CO, hep-th (cross-list).*
 
@@ -10,111 +10,140 @@
 
 ## Abstract
 
-Take CPT to be a symmetry of the universe and not only of its laws. The fold is then an
-involution, so every field has an average of its two readings and a difference: the classical
-and quantum variables physics already uses. The classical world is where the sheets agree. At a
-bifurcate Killing horizon the fold's map is a half-period thermal shift, making the cross-sheet
-correlator a thermofield double at $\tanh r=e^{-\beta\omega/2}$, a temperature nobody put in.
-The quantum half weighs $4\tanh^2(\beta\omega/4)$ and equals the classical half at
-$\beta\omega=2\ln3$: the classical world is a horizon seen from below its temperature.
-Jacobson's 1995 derivation takes a horizon temperature, an area entropy and horizons
-everywhere. The fold supplies all three, the entropy law from that double and not from
-Bekenstein-Hawking, so nothing is borrowed from relativity. Nineteen properties of general
-relativity come out, among them $G>0$, four dimensions and $\Lambda$ as an integration
-constant; four go in, two what a metric theory is and two the measured constants. At the bang
-the mode equation is an avoided crossing, and a fold-invariant state sits half in each branch,
-which floors how many particles are made. The observed abundance turns that floor into a
-ceiling: the dark-matter fermion weighs at most $491.6\pm2.0$ PeV, its two-body neutrino line
-at $245.8\pm1.0$ PeV. Exact stabilisation floors the neutrino-mass sum at 58.8 meV and commits
-to constant dark energy, shutting the $w_0w_a$ escape that relaxes the DESI bound to 163 meV.
-It departs measurably from relativity only inside a black hole, in a $2.1$ micron shell at a
-solar mass, where relativity predicts its own breakdown. The metric is a fixed background
-throughout and nothing gravitational is quantised anywhere, so Einstein's equations arrive as a
-consequence of the symmetry and not as something a quantum theory of gravity still owes.
+CPT, charge conjugation with spatial reflection and time reversal, is taken here of the universe
+and not only of its laws. That cosmology is fused with the algebraic account of a wedge, whose
+modular conjugation is a reflection, and each supplies what the other leaves open. The fold is an
+involution, so every field has an average of its two readings and a difference: the classical and
+quantum variables. At a bifurcate Killing horizon the fold's map is a half-period thermal shift,
+making the cross-sheet correlator a thermofield double at $\tanh r=e^{-\beta\omega/2}$, pure
+taken whole and thermal to either side alone, a temperature nobody put in. Jacobson's 1995 derivation takes a horizon temperature,
+an area entropy and horizons everywhere; the fold supplies all three. The area law is the
+entanglement entropy of that double, never Bekenstein-Hawking, so no result of general relativity
+enters its own derivation, and the dependency graph is audited. Nineteen properties of general
+relativity come out, among them $G>0$, four dimensions and $\Lambda$ as an integration constant;
+four go in, two what a metric theory is and two the measured constants. The same fusion, stress-tested at the bang, makes the mode equation an avoided crossing, where
+a fold-invariant state sits half in each branch and floors particle production. The observed abundance turns that
+floor into a ceiling: the dark-matter fermion weighs at most $491.6\pm2.0$ PeV, its two-body
+neutrino line at $245.8\pm1.0$ PeV, and the neutrino-mass sum is floored at 58.8 meV with the
+$w_0w_a$ escape shut. It departs from relativity only inside a black hole, in a $2.1$ micron
+shell at a solar mass, where relativity predicts its own breakdown. Nothing gravitational is
+quantised anywhere, so Einstein's equations arrive as a consequence of the symmetry and not as
+something a quantum theory of gravity still needs.
 
 ## 1. Introduction
 
+![](graphical_abstract_v5.png){width=100%}
+*Graphical abstract. One postulate goes in: CPT is a symmetry of the universe itself, not
+just of the laws inside it. The fold relating the two sheets is an involution and not a
+destination, so no matter crosses it and no white-hole population or traversable connection
+is predicted. The classical-quantum split is §2.1, the horizon temperature §3.1, the field
+equations §3.6, and the ledger line by line Appendix E.*
+
+
 A horizon hides part of spacetime from an observer, and a bang hides the far side of time.
 Suppose what is hidden behind the Big Bang is our own universe over again, with matter swapped
-for antimatter, space reflected and time running the other way. That is CPT: charge conjugation, spatial reflection and
-reversal of time orientation. It is the one symmetry every particle experiment has respected,
-and here it is applied to the universe itself rather than to the physics going on inside it. This paper asks what taking it that seriously commits us to.
+for antimatter, space reflected and time running the other way. That is CPT, the combination of
+charge conjugation, spatial reflection and reversal of time orientation, and it is the one
+symmetry every particle experiment has respected. Boyle, Finn and Turok took it of the universe
+as a whole and built a cosmology on it [9,10,11]. Throughout what follows, *the fold* names
+both the involution relating the two sheets and the fold built on it.
 
-The answer has a structural half and a matter half, and the structural half was not what we
-went looking for. Three of the things a quantum theory of gravity has been wanted for arrive here
-with the metric a fixed background throughout: the classical-quantum divide, which turns out to be
-whether a field is even or odd under the fold and not a scale at all; a horizon temperature, which
-is what a half-period shift makes of the cross-sheet correlator; and the Einstein equation itself. Jacobson showed in 1995 that a temperature and an entropy proportional to area
-give the field equations, and took both as inputs. Here both come from the fold. The entropy is the
-entanglement entropy of the thermofield double the fold's map forces, a state that is pure taken
-whole and thermal to either side alone; taking the area law from there rather than from
-Bekenstein-Hawking is what keeps relativity out of its own derivation. His remaining input, that a
-horizon exists at every point in every null direction, is derived in §3.6. None of it quantises
-anything gravitational. What comes back is general relativity plus one non-local term. That term
-carries no free parameter and is suppressed outside every horizon to thirty-four orders below the
-dark energy at its worst, so the construction agrees with relativity wherever relativity has been
-tested and departs from it only inside.
+Their cosmology needs no inflaton. Two sheets meet at a radiation bang, CPT relates them, and the
+dark matter is a heavy right-handed neutrino produced gravitationally at the bang, its mass fixed
+by the observed abundance. One thing in it is prescribed. The abundance
+machinery has to be fed a state, and the state is selected by a minimum-energy condition imposed
+from outside the fold, where the cosmology itself is silent. Nothing in the cosmology says which involution relates the sheets
+either; it says that one does.
 
-That departure is not a formality. On the inner half of a hole's interior the term is nonzero, and the
-shell in which it dominates the interior's own focusing is $2.1$ microns thick for the dark-matter
-particle of §3.1 at a solar-mass hole and $0.55$ femtometres for an electron. Which way it pushes
-that focusing is a second question with an answer. It defocuses the direction in which the two
-sheets would touch, delaying the contact that would close a causal curve. And it focuses the radial
-congruence Penrose's theorem runs on, so the singularity theorem's hypothesis holds where he uses
-it. §4.2 works that out. The construction's one departure from relativity is therefore the one that
-keeps it consistent, which is not what a free parameter does.
+A second body of work answers questions of exactly that kind, and it has been developed
+independently. Algebraic quantum field theory, AQFT, knows what the modular conjugation of a static-patch
+vacuum algebra is: Sewell's theorem [2] and the de Sitter analysis of Borchers and
+Buchholz [3] identify it with a wedge reflection, and Bisognano and Wichmann [28] supply the
+flat-space original. Parikh, Savonije and Verlinde [1] show by parallel transport between
+antipodal points that the map acts on the tangent space by $PT$. Chang and Li [26] give the
+mode-level form and the reality condition. Thermofield dynamics is Takahashi and Umezawa's [29]
+and its use at horizons Israel's and Maldacena's [7,8]; the closed time path is Schwinger's and
+Keldysh's [16,17], and the symmetric thermal contour is Niemi and Semenoff's [18] and Herzog and
+Son's [19]. Every ingredient above is prior and credited.
 
-§3.6 works that through, and keeps a ledger: nineteen properties of general relativity out, four in, two of
-which are what writing a metric theory means and two the measured constants, alongside the
-regularity condition on states that lets a stress tensor exist at all. Appendix E lists all
-twenty-three at full wording, so the count can be checked without opening the release.
+Neither body of work is new here. What is new is their fusion, and the reason it is not a
+repackaging is that each supplies what the other leaves open. The wedge-reflection theorems fix
+the involution the cosmological accounts do not determine. That involution, applied at the bang,
+returns the family of states the cosmology had to prescribe, and an operator inequality over the
+whole family turns the observed abundance into a bound rather than a value. The traffic runs both
+ways: algebra contributes an input to the cosmology and not only a constraint on what the
+cosmology had already chosen. Boyle, Finn and Turok reach the saturating state by an independent
+minimum-energy route, so §2.3 does not adopt it on their authority.
 
-The matter half is what makes the whole thing falsifiable, and it is where most of this
-paper's arithmetic goes. Boyle, Finn and Turok built the cosmology [9,10,11]: two sheets meet
-at a radiation bang, CPT relates them, and the dark matter is a heavy right-handed neutrino
-produced gravitationally at the bang, its mass fixed by the observed abundance. We keep both
-sheets and relate their fields by an antilinear map, the fold, which conjugates the numbers as it
-carries a field across. An observer on either sheet has an
-ordinary local arrow of time. The mirror sheet is a copy related by an involution and not a place:
-the construction supplies no route for a visitor to arrive in our past.
+A fusion of two mature frameworks is either real physics or a coincidence of form, and the way
+to tell is to ask what it produces. The matter half came first
+and this paper's structural half came out of stress-testing it. The fusion also leads to general relativity, which is the one place a wrong fusion has nowhere
+to hide: if CPT read through the modular structure of a wedge is real physics, gravity should follow
+from it without being put in, and if nothing follows then the fusion is a curiosity and should be recorded as one. What follows is set out below.
 
-Cosmology, the identification of the dark matter and the machinery that turns an abundance into a
-mass belong to Boyle, Finn and Turok. The state that machinery is fed was prescribed by a
-minimum-energy condition. This paper derives the family that state lies in from the fold, and
-shows that the mass the abundance returns is a bound over the whole family rather than the value
-at one member. The argument is an operator inequality. At a radiation bang the mode equation is an
-avoided crossing, the two-level problem a solid-state physicist meets when levels sweep past one
-another. A state invariant under the fold must be half in each component at the crossing, which
-cuts the space of states to one free phase per mode. On the pair block the average of the in- and
-out-region number operators is bounded below by $n_*=(1-\sqrt{1-P})/2$, for every admissible
-state, pure or mixed, Gaussian or not, and for a block reduced from a state entangled across
-momenta, because such a block is still a density operator. The least-occupied member saturates the
-bound and no state beats it. The abundance match therefore gives
+Three of the things a quantum theory of gravity has been wanted for arrive with the metric a
+fixed background throughout: the classical-quantum divide, which turns out to be whether a field
+is even or odd under the fold and not a scale at all; a horizon temperature, which is what a
+half-period shift makes of the cross-sheet correlator; and the Einstein equation itself. Jacobson
+showed in 1995 that a temperature and an entropy proportional to area give the field equations,
+and took both as inputs [33]. Here both come from the fold. The area law is the entanglement
+entropy of the thermofield double the fold's map forces, a state that is pure taken whole and
+thermal to either side alone, and is never taken from Bekenstein-Hawking, which is what keeps
+general relativity out of its own derivation; §4.1
+audits the dependency graph for that and names the four places the derivation could have failed.
+Jacobson's remaining input, a horizon at every point in every null direction, is derived in §3.6.
+None of this quantises anything gravitational, so the field equations arrive as a consequence of
+a symmetry and not as something a quantum theory of gravity still needs to supply.
+
+§3.6 works that through, and Appendix E lists the ledger line by line. The lines are produced by
+a script, so the count can be audited line by line.
+
+The matter half is what makes the whole thing falsifiable, and it is where most of the arithmetic
+goes. At a radiation bang the mode equation is an avoided crossing, the two-level problem a
+solid-state physicist meets when levels sweep past one another. A state invariant under the fold
+must sit half in each component at the crossing, which cuts the space of states to one free phase
+per mode, and on the pair block the average of the in- and out-region number operators is bounded
+below for every admissible state, pure or mixed, Gaussian or not. The abundance match therefore
+returns
 
 $$
 M_1\le491.6\pm2.0\ {\rm PeV},\qquad E_\nu\le245.8\pm1.0\ {\rm PeV},\qquad
 \Sigma m_\nu\ge58.8\ {\rm meV}.
 $$
 
-The second number is the two-body neutrino line in the decay model of §2.4, which needs a weakly
-broken stabilising rule. A third number is a floor, from exact stabilisation with normal ordering,
-and it arrives with a commitment to exactly constant dark energy. A model under neutrino pressure
-usually buys room by relaxing the expansion history: the same DESI data give $\Sigma m_\nu<64.2$
-meV under $\Lambda$CDM and $<163$ meV under $w_0w_a$CDM, a factor of two and a half [12]. This
-implementation has forfeited that escape, so one dataset presses the expansion history and the
-particle bound together and the model cannot trade one against the other. The fixed mass also
-closes the dark budget, which JWST's overmassive early black holes press on; §3.4 prices their
-seeds against it and finds room, while the Poisson route from the relic itself falls twenty-four
-orders short. A JWST result and a neutrino-telescope result are formally linked but the link is
-unreachable, and what the closed sector supplies instead is a ceiling on a primordial dark seed
-component.
+That first number is a ceiling on the dark-matter mass over every state the fold permits. Next
+comes the two-body neutrino line in the decay model of §2.4, sharp enough that one securely
+assigned event above it refutes the model. Last is a floor on the neutrino-mass sum, which the fold cannot relax, having committed to constant dark energy and given up the $w_0w_a$
+freedom that relaxes such a bound. The quoted widths propagate the measured inputs only,
+at fixed production history and particle content; §2.3 gives the budget and says what it leaves
+out.
 
-The quoted widths propagate the measured inputs only, at fixed production history and particle
-content. They are not a total theory error; §2.3 gives the budget and says what it leaves out.
+The same involution can be carried to a black-hole horizon, and that half of the work is in the
+companion paper [32]. It bears on the picture here without being needed for it, and §3.6 cites it
+for two things: that contact surfaces are caustics, which is what lets the focusing argument of
+§3.6 act on them,
+and that the sheets can touch nowhere outside a horizon and only inside $r=M$ within one.
 
-**The fold.** In the embedding of de Sitter in $\mathbb R^{1,4}$ the antipodal involution $\alpha$
-is total inversion, $X\mapsto-X$. Lifted antilinearly, total inversion is the PCT prescription
-itself, and Chang and Li use exactly that to establish CPT invariance of the scalar theory on
+Section 2 gives the fold, the crossing and the abundance machinery, and section 3 the results
+and their tests. Section 4 sets out what the fold claims, its limits, and
+what would refute it, and section 5 concludes. The appendices carry the algebra, the states at the bang, the
+quotient readings, the benchmarks, and the ledger line by line.
+
+## 2. Construction of the fold
+
+Every number quoted in this paper is produced by a script, and each script is named for the
+passage it supports. The calculations are in R 4.5.2 with no package loaded, so base R runs all
+of them, and in Python 3.12.13 where a special function or a symbolic step is wanted, using NumPy
+2.5.3, SciPy 1.18.1, SymPy 1.14.0 and mpmath 1.3.0. A checking pass runs over both manuscripts on
+every change and fails if a number in the text and the script named for it come apart; the code
+and that pass are at <https://github.com/BenWiseman/separate-ways>.
+
+### 2.1 Fold parity, and the classical-quantum split it makes
+
+Let $\alpha$ be the free antipodal involution of the de Sitter cover. In the embedding of de
+Sitter in $\mathbb R^{1,4}$ it is total inversion, $X\mapsto-X$. Lifted antilinearly, so that the lift conjugates the numbers
+as it carries a field across, total inversion is the PCT prescription itself, PCT being Pauli's letter order for the same
+theorem as CPT, and Chang and Li use exactly that to establish CPT invariance of the scalar theory on
 elliptic de Sitter [26]. So the operator relating the two copies exists by the PCT theorem and the
 geometry. What is hypothesised is narrower: that the image under that operator is the second leg
 of the closed time path. Three things can be done with the same operator, and they are
@@ -140,98 +169,12 @@ at every separation for exactly one $\sigma$, and that is $\beta/2$. The two end
 are the two extremes of the same quantity: at $\sigma=0$ the orderings differ by the whole
 commutator $i\sin\omega t/\omega$, the same at any temperature, and at $\beta/2$ they do not
 differ at all. So the hypothesis is only that the legs are paired. An involution can
-pair one contour out of the family, and the symmetric one is that contour. The KMS condition, which is what being thermal means for a
-state, does the selecting, through $(1+n)e^{-\omega\sigma}=ne^{\omega\sigma}$; with the Bose factor removed no $\sigma$ is
+pair one contour out of the family, and the symmetric one is that contour. The Kubo-Martin-Schwinger (KMS) condition, which is what being thermal means for a state, does the selecting, through $(1+n)e^{-\omega\sigma}=ne^{\omega\sigma}$; with the Bose factor removed no $\sigma$ is
 preferred at all. Every mode is sensitive to the
 displacement, most sharply those with $\beta\omega$ of order two.
 
-Every ingredient is prior and credited. Sewell's theorem [2] and the de Sitter analysis of
-Borchers and Buchholz [3] identify the modular conjugation of a static-patch vacuum algebra with a
-wedge reflection, and Bisognano and Wichmann [28] supply the flat-space original. Parikh, Savonije
-and Verlinde [1] show by parallel transport between antipodal points that the map acts on the
-tangent space by $PT$. Chang and Li [26] give the mode-level form $Y_{\ell m}(\Omega_{\mathcal
-A})=(-1)^\ell Y^*_{\ell m}(\Omega)$, $U(-\rho)=(-1)^\ell U^*(\rho)$, and the reality condition
-$\phi(-x)=\phi^*(x)$.
-
-Boyle and Deng [24] propose that the Kähler-Dirac field lives on a
-two-sheeted spacetime with the sheets related by $PT$ or by $i\leftrightarrow-i$, with a reality
-condition pairing every particle on one sheet with a mirror partner on the other; their target is
-fermion doubling, and they note only that it may connect to CPT-symmetric universe models.
-Thermofield dynamics is Takahashi and Umezawa's [29] and its use at horizons Israel's and
-Maldacena's [7,8], the closed time path is Schwinger's and Keldysh's [16,17], and the symmetric
-thermal contour is Niemi and Semenoff's [18] and Herzog and Son's [19]. Bondarenko [27] relates
-the regions of an extended manifold by a CPT reversal and gives an action equivalent to the
-Keldysh formalism, on the Kruskal extension rather than the de Sitter antipode, and §8 of that
-paper compares cross-region propagators against Keldysh ones. Across the 180 records citing the
-four papers that founded the CPT-symmetric programme, none sets a CPT-related cross-leg kernel
-beside the symmetric thermal contour and none mentions modular conjugation or Tomita-Takesaki;
-"CPT-symmetric" with "modular conjugation" returns one unrelated record. A citation count is not proof of absence.
-
-Harlow and Numasawa [25] argue that a spacetime inversion in quantum gravity
-must be gauged, that the Hilbert space of a closed universe is real, and that non-orientable
-manifolds must be admitted as configurations; the first two are the moves made in Appendix A, and
-we take their argument as motivation. The contact conditions at the bang are Nadal-Gisbert,
-Navarro-Salas and Pla's [22], as §2.2 sets out.
-
-What is developed here is the assembly, and the point of assembling them is that the legs then
-constrain each other. The wedge-reflection theorems fix the involution the cosmological accounts
-leave open. The involution, applied at the bang, returns the family of states the cosmology needs,
-and an operator inequality on that family turns the abundance into a bound. Boyle, Finn and Turok
-reach the saturating state by a minimum-energy prescription along an independent route, so §2.3
-does not adopt it on their authority.
-
-**The horizon half.** The same involution can be carried to a black-hole horizon, and that half
-of the work is in the companion paper [32]. It tests three one-copy readings of the mirror sheet
-and finds each fails on stated grounds, adopts an ordinary absorbing Kerr horizon with a
-transparent seam, and sets out what a reflecting alternative would have to supply. The seam
-coefficient there is adopted, not derived.
-
-Three of its results bear on the picture here without being needed for it. One is a law at our
-own horizon with nothing chosen in it. Write $R$ for the correlation across a reflected
-separation over the correlation across the direct one, on the horizon's bifurcation surface.
-Since the fold's transverse map squares to the identity, replacing one point by its image
-exchanges numerator with denominator, so $R$ times itself with the reflection applied again is
-$1$ identically, for every state, every metric on that surface and every free involution. On a
-round surface with an isotropic state the reflection carries an angle to its supplement, so the
-logarithm of $R$ is odd about ninety degrees and every even multipole of it vanishes exactly.
-
-The companion also settles where the two sheets can reach each other at all, which is nowhere
-outside a horizon and inside $r=M$ within one, half the horizon radius, exactly and with the
-mass cancelling. And it settles, negatively, whether $N_{\rm eff}$ can decide between reading
-the mirror sheet as a copy of our degrees of freedom or as a place carrying its own: it
-cannot, because the fold puts the two sheets at different events and neither reading changes
-the radiation at our recombination. That helps here, since it means $g_*=106.75$ above is
-forced by the construction, and the ceiling carries no factor-of-two ambiguity on that account.
-None of the results below depend on any of it: the bound, the neutrino line and the mass floor
-stand or fall on §§2 and 3 alone.
-
-Section 2 gives the fold, the crossing and the abundance machinery. Section 3 gives the results
-and their tests. Section 4 says what the assembly claims and where it can fail. Appendix A carries
-the fold's algebra and the free-graviton sector, Appendix B the states at the bang, Appendix C the
-quotient readings and two corrections to the literature, and Appendix D the contact benchmark and
-the exact-$\Lambda$ derivation.
-
-![](fig_three_things.png){width=100%}
-
-*Graphical abstract. One postulate goes in, that CPT holds of the universe and not only of its
-laws. Three things come out with the metric a fixed background at every step: the
-classical-quantum divide, which is the fold's own parity since $\Theta^2=1$; a horizon temperature,
-because the fold's map at a bifurcate Killing horizon, one whose
-generator vanishes on a surface, is a shift by half the thermal period;
-and the Einstein equation, from Clausius run on the fold's own horizons with the temperature,
-the entropy law and the horizons all supplied rather than assumed. Nineteen properties of
-general relativity follow and four go in, two of them measured numbers. Right: the weight the
-quantum half carries, $4\tanh^2(\beta\omega/4)$, which switches off below the horizon
-temperature and equals the classical half at $\beta\omega=2\ln3$, so the classical limit is
-reached in temperature. The counts are read from the ledger script at draw time. The mirror sheet is related to ours by an involution and is not a destination: no transport of matter
-between branches, and no white-hole population or traversable connection is predicted.*
-
-## 2. Methods
-
-### 2.1 The fold, and the classical-quantum split it makes
-
-Let $\alpha$ be the free antipodal involution of the de Sitter cover and $J$ the point map that
-the wedge reflection of Sewell [2] and Borchers and Buchholz [3] implements; $J$ denotes the point
+Write $J$ for the point map that the wedge reflection of Sewell [2] and Borchers and Buchholz
+[3] implements; $J$ denotes the point
 map throughout, not the antiunitary. In the mode convention used here
 
 $$
@@ -289,8 +232,7 @@ both retains the conjugate information that a projection onto the average alone 
 What the fold adds is the spacetime involution, its state implementation and its compatibility
 with the free gravitational constraints (Appendix A).
 
-Two sentences of interpretation belong here, because the algebra above is standard and what the
-fold adds to it is not. Since $\Theta^2=1$, the average is exactly the fold-even part of the field
+The algebra above is standard and what the fold adds to it is not. Since $\Theta^2=1$, the average is exactly the fold-even part of the field
 and the difference exactly the fold-odd part. **The fold's parity is the classical-quantum split
 itself**: where the two sheets agree the difference vanishes and the physics is classical, and
 where they disagree is where the commutator lives. The doubling is sixty years old and nobody
@@ -321,7 +263,7 @@ commutes with the flow, so neither limit is a hedge. The identification of
 the two patches with the expanding and contracting branches is a separate interpretation, and §3's
 numbers use none of the patch algebra.
 
-### 2.2 The bang as an avoided crossing
+### 2.2 A radiation bang as an avoided crossing
 
 At a radiation bang $R=0$ and $a''=0$; massless free fields are conformal in this background while
 a mass term can distinguish the two orientations. With $a(\eta)=a_1\eta$ the conformal mass term
@@ -354,6 +296,8 @@ $|\hat\beta_\pm(p)|^2=[1-\cos2\eta(p)\cos\lambda(p)]/2$, so that
 $n_\eta-n_0=\cos\lambda(p)\,\sin^2\eta(p)\ge0$ with $\cos\lambda>0$ on the established range
 $-\pi/2<\lambda(p)<\pi/2$, and state that the particle number density is minimised at $\eta(p)=0$,
 where their state has both minimum expected particle density and minimum energy density [10].
+
+Figure 1 draws the crossing and what the second sheet does to it.
 
 *Two sheets complete the crossing.* The Landau-Zener closed form applies to a sweep from
 $\eta=-\infty$ to $+\infty$. A single-sheet cosmology begins at the bang and gets half of one. A
@@ -413,10 +357,9 @@ State, radiation history and branch remain inputs, and the separate large-Weyl-c
 changes the mass.
 
 That width propagates the measured inputs. The abundance enters at the two-fifths power and is
-known to one per cent from $\Omega_{\rm DM}h^2=0.1200\pm0.0012$, contributing $0.40$ per cent; the
-entropy density is fixed by $T_{\rm CMB}$ to $0.07$ per cent and contributes $0.026$; the
-production integral is a quadrature of a fixed function and the reduced Planck mass a CODATA
-constant, both negligible. Nearly all the variance comes from the abundance, giving $\pm2.0$ PeV
+known to one per cent from $\Omega_{\rm DM}h^2=0.1200\pm0.0012$, contributing $0.40$ per cent; the entropy density is fixed by the cosmic microwave background temperature $T_{\rm CMB}$ to $0.07$ per cent and contributes $0.026$; the
+production integral is a quadrature of a fixed function and the reduced Planck mass a recommended constant of the Committee on Data of the
+International Science Council, both negligible. Nearly all the variance comes from the abundance, giving $\pm2.0$ PeV
 on the mass and $\pm1.0$ PeV on the half-mass energy. It contains no allowance for the history
 being different or for the production model being wrong, and either moves the endpoint by far more
 than $2$ PeV: a per cent of theory error anywhere in the reconstruction moves the endpoint by
@@ -425,7 +368,7 @@ radiation history each shift the number rather than blur it, and that is the lis
 is different: a different admissible state changes the abundance-matched mass below the ceiling
 (§3.1) and does not move the ceiling.
 
-### 2.4 The decay model
+### 2.4 Decay model
 
 We adopt Boyle, Finn and Turok's particle content and sterile-species stabilising rule [10,11]. If
 the rule is exact the chosen sterile neutrino cannot decay and one light neutrino is massless in
@@ -436,7 +379,7 @@ radiation and propagation shape any observed spectrum. The companion checks that
 light-neutrino mass and abundance change can be negligible. The KM3NeT event [21] is observational
 context, not evidence for this particle.
 
-### 2.5 The tests
+### 2.5 Tests
 
 The endpoint test draws events from an $E^{-2}$ spectrum above 50 PeV, truncated at the true
 endpoint, and smears them with a lognormal response of width $0.3$ in $\ln E$. The threshold is
@@ -446,14 +389,13 @@ model's. A fixed per-event threshold would not do, because its sample-wide false
 the sample; that is why the calibrated threshold climbs with $N$ in Table 2.
 
 Assignment of an event to the decay component uses direction: a decaying halo traces the
-line-of-sight integral of the dark-matter density and an astrophysical population does not. The
-numbers assume an NFW halo, pure Galactic decay and uniform exposure.
+line-of-sight integral of the dark-matter density and an astrophysical population does not. The numbers assume a Navarro-Frenk-White (NFW) halo, pure Galactic decay and uniform exposure.
 
 For the neutrino-mass sum the floor is $\sqrt{\Delta m^2_{21}}+\sqrt{\Delta m^2_{31}}$, with
 global-fit central values and symmetric one-sigma errors $\Delta
 m^2_{21}=(7.53\pm0.18)\times10^{-5}$ eV$^2$ and $\Delta m^2_{31}=(2.510\pm0.030)\times10^{-3}$
-eV$^2$, the one set used wherever the floor's width is quoted. The comparison with DESI DR2 uses
-the parabolic profile likelihood Elbers et al. publish for their BAO+CMB analysis [12], Gaussian
+eV$^2$, the one set used wherever the floor's width is quoted. The comparison with the second data release of the Dark Energy Spectroscopic Instrument, DESI
+DR2, uses the parabolic profile likelihood Elbers et al. publish for their baryon-acoustic-oscillation and microwave-background (BAO+CMB) analysis [12], Gaussian
 with $\mu_0=-0.036$ eV and $\sigma=0.043$ eV, obtained by maximising over nuisance and
 cosmological parameters with degenerate masses, as a proxy likelihood under a flat
 non-negative-mass prior. A profile is not a marginalised posterior, matching one quantile does not
@@ -466,9 +408,9 @@ floor, fixed by the floor's own propagated width before the partition is looked 
 standard treatment of a point prediction against a bounded measurement in Bayesian psychometrics
 and replaces two one-sided constructions with one statement.
 
-## 3. Results
+## 3. Matter sector and field equations
 
-### 3.1 The mass is a ceiling over every admissible state
+### 3.1 A ceiling over every admissible state
 
 Take the out operators $a,b$ of a pair and absorb phases so the in operators are
 $a_-=c\,a+s\,b^\dagger$ and $b_-=c\,b-s\,a^\dagger$, with $c=\sqrt{1-P}$, $s=\sqrt P$ and
@@ -485,7 +427,7 @@ At $P=0.05,0.2,0.5,0.8,0.95$ the least eigenvalue equals $n_*$ to machine precis
 transformation is canonical to $10^{-16}$.
 Every member of the family has equal in- and out-region occupations, which is what the contact
 condition requires on a symmetry-complete block, so such a state satisfies $\langle N_+\rangle\ge
-n_*$. That equality reaches well past the family, and it costs two lines. $\Theta$ is antiunitary
+n_*$. That equality reaches well past the family, and two lines establish it. $\Theta$ is antiunitary
 and exchanges the two regions, so $\Theta N_+\Theta^{-1}=N_-$; for an antiunitary map
 $\operatorname{Tr}(\Theta A\Theta^{-1})=\overline{\operatorname{Tr}A}$; and a $\Theta$-invariant
 state has $\Theta\rho\Theta^{-1}=\rho$. Then
@@ -502,8 +444,7 @@ the operator bound to the observable needs nothing beyond invariance. Integratin
 $P=e^{-x^2}$ returns the $I=0.0127597$ of §2.2. Both identities hold on three hundred random mixed
 states and fail as soon as invariance is dropped.
 
-That argument is worth turning round, because what it does not do is as informative as what it
-does. It works because $\Theta$ *exchanges* two things, so there is a second operator for the
+The argument runs the other way too, and what it fails to do is more informative still. It works because $\Theta$ *exchanges* two things, so there is a second operator for the
 identity to equate. Where $\Theta$ *fixes* the object instead, the same identity constrains
 nothing: a squeezed vacuum with real $r$ has real Fock amplitudes and is $\Theta$-invariant at
 every $r$, while its occupation $\sinh^2r$ runs freely, and only giving those amplitudes a phase
@@ -522,11 +463,11 @@ a pure number with no parameter in it, and overshooting it would need $n_*>\tfra
 $(1-\sqrt{1-P})/2$ reaches only at $P=1$ and passes into the complex plane beyond. Reading that as
 a ceiling on the fold's two-sheet correlation at any later epoch needs two things this paper does
 not establish: that the crossing's invariance reaches the mode in question, and that its squeeze
-is inherited rather than regenerated. Both are stated so a reader can price them. What does not
+is inherited rather than regenerated. Both are stated, and both are quantified. What does not
 depend on either is that the selected quantity and the free quantity are the same quantity, so the
 amplitude was never a dial.
 
-At the other end of the construction the squeeze comes out determined, and the step that does
+At the other end of the fold the squeeze comes out determined, and the step that does
 it is one this paper already owns. Because the fold's map is the square root of the thermal
 transformation at the primitive period, a state in equilibrium at a bifurcate horizon has its
 cross-sheet correlator equal to the direct one shifted by half a period. A hole formed by collapse
@@ -539,9 +480,9 @@ $\sinh^2 r=1/(e^{\beta\omega}-1)$ exactly. So the squeeze at a horizon is fixed 
 frequency and the surface gravity, with nothing left to choose, subject to the fold being
 $J\circ P_\perp$, which leaves the marginals alone and puts $(-1)^\ell$ on the cross term.
 
-Equilibrium is not a second cost beside that one. A state can be built with no KMS property at a
+Equilibrium is not a second assumption beside that one. A state can be built with no KMS property at a
 horizon, so nothing here shows that every state is thermal. What the Hadamard condition gives, and
-the construction has it already since §3.6 computes the image stress from the Hadamard parametrix,
+the fold has it already since §3.6 computes the image stress from the Hadamard parametrix,
 is that the state-dependent part of a two-point function is smooth while the singular part is fixed
 by the geometry alone. The temperature comes from the singular part. On a patch of proper size $r$
 the state-dependent part reaches the ratio $W_{\rm reg}/W_{\rm sing}$ only at order $r^2$, which
@@ -553,14 +494,12 @@ balance returns, in the same way that the local fold is an isometry to second or
 third. Alter the singular coefficient instead, which is what a state outside the Hadamard class
 does, and the ratio stops vanishing: it goes to the alteration, at exponent zero.
 
-The limit is worth stating once, because $r$ has to be small for any of this: a stellar-mass horizon sitting in
+The limit applies only for small $r$: a stellar-mass horizon sitting in
 the present microwave background has $rT$ of order $3\times10^6$, so the expansion says nothing
 about a whole astrophysical horizon and everything about the shrinking patch the balance actually
-uses. What is assumed is the Hadamard condition, and equilibrium follows from it to the order used. The
-transverse parity is not a cost of the same kind, because §2.1's map is forced: $J\circ
+uses. What is assumed is the Hadamard condition, and equilibrium follows from it to the order used. The transverse parity is not an assumption of the same kind, because §2.1's map is forced: $J\circ
 P_\perp=-\mathrm{Id}$ exactly on the embedding, while $J$ alone fixes a whole two-sphere and a
-rotation put in place of the parity fixes two points, so the $(-1)^\ell$ on the cross term is a
-consequence to carry and not a choice to price.
+rotation put in place of the parity fixes two points, so the $(-1)^\ell$ on the cross term is a consequence to carry and not a choice to make.
 
 Those two ends then meet at one frequency, and the meeting is arithmetic. The crossing's ceiling
 $\mathrm{arcsinh}(1/\sqrt2)$ is exactly the horizon's own value at $\beta\omega=\ln3$, because
@@ -588,7 +527,8 @@ $$
 with equality requiring $\eta(p)=0$ wherever $\cos\lambda$ and the integration weight are nonzero.
 The least-occupied member is the saturating case rather than a state a principle picks out, and
 the selection criteria of Boyle, Finn and Turok and of Nadal-Gisbert, Navarro-Salas and Pla remain
-the additional input they were.
+the additional input they were. Figure 2 shows the band, the floor under it, and how the
+abundance match reads the two.
 
 ![](fig_band.png)
 
@@ -602,10 +542,10 @@ member sits at the top.
 Unitarity makes the family symmetric about a half, $n_{\max}=1-n_{\min}$, checked to seven
 figures. At $p=0$ the Hamiltonian is diagonal, no mixing occurs and $n=1/2$ for every $\mu$, so
 the band has zero width in the deep infrared. The upper branch is inadmissible on its own, since
-$n_{\max}\to1$ gives a divergent number density. Table 1 prices the worst admissible excursion, a
+$n_{\max}\to1$ gives a divergent number density. Table 1 quantifies the worst admissible excursion, a
 state at the band edge out to $x_c$ and at the minimum beyond.
 
-**Table 1.** The price of the surviving freedom.
+**Table 1.** The size of the surviving freedom.
 
 | $x_c$ | $I/I_{\min}$ | $M_1$ (PeV) | line (PeV) |
 |---|---|---|---|
@@ -650,7 +590,7 @@ logarithmically for that tail, from $0.21$ to $0.46$ as the cutoff runs from $10
 against $0.1358$ for the adopted state. The ultraviolet decides which family is admissible; the
 infrared decides the number.
 
-### 3.2 The neutrino line, the event, and the test that bites
+### 3.2 Neutrino line, the event, and the test that bites
 
 The two-body line sits at $E_\nu\le245.8\pm1.0$ PeV. KM3NeT's reconstructed median of $220$ PeV
 [21] lies $25.8$ PeV below the endpoint, nearly twenty-six times the endpoint's width, so the
@@ -684,14 +624,14 @@ we suggest they hold it exclusively among heavy dark-matter readings of the even
 the direction of inference: they choose the mass to fit the measured energy, while $M_1$ is fixed
 by the abundance and the half-mass energy follows.
 
-*What the test costs.* Shower energies at these scales are reconstructed to tens of per cent. At
+*What the test assumes.* Shower energies at these scales are reconstructed to tens of per cent. At
 thirty per cent the detector width at the endpoint is $73$ PeV against the model's $1.0$: the test
 is resolution-limited, not theory-limited. A fixed per-event threshold lets the sample-wide false
 alarm grow with the sample. Under the model's own endpoint the per-event crossing probability is
 $3.2\times10^{-5}$, and a conforming population trips such a rule $0.3$ per cent of the time at a
 hundred events, $1.3$ per cent at four hundred and $32$ per cent at the twelve thousand the
 weakest case would need. Calibrated to a five per cent sample-wide false alarm, the operating
-characteristic is
+characteristic is in Table 2.
 
 **Table 2.** The calibrated endpoint test.
 
@@ -713,7 +653,7 @@ thirty per cent resolution. One event clearly above the endpoint and securely as
 decay component refutes the implementation, and the weak link is the assignment rather than the
 energy.
 
-*What "securely assigned" costs.* Flavour cannot do the assigning, since the matter rule leaves
+*What "securely assigned" requires.* Flavour cannot do the assigning, since the matter rule leaves
 the Yukawa structure and with it the flavour ratio free. Direction can. Averaged over solid angle,
 the NFW column is $10.0$ GeV cm$^{-3}$ kpc in the hemisphere toward the Galactic Centre against
 $4.3$ away from it, so decay places $69.9$ per cent of its events in the near hemisphere against
@@ -723,8 +663,7 @@ on the inner cutoff rather than on the halo. Those numbers sit at the same scale
 test, so one population of order $10^2$ to $10^3$ events supplies both the endpoint statistics and
 the directional assignment. Event counts assume an $E^{-2}$ spectrum with a 50 PeV lower cutoff
 and a lognormal response, and the directional figure assumes pure Galactic decay with uniform
-exposure; neither carries backgrounds, extragalactic flux or detector acceptance, so they set the
-scale of what the falsifier costs and forecast nothing about when it will be paid. One per-event
+exposure; neither carries backgrounds, extragalactic flux or detector acceptance, so they set the scale of what the falsifier demands and forecast nothing about when it will be paid. One per-event
 discriminant exists and is weaker than it looks: an association with a transient by time and
 direction excludes the decay component, since a halo has no transients, but a steady, obscured or
 undetected source has no counterpart either, so non-association is necessary for the assignment
@@ -735,7 +674,7 @@ astrophysical events may exceed it at any energy, and testing it needs a specifi
 flavour and flux with propagation and detector response. What remains uncertain is the family, the
 radiation and entropy history, a stable decoupled sector and no later dilution.
 
-### 3.3 The neutrino-mass floor, and the exit the model has shut
+### 3.3 Neutrino-mass floor, and the exit the model has shut
 
 Exact stabilisation leaves one light neutrino massless in the stated seesaw approximation. With
 normal ordering and $m_1=0$ the measured splittings fix
@@ -747,14 +686,15 @@ $$
 of which $\Delta m^2_{31}$ supplies $89$ per cent of the width; inverted ordering with $m_3=0$
 gives $100.9$ meV, and $m_{\beta\beta}=1.5$–$3.7$ meV. The sum is obtained without fitting to any
 absolute-mass measurement, and it is a floor: it cannot be lowered without giving up the rank
-deficiency that produces it.
+deficiency that produces it. Figure 3 places it against the cosmological bounds and the
+dark-energy constraint the same commitment carries.
 
 ![](fig5_data.png)
 
 **Figure 3.** Neutrino mass and dark-energy context. *(a)* The massless-lightest-neutrino markers
 in the exact stabilising-rule sector at 58.8 meV (normal ordering, $m_1=0$) and 100.9 meV
-(inverted, $m_3=0$), against DESI DR2 BAO + CMB bounds from Elbers et al. [12]: 64.2 meV for
-$\Lambda$CDM, 163 meV for $w_0w_a$CDM, and the 53 meV Feldman-Cousins limit. Below 58.8 meV the
+(inverted, $m_3=0$), against DESI DR2 BAO + CMB bounds from Elbers et al. [12]: 64.2 meV for $\Lambda$CDM, the cold-dark-matter cosmology with a constant $\Lambda$, and 163 meV
+for $w_0w_a$CDM, the same with dark energy allowed to evolve, and the 53 meV Feldman-Cousins limit. Below 58.8 meV the
 shaded region is kinematically forbidden. *(b)* The three $\Delta\chi^2$ curves are a
 geometry-only reproduction using BAO, Pantheon+, an $\omega_{cb}$ prior and $\theta_*$, with no
 CMB lensing or primary-CMB amplitude; they show the relative shape of the three models and are
@@ -768,8 +708,7 @@ supernova samples and quoted $1\sigma$ uncertainties: DES-Dovekie $(-0.803\pm0.0
 Any bound on the sum depends on the dark-energy model assumed when deriving it. In Elbers et al.'s
 DESI DR2 analysis the same data give $\Sigma m_\nu<64.2$ meV under $\Lambda$CDM and $<163$ meV
 under $w_0w_a$CDM, because a relaxed expansion history can absorb the suppression a neutrino mass
-would produce. That is the standard way a model under neutrino pressure buys room, and this one
-cannot use it. For dark energy we adopt an exact cosmological constant, and for the restricted
+would produce. That is the standard way a model under neutrino pressure makes room, and this one cannot use it. For dark energy we adopt an exact cosmological constant, and for the restricted
 metric-only action class of Appendix D.2 the closure conditions give $p_\Lambda=-\rho_\Lambda$ and
 $Q=0$ even in a decelerating matter-filled background. The implementation is pinned by two
 separate commitments against one dataset: the floor cannot move down, and the branch where the
@@ -791,7 +730,10 @@ these percentages are not the probability that the model survives.
 The comparison a point prediction against a bounded measurement wants is a partition, and with the
 profile it is computable. With two propagated widths as the half-width, on the ground that a
 region of practical equivalence should hold values no measurement could separate from the floor,
-the region is $[58.14,\,59.41]$ meV, and against the profile posterior
+the region is $[58.14,\,59.41]$ meV. Table 3 partitions the profile posterior against it.
+
+**Table 3.** Where the DESI DR2 profile posterior sits relative to the floor's region of
+practical equivalence.
 
 | region | posterior mass |
 |---|---|
@@ -806,8 +748,7 @@ every larger sum, so the $6.6$ per cent above the region belongs to no predictio
 the $0.5$ per cent inside it is not a survival probability. No decision rule is attached to the
 partition and none should be read into it. The half-width is a judgement, stated so it can be
 disagreed with; anyone preferring one or three sigma can recompute it from the two numbers above.
-What would settle the comparison is the same partition of the survey's full posterior chain, which
-we do not hold, and we record the method so that a reader holding the chain can apply it.
+What would settle the comparison is the same partition of the survey's full posterior chain, which we do not hold, and the method is recorded here so that anyone holding the chain can apply it.
 
 The Feldman-Cousins limit of $53$ meV sits $5.8$ meV below the floor, and on that construction the
 prediction is already excluded. We do not read it as an exclusion: a frequentist limit below the
@@ -844,7 +785,7 @@ cubic kilometre at a mean spacing of $730$ m, where a hundred-GeV WIMP at the sa
 would sit $4.3$ m apart. This dark matter is not a fluid on any scale an instrument spans, and
 that is the picture behind the event count in Appendix D.1.
 
-The place the closed budget is pressed is the population of compact red sources JWST has found at
+The place the closed budget is pressed is the population of compact red sources the James Webb Space Telescope (JWST) has found at
 $z\sim4$ to $9$, which appear to host black holes heavy for their epoch and which little of the
 literature is yet fitted to. Growth is not the difficulty. Eddington-limited accretion from $z=20$
 to $z=7$ allows $11.6$ Salpeter e-folds, so an $88\,M_\odot$ remnant reaches $10^{7}M_\odot$ if it
@@ -857,7 +798,7 @@ magnitude, and by twenty-seven against an overdensity of order one. The seeds mu
 astrophysical or primordial; what this closes is particle shot noise, not every primordial
 mechanism.
 
-The budget can afford them, with margin. With one seed per host and a comoving host density of
+The budget accommodates them, with margin. With one seed per host and a comoving host density of
 $10^{-4}\,{\rm Mpc}^{-3}$, seeds of $10^{5}M_\odot$ carry a fraction $3\times10^{-10}$ of the dark
 matter, and even generous variants stay below $10^{-5}$. Since $\rho\sim IM_1^{5/2}$ gives
 $M_1\propto(1-f)^{2/5}$, a fraction $f=10^{-3}$ moves $M_1$ by $0.04\%$, well inside the $\pm2.0$
@@ -865,10 +806,9 @@ PeV of §2.3. A seed population ample enough to account for every such source pe
 far less than its own uncertainty, and the paper neither needs those sources nor is troubled by
 them.
 
-What the budget cannot afford is a dark sector made of black holes. At $f=0.1$ the mass falls to
+What the budget cannot accommodate is a dark sector made of black holes. At $f=0.1$ the mass falls to
 $471.3$ PeV and the two-body line to $235.7$ PeV; at $f=0.5$, to $372.6$ and $186.3$ PeV; at
-$f=0.9$, to $195.7$ and $97.9$ PeV. The line is the observable of §3.2, and the direction is worth
-stating because it runs the way one would not guess. A compact-object fraction lowers the line,
+$f=0.9$, to $195.7$ and $97.9$ PeV. The line is the observable of §3.2, and the direction runs the way one would not guess. A compact-object fraction lowers the line,
 and KM3NeT's reconstructed energy is below the $f=0$ prediction, so such a fraction moves the line
 *towards* the measurement and not away from it. Solving $245.8(1-f)^{2/5}=220$ gives $f=0.242$: a
 quarter of the dark budget in compact objects would put the line exactly on the reconstructed
@@ -886,7 +826,7 @@ component, $nM_{\rm seed}\le\rho_{\rm DM}=3.3\times10^{10}M_\odot\,{\rm Mpc}^{-3
 above the observed seeds. Baryonic seeds and envelopes are drawn from their own inventory and are
 not charged to it.
 
-### 3.5 The decoherence time and the dark-matter mass are one number
+### 3.5 Decoherence time and dark-matter mass are one number
 
 The fold relates two time orientations, and the production integral that fixes the mass also fixes
 when the two stop interfering at the radiation bang. In the adopted massive-particle state, for
@@ -983,9 +923,9 @@ bang it is not, and the sheet statement that holds there is the symmetry of §3.
 
 ### 3.6 Einstein's equations from the fold, with nothing quantised
 
-Two of this construction's results have been carried separately and are one result. The fold's
+Two of the fold's results have been carried separately and are one result. The fold's
 parity is the classical-quantum split, $\Phi_c$ being the fold-even half and $\Phi_q$ the fold-odd
-one. And at a bifurcate Killing horizon the fold's map is the half-period shift, so the cross-sheet
+one. And at a bifurcate Killing horizon, one whose generator vanishes on a surface, the fold's map is the half-period shift, so the cross-sheet
 correlator is the direct one at $t-i\beta/2$. Those two facts together fix the weight of the
 quantum half, and fix it as a number rather than as a statement.
 
@@ -1014,7 +954,7 @@ equal-weight point off $2\ln3$, so the number belongs to the fold and not to the
 
 Everything above treats the metric as a fixed background. That is usually a limitation to be
 apologised for, and here it turns out to be the point, because the field equations governing that
-background can be obtained from the same construction without the metric ever becoming an operator.
+background can be obtained from the same fold without the metric ever becoming an operator.
 
 Jacobson derives the Einstein equation from the Clausius relation applied to local Rindler
 horizons [33]. Because that step carries the whole of what follows, it is re-derived here rather
@@ -1030,9 +970,10 @@ gives $\theta=-\lambda R_{kk}$ to within $4\times10^{-4}$ at
 $\lambda=0.05$ and visibly worse further out, which is the expansion behaving as one. The heat
 flux carries the same $\int\lambda\,d\lambda\,dA$, and the surface gravity cancels between the
 two sides, which is what lets a statement about one accelerated observer become a field equation.
-What is left is $2\pi T_{kk}=\eta R_{kk}$ for every null $k$. That a symmetric tensor annihilating
-every null vector must be a multiple of the metric is linear algebra and is checked rather than
-asserted: the constraint map built from sixty random null vectors has a one-dimensional kernel, its
+What is left is $2\pi T_{kk}=\eta R_{kk}$ for every null $k$.
+
+That a symmetric tensor annihilating
+every null vector must be a multiple of the metric is linear algebra, and the check is: the constraint map built from sixty random null vectors has a one-dimensional kernel, its
 ninth and tenth singular values differing by $3\times10^{15}$, and that kernel is $g_{ab}$ to
 $9\times10^{-16}$. Timelike vectors leave no kernel at all, so nullity is doing the work. The
 contracted Bianchi identity and $\nabla^aT_{ab}=0$ then fix the remaining function, and the balance
@@ -1042,22 +983,23 @@ constant of the derivation rather than a prediction of it.
 Two objections to the 1995 argument have to be met here rather than inherited. Eling, Guedens and
 Jacobson showed that the equilibrium Clausius relation fails once the entropy is not proportional
 to area with a universal coefficient, and that an entropy-production term is needed in its place
-[34]; their worked case is $f(R)$. In this construction $\eta$ is not available to choose. It
+[34]; their worked case is $f(R)$. In the fold $\eta$ is not available to choose. It
 comes out of the transverse mode count with the surface gravity cancelling, which the entropy
 paragraphs below compute, so the derivation sits in the case the equilibrium relation was written
-for instead of assuming it does. Chirco and Liberati showed that the shear supplies an internal production
-term of its own, which they identify with tidal heating [35]. That term is second order at the
+for instead of assuming it does. 
+
+Chirco and Liberati showed that the shear supplies an internal production term of its own, which they identify with tidal heating [35]. That term is second order at the
 bifurcation surface, where the expansion and the shear are both first order, and the Raychaudhuri
 measurement above says how far out that survives: the linear behaviour holds to $4\times10^{-4}$
 at $\lambda=0.05$ and visibly worse beyond. What is still assumed is the equilibrium reading
 itself, taken near the bifurcation surface of each local wedge, and that is the first of the four
-things listed above, the one the fold was never going to hand over. The construction takes away
+things listed above, the one the fold was never going to hand over. The fold takes away
 the freedom in $\eta$ and in the temperature, and it does not take away that.
 
 The temperature comes first, and nothing in it is left to choose. §2.1's map is an involution and
 its action at a bifurcate Killing horizon is the half-period shift, so the equilibrium cross-sheet
 correlator is the direct one displaced by $i\beta/2$, which is a thermofield double at
-$\tanh r=e^{-\beta\omega/2}$. No temperature was inserted and one came out; what the construction
+$\tanh r=e^{-\beta\omega/2}$. No temperature was inserted and one came out; what the fold
 supplies is that the map is a half-period shift rather than a whole one, which makes it the square
 root of the thermal transformation and lets primitivity pick the fundamental period.
 
@@ -1083,11 +1025,11 @@ r=e^{-\beta\omega/2}$ that is exactly the Bose factor, so the entanglement entro
 the thermal entropy of its modes, $s=(1+n)\ln(1+n)-n\ln n$. A horizon's modes carry a transverse
 momentum, the transverse directions are translation invariant, and the mode count of a patch is
 therefore proportional to its area, which factors straight out and is flat-space field theory with
-nothing gravitational in it.
+nothing gravitational in it. The dependency graph is in §4.1, and beside it the four places this derivation could have failed and did not.
 
 Proportionality is half of what Jacobson asks for. He needs the same $\eta$ at every horizon, and
 $\beta=2\pi/\kappa$ differs from one to the next, so the occupation visibly carries the surface
-gravity. It cancels. In the observer's own proper frequency the WKB mode count below $\omega$ is
+gravity. It cancels. In the observer's own proper frequency the Wentzel-Kramers-Brillouin (WKB) mode count below $\omega$ is
 $(1/\pi)\int_\epsilon^{\omega/\kappa k}\sqrt{\omega^2/\kappa^2\rho^2-k^2}\,d\rho$, which
 carries $\kappa$ in three places, and the Jacobian $d\omega=\kappa\,d\Omega$ cancels the
 $1/\kappa$ the density carries. Computed with $\kappa$ kept throughout, $S/A$ does not move to one
@@ -1099,8 +1041,9 @@ $\beta\omega=2\pi\Omega$ identically. Let the modular temperature depend on $\ka
 What $S/A$ does depend on is the cutoff, as $1/\epsilon^2$ to four figures, and that joins two
 statements this section had been making separately: the coefficient is universal and it is
 divergent, of mass dimension two, which is exactly the object no structural input of dimension
-zero could return. It also attaches one condition, found by trying to break the result rather
-than left for a reader. Because of that $1/\epsilon^2$, a cutoff allowed to track the surface
+zero could return. 
+
+It also attaches one condition, found by trying to break the result. Because of that $1/\epsilon^2$, a cutoff allowed to track the surface
 gravity as $1/\kappa$ moves the answer by a factor of $52$ over the same range, so $\eta$ is the
 same at every horizon provided the ultraviolet cutoff is one length and not one per horizon,
 which is what a cutoff is. The mode count is not a condition: weighting the transverse density by
@@ -1109,23 +1052,18 @@ leaves the $\kappa$ independence at four parts in $10^{10}$, so the cancellation
 boost structure and not to one prescription. The fold fixes that $\eta$ is the same everywhere.
 What it is remains measured.
 
-That last sentence is what separates this from induced gravity, and the distinction is worth
-making because the two use the same object. Induced gravity computes $1/G$ from a given matter
-content and cutoff, and stands or falls on whether the species count comes out; walked as a route
-to $\eta$ here, it does not. Nothing of that kind is claimed. The argument needs only that the
+That last sentence is what separates this from induced gravity, and the two use the same object, so the distinction matters. Induced gravity computes $1/G$ from a given matter
+content and cutoff, and stands or falls on whether the species count comes out; walked as a route to $\eta$ here, it does not, and no such claim is made here. The argument needs only that the
 coefficient is the same at every horizon, which is the previous paragraph, and takes its value
-from experiment, which is what $8\pi G=2\pi/\eta$ then reads as. The weaker claim is the one
-Jacobson's step actually requires, and it is the only one made.
+from experiment, which is what $8\pi G=2\pi/\eta$ then reads as. Jacobson's step requires only the weaker claim, and only the weaker claim is made, which is not the same as empty.
 
-Weaker does not mean empty. Because $\eta$ is fixed by the modular temperature and a transverse
-mode count, and neither is cosmological, it carries no dependence on epoch or location: the
-construction has no dial that could make Newton's constant run. That is a commitment of the same
+Because $\eta$ is fixed by the modular temperature and a transverse
+mode count, and neither is cosmological, it carries no dependence on epoch or location: the fold has no dial that could make Newton's constant run. That is a commitment of the same
 kind as $w_0=-1$, arrived at the same way, and a securely measured variation in $G$ would end
 this reading of the fold with nothing available to absorb it.
 
 The sign of Newton's constant comes with it. Since $8\pi G=2\pi/\eta$ and $\eta$ is an entropy
-per unit area, which is positive at every frequency, $G>0$: **gravity attracts here because
-entanglement entropy is positive.** A priori that sign is free.
+per unit area, which is positive at every frequency, $G>0$, so gravity attracts here because entanglement entropy is positive. A priori that sign is free.
 
 That leaves the fourth. Jacobson needs a horizon at every point in every null direction, and the
 fold's own fixed points are isolated,
@@ -1137,8 +1075,9 @@ The geometry supplies both, everywhere. The geodesic symmetry $\exp_pv\mapsto\ex
 differential $-\mathrm{Id}$ by construction, so it is the fold's own local model at any point of any
 spacetime. In normal coordinates the metric's quadratic term is built from $R$ and its cubic term
 from $\nabla R$, which makes that symmetry exact through second order with a third-order failure.
-Cartan's theorem says the failure is real wherever $\nabla R\ne0$, so what has to be settled is how
-heavy it is. Measured on a surface with $\nabla K\ne0$, the residual $G_{\mu\nu}(v)-G_{\mu\nu}(-v)$
+Cartan's theorem says the failure is real wherever $\nabla R\ne0$, so what has to be settled is how heavy it is.
+
+Measured on a surface with $\nabla K\ne0$, the residual $G_{\mu\nu}(v)-G_{\mu\nu}(-v)$
 has exponent $2.9994$ against $3$, and a coefficient agreeing to five figures with the closed form
 $\tfrac13(\nabla K\cdot v)(|v|^2\delta_{\mu\nu}-v_\mu v_\nu)$. On a surface whose cubic part is
 harmonic, so that the curvature varies while $\nabla K$ vanishes at the point, the cubic disappears
@@ -1173,19 +1112,20 @@ by nothing else. It is proportional to $1-6\xi$ and vanishes for conformally inv
 and the same slot in the Hadamard coefficient carries $m^2$ for massive fields. That second
 slot is computed here: at conformal coupling with a mass the null-null component is negative at
 every mass and close to proportional to $m^2$, so the sign the companion's A.15 needs holds
-through both slots rather than through the coupling alone. The two slots also diverge at
-different rates as the caustic is approached, and the difference is now accounted for. In the
+through both slots rather than through the coupling alone. 
+
+The two slots also diverge at different rates as the caustic is approached, and the difference is now accounted for. In the
 distance to the caustic the coupling slot goes as $\delta^{-4.010}$, which is what the
-caustic-order rule and two derivatives predict, and the mass slot as $\delta^{-2.037}$. It is one power
-softer because a mass costs one power of the world function, and one more because the conformal
+caustic-order rule and two derivatives predict, and the mass slot as $\delta^{-2.037}$. It is one power softer because a mass carries one power of the world function, and one more because the conformal
 coupling is, on that geometry, exactly the value at which the leading mass parts cancel.
 
 
 Outside every horizon it is suppressed to nothing that could be
 measured, and by mechanisms rather than by a theorem: the silence theorem is about the cross-sheet
 commutator, and the companion says in its own words that it does not extend to the stress tensor.
-What does the work is that a point and its image are spacelike separated there. A massive
-field's image correlator then carries $e^{-md}$, with $md$ above $10^{16}$ for an electron at a
+What does the work is that a point and its image are spacelike separated there. 
+
+A massive field's image correlator then carries $e^{-md}$, with $md$ above $10^{16}$ for an electron at a
 stellar horizon and $10^9$ for the lightest neutrino anyone proposes. A field light enough to
 escape that is light enough for the $m^2$ in the Hadamard slot to finish it, the worst case
 across the whole range sitting at $3\times10^{-34}$ of the dark energy. And a massless
@@ -1193,14 +1133,13 @@ conformal field has an empty slot and a Weyl-suppressed remainder falling as $r^
 integrable and leaves no deficit angle. Inside a horizon the term lives on the inner half of the interior and
 nowhere else.
 
-The sign there is worth following, because for a null $k$ the trace term and $\Lambda$ drop out of
+The sign there follows through, because for a null $k$ the trace term and $\Lambda$ drop out of
 the field equations, so $R_{ab}k^ak^b=8\pi G\,T_{ab}k^ak^b$ with no residue and the two signs are
 locked together. A negative $R_{ab}k^ak^b$ is a failure of the null convergence condition, which is
 the hypothesis Penrose's argument uses to turn a trapped surface into an incomplete geodesic. So the
-one region where general relativity predicts its own breakdown is the one region where this
-construction departs from it, and which way that departure runs is settled rather than
-rhetorical. §4.2 gives the answer: the fold's
-term defocuses the congruence along which the two sheets would touch and focuses the radial one
+one region where general relativity predicts its own breakdown is the one region where the fold departs from it, and which way that departure runs is settled below. 
+
+§4.2 gives the answer: the fold's term defocuses the congruence along which the two sheets would touch and focuses the radial one
 Penrose's argument follows, so the null convergence condition holds where he uses it and fails only
 along the contact direction. How far the departure reaches is a definite number too. An ingoing radial null congruence in the
 Schwarzschild interior is shear-free, focuses on its own, and saturates Penrose's bound exactly,
@@ -1210,7 +1149,7 @@ expansion back to zero inside the region is $11.5/r_h^2$, from
 $\mathrm{artanh}(1/u)=u$ at $u=1.1997$.
 
 The fold's term is not constant across the region, and it diverges on the contact sphere, which is the region's outer edge and therefore where an ingoing
-congruence enters. So what is worth a number is a thickness: the shell in which the fold's term is
+congruence enters. What takes a number is a thickness: the shell in which the fold's term is
 the larger of the two. Dimensions leave one combination of the two lengths available,
 $T_{ab}k^ak^b=\kappa m^2D^{-p}r_h^{p-2}$, and the shell is
 $D_*/r_h=\big(8\pi\kappa(m/m_P)^2/11.5138\big)^{1/p}$, proportional to $r_h$ and to nothing else.
@@ -1220,8 +1159,9 @@ as its $p$-th root. That power is $5/2$, and it follows from three things each m
 geometry where every quantity is a closed-form mode sum. The image Green function at a caustic goes
 as $\delta^{-(D-2+n)/2}$ in the distance to it, so a stress built from two derivatives goes as
 $\delta^{-(D+2+n)/2}$: that predicts $\delta^{-4}$ there and the computation gives
-$\delta^{-3.95}$, which tests the rule against a stress rather than against a correlator. The mass-dependent part of every quantity comes out one power softer than its massless
-counterpart, at $0.956$, $0.976$ and $0.968$ of a power for the correlator and its two second
+$\delta^{-3.95}$, which tests the rule against a stress rather than against a correlator. 
+
+The mass-dependent part of every quantity comes out one power softer than its massless counterpart, at $0.956$, $0.976$ and $0.968$ of a power for the correlator and its two second
 derivatives, and the reason is the proper-time representation rather than the fit. A mass is a phase
 in the proper time, so to first order the mass part is the same integral with one extra power of $s$,
 and one extra power of $s$ raises the world-function exponent by exactly one, checked against
@@ -1243,9 +1183,10 @@ mass part, which is the part that acts where the Ricci tensor vanishes, is $\del
 
 At $p=5/2$ the thickness is a definite length and not a Planck-scale one, and $\kappa$ is no longer
 an unknown either. Figure 4 draws both halves of that: where the term acts, and how thick the shell
-is against the field's mass. Every ingredient of it is already here. The caustic amplitude is
-$\Delta^{1/2}\to3.9004\,M\,s^{-1/2}$, and it is settled rather than adopted: moving the Jacobi
-profile at fixed length and family volume on a non-symmetric surface of revolution leaves the
+is against the field's mass. Every ingredient of it is already here.
+
+The caustic amplitude is
+$\Delta^{1/2}\to3.9004\,M\,s^{-1/2}$, and it is settled, not adopted: moving the Jacobi profile at fixed length and family volume on a non-symmetric surface of revolution leaves the
 heat kernel where it was, which leaves the length. That length is the arc of the geodesic's
 projection onto the sphere the caustic lives in, $\int r\,d\varphi=M(\pi+2)$ along
 $r=M(1+\sin\varphi)$, so $c_1=\sqrt\pi\,M(\pi+2)$. Three more go in: the two proper-time
@@ -1267,7 +1208,7 @@ choose, the two agree to twelve digits for the massless part and to $0.2$ per ce
 part at the closest offset reached. So $2.1$ microns is the number and not the middle of a decade;
 reaching $5.3$ would need $\kappa$ inflated tenfold.
 
-So the region where this construction parts company with general relativity is, for ordinary
+So the region where the fold parts company with general relativity is, for ordinary
 matter, a shell of nuclear thickness around the contact sphere, and for the fold's own dark-matter
 fermion a shell you could see. It widens as the hole does, since $D_*$ is proportional to $r_h$,
 which puts the effect at its largest in the largest holes and not the smallest.
@@ -1275,8 +1216,9 @@ which puts the effect at its largest in the largest holes and not the smallest.
 What it does not do is thin away to nothing as the mass falls, and saying why corrects the
 $1-6\xi$ law two paragraphs above. That law is exact where the parametrix holds and on the
 conformally flat geometry it was calibrated on, and it fails at a null caustic in a spacetime that
-is not conformally flat, which is what a contact sphere is. There the coupling cancels outright:
-with $k\cdot k=0$ the metric terms of the point-split stress drop, the leading behaviour of the
+is not conformally flat, which is what a contact sphere is. 
+
+There the coupling cancels outright: with $k\cdot k=0$ the metric terms of the point-split stress drop, the leading behaviour of the
 image term is $C\sigma^{-3/2}$ so both second derivatives are dominated by the $\nabla\sigma$
 pairing with $\nabla_{b'}\sigma$ minus the transport of $\nabla_b\sigma$, and
 $(1-2\xi)(-X)-2\xi X=-X$ at every $\xi$. The mass and the curvature coupling both multiply the
@@ -1293,11 +1235,11 @@ solar mass it is $1.1\times10^{-19}$ m and at a billion solar masses $7.8\times1
 sixteen orders above the Planck length. It moves nothing above, because two extra powers of
 divergence arrive with a coefficient the mass beats by $3\times10^{46}$ at the fermion's own shell
 and by $10^{13}$ at the electron's. What it changes is the shape of the claim: the shell has a
-floor and not a vanishing point, and nothing the construction can be made of falls through it.
+floor and not a vanishing point, and nothing the fold can be made of falls through it.
 
 ![](fig_interior_shell.png)
 
-**Figure 4.** Where the construction leaves general relativity, and how thick that place is. Left:
+**Figure 4.** Where the fold leaves general relativity, and how thick that place is. Left:
 the fold's extra term is suppressed to nothing measurable outside the horizon and acts only inside the contact
 sphere at $r=r_h/2$, and the shell drawn in at the edge of that region is where it is the larger of
 the two terms acting on an infalling congruence. The shell is drawn wide to be visible; it is
@@ -1319,8 +1261,9 @@ One region is still unaccounted for, the interior of a cosmological horizon, and
 contribution to $\Lambda$ would have to live. There the budget is exactly marginal. Beyond
 $r=L$ the turning available is $\int_L^\infty dr/(r\sqrt{|f|})=\pi/2$ per leg, so two legs supply
 exactly the $\pi$ the antipodal map asks for and supply it only as $r\to\infty$; at finite radius
-they fall short by $L/r$. That marginality holds in every dimension, since $f=1-r^2/L^2$ does not
-know $D$, and it sits alongside the black hole's $\pi/(D-3)$, which meets the same bill at $D=4$
+they fall short by $L/r$. 
+
+That marginality holds in every dimension, since $f=1-r^2/L^2$ does not know $D$, and it sits alongside the black hole's $\pi/(D-3)$, which meets the same bill at $D=4$
 alone. Compactifying the extra dimensions does not change that: a hole larger than the
 compactification scale has exactly the four-dimensional budget, since motion in the compact
 directions only eats into the angular progress left to a causal curve, and a hole smaller than it is
@@ -1336,7 +1279,7 @@ $1/16\pi^2L^2$, which is $2\times10^{-71}$ of the dark energy, and no part of $\
 by it. The value
 of $\Lambda$ is a boundary datum, and the computation forces that reading.
 
-Under this construction, then, the field equations follow from the fold
+Under the fold, then, the field equations follow from the fold
 and one constant, where they had followed from a temperature, an entropy law and a constant. What
 they follow as is general relativity plus one non-local term, which carries no free parameter and
 which no observation ever made could have reached: outside a horizon the largest value it takes
@@ -1351,7 +1294,7 @@ of them: $w_0=-1$ and $w_a=0$ exactly, the two-body line at exactly half the mas
 $2/3$ tying the decoherence time to that mass, the half-period ratio that makes a horizon thermal,
 the equal-weight frequency $2\ln3$, four large dimensions and no others, and the sign of $G$.
 
-The construction takes two dimensionful constants, $G$ and $\Lambda$, where one would do if the
+The fold takes two dimensionful constants, $G$ and $\Lambda$, where one would do if the
 ratio between them were derivable. That ratio is a pure number, $G\Lambda\approx3\times10^{-122}$,
 and nothing here produces it.
 
@@ -1365,14 +1308,15 @@ at once.
 
 It survives a test it could have failed. If $\Lambda$ were a coupling fixed by the theory's
 content, its rate $H_\Lambda=c\sqrt{\Lambda/3}=1.81\times10^{-18}$ s$^{-1}$ would sit at some
-simple ratio to a scale the construction carries. Against the dark-matter mass, the two-body line,
+simple ratio to a scale the fold carries. Against the dark-matter mass, the two-body line,
 the neutrino sum and the Planck rate, the ratios are $10^{-50.6}$, $10^{-50.3}$, $10^{-31.7}$ and
-$10^{-61.0}$, none commensurate with another. Finding nothing is what a boundary datum should look
-like and is awkward for a coupling. So the construction does not fail to derive $\Lambda$ so much
+$10^{-61.0}$, none commensurate with another. 
+
+Finding nothing is what a boundary datum should look like and is awkward for a coupling. So the fold does not fail to derive $\Lambda$ so much
 as locate it: the value is a fact about the fold's global state rather than about the local
 physics, which relocates the cosmological constant problem to the bang and says it is not to be
 looked for in the field equations. Naming it that way is more use than calling it impossible: it is the
-cosmological constant problem in the form this construction meets it, and it is the single number
+cosmological constant problem in the form the fold meets it, and it is the single number
 standing between two constants and one.
 
 The bang is where that relocation points. The fold's condition on a cosmology is that
@@ -1393,18 +1337,18 @@ $a$, and that needs $H\propto s^4$, whereupon every factor of the scale factor c
 answer is $cM_1^4$. Against the observed $\rho_\Lambda=2.52\times10^{-11}$ eV$^4$ that is $81.4$
 orders of magnitude too large.
 
-That form is worth reading the other way round as well, because an $a^{-4}$ density is radiation
+Read the other way round, an $a^{-4}$ density is radiation
 and a radiation component at the bang is what $N_{\rm eff}$ measures. The ratio to the radiation
 already there carries no cosmology at all: with $a_1^2/a^4=8\pi G\rho_r/3$ in a radiation bang,
 the $a_1$ and the $a^4$ cancel and $\rho_{\rm img}/\rho_r=(8\pi/3)cH(s)(M_1/m_P)^2$, about
-$10^{-22}$ at a loop factor and $10^{-20}$ of what $N_{\rm eff}$ can resolve. Only the massive
-content contributes, since radiation is conformally invariant and the bang carries no caustic, so
+$10^{-22}$ at a loop factor and $10^{-20}$ of what $N_{\rm eff}$ can resolve. 
+
+Only the massive content contributes, since radiation is conformally invariant and the bang carries no caustic, so
 the scale is the fermion mass and not the bath temperature, which at the epoch $H=M_1$ would have
 been nine orders larger. The mass that would move $N_{\rm eff}$ by its own error bar is
 $7.5\times10^{18}$ GeV, ten orders above the ceiling §3.1 derives, so the same bound that fixes
-the dark matter is what keeps the fold's own term out of the radiation budget. So the bang cannot supply $\Lambda$ either, and no part of the
-construction carries a scale near $2.2$ meV. The relocation terminates:
-$\Lambda$ is a boundary datum, and there is now no place left in the construction where it could
+the dark matter is what keeps the fold's own term out of the radiation budget. So the bang cannot supply $\Lambda$ either, and no part of the fold carries a scale near $2.2$ meV. The relocation terminates:
+$\Lambda$ is a boundary datum, and there is now no place left in the fold where it could
 have been anything else.
 
 Beyond it the remaining inputs are what it means to
@@ -1413,27 +1357,27 @@ horizons and a covariant matter action. Matter conservation is not among
 them, since Noether's second
 theorem gives $\nabla^aT_{ab}=0$ from diffeomorphism invariance for any matter whatever.
 
-### 3.7 The commitments
+### 3.7 Commitments
 
-Table 3 lists every observational commitment, its origin, and what a contrary observation would
+Table 4 lists every observational commitment, its origin, and what a contrary observation would
 exclude. Most belong to the stated implementation, and several of those are inherited from
 [10,11] or shared with ordinary general relativity. One belongs to the structural half instead
 and holds whatever the implementation is: $G$ does not run, and that follows from the same
 cancellation that makes the entropy coefficient universal.
 
-**Table 3.** Observational commitments of the minimal implementation.
+**Table 4.** Observational commitments of the minimal implementation.
 
 | Quantity | Prediction and required assumptions | Origin | Test, and what a contrary result excludes |
 |---|---|---|---|
 | Light-neutrino masses | One massless light neutrino in the exact-stabilisation seesaw approximation. With normal ordering the inputs used here give $\Sigma m_\nu=58.8$ meV and $m_{\beta\beta}=1.5$–$3.7$ meV. | Refs. [10,11]; values from the stated oscillation inputs. | Oscillation measurements test the ordering; cosmology tests the sum conditional on its model. A larger established absolute mass excludes the rank-deficient mass sector. Present null double-beta results do not confirm the narrow range. |
 | Conditional decay-energy scale | Hard $h\nu$ and $Z\nu$ energies near $M_1/2$, $E_\nu\le245.8\pm1.0$ PeV. The weak Yukawa example has $h\nu:Z\nu:W\ell=1:1:2$ at tree level; lifetime and flavour are free; radiation and propagation determine the observed spectrum. | The abundance-to-mass machinery of [10,11] fed by the family of §2.2, plus the added Yukawa model and two-body kinematics. | Neutrino and photon spectra test a specified lifetime and flavour direction. About $46$ per cent of KM3NeT's reconstructed posterior lies above the endpoint [21], so the event neither confirms nor refutes (§3.2). A channel exclusion does not exclude exact stabilisation, which predicts no decay signal. |
-| Direct-recoil contact benchmark | $\sigma_n\lesssim1.293\times10^{-72}$ cm$^2$ under the contact-rate, scattering and radiation-history assumptions; about $2.2\times10^{-30}$ events in LZ's quoted exposure for the SI point-nucleus, unit-efficiency benchmark. | Appendix D.1. | A recoil incompatible with the estimate excludes the benchmark assumptions; other $\mathbb Z_2$-even portals remain allowed. This row is not a live test: the cross-section sits about twenty-four orders of magnitude below current sensitivity, and compounding six generous uncertainties in the same direction closes only five of them. |
+| Direct-recoil contact benchmark | $\sigma_n\lesssim1.293\times10^{-72}$ cm$^2$ under the contact-rate, scattering and radiation-history assumptions; about $2.2\times10^{-30}$ events in the LUX-ZEPLIN experiment's quoted exposure for the spin-independent point-nucleus, unit-efficiency benchmark. | Appendix D.1. | A recoil incompatible with the estimate excludes the benchmark assumptions; other $\mathbb Z_2$-even portals remain allowed. This row is not a live test: the cross-section sits about twenty-four orders of magnitude below current sensitivity, and compounding six generous uncertainties in the same direction closes only five of them. |
 | Primordial tensor component from the bang | Absent in the adopted bang model without an inflationary epoch. Tensor modes obey $v''+(k^2-a''/a)v=0$ for $v=ah$, and a radiation bang has $a''=0$, so the source vanishes at every $k$ and not only at small $k$. Boyle et al. state the long-wavelength case; later radiation-era sources are untouched by this argument. | Refs. [10,11]; the all-$k$ reading of their mechanism here. | A securely identified primordial component incompatible with that bang calculation excludes this cosmological implementation. Because a phase transition or a string network after the bang is permitted, the discriminating signature is an inflationary one: a near scale-invariant tensor spectrum across decades. |
 | Intrinsic black-hole horizon response | Ordinary absorbing Kerr dynamics, with no added horizon reflectivity or fold-induced quasinormal-mode shift at the order treated. | The adopted minimal black-hole implementation (companion). | A robust intrinsic departure excludes that implementation; it would not identify its cause or a quotient geometry. |
-| Newton's constant does not run | $G$ is constant in epoch and location, with no admissible variation at any level. $\eta=1/4G$ is fixed by a modular temperature and a transverse mode count, and §3.6 shows the surface gravity cancels out of both, so neither carries an epoch or a position. | §3.6; the same calculation that makes the entropy coefficient universal. | Any securely measured variation in $G$ excludes the construction outright. This is the one row that tests the structural half rather than the matter sector or the implementation, and it needs no threshold, since the commitment is to no running at all rather than to a rate below a bound. |
+| Newton's constant does not run | $G$ is constant in epoch and location, with no admissible variation at any level. $\eta=1/4G$ is fixed by a modular temperature and a transverse mode count, and §3.6 shows the surface gravity cancels out of both, so neither carries an epoch or a position. | §3.6; the same calculation that makes the entropy coefficient universal. | Any securely measured variation in $G$ excludes the fold outright. This is the one row that tests the structural half rather than the matter sector or the implementation, and it needs no threshold, since the commitment is to no running at all rather than to a rate below a bound. |
 | Dark energy and matter exchange | $\rho_\Lambda$ constant, $p_\Lambda=-\rho_\Lambda$ and $Q=0$ in the adopted minimal cosmology. | The restricted action analysis of Appendix D.2 and the continuity equation. | Expansion and growth data test this exact-$\Lambda$ cosmology. A robust need for evolving dark energy excludes the commitment. |
 | Growth and lensing | Standard GR baseline for the same matter content, parameters and initial spectrum in the demonstrated regime. | The retained local dynamics (Appendix A.2). | A robust departure requiring added interactions or modified gravity challenges the baseline. No all-scale completion is proved by the free algebra alone. |
-| Quantum gravitational mediation | The graviton retains its quantum commutator; the ordinary weak-field quantum-mediation calculation remains available. | The reduced free TT algebra (Appendix A.3); the exhibited physical quotient is one-dimensional. | A controlled gravitational-entanglement experiment tests quantum mediation. Agreement is shared with ordinary quantum gravity and does not identify the fold; the relational apparatus completion remains open. |
+| Quantum gravitational mediation | The graviton retains its quantum commutator; the ordinary weak-field quantum-mediation calculation remains available. | The reduced free transverse-traceless (TT) algebra (Appendix A.3); the exhibited physical quotient is one-dimensional. | A controlled gravitational-entanglement experiment tests quantum mediation. Agreement is shared with ordinary quantum gravity and does not identify the fold; the relational apparatus completion remains open. |
 
 The tensor row is the one commitment whose test is currently being argued over in public. Pulsar
 timing arrays have detected a nanohertz background [30], and its origin is contested between
@@ -1453,29 +1397,27 @@ the abundance of early galaxies, an observed galaxy population is not by itself 
 early-galaxy abundances need their astrophysical and initial-condition analysis before they test
 the implementation. A test passed in common with GR or $\Lambda$CDM does not identify the fold.
 
-## 4. Discussion
+## 4. Claims, limits and falsifiers
 
-### 4.1 What the assembly claims and where it can fail
+### 4.1 What the fold claims and where it can fail
 
-Algebraic and thermal quantum field theory fix things the cosmological accounts leave open, in the
+AQFT and its thermal side fix things the cosmological accounts leave open, in the
 sector where the two overlap: geometry, states, horizons and correlators. The wedge-reflection
 theorems select the involution, the involution at the bang returns the state family, and the
 operator bound on that family turns the abundance into a ceiling. Traffic runs both ways. Algebra
 contributes an input to the cosmology, the family, and not only a constraint on what the cosmology
-had already chosen; that is the sharpest form of the claim that the two legs constrain each other,
-and it is the one a reader should test.
+had already chosen; that is the sharpest form of the claim that the two legs constrain each other.
 
-One separation is worth stating before that list, because a referee will want it. The structural
+The structural
 result of §3.6 and the matter results of §2 and §3.1 to §3.5 share the fold and share nothing else.
 §3.6 uses no abundance, no dark-matter mass, no neutrino datum and no cosmological history; it uses
 the involution, its action at a bifurcate Killing horizon, and the geometry of a local Rindler
-wedge. So a reader who doubts the $491.6$ PeV ceiling, or the identification of the dark matter, or
+wedge. So doubting the $491.6$ PeV ceiling, or the identification of the dark matter, or
 the decay channel, can reject all of it and leave the derivation of the field equations standing.
 The dependence runs the other way too: §3.6 gives the matter sector no support it would not have
 without it.
 
-The claim not to have assumed the conclusion is checkable, so it is checked rather than
-repeated. Writing every derived line with what it rests on gives a graph of thirty nodes and
+The claim not to have assumed the conclusion is checkable, and it is checked. Writing every derived line with what it rests on gives a graph of thirty nodes and
 fifty-seven edges over six declared roots. It is acyclic, so nothing proves itself at any
 distance; every leaf is one of the declared roots, so nothing enters the argument unnamed; and
 no path from the field equations reaches general relativity or Bekenstein-Hawking entropy,
@@ -1489,14 +1431,33 @@ measured constant is among them: what the balance rests on is CPT, the signature
 shared metric and the Hadamard condition. So the form of the equations is settled before either
 number is supplied, and $G$ and $\Lambda$ enter only where the numbers do.
 
-The sixth root is worth naming, because it is the one a leaf test cannot find for you. The Hadamard
+The sixth root is named separately, since a leaf test cannot find it. The Hadamard
 condition on states is what the equilibrium paragraph of §3.1 rests on and what the thermofield
 double uses, and a leaf test only covers what is in the graph. It is a regularity condition, the one
 under which a renormalised stress tensor exists at all, so it is not a property of general relativity
-and it does not belong in the ledger of nineteen against four. It is an input all the same, and
-naming it is cheaper than having a reader find it.
+and it does not belong in the ledger of nineteen against four. It is an input all the same, and it is named here.
 
-Three things would show the assembly is wrong. Their status differs.
+That graph answers whether a result of general relativity was used to derive general relativity.
+It leaves a second question open: whether the machinery was built backwards from a destination
+already known. That one is about how the work went. The starting point was not the field
+equations. It was that CPT taken of the universe, read through the modular structure of a wedge,
+is either a real piece of physics or a formal coincidence, and the way to find out is to ask what
+it is obliged to produce. If it is real, what a quantum theory of gravity has been wanted for
+should follow without being put in.
+
+So §3.6 was run as a test of the premise, and the test had four places it could have failed. The
+surface gravity had to cancel between the occupation and the mode density: a modular temperature
+carrying $\kappa$ spreads $S/A$ by $21.6$ and leaves no universal coefficient, so no Einstein
+equation. Composing the wedge reflection with the transverse antipode had to leave something
+frame-independent, since otherwise the balance gives one equation of state per observer and no
+field equation at all. The geodesic symmetry's third-order failure had to vanish with the patch,
+since at order unity there is no local horizon at a generic point. And the coefficient had to
+survive a single ultraviolet cutoff, where one tracking the surface gravity moves it by $52$.
+Each is measured in §3.6, and none was available to adjust: every structural input carries mass
+dimension zero, so the fold has no free parameter with which it could have been tuned to
+pass.
+
+Three things would show the fold is wrong. Their status differs.
 
 *The seam coefficient.* If the modular structure does not fix the seam coefficient, the algebra
 has not paid for a geometric quantity that is its own business. It does not. The companion adopts
@@ -1568,14 +1529,12 @@ admissible exactly for $\tau\ge1/2$, the cubic terms leaving $1/24$ to spare the
 boundary the production integral has the closed form $3\zeta(3)/16\pi^2=0.02284$, so the whole
 thermal family returns $M_1\le389.5$ PeV and $E_\nu\le194.7$ PeV, which puts its line below
 KM3NeT's median. $\Theta$-invariance therefore throws out the nearest alternative to the
-adopted state at the adopted momentum scale, and prices what is left of it.
+adopted state at the adopted momentum scale, and quantifies what is left of it.
 
 A Gaussian is the least committed profile at fixed second moment, and any argument fixing the
 pair state variationally at fixed $\gamma$ would close the question; that is a different
 variational principle from the minimum-energy one, acting on the profile's shape where the
-other acts on its level, and neither follows from the other. The residual phase is the
-falsifier a reader should press, and what pressing it buys is bounded on one side only. Table 1
-prices the excursion against a cutoff $x_c$, and $x_c$ is a scale the adopted state does not
+other acts on its level, and neither follows from the other. The residual phase is the falsifier, and its effect is bounded on one side only. Table 1 measures the excursion against a cutoff $x_c$, and $x_c$ is a scale the adopted state does not
 have. The Hadamard tail does not remove it, because a polynomial prefactor keeps the $e^{-x^2}$
 exponent while moving the excursion's peak out to any momentum, so the production integral has
 no maximum and the mass no floor. What the tail does fix is the shape at infinity, and the
@@ -1595,8 +1554,7 @@ involution on the cover distinguishes one sterile neutrino from another, whateve
 its lift. The rule stays an input, and a derivation would require flavour itself to be a spacetime
 label, which this paper neither asserts nor needs. Appendix C.2 shows that the holonomy route to
 the rule is closed on the cover, and that a gauged $P_\perp$ carries a mode parity where the rule
-needs a species parity. The lift is not a way round it either, which is worth saying because it
-is where a species parity would most plausibly hide. Writing the fold on a mode as
+needs a species parity. The lift is not a way round it either, and the lift is where a species parity would most plausibly hide. Writing the fold on a mode as
 $\psi\mapsto e^{i\alpha}M\psi^*(-\eta)$ gives $\Theta^2=M\overline M$, in which the phase has
 met its own conjugate and cancelled, so a Majorana phase is no handle. And $M$ is not free:
 preserving §2.2's mode equation needs $MH(\eta)M^{-1}=H(-\eta)$ with $M$ real, which among the
@@ -1625,7 +1583,7 @@ even; Appendix B.5 checks that across sweep laws. It does not reach the singular
 hole, where the interior is Kasner and even in $\tau$, and only the crossing type is treated here.
 
 The interior sign belongs in this section rather than in §3.6 because half of it rests on a model
-geometry, and the reduction that gets it there is worth setting out in full. A stress invariant under the interior's isometries has only $T^t{}_t$,
+geometry, and the reduction that gets it there is set out in full. A stress invariant under the interior's isometries has only $T^t{}_t$,
 $T^r{}_r$ and $T^\theta{}_\theta=T^\varphi{}_\varphi$, and contracting with a null vector gives
 $|f|(k^t)^2(T^t{}_t-T^r{}_r)+r^2(k^\theta)^2(T^\theta{}_\theta-T^r{}_r)$. The fold joins a point to
 its image at fixed Schwarzschild $t$, so the contact geodesic has $E=0$ and no $t$ component, and its
@@ -1651,8 +1609,7 @@ whose coefficient would then have to vanish. So $a=b$ with $Y$ one power softer 
 consistent scaling, and the trace's leading cancellation is $X+2A=0$. Integrating the system
 confirms it at four different powers, the ratio sitting at $-2$ to within $1.1\times10^{-6}$
 and independently of the anisotropy's size, and the power itself never enters: whatever the
-caustic's exponent turns out to be, the ratio is the same. The division of labour is worth
-stating, because it is easy to get backwards. The trace supplies the factor of two, since
+caustic's exponent turns out to be, the ratio is the same. The division of labour is easy to get backwards. The trace supplies the factor of two, since
 $X+2A\to0$ follows the moment $Y$ is subleading; conservation supplies that $Y$ is subleading.
 Free $Y$ to be $\lambda A$ instead and the trace gives $X/A=-4\lambda-2$, which is anything,
 and vanishes at $\lambda=-1/2$.
@@ -1677,8 +1634,7 @@ vanishing, leaving $T^t{}_t:T^r{}_r:T^\theta{}_\theta=2:0:-1$ and a coefficient
 $15/32\pi\sqrt{2\pi}=0.059525$ on the offset's $-7/2$ power. Neither sign moves with the coupling or the
 mass, where the flat calibration's flips as $\xi$ crosses $1/6$.
 
-That pattern has a second derivation on this side of the transfer, which is worth more than the
-transfer would have been. Three statements force it: the leading divergence is traceless, the
+That pattern has a second derivation on this side of the transfer, which is stronger than the transfer would have been. Three statements force it: the leading divergence is traceless, the
 transverse pressures are equal by the interior's $SO(2)$, and $T^r{}_r$ vanishes at leading order,
 which is what $Y'=(f'/2f)X+2A/r$ gives by putting $Y$ one power below $X$ and $A$. The trace then
 reads $T^t{}_t+2T^\theta{}_\theta=0$ and nothing is left free. So both geometries empty the same
@@ -1709,7 +1665,7 @@ separation is real, and a multiple of $\pi$ would flip a sign that is the same i
 
 Both halves settle, and they settle opposite ways, which is what the conjecture needed. The image stress defocuses the congruence that would bring the two sheets into
 contact, delaying the conjugate point the contact requires, and focuses the one Penrose's argument
-runs on. So the construction censors its own closed causal curves and leaves the singularity
+runs on. So the fold censors its own closed causal curves and leaves the singularity
 theorem's hypothesis where it found it. What is still held by conservation rather than by a sum
 done in the interior is the radial sign itself, and the same sum on Schwarzschild would remove that
 step. Its hardest ingredient is in hand: the interior's zero-frequency radial modes are Jacobi
@@ -1719,12 +1675,10 @@ with the variable part equal to the companion's own contact leg, from $r$ out to
 The magnitude never depended on any of it. The shell thickness rests on the coefficient and the
 power, and neither cares which combination carries the sign.
 
-One limit on the whole of §3.6 belongs here, because it is the first thing a reader of that
-section should want to know. What a Clausius argument returns is an
+One limit applies to the whole of §3.6. What a Clausius argument returns is an
 equation of state: the field equations hold at every point and in every null direction, and no
 gravitational action is produced along the way. So nothing here supplies a path integral, a
-graviton propagator, or a route to quantising gravity, and the point of §3.6 is that the field
-equations do not need one, not that one has been found. The image term sharpens the point, since
+graviton propagator, or a route to quantising gravity, and §3.6 shows the field equations do not need one, not that one has been found. The image term sharpens the point, since
 it is non-local and a local gravitational action would not have produced it in any case.
 
 The remaining mathematical tasks are specific: the interacting constraints, the joint
@@ -1733,14 +1687,14 @@ sterile-species rule from the proposed boundary data. A general rotating-horizon
 own matching law. None of the present results requires those objects to be silently assumed
 complete.
 
-### 4.3 Two questions the construction raises
+### 4.3 Two questions the fold raises
 
 The fold's two-sided horizon results need a hole with a past singularity to be identified with,
 which a hole formed by collapse does not have, so for an astrophysical black hole they say
 nothing. That divides black holes into two classes, and the division is not observational: a
 transparent seam predicts ordinary Kerr dynamics either way. If the overmassive early population
 of §3.4 needs seeds that did not form by collapse, those seeds are the only objects in this
-framework that could be two-sided, and the budget affords them with nine orders to spare. We have
+framework that could be two-sided, and the budget accommodates them with nine orders to spare. We have
 no test that separates the classes and do not propose one; which black holes have a past is left
 open and named.
 
@@ -1754,9 +1708,9 @@ antiparticle content is a reading of the reduction, the freedom between the endp
 continuous phase and not a two-element choice, and saying more needs the interacting theory this
 paper does not have.
 
-### 4.4 What the construction costs and what it returns
+### 4.4 What the fold takes and what it returns
 
-A claim to unify is worth what its parameter count is worth, so here is the count. The rule used
+A claim to unify is easy if the model is allowed to overfit. Here is the parameter count. The rule used
 throughout is that a quantity is free if the theory permits a range and observation picks a point
 in it, and fixed if the theory returns a number that was not chosen. Postulates are counted apart
 from parameters, since removing one is a different kind of gain.
@@ -1764,7 +1718,7 @@ from parameters, since removing one is a different kind of gain.
 Take the baseline to be general relativity with $\Lambda$CDM, a dark-matter particle and massive
 neutrinos. In the sector this paper touches, six things are free and settled by fitting: Newton's
 constant, the value of the cosmological constant, $w_0$ and $w_a$, the dark-matter particle mass,
-and the neutrino mass scale. The construction returns four of them. The dark-matter mass is
+and the neutrino mass scale. The fold returns four of them. The dark-matter mass is
 $491.6\pm2.0$ PeV, a ceiling the abundance saturates. The neutrino mass scale is $\Sigma
 m_\nu=58.8$ meV, from one massless light neutrino. And $w_0=-1$ with $w_a=0$ exactly, from the
 restricted action of Appendix D.2. What remains taken from experiment is Newton's constant and the
@@ -1772,19 +1726,18 @@ value of $\Lambda$, which is two dimensionful constants: the same two any formul
 needs, and the floor rather than a shortfall.
 
 Counted as prior volume the dark-matter row dominates. The literature searches that mass from
-fuzzy dark matter near $10^{-22}$ eV to the GUT scale, fifty decades, and the construction returns
-it to four parts in a thousand. The neutrino row is worth less in decades, about half of one, and
-more in sharpness: the prediction is not a value inside the allowed band but the statement that the
+fuzzy dark matter near $10^{-22}$ eV to the GUT scale, fifty decades, and the fold returns
+it to four parts in a thousand. The neutrino row spans fewer decades, about half of one, and more in sharpness: the prediction is not a value inside the allowed band but the statement that the
 sum sits exactly on the oscillation floor, which one established absolute mass ends. And $w_0$,
 $w_a$ collapse from a plane to a point.
 
-The other half of the ledger is the postulates, and it is the more interesting half. Three things
+The other, more interesting half of the ledger is postulates. Three things
 usually put in by hand come out. The Unruh temperature at a horizon, because the fold's map is the
 half-period shift and the cross-sheet correlator is therefore a thermofield double. The divide
 between classical and quantum behaviour, because $\Theta^2=1$ makes the sheet average the fold-even
 part and the difference the fold-odd part, which are the Keldysh classical and quantum variables.
 And the field equations themselves, by §3.6. All three come from the one supposition, that CPT
-holds of the universe and not only of its laws.
+is a symmetry of the universe itself, not just of the laws inside it.
 
 Counted line by line, nineteen separate properties of general relativity come out and four go
 in; Appendix E is the list. Each of the nineteen names the file in the release that produces it. Three of the four name
@@ -1795,7 +1748,7 @@ covariant matter action, and the values of $G$ and $\Lambda$. The first two are 
 metric theory means; the last two are the dimensionful constants no symmetry argument can
 supply, since every structural input here carries mass dimension zero.
 
-Two entries a reader might expect are absent, and in each case what the argument uses is narrower
+Two entries one might expect are absent, and in each case what the argument uses is narrower
 than the name. The equivalence principle is not assumed: its weak form is what the eikonal limit of
 any field on the shared metric does, the characteristics of the wave equation agreeing with the
 Christoffel system to $2\times10^{-12}$ with the mass cancelling out of the path, and a matter
@@ -1811,7 +1764,7 @@ the assumed side is nothing substantive about gravity. Figure 5 draws the whole 
 
 ![](fig_ledger.png)
 
-**Figure 5.** The ledger. On the left is everything the construction is given: a Lorentzian
+**Figure 5.** The ledger. On the left is everything the fold is given: a Lorentzian
 signature and one metric carrying both the fold's horizons and a covariant matter action, which
 between them are what writing a metric theory means, and the measured values of $G$ and $\Lambda$.
 In the middle is the single postulate, that CPT is a symmetry of the universe and not only of its
@@ -1825,7 +1778,7 @@ draw, because it is not a property of general relativity, is the Hadamard condit
 which §4.1 names as the sixth root of the dependency graph.
 
 The signature entry deserves more than a line saying the fold is built on a spacetime that has one,
-because the fold is not indifferent to it. Everything the construction takes from $\Theta$
+because the fold is not indifferent to it. Everything the fold takes from $\Theta$
 comes from its being a discrete symmetry with a parity, and a parity is invariant only if the map
 cannot be deformed continuously to the identity. In four Euclidean dimensions it can: rotating by
 $\theta$ in the $1$-$2$ plane and by $\theta$ in the $3$-$4$ plane at once is an isometry at every
@@ -1857,18 +1810,16 @@ Lorentzian manifold has to exist. It says that among the arenas one could have w
 on, it has content in exactly one, which is a different kind of assumption from a convenience.
 The dimension selection of §5.2 in the companion and this one are not independent, since a causal
 budget already presumes a signature to be causal in, and together they say only that the pair
-$(4,\ \text{one time direction})$ is the one the construction can live on.
+$(4,\ \text{one time direction})$ is the one the fold can live on.
 
-Two coefficients are open, the seam coefficient and the state's residual phase $\mu(p)$, and §4.1
-prices both. They
+Two coefficients are open, the seam coefficient and the state's residual phase $\mu(p)$, and §4.1 assesses both. They
 are structural and are fitted to nothing, so they are not free parameters in the sense counted
 here. The entropy coefficient $\eta$ is likewise not an extra input, since $\eta=1/4G$ and a theory
 of gravity cannot avoid one dimensionful constant.
 
-So this ledger, the parameter one rather than the nineteen-against-four above, reads: one
+The parameter ledger, then, reads: one
 symmetry assumption in; four numbers that used to be fitted, three postulates and about fifty
-decades of prior volume out; nothing added in their place. That is the unification claim in
-the only form worth making, which is a countable one.
+decades of prior volume out; nothing added in their place. That is the unification claim in its only countable form.
 
 ### 4.5 What would refute it, and what no test can take away
 
@@ -1886,12 +1837,12 @@ $\Lambda$ is an integration constant of the derivation, so it
 does not run by construction, and the fold cannot add a running piece because its own extra term
 reaches $2\times10^{-71}$ of the dark energy where the universe has been observed. $\eta$ is fixed by a modular temperature and a
 transverse mode count, neither of which depends on epoch or location, so $G$ cannot run either.
-The construction takes two numbers from experiment and then forbids both from moving. A secure
+The fold takes two numbers from experiment and then forbids both from moving. A secure
 measurement of either varying ends it, with nothing available to absorb the result. The seam
 coefficient and the state's residual phase are the two places the algebra has not paid, and both
 are stated as open.
 
-One structural consequence outlasts any of those tests and is worth the last word. Since
+One structural consequence outlasts any of those tests and belongs last. Since
 $\Theta^2=1$, the average of a field's two sheet readings is exactly its fold-even part and the
 difference exactly its fold-odd part, so the fold's parity is the classical-quantum split itself:
 where the sheets agree the difference vanishes and the physics is classical, and where they
@@ -1911,186 +1862,115 @@ $\tanh(\beta\omega/4)$ in units of $1/2\omega$, and their product is $1$ at ever
 every temperature, so the geometric mean of the classical and quantum weights is the
 zero-temperature amplitude. Nothing in the normalisations above disturbs that, since
 $\langle\Phi_c\Phi_c\rangle$ is half the first eigenvalue and $\langle\Phi_q\Phi_q\rangle$ is
-twice the second, and the two halves carry equal weight at $\beta\omega=2\ln3$. Two ends of one
-construction, meeting at one frequency, with the transverse parity carried through as what the
-absence of fixed points costs.
+twice the second, and the two halves carry equal weight at $\beta\omega=2\ln3$. Two ends of one fold, meeting at one frequency, with the transverse parity carried through as what the absence of fixed points requires.
 
-That is the fold to assess and the set of commitments to compare with observation.
+Those are the commitments, and they are what observation has to be set against.
 
 ## 5. Conclusions
 
-Start with the part nobody was looking for. Suppose the mirror symmetry behind every particle
-experiment, the one that swaps matter for antimatter and runs time backwards, holds of the universe
-itself and not only of the physics going on inside it. Three of the things a quantum theory of
-gravity has been wanted for then arrive without anything gravitational being quantised at all.
-Where the classical world comes from: the two mirror copies of a field have an average and a
-difference, and those are exactly the classical and quantum variables physics already uses, so the
-divide between them is the mirror's own parity and not a scale that anything has to cross. Why a
-horizon is hot: the mirror's map at a horizon is a shift by half the thermal period, which makes
-the correlation between the copies a thermal one, and no temperature was put in anywhere. Those two turn out to be one fact. The weight the quantum half carries is
-$4\tanh^2(\beta\omega/4)$, so it fades out below the horizon's own temperature, and the classical
-world is a horizon seen from below.
+The structural half of this paper was not what the work set out to find. Suppose the mirror
+symmetry behind every particle experiment, the one that swaps matter for antimatter and runs time
+backwards, is a symmetry of the universe itself and not just of the physics going on inside it. Three of
+the things a quantum theory of gravity has been wanted for then arrive without anything
+gravitational being quantised at all.
 
-Third, the field equations themselves. There is an argument of Jacobson's from 1995 that gets
-Einstein's equations out of thermodynamics, provided someone hands it a horizon temperature and an
-entropy proportional to horizon area. Someone has always had to. Here the mirror supplies both, and supplies the horizons
+Where the classical world comes from: the two mirror copies of a field have an average and a
+difference, and those are exactly the classical and quantum variables physics already uses, so
+the divide between them is the mirror's own parity and not a scale that anything has to cross.
+Why a horizon is hot: the mirror's map at a horizon is a shift by half the thermal period, which
+makes the correlation between the copies a thermal one, and no temperature was put in anywhere.
+Those two turn out to be one fact. The weight the quantum half carries is
+$4\tanh^2(\beta\omega/4)$, so it fades out below the horizon's own temperature, and the
+classical world is a horizon seen from below.
+
+Third, the field equations themselves. Jacobson's 1995 argument gets Einstein's equations out of
+thermodynamics, provided someone hands it a horizon temperature and an entropy proportional to
+horizon area. Someone has always had to. Here the mirror supplies both, and supplies the horizons
 as well, at every point and in every direction, so the argument runs with nothing borrowed from
-relativity in order to prove relativity. Nineteen separate pieces of general relativity come out,
-among them the fact that gravity attracts. Four things go in. Two of them are what it means to
-write down any theory with a spacetime in it, and the other two are the two numbers, Newton's
-constant and the cosmological constant, that every theory of gravity has to be told. The metric is
-a fixed background on every page of this paper.
+relativity in order to prove relativity. What comes out is the ledger of §4.4; what goes in is
+two statements about what a spacetime theory is and the two numbers, Newton's constant and the
+cosmological constant, that every theory of gravity has to be told. Four large dimensions, one
+time direction and a single shared metric are on the output side of that ledger rather than the
+input side, and §4.4 gives each its own line. The metric is a fixed background on every page of
+this paper.
 
 Now the matter half, where two ideas that had never been set side by side do what neither does
-alone. The same supposition has a second consequence: if the mirror holds of the universe itself,
-the Big Bang has a far side, a whole mirror universe running away from it the other way. Ask which quantum states that mirror permits and a number falls out. The reason is worth
-one sentence: the mirror forces every ripple in the dark-matter field to sit evenly between the two
-states open to it, and a ripple split evenly cannot come out empty, since empty would mean all of
-it sitting in one state. So the bang has to make particles, and there is a floor under how many.
-How much dark matter there is has been measured, so fewer particles means each one is heavier, and
-the floor turns into a ceiling. Dark matter can weigh no more than $491.6\pm2.0$ PeV, about half a
-billion proton masses. Nobody fitted that to anything. It is what the symmetry allows.
+alone. If the mirror is a symmetry of the universe itself, the Big Bang has a far side, a whole mirror
+universe running away from it the other way, and asking which quantum states that mirror permits
+makes a number fall out. The mirror forces every ripple in the dark-matter field to sit evenly
+between the two states open to it, and a ripple split evenly cannot come out empty, since empty
+would mean all of it sitting in one state. So the bang has to make particles, and there is a
+floor under how many. How much dark matter there is has been measured, so fewer particles means
+each one is heavier, and the floor turns into a ceiling. Dark matter can weigh no more than
+$491.6\pm2.0$ PeV, about half a billion proton masses. Nobody fitted that to anything. It is what
+the symmetry allows.
 
-The model is easy to break, and that is the point of it. The dark-matter particle decays in two, so
-it should leave a sharp neutrino line at half its mass, $245.8\pm1.0$ PeV, and one well-measured
-neutrino above that line ends it. It also forces the lightest neutrino to weigh nothing at all,
-which fixes the three neutrino masses at $58.78\pm0.32$ meV between them, and it has given up the
-usual way of wriggling out of that. Two more things come free. A black hole dating from the bang
-has two outsides and can feed from both at once. What normally caps how fast a hole can eat is the
-glare of the stuff already falling in, and each side only feels its own glare, so the hole grows at
-roughly twice the rate either side thinks possible. That is the head start JWST's surprisingly
-heavy early black holes look like they need. And on one further assumption the whole construction
-has no room for a clock. Not the everyday kind, which still ticks for anyone inside it. What goes
-is any master time the universe as a whole could be running in.
+The model is easy to break, by design. The dark-matter particle decays in two, so it should leave
+a sharp neutrino line at half its mass, $245.8\pm1.0$ PeV, and one well-measured neutrino above
+that line ends it. It also forces the lightest neutrino to weigh nothing at all, which fixes the
+three neutrino masses at $58.78\pm0.32$ meV between them, and it has given up the usual way of
+wriggling out of that. Two more things come free. A black hole dating from the bang has two
+outsides and can feed from both at once, and since each side only feels the glare of its own
+infalling matter, the hole grows at roughly twice the rate either side thinks possible: the head
+start JWST's surprisingly heavy early black holes look like they need. And on one further
+assumption the fold has no room for a master time the universe as a whole could be
+running in, though the everyday kind still ticks for anyone inside it.
 
-One of those commitments deserves the last word, because it is the largest. Nothing in this paper
-quantises the gravitational field. The metric is a fixed background throughout, and the horizon
-law, the ceiling on the dark matter, the neutrino line and the divide between classical and
-quantum behaviour are all obtained without ever treating it as an operator. Three things a quantum
-theory of gravity was wanted for arrive anyway. The classical-quantum divide sits in the geometry
-already, as the fold's parity: the classical world is the fold-even sector, it is classical because
-the cross-sheet commutator vanishes outside a horizon, and the quantum half has an amplitude which
-is a temperature. That temperature is not inserted either, since the fold's map at a bifurcate
-Killing horizon is the half-period shift. And the field equations follow from those two, because
-the same map is the fold of every local Rindler wedge through its fixed point at once. That hands
-Jacobson's 1995 argument its horizons and its temperature, and the entanglement of the thermofield
-double the map forces hands it the entropy law as well, so nothing is borrowed from relativity to
-derive relativity. His one remaining assumption, a horizon at every point in every direction, is
-the geodesic symmetry there, which carries the same differential and is an isometry to the order
-the argument uses.
+What the field equations come out as takes a sentence of its own. Running the balance on the
+fold's own horizons puts the image stress into it, and that term is not a local curvature
+polynomial, so it cannot be absorbed into Newton's constant and this is not general relativity
+with a shifted coupling. It carries no free parameter: away from the contact sphere its size is
+set by the matter's departure from conformal invariance and by nothing else. Outside a horizon a
+point and its image are spacelike separated, which gives not a zero but a suppression, exponential
+in the mass for anything heavy, quadratic for anything light, Weyl-suppressed for a massless
+conformal field, with the worst case anywhere in that range thirty-four orders below the dark
+energy. So the fold diverges from relativity only where relativity already predicts its own breakdown,
+on the inner half of a black hole's interior, and agrees with it everywhere else.
 
-The same accounting says how many dimensions there are, which was not what anyone was looking
-for either. For the two sheets to touch at all, a light ray crossing a black hole's interior has to
-swing halfway round it, and half a turn is the bill whatever the dimension, because the antipodal
-map is an involution of a sphere. What an interior can pay is a half turn in four dimensions, half
-of that in five, and less again above. So four is the only dimension in which the two sheets touch
-anywhere: in five the budget climbs towards the bill and reaches it only in a limit that is not a
-point of the spacetime, and from six up it is short outright. Whether a five-dimensional universe
-is allowed is a different question, and the answer is that it is. What it would not have is
-anything to add to relativity, since the term the fold contributes lives only where the sheets
-touch, and in five dimensions there is nowhere for it to live.
-
-Making the extra dimensions small does not get round that, which is worth saying because it is the
-first thing anyone asks. The companion runs both limits. A hole much larger than the compactification
-scale sees a four-dimensional interior times the compact space. Any motion in the compact
-directions strictly eats into the angular progress a causal curve has left, so the four-dimensional
-budget is an upper bound, reached only by staying put in them. That hole has exactly the budget of
-the four-dimensional case and nothing changes. A hole much smaller does not see the
-compactification at all, so it is a Tangherlini hole in $4+n$ dimensions with budget $2\pi/(n+1)$,
-and the bill does not move, because the distance between antipodes on a unit sphere is $\pi$ in
-every dimension. Large or small, the sheets touch in four and nowhere else.
-
-The same counting answers how many of those four are time. A mirror symmetry is only worth
-anything if you cannot rotate it away, and whether you can depends entirely on the signature: pair
-up directions of the same kind, turn both pairs through half a circle, and you arrive at the
-mirror itself. That works when the times and the spaces are both even in number, and it is
-available in four Euclidean dimensions, in two-and-two, and in four times. It is not available
-with one time direction, or with three, because the odd one out has nothing of its own kind to
-pair with and the only move left, a boost, never turns far enough. So the mirror survives as a
-mirror in exactly the signatures the world has. That is not a proof that spacetime had to be this
-way, and the two countings lean on each other, since a causal budget already needs a direction to
-be causal in. What they say together is that of all the arenas this construction could have been
-written on, it has anything to say on one.
-
-The other half of what a metric theory is gets the same treatment, and comes out the same way.
-Writing one metric for the horizons and the matter alike is not a convenience either. The Clausius
-step needs a stress tensor that is conserved, and Noether's theorem only ever hands you
-conservation with respect to the metric the matter action was written with. Give the matter a
-second metric and that conservation is a statement about the wrong geometry: taking the divergence
-with the horizons' connection instead leaves a residue four hundred thousand times the numerical
-floor, so on shell the quantity the balance is handed does not close and the Bianchi step has
-nothing to work with. Rescale the second metric by a constant, which changes no connection at all,
-and the residue drops to $7\times10^{-15}$. None of that says a universe could not have two
-metrics. It says that if one did, this derivation would stop where it stands and hand back
-no field equation at all, which is what an assumption being load-bearing looks like.
-
-What they follow as is worth a sentence of its own. Running the balance on the fold's own horizons
-puts the image stress into it, and that term is not a local curvature polynomial, so it cannot be
-absorbed into Newton's constant and this is not general relativity with a shifted coupling. It
-carries no free parameter either: away from the contact sphere its size is set by the matter's
-departure from conformal invariance and by nothing else. Outside a horizon a point and its image
-are spacelike separated, and what that buys is not a zero but a suppression: exponential in the
-mass for anything heavy, quadratic in it for anything light, and Weyl-suppressed for a massless
-conformal field. The worst case anywhere in that range is thirty-four orders below the dark
-energy. So the construction agrees with relativity on every measurement ever made, and leaves it
-only on the inner half of a black hole's interior.
-
-That departure has a size, and working it out is the last thing this paper does. The single region
-where general relativity predicts its own breakdown is the single region where this construction
-leaves general relativity, which is a coincidence worth more than a footnote, and the direction the
-departure runs in turns out to be the one consistency needs. The region is a shell around the contact sphere and its thickness follows from the
-order of the caustic there. At a hole of one solar mass it is half a femtometre for an
-electron, a seventieth of a nanometre for a top quark, and two microns for the dark-matter particle
-the rest of this paper is about, and it widens as the hole does, so the place to look is the
-largest holes and not the smallest. Its coefficient is assembled, nothing in it fitted, and the
-order-unity factor that used to stand beside it is measured at one: the pairing the assembly keeps
-is the only one that reaches a caustic's leading term, which the exact mode sum confirms to twelve
-digits.
+That divergence has a size. The single region where general relativity predicts its own breakdown
+is the single region where the fold leaves it, and the direction the departure runs in
+is the one consistency needs. The region is a shell around the contact sphere whose thickness
+follows from the order of the caustic there: at a hole of one solar mass, half a femtometre for
+an electron, a seventieth of a nanometre for a top quark, and two microns for the dark-matter
+particle the rest of this paper is about. It widens as the hole does, so the place to look is the
+largest holes and not the smallest. Nothing in the coefficient is fitted, and the order-unity
+factor that used to stand beside it is measured at one.
 
 The shell does not thin away to nothing as the mass falls, which is the last thing the calculation
 had to say and the one that surprised us. At the contact sphere the coupling cancels out of the
 leading term, so a massless conformal field feels it too, and what is left is a floor at
 $\ell_P^{4/7}r_h^{3/7}$ up to a number: $1.1\times10^{-19}$ m at a solar mass, sixteen orders
-above the Planck length, with no matter content in it at all. Nothing the construction can be made
+above the Planck length, with no matter content in it at all. Nothing the fold can be made
 of falls through that.
 
-The departure does not touch the singularity, and that is computed rather than hoped for. Two
-directions matter and they read different combinations of the stress. The fold joins a point to its
-image at the same Schwarzschild time, so the direction in which the two sheets touch carries no time
-component, while the congruence Penrose's argument follows is the radial one. Conservation and the
-trace tie the two together at conformal coupling with a minus sign, so exactly one of them is
-negative, and the companion's A.18 computes the whole tensor at the caustic and says which. The
-contact contraction comes out negative, and it is the contraction built the same way in the model
-geometry as in a hole, a timelike direction plus a transverse one. So the null convergence condition
-fails along the direction in which the sheets would touch and holds along the one Penrose uses: the
-construction defocuses its own closed causal curves and leaves his theorem where it found it. §4.2
-carries that through. What survives independently of it is the size: the term is not small where it
-acts, and where it acts is exactly where relativity predicts it will fail.
+The departure does not touch the singularity, and that is computed here. The fold joins a point to
+its image at the same Schwarzschild time, so the direction in which the two sheets touch carries
+no time component, while the congruence Penrose's argument follows is the radial one. Conservation
+and the trace tie the two together at conformal coupling with a minus sign, so exactly one of them
+is negative, and the companion's A.18 computes the whole tensor at the caustic and says which. The
+contact contraction comes out negative. The null convergence condition therefore fails along the
+direction in which the sheets would touch and holds along the one Penrose uses: the fold
+defocuses its own closed causal curves and leaves his theorem where it found it.
 
-The limit is worth one sentence and then no more. Here the metric is a spectator, so none of this
-shows that a quantum theory of it does not exist or is not needed elsewhere. The entropy
-coefficient is not part of that limit: it is $1/4G$, a quantity of mass dimension two, and every
-structural input of this construction has mass dimension zero, so no argument from a symmetry could
-ever have returned it. What a symmetry returns is relations and dimensionless numbers, and this one
-returns both.
-
-None of that is finished. The fold does not say why one neutrino species is stable, does not prove
-a mirror sheet is the only way to read it, and leaves two coefficients open. Section 4.2 quantifies
-each. What the construction does is generate outcomes that follow from the mathematics rather than
-fitting mathematics to outcomes.
+Here the metric is a spectator, so none of this shows that a quantum theory of it does not exist
+or is not needed elsewhere. The entropy
+coefficient is not part of that limit: it is $1/4G$, of mass dimension two, and every structural
+input of the fold has mass dimension zero, so no argument from a symmetry could ever have
+returned it. What a symmetry returns is relations and dimensionless numbers, and this one returns
+both, none of it finished. The fold does not say why one neutrino species is stable, does not
+prove a mirror sheet is the only way to read it, and leaves two coefficients open, each quantified
+in §4.2. What the fold does is generate outcomes that follow from the mathematics instead
+of fitting mathematics to outcomes.
 
 One thing belongs last, because it is what the rest was for. Einstein's equations came out of a
 symmetry, with the metric a fixed background at every step and no gravitational field ever
 promoted to an operator. Neither constant's measured value enters that derivation, as §4.1's
-dependency graph shows by tracing the balance back to four of its six roots; $G$ and $\Lambda$
-are needed where the numbers are and nowhere before. Jacobson showed in 1995 that a horizon
-temperature and an area entropy are enough to get the equations, and took both as given; what
-the fold adds is that both of them, and the horizon they sit on, follow from taking CPT to hold
-of the universe and not only of the physics inside it. Read that way, general relativity is
-what the two-sheet construction looks like from one sheet, and the field equations were never
-waiting on a quantum theory of gravity. Whether the metric admits a quantum theory of
-its own is a separate question and this paper leaves it open. What the construction removes is
-the reason for thinking the equations depended on the answer.
+dependency graph shows by tracing the balance back to four of its six roots; $G$ and $\Lambda$ are
+needed where the numbers are and nowhere before. Read that way, general relativity is what the
+two-sheet construction looks like from one sheet, and the field equations were never waiting on a
+quantum theory of gravity. Whether the metric admits a quantum theory of its own is a separate
+question and this paper leaves it open. What the fold removes is the reason for thinking
+the equations depended on the answer.
 
 ## Appendix A. The fold's algebra
 
@@ -2209,8 +2089,7 @@ the vacuum, sends $a^\dagger_{nA}$ to $(-1)^na^\dagger_{nA}$ and implements $\Th
 h(p)\Theta^{-1}=h(\alpha p)$ with tensor pullback understood. Temporal gauge and the TT conditions
 are preserved, and an isometry maps pure-gauge perturbations to pure-gauge perturbations, so the
 map is well defined on the reduced classes. Since the antipode is central, the lift and the
-compensated de Sitter action implement the same automorphism of the irreducibly represented
-reduced CCR algebra, their scalar ambiguity fixed to one by the common invariant vacuum. Hence
+compensated de Sitter action implement the same automorphism of the irreducibly represented reduced canonical-commutation-relation algebra, their scalar ambiguity fixed to one by the common invariant vacuum. Hence
 $\Theta U(g)\Theta^{-1}=U(g)$.
 
 The $O(4)$-invariant two-graviton seed $\Psi=\sum_{A=1}^{10}(a^\dagger_{3A})^2|0\rangle$ is the
@@ -2445,8 +2324,7 @@ state: a detector-response calculation rejects its literal Lorentzian kernel, an
 is neither the two-point function of any state on the cover algebra [5] nor what a patch observer
 measures [4].
 
-**C.2 The $\mathbb Z_2$ line bundle.** These are limitations of the quotient reading, given
-because the quotient is the natural first thing a reader will propose. *(i)* Both real flat line
+**C.2 The $\mathbb Z_2$ line bundle.** These are limitations of the quotient reading, which is the natural first proposal. *(i)* Both real flat line
 bundles are allowed and geometry does not choose which species tensors with the non-trivial one;
 calling it a Wilson line presupposes a $\mathbb Z_2$ gauge bundle, whereas a non-trivial
 fundamental group supplies possible holonomies, not a dynamical gauge field. *(ii)* A descended
@@ -2558,15 +2436,13 @@ conversion to the observable curvature perturbation.
 ## Appendix E. The ledger, line by line
 
 §3.6 counts nineteen properties of general relativity out and four in, and Figure 5 draws the
-count with the lines compressed to labels. Here they are at full wording, so a reader can check
-the count without the release. Each derived line also names, in the release, the file that
+count with the lines compressed to labels. Here they are at full wording, so the count can be checked without the release. Each derived line also names, in the release, the file that
 produces it; the checking pass fails if this list and that file's list come apart.
 
 **E.1 The nineteen that come out.**
 
 1. **The form of the field equations,** $R_{ab}-\tfrac12Rg_{ab}+\Lambda g_{ab}$ proportional to
-   $T_{ab}$. Clausius run on the fold's own horizons, with Raychaudhuri integrated, the
-   null-vector algebra checked rather than asserted, and the Bianchi step written out.
+   $T_{ab}$. Clausius run on the fold's own horizons, with Raychaudhuri integrated, the null-vector algebra checked, and the Bianchi step written out.
 
 2. **A temperature at every local Rindler horizon.** The fold's map is the half-period shift, so
    the cross-sheet correlator is a thermofield double.
@@ -2591,7 +2467,7 @@ produces it; the checking pass fails if this list and that file's list come apar
    map; the uniqueness theorems make those the whole stationary vacuum case.
 
 7. **That Newton's constant does not run** with epoch or location. $\eta$ is fixed by the modular
-   temperature and a transverse mode count, neither of them cosmological, so the construction has
+   temperature and a transverse mode count, neither of them cosmological, so the fold has
    no dial that could make $G$ vary.
 
 8. **The sign of Newton's constant,** so that gravity attracts. $8\pi G=2\pi/\eta$ and $\eta$ is
@@ -2649,7 +2525,7 @@ produces it; the checking pass fails if this list and that file's list come apar
 **E.2 The four that go in.**
 
 1. **The value of Newton's constant.** Dimensionally impossible for a symmetry to supply: every
-   structural input of the construction has mass dimension zero and $\eta=1/4G$ has dimension
+   structural input of the fold has mass dimension zero and $\eta=1/4G$ has dimension
    two.
 
 2. **The value of $\Lambda$.** An integration constant of the derivation, and both places it
@@ -2657,8 +2533,7 @@ produces it; the checking pass fails if this list and that file's list come apar
    late universe, and at the bang an $a$-independent image stress would be of order $M_1^4$,
    some $81.4$ orders above the observed value.
 
-3. **Lorentzian signature.** The fold is built on a spacetime that already has one, and it is the
-   only signature in which the fold has content: $-\mathrm{Id}$ sits in the identity component of
+3. **Lorentzian signature.** The fold is built on a spacetime that already has one, and no other signature gives the fold content: $-\mathrm{Id}$ sits in the identity component of
    $O(t,s)$ exactly when $t$ and $s$ are both even, so the fold keeps a parity exactly when the
    number of time directions is odd. Over the five four-dimensional signatures that leaves
    $(1,3)$ and $(3,1)$ and excludes Euclidean, $(2,2)$ and $(4,0)$ alike.
@@ -2667,7 +2542,7 @@ produces it; the checking pass fails if this list and that file's list come apar
    needs it already, since $T_{ab}$ means the variation of the matter action with respect to that
    metric and has no other meaning. Not a convenience either: with a second metric, conservation
    holds against the wrong connection and the mismatch is $4\times10^5$ times the numerical
-   floor, while a constant rescaling, which changes no connection, costs $7\times10^{-15}$.
+   floor, while a constant rescaling, which changes no connection, leaves $7\times10^{-15}$.
 
 Two of the four are what writing a metric theory means and two are units. Two entries that used
 to sit on this side have moved across. The equivalence principle went, because its weak form is
@@ -2791,25 +2666,23 @@ gravitational dissipation," Phys. Rev. D **81** (2010) 024016, arXiv:0909.4194.
 ## Acknowledgements
 
 I thank Debbie Guimarães, Will Gittoes, Julie Wood, Emily Fountain, Sophie Bordson, and Jared
-Young, who did not let me give up, and Angela Spina, who encouraged me to follow this when the
-idea of past and future as folds first arrived, and who has backed it at every point since. I
-thank Patricia Karr for her love and support, always. Joe Hanna for encouraging me to get back
+Young, and Nita Mannering who did not let me give up, and Angela Spina, who encouraged me to
+follow this when the idea of past and future as folds first arrived, and who has backed it at
+every point since. I thank Patricia Karr for her love, support, and always having my back. Ambre
+Hammond for being the best cheerleader I could ask for. Joe Hanna for encouraging me to get back
 into writing and publishing. I also thank my friends at Kandi Luxe, who have listened to more
 cosmology over a cocktail bar than anyone signed up for: Jamila, Te, Gigi, Tuna, Layla, Claudia,
 James, Jay, Michelle, Vesna, Amy, Adam, Mish, Bri, Hetti, Mehreen, Charlie, Petros, Blue, Noah,
-Leah, Leyre, and everyone else who has lovingly engaged with, or endured, my tangents and rabbit
-holes. Aroha ahau ki a koutou katoa. And to Winston, fat and
-shameless as you are:
-there is no more loyal configuration of matter in the cosmos. You are a good dog.
+Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or endured, my tangents and
+rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
+is no more loyal configuration of matter in the cosmos. You are a good dog.
 
 The author is responsible for every claim and decision in this paper. Literature search, grammar,
-proof reading, and automated tests, cross-checks, code revisions, and sanity checks used
+proofreading, and automated tests, cross-checks, code revisions, and sanity checks used
 contemporary research tools, large language models among them. No such tool is an author. Every
-number in this paper is
-produced by one of the 169 calculation files or 21 figure generators in the release, and each check
-over them was validated by planting an error it had to catch, since a check that matches nothing
-reports success. 5 of those files carry a banner at both ends saying the result they compute has
-been superseded, and print it when run, with the reason kept in the file.
+number in this paper is produced by one of the 169 calculation files or 21 figure generators in
+the release, and each check over them was validated by planting an error it had to catch, since a
+check that matches nothing reports success.
 
 ## Code and data availability
 
@@ -2819,7 +2692,7 @@ header what it computes and what it does not settle. All 21 generators and 147 o
 calculations are R, and none of them loads a package, so base R is enough; they run to
 completion under R 4.5.2, one taking several minutes. The remaining 22 calculations are Python,
 run under 3.12. Three use only the standard library and the rest import numpy, scipy, sympy or
-mpmath, at the versions the release records. A checking pass runs 25 gates over both
+mpmath, at the versions the release records. A checking pass runs 28 gates over both
 manuscripts and fails if a quoted number has drifted from the script that produces it, if a
 cross-reference lands on a section that does not exist, if a figure is absent or unused, if a
 label runs off the edge of its panel, or if a position stated in one place is contradicted in
@@ -2837,7 +2710,8 @@ provenance and exact hashes in `data/README.md`. The Zenodo record is
 <https://doi.org/10.5281/zenodo.22888119>, the concept DOI, which covers every version and always
 resolves to the most recent; each individual deposit also carries its own version DOI, and that is
 the one to cite when a specific set of numbers matters. The companion paper, *Somewhere Over the
-Horizon*, has its own release and follows in a later deposit.
+Horizon*, has its own Zenodo record at <https://doi.org/10.5281/zenodo.23030633>, also a concept
+DOI.
 
 Passing these checks shows that the stated formulas and inputs give the quoted numbers. It does
 not test the physical assumptions behind them.

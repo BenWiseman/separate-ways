@@ -42,7 +42,7 @@ draw <- function() {
   plot(NA, xlim = c(0, 1), ylim = c(0, 1), axes = FALSE, xlab = "", ylab = "")
   box(col = "white")
   rect(0.03, 0.845, 0.97, 0.965, col = pale, border = c2, lwd = 1.6)
-  text(0.50, 0.905, "CPT holds of the universe, not only of its laws",
+  text(0.50, 0.905, "CPT is a symmetry of the universe, not just of its laws",
        col = c2, font = 2, cex = 1.0)
   arrows(0.50, 0.838, 0.50, 0.772, length = 0.07, col = grey, lwd = 1.5)
   text(0.545, 0.805, "one postulate", col = grey, cex = 0.82, adj = 0)

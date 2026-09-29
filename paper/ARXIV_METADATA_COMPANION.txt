@@ -25,7 +25,7 @@ JOURNAL REFERENCE
 [none]
 
 COMMENTS
-Companion to arXiv:[Separate Ways identifier, once assigned]. about 58600 words, of which about 34900 are
+Companion to arXiv:[Separate Ways identifier, once assigned]. about 58300 words, of which about 34800 are
 the appendices; 17 figures; 36 references. Code, figure sources and checks:
 https://github.com/BenWiseman/separate-ways
 

@@ -48,33 +48,43 @@ draw <- function() {
 
   # ---- left: the arena. list indexing must be [[ ]] or a plotmath label is deparsed and drawn
   # as its own source text, which is what the first render of this figure did.
-  dy <- 8.0; ytop <- ymid + 1.5 * dy
-  text(14, ytop + 8, "what goes in", col = ink, cex = 1.00, font = 2)
+  # both headings sit on one line. The first render hung "what goes in" twenty units below
+  # "what comes out" and left the top-left quarter of the figure empty.
+  dy <- 11.0; ytop <- 84
+  text(13, ytop2 + 4.5, "what goes in", col = ink, cex = 1.00, font = 2)
   for (i in seq_along(IN)) {
     y <- ytop - (i - 1) * dy
     col <- if (IS_NUM[i]) grey else c1
-    rect(2, y - 2.9, 26, y + 2.9, col = "#ffffff", border = col, lwd = 1.6)
-    text(14, y, IN[[i]], col = col, cex = 0.82)
+    rect(2, y - 3.2, 24, y + 3.2, col = "#ffffff", border = col, lwd = 1.6)
+    text(13, y, IN[[i]], col = col, cex = 0.82)
   }
-  text(14, ytop - 4 * dy + 1.0, "the last two are measured numbers", col = grey, cex = 0.80)
-  text(14, ytop - 4 * dy - 4.5, "the first two are what a metric", col = grey, cex = 0.80)
-  text(14, ytop - 4 * dy - 8.0, "theory is", col = grey, cex = 0.80)
+  ynote <- ytop - (length(IN) - 1) * dy - 9
+  text(13, ynote,       "the last two are measured numbers", col = grey, cex = 0.80)
+  text(13, ynote - 4.5, "the first two are what a metric theory is", col = grey, cex = 0.80)
 
   # ---- middle: the one postulate
-  rect(32, ymid - 7, 57, ymid + 7, col = "#ffffff", border = c2, lwd = 2.2)
-  text(44.5, ymid + 2.6, "CPT holds of the universe", col = c2, cex = 0.88, font = 2)
-  text(44.5, ymid - 2.6, "and not only of its laws", col = c2, cex = 0.88, font = 2)
-  text(44.5, ymid - 12, "the metric is never", col = grey, cex = 0.80)
-  text(44.5, ymid - 15.5, "an operator", col = grey, cex = 0.80)
-  arrows(27, ymid + 4, 31, ymid + 2, length = 0.08, col = pale, lwd = 2)
-  arrows(58, ymid, 61.5, ymid, length = 0.08, col = pale, lwd = 2)
+  # The box is measured from its own text rather than given a fixed width. A hardcoded 25 units
+  # was narrower than the line inside it, so the first and last characters of "CPT is a symmetry
+  # of the universe," were drawn straddling the border on both sides.
+  cx <- 44.5; mcex <- 0.84
+  L1 <- "CPT is a symmetry of the universe,"; L2 <- "not just of its laws"
+  halfw <- max(strwidth(L1, cex = mcex, font = 2),
+               strwidth(L2, cex = mcex, font = 2)) / 2 + 2.4
+  rect(cx - halfw, ymid - 7, cx + halfw, ymid + 7, col = "#ffffff", border = c2, lwd = 2.2)
+  text(cx, ymid + 2.6, L1, col = c2, cex = mcex, font = 2)
+  text(cx, ymid - 2.6, L2, col = c2, cex = mcex, font = 2)
+  text(cx, ymid - 12, "the metric is never", col = grey, cex = 0.80)
+  text(cx, ymid - 15.5, "an operator", col = grey, cex = 0.80)
+  stopifnot(cx - halfw > 24.6, cx + halfw < 62.4)   # must not collide with either column
+  arrows(24.8, ymid + 9, cx - halfw - 0.9, ymid + 2.5, length = 0.08, col = pale, lwd = 2)
+  arrows(cx + halfw + 0.9, ymid, 62.4, ymid, length = 0.08, col = pale, lwd = 2)
 
   # ---- right: the eighteen
-  text(80, ytop2 + 4.5, "what comes out", col = ink, cex = 1.00, font = 2)
+  text(81, ytop2 + 4.5, "what comes out", col = ink, cex = 1.00, font = 2)
   for (i in seq_along(OUT)) {
     y <- ytop2 - (i - 1) * dy2
-    points(63, y, pch = 15, cex = 0.5, col = c1)
-    text(65, y, OUT[[i]], col = ink, cex = 0.80, adj = 0)
+    points(64.2, y, pch = 15, cex = 0.5, col = c1)
+    text(66.2, y, OUT[[i]], col = ink, cex = 0.80, adj = 0)
   }
   mtext(sprintf("%d lines of general relativity out, %d in, and no path from any of them back to relativity",
                 n_der, n_asu),
