@@ -52,9 +52,9 @@ one result of paper 2 on its own. Read them in that order.
 
 | | |
 |---|---|
-| **1. Separate Ways and the Upside Down** | The fold, the field equations, the matter sector and the tests. 50 pages. `papers/1_separate_ways/` |
-| **2. Somewhere Over the Horizon** | Where the two halves of a folded universe can touch, why only in four dimensions, and where the classical world comes from. Carries the interior results the first paper cites. 88 pages. `papers/2_over_the_horizon/` |
-| **3. Road to Nowhere** | A Letter. Where a point can reach its own image on the far side, and why the answer picks out four dimensions. Paper 2 states the result and keeps the extensions; this derives it. 4 pages. `papers/3_road_to_nowhere/` |
+| **1. Separate Ways and the Upside Down** | The fold, the field equations, the matter sector and the tests. 50 pages. `papers/1_separate_ways/` · [doi:10.5281/zenodo.22888119](https://doi.org/10.5281/zenodo.22888119) |
+| **2. Somewhere Over the Horizon** | Where the two halves of a folded universe can touch, why only in four dimensions, and where the classical world comes from. Carries the interior results the first paper cites. 88 pages. `papers/2_over_the_horizon/` · [doi:10.5281/zenodo.23030633](https://doi.org/10.5281/zenodo.23030633) |
+| **3. Road to Nowhere** | A Letter. Where a point can reach its own image on the far side, and why the answer picks out four dimensions. Paper 2 states the result and keeps the extensions; this derives it. 5 pages. `papers/3_road_to_nowhere/` · [doi:10.5281/zenodo.23056601](https://doi.org/10.5281/zenodo.23056601) |
 
 Each directory holds one paper and everything that belongs to it: the PDF, the Markdown
 source it was built from, the figures that source references, and the arXiv metadata
