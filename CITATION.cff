@@ -4,6 +4,7 @@ title: 'Separate Ways and the Upside Down: code, figures and the checking pass'
 authors:
   - family-names: Wiseman
     given-names: B. H.
+    orcid: 'https://orcid.org/0009-0002-1023-9026'
     affiliation: Linnet Labs, Sydney, Australia
 type: software
 version: 4.5
@@ -16,6 +17,7 @@ preferred-citation:
   authors:
     - family-names: Wiseman
       given-names: B. H.
+      orcid: 'https://orcid.org/0009-0002-1023-9026'
       affiliation: Linnet Labs, Sydney, Australia
   year: 2026
   url: 'https://github.com/BenWiseman/separate-ways'
