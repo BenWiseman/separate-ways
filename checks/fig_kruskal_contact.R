@@ -83,7 +83,7 @@ draw <- function() {
   text(0.62, -0.33, "the bifurcation surface", cex=0.78, col=warm)
 }
 
-for (f in c("paper/fig_companion_kruskal.pdf","paper/fig_companion_kruskal.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_kruskal.pdf","papers/2_over_the_horizon/fig_companion_kruskal.png")) {
   if (grepl("pdf$", f)) pdf(f, width=6.4, height=6.0) else png(f, width=960, height=900, res=150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

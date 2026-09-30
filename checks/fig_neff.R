@@ -58,7 +58,7 @@ draw <- function() {
   mtext("the test that looks decisive, and the reason it does not apply", side = 3,
         line = 1.25, cex = 0.88, col = ink)
 }
-for (f in c("paper/fig_companion_neff.pdf", "paper/fig_companion_neff.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_neff.pdf", "papers/2_over_the_horizon/fig_companion_neff.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 7.8, height = 3.5) else png(f, width = 1210, height = 545, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

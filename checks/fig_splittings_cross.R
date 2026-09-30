@@ -108,7 +108,7 @@ draw <- function() {
 }
 
 for (dev in c("pdf", "png")) {
-  out <- sprintf("paper/fig_companion_splittings.%s", dev)
+  out <- sprintf("papers/2_over_the_horizon/fig_companion_splittings.%s", dev)
   if (dev == "pdf") pdf(out, width = 9.6, height = 4.3, pointsize = 12)
   else png(out, width = 9.6, height = 4.3, units = "in", res = 150, pointsize = 12)
   draw(); dev.off(); cat(sprintf("  wrote %s\n", out))

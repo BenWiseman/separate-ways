@@ -1,6 +1,6 @@
 # The graphical abstract the paper needs, replacing one drawn before its headline existed.
 #
-# WHY. paper/figure_authoring_r/graphical_abstract_v3.R is dated 2026-09-18, before the
+# WHY. archive/release_4_2_scripts/figure_authoring_r/graphical_abstract_v3.R is dated 2026-09-18, before the
 # field-equations result matured. What it draws is 2.1's Keldysh algebra; it labels itself
 # INTERPRETIVE SCHEMATIC in its own top corner, says "the drawing is interpretive" in its own
 # footer, and its caption runs six sentences of which five say what the paper does NOT claim. A
@@ -105,7 +105,7 @@ draw <- function() {
 }
 
 for (dev in c("pdf", "png")) {
-  out <- sprintf("paper/fig_three_things.%s", dev)
+  out <- sprintf("pub/paper2/fig_three_things.%s", dev)
   if (dev == "pdf") pdf(out, width = 10.2, height = 4.9, pointsize = 12)
   else png(out, width = 10.2, height = 4.9, units = "in", res = 200, pointsize = 12)
   draw(); invisible(dev.off())

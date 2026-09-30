@@ -9,7 +9,7 @@
 # Every number the fold side quotes is read out of the manuscript rather than typed here, so the
 # count cannot drift away from the paper it is about.
 
-paper <- "paper/PAPER2_v4_draft.md"
+paper <- "papers/1_separate_ways/PAPER2_v4_draft.md"
 txt <- paste(readLines(paper, warn = FALSE), collapse = " ")
 grab <- function(pat, what) {
   m <- regmatches(txt, regexpr(pat, txt, perl = TRUE))

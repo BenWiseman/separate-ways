@@ -33,7 +33,7 @@ import sys, re, io, os, sys, math, subprocess, tempfile, shutil
 from concurrent.futures import ThreadPoolExecutor
 
 DOCS   = tuple(a for a in sys.argv[1:] if not a.startswith("--")) or \
-         ("paper/PAPER2_v3.md", "paper/COMPANION_v1.md")
+         ("archive/PAPER2_v3.md", "papers/2_over_the_horizon/COMPANION_v1.md")
 WINDOW = 320          # the sentence the citation sits in, roughly
 
 # script -> [numbers that are legitimately absent, with the reason]
@@ -173,7 +173,14 @@ def run_all(scripts, outdir):
     def one(s):
         dst = os.path.join(outdir, s.replace('/', '_') + ".out")
         with open(dst, "w") as fh:
-            subprocess.run(interpreter(s), stdout=fh, stderr=subprocess.STDOUT, timeout=1800)
+            r = subprocess.run(interpreter(s), stdout=fh, stderr=subprocess.STDOUT,
+                               timeout=1800)
+        # The return code used to be thrown away. A script dying on a missing import wrote
+        # its traceback here, nums_from_out found nothing in it, and every claim behind that
+        # script reported "number not in the output" as though the arithmetic had changed.
+        # Fourteen claims read that way on 2026-09-30 for want of mpmath. Record it instead.
+        with open(dst + ".rc", "w") as fh:
+            fh.write(str(r.returncode))
     with ThreadPoolExecutor(max_workers=min(30, (os.cpu_count() or 4))) as ex:
         list(ex.map(one, scripts))
 

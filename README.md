@@ -7,6 +7,9 @@ B. H. Wiseman · Linnet Labs, Sydney, Australia
 
 Repository: <https://github.com/BenWiseman/separate-ways>
 
+This repository holds the papers in this line of work, their figures, and every script
+behind every number in them. Start at `papers/1_separate_ways/`.
+
 ## What this is
 
 CPT swaps matter for antimatter and reverses time, and it is one of the best-tested
@@ -42,24 +45,29 @@ Four observations would end it: a securely measured variation in Newton's consta
 level, a robust detection of evolving dark energy, a cosmological neutrino-mass sum below
 58.8 meV, and an identified decay above the two-body endpoint.
 
-## The two documents
+## The papers
 
-| Document | What it is |
+Three. Paper 1 is the foundation and paper 2 depends on it; paper 3 is a Letter carrying
+one result of paper 2 on its own. Read them in that order.
+
+| | |
 |---|---|
-| `paper/Separate_Ways_and_the_Upside_Down_v4.5.pdf` | The main paper. The fold, the field equations, the matter sector, and the tests. |
-| `paper/Somewhere_Over_the_Horizon_v1.pdf` | The companion. Where the two halves can touch, why only in four dimensions, and where the classical world comes from. It carries the interior results the main paper cites. |
+| **1. Separate Ways and the Upside Down** | The fold, the field equations, the matter sector and the tests. 50 pages. `papers/1_separate_ways/` |
+| **2. Somewhere Over the Horizon** | Where the two halves of a folded universe can touch, why only in four dimensions, and where the classical world comes from. Carries the interior results the first paper cites. 88 pages. `papers/2_over_the_horizon/` |
+| **3. Road to Nowhere** | A Letter. Where a point can reach its own image on the far side, and why the answer picks out four dimensions. Paper 2 states the result and keeps the extensions; this derives it. 4 pages. `papers/3_road_to_nowhere/` |
 
-Markdown sources sit beside each PDF. The arXiv metadata actually deposited is in
-`paper/ARXIV_METADATA.txt` and `paper/ARXIV_METADATA_COMPANION.txt`.
+Each directory holds one paper and everything that belongs to it: the PDF, the Markdown
+source it was built from, the figures that source references, and the arXiv metadata
+actually deposited. Nothing else is in there, and nothing of a paper's is anywhere else.
 
 ## Every number is checked
 
 Every quantitative claim in the manuscripts is produced by a script in this repository,
 and a checking pass refuses to pass if a quoted number and the script that produces it
-come apart. There are <!--N:calc-->169<!--/N--> such scripts under `checks/calc/`.
+come apart. There are <!--N:calc-->172<!--/N--> such scripts under `checks/calc/`.
 
 <!--N:calcR-->147<!--/N--> of them are R, and not one loads a package, so base R runs them
-all. The remaining <!--N:calcpy-->22<!--/N--> are Python and do use numerical libraries:
+all. The remaining <!--N:calcpy-->25<!--/N--> are Python and do use numerical libraries:
 
 ```bash
 python3 -m pip install -r checks/requirements.txt
@@ -71,7 +79,7 @@ The pass itself runs <!--N:gates-->28<!--/N--> gates over both manuscripts:
 bash checks/check_all.sh
 ```
 
-It reproduces <!--N:claims-->152<!--/N--> claims against the scripts named for them,
+It reproduces <!--N:claims-->156<!--/N--> claims against the scripts named for them,
 checking every number each one names, and it also measures prose. It
 catches an abstract over the arXiv character cap, a cross-reference to a section that does
 not exist, a citation that does not say what the sentence says it says, a figure label
@@ -83,16 +91,22 @@ check that reports success while matching nothing is worse than no check.
 
 | Path | What it is |
 |---|---|
-| `paper/` | Both manuscripts, as PDF and as Markdown source, with their arXiv metadata |
-| `paper/fig_*.pdf`, `paper/fig_*.png` | Figure masters. Re-running the pass regenerates them in place |
+| `papers/1_separate_ways/` | Paper 1: PDF, Markdown source, its six figures, arXiv metadata |
+| `papers/2_over_the_horizon/` | Paper 2: PDF, Markdown source, its seventeen figures, arXiv metadata |
+| `papers/3_road_to_nowhere/` | Paper 3: PDF, Markdown source, its figure |
 | `checks/` | The checking pass and the prose measures it runs |
 | `checks/calc/` | One script per claim, named for the claim it supports |
 | `checks/CLAIMS.tsv` | Which script backs which passage, and which numbers it must reproduce |
 | `tangents/` | Calculations behind individual questions asked of the paper, organised by topic (<!--N:tangents-->139<!--/N--> scripts) |
-| `paper/cross_checks/`, `paper/figure_authoring_r/` | The earlier release's scripts, kept so version 4.2 stays reproducible |
+| `archive/superseded_figures/` | Figures from earlier releases that no current manuscript references |
+| `archive/release_4_2_scripts/` | The 4.2 release's cross-checks and figure authoring, kept so that version stays reproducible |
 | `data/` | Acquisition instructions, pinned upstream commit and hashes for the external Pantheon+ inputs, which are not redistributed here |
 | `archive/` | Superseded manuscripts and PDFs from earlier versions |
 | `SHA256SUMS.txt` | Hashes of every paper and script file in this release |
+
+Figures sit with the paper that uses them, and a figure no manuscript references is in
+`archive/superseded_figures/` rather than beside the live ones. Twelve were, until
+2026-09-30.
 
 ## Reproducing a number
 

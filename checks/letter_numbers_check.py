@@ -27,6 +27,48 @@ import os
 import re
 import sys
 
+# The body heading is not a fixed string. It was "## The Letter" until 2026-09-29, when the
+# manuscript went to Nature Physics as an Article and the Physical Review furniture was renamed:
+# "## The Letter" became "## Main" and "## End Matter" became "## Appendices". Both checkers
+# split on the old literal, so both raised SystemExit, and the length and number checks they
+# exist to run did not run at all while the gate still printed. A checker that cannot find its
+# subject must say so loudly rather than exit quietly mid-suite, and it must not be pinned to a
+# journal's house style when the manuscript may be sent to any journal.
+BODY_HEADINGS = ("## Main", "## The Letter", "## Letter")
+# The appendix heading moved with the body heading, and this one failed SILENTLY. The old code
+# read `rest.split("## End Matter", 1)[1] if "## End Matter" in rest else ""`, so after the
+# rename the conditional took the empty branch and the whole appendix stopped being checked
+# while the gate still printed its numbers. Only the self-test caught it, by reporting that its
+# planted value in that section was not found. An absent heading now raises.
+APPENDIX_HEADINGS = ("## Appendices", "## End Matter", "## Appendix")
+
+
+def _find_heading(text, headings):
+    """Split on a heading only where it starts a line.
+
+    A plain `h in text` test is wrong and was: "## Appendix" is a substring of the subsection
+    heading "### Appendix A.", so renaming the section heading still matched, the split landed
+    mid-document and the region came back partial instead of raising. Caught by planting a
+    renamed heading and finding the guard did not fire."""
+    for h in headings:
+        m = re.search(r"^" + re.escape(h) + r"\s*$", text, re.M)
+        if m:
+            return text[m.end():]
+    return None
+
+
+def split_body(text, what):
+    """Return everything after whichever body heading this manuscript uses."""
+    got = _find_heading(text, BODY_HEADINGS)
+    if got is not None:
+        return got
+    raise SystemExit(
+        "LETTER: none of %s found, cannot find the %s. If the heading was renamed again, add it "
+        "to BODY_HEADINGS rather than letting this check pass over an empty string."
+        % (", ".join(repr(h) for h in BODY_HEADINGS), what))
+
+
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 LETTER = os.path.join(ROOT, "pub", "paper2", "LETTER_PRL_v1.md")
@@ -64,12 +106,18 @@ def _checked_region(letter_text):
     End Matter. Only the reference list is exempt, and it is cut by its own headings
     rather than by a test on the remainder, which silently took End Matter with it."""
     try:
-        body = letter_text.split("## The Letter", 1)[1]
+        body = split_body(letter_text, "body")
     except IndexError:
-        raise SystemExit("LETTER: no '## The Letter' heading, cannot find the body")
+        raise SystemExit("LETTER: could not split the body")
     if "## References" in body:
         before, rest = body.split("## References", 1)
-        after = rest.split("## End Matter", 1)[1] if "## End Matter" in rest else ""
+        after = _find_heading(rest, APPENDIX_HEADINGS)
+        if after is None:
+            raise SystemExit(
+                "LETTER: references found but none of %s after them, so the appendix would go "
+                "unchecked. Add the new heading to APPENDIX_HEADINGS rather than letting this "
+                "check pass over an empty string."
+                % ", ".join(repr(h) for h in APPENDIX_HEADINGS))
         return before + "\n" + after
     return body
 
@@ -108,9 +156,9 @@ def _plants(letter_text, paper_text):
         ("a corrupted error bar", r"245.8\pm1.0", r"245.8\pm1.4"),
         ("a corrupted small integer", "factor of 21.6", "factor of 21.7"),
         ("a sentence-final number", "moves to 5.04", "moves to 5.07"),
-        # End Matter is all small integers, which a substring test cannot discriminate,
+        # The appendix section is all small integers, which a substring test cannot discriminate,
         # so this plant inserts a distinctive value there instead of corrupting one.
-        ("a number in End Matter", "Two of the four are what writing a metric theory means",
+        ("a number in the appendices", "Two of the four are what writing a metric theory means",
                                    "Two of the four, to $7.3194\\times10^{-8}$, are what writing a metric theory means"),
     ]
     ok = True

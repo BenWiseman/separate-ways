@@ -34,7 +34,7 @@ import re
 import subprocess
 import sys
 
-PAPER = "paper/COMPANION_v1.md"
+PAPER = "papers/2_over_the_horizon/COMPANION_v1.md"
 CLAIMS = "checks/CLAIMS.tsv"
 
 

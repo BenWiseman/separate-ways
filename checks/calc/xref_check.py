@@ -63,7 +63,7 @@ def check(path, quiet=False):
         print(f"  {len(bad)} dangling reference(s)")
     return bad
 
-def check_external(companion="paper/COMPANION_v1.md", cosmology="paper/PAPER2_v4_draft.md",
+def check_external(companion="papers/2_over_the_horizon/COMPANION_v1.md", cosmology="papers/1_separate_ways/PAPER2_v4_draft.md",
                    quiet=False):
     """Each paper's references to the other must name a heading the other paper has.
 
@@ -112,8 +112,8 @@ def check_external(companion="paper/COMPANION_v1.md", cosmology="paper/PAPER2_v4
 def validate_external():
     """Plant a bad reference in each direction and confirm both are caught."""
     import tempfile, os
-    c = open("paper/COMPANION_v1.md", encoding="utf-8").read()
-    m = open("paper/PAPER2_v4_draft.md", encoding="utf-8").read()
+    c = open("papers/2_over_the_horizon/COMPANION_v1.md", encoding="utf-8").read()
+    m = open("papers/1_separate_ways/PAPER2_v4_draft.md", encoding="utf-8").read()
     d = tempfile.mkdtemp()
     cpath, mpath = os.path.join(d, "c.md"), os.path.join(d, "m.md")
     open(cpath, "w", encoding="utf-8").write(c + "\n\nSee the cosmology paper's A.97 for this.\n")
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     if "--validate-external" in sys.argv:
         sys.exit(validate_external())
     if "--validate" in sys.argv:
-        src = open("paper/COMPANION_v1.md", encoding="utf-8").read()
+        src = open("papers/2_over_the_horizon/COMPANION_v1.md", encoding="utf-8").read()
         probe = "/tmp/_xref_probe.md"
         open(probe, "w", encoding="utf-8").write(src + "\n\nA planted reference to Section 99 and to A.99 and to §42.7.\n")
         bad = check(probe, quiet=True)
@@ -150,4 +150,4 @@ if __name__ == "__main__":
             sys.exit(1)
         print("  every planted dangling reference was caught")
         sys.exit(0)
-    sys.exit(1 if check(sys.argv[1] if len(sys.argv) > 1 else "paper/COMPANION_v1.md") else 0)
+    sys.exit(1 if check(sys.argv[1] if len(sys.argv) > 1 else "papers/2_over_the_horizon/COMPANION_v1.md") else 0)

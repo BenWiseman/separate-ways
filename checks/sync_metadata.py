@@ -12,8 +12,8 @@ It rewrites only the abstract and the four counts. Everything Ben fills in by ha
 """
 import re, io, sys
 
-PAPER = "paper/COMPANION_v1.md"
-META  = "paper/ARXIV_METADATA_COMPANION.txt"
+PAPER = "papers/2_over_the_horizon/COMPANION_v1.md"
+META  = "papers/2_over_the_horizon/ARXIV_METADATA_COMPANION.txt"
 
 c = io.open(PAPER, encoding="utf-8").read()
 body_all, _, refs = c.partition("\n## References")

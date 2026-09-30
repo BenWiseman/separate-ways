@@ -68,8 +68,26 @@ ALLOWED = [
     # none yet; the 2026-09-29 pass removed every one it found
 ]
 
+# 4. THE PAPER AS AN ACTOR. "the construction returns a region", "what it does say is",
+#    "this Letter says nothing". The work is made the subject of a reporting verb, so the
+#    sentence is about the document instead of about the physics. Added 2026-09-30 after
+#    Ben found "the construction returns a region rather than a possibility ... None of that
+#    was put in by hand" in a Letter this gate had just passed 0/0/0. Families 2 and 3 did
+#    not cover it: nothing was being justified and no reader was addressed.
+_SELF = r"(?:the construction|the argument|the analysis|the calculation|the paper|this letter)"
+_REPORT = (r"says|shows|argues|claims|returns|tells|asks|answers|demonstrates|reaches|puts"
+           r"|selects|closes|offers|gives|finds|concludes|establishes|proves")
+ACTOR = re.compile(
+    r"\b%s\s+(?:%s)\b"
+    r"|\bwhat it does (?:say|show|claim)\b"
+    # "nothing is put in by hand" is a claim about the physics and good writing. The tic is
+    # the vague-referent closing version, where "that" stands for the whole paper.
+    r"|\bnone of (?:that|this|it) (?:was|is) put in by hand\b"
+    r"|\bshould be read as\b" % (_SELF, _REPORT), re.I)
+
 CAP_RHETORIC = 0
 CAP_READER = 0
+CAP_ACTOR = 0
 
 
 def sentences(text):
@@ -83,7 +101,7 @@ def sentences(text):
 
 def scan(path):
     text = io.open(path, encoding="utf-8").read()
-    hits = {"referee": [], "rhetoric": [], "reader": []}
+    hits = {"referee": [], "rhetoric": [], "reader": [], "actor": []}
     for s in sentences(text):
         if any(a in s for a in ALLOWED):
             continue
@@ -93,6 +111,8 @@ def scan(path):
             hits["reader"].append(s)
         elif RHETORIC.search(s):
             hits["rhetoric"].append(s)
+        if ACTOR.search(s):
+            hits["actor"].append(s)
     return hits
 
 
@@ -106,7 +126,8 @@ def report(paths):
         print("   %-24s referee %d (0 allowed), rhetoric %d (%d), reader %d (%d)"
               % (name, len(h["referee"]), len(h["rhetoric"]), CAP_RHETORIC,
                  len(h["reader"]), CAP_READER))
-        for kind, cap in (("referee", 0), ("rhetoric", CAP_RHETORIC), ("reader", CAP_READER)):
+        for kind, cap in (("referee", 0), ("rhetoric", CAP_RHETORIC), ("reader", CAP_READER),
+                          ("actor", CAP_ACTOR)):
             if len(h[kind]) > cap:
                 bad += 1
                 for s in h[kind]:
@@ -115,26 +136,31 @@ def report(paths):
 
 
 def _selftest():
-    """Plant one of each family and check all three fire; spare a clean control."""
+    """Plant one of each family and check they all fire; spare a clean control."""
     ok = True
     cases = [
         ("referee", "A referee will want the separation stated before that list."),
         ("rhetoric", "The division of labour is worth stating, because it is easy to get backwards."),
         ("reader", "The residual phase is the falsifier a reader should press."),
+        ("actor", "Asked where its halves can touch, the construction returns a region."),
+        ("actor", "What it does say is that none of that was put in by hand."),
     ]
     for kind, sent in cases:
-        h = {"referee": [], "rhetoric": [], "reader": []}
+        h = {"referee": [], "rhetoric": [], "reader": [], "actor": []}
         if REFEREE.search(sent):
             h["referee"].append(sent)
         elif READER.search(sent):
             h["reader"].append(sent)
         elif RHETORIC.search(sent):
             h["rhetoric"].append(sent)
+        if ACTOR.search(sent):
+            h["actor"].append(sent)
         caught = len(h[kind]) == 1
         print("   plant: a %s sentence is caught: %s" % (kind, "yes" if caught else "NO"))
         ok = ok and caught
     clean = "The surface gravity cancels between the occupation and the WKB mode density."
-    spared = not (REFEREE.search(clean) or READER.search(clean) or RHETORIC.search(clean))
+    spared = not (REFEREE.search(clean) or READER.search(clean) or RHETORIC.search(clean)
+                  or ACTOR.search(clean))
     print("   plant: an ordinary sentence is spared: %s" % ("yes" if spared else "NO"))
     return ok and spared
 

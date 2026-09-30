@@ -62,6 +62,6 @@ draw <- function() {
   points(0, 0.5, pch=19, cex=1.1, col=c1)
   text(0.022, 0.462, expression(paste("Schwarzschild: ", italic(r) <= italic(M))), col=c1, cex=0.80, adj=0)
 }
-for (f in c("paper/fig_companion_nariai.pdf","paper/fig_companion_nariai.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_nariai.pdf","papers/2_over_the_horizon/fig_companion_nariai.png")) {
   if (grepl("pdf$", f)) pdf(f, width=6.6, height=4.6) else png(f, width=1000, height=700, res=150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n") }

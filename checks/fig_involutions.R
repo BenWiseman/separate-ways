@@ -86,7 +86,7 @@ panel <- function(m) {
 draw <- function() { par(mfrow = c(1, 3), oma = c(0.6, 0.4, 2.0, 0.4)); for (m in maps) panel(m)
   mtext("three involutions of the eternal hole, and only one can be the fold",
         outer = TRUE, side = 3, line = 0.4, cex = 0.92, col = ink) }
-for (f in c("paper/fig_companion_involutions.pdf", "paper/fig_companion_involutions.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_involutions.pdf", "papers/2_over_the_horizon/fig_companion_involutions.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 9.0, height = 3.8) else png(f, width = 1390, height = 590, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

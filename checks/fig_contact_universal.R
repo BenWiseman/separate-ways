@@ -79,7 +79,7 @@ draw <- function() {
   mtext("and the quarter-area coincidence does not survive it", side = 3, line = 0.7,
         cex = 0.86, col = ink)
 }
-for (f in c("paper/fig_companion_contact.pdf", "paper/fig_companion_contact.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_contact.pdf", "papers/2_over_the_horizon/fig_companion_contact.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 8.6, height = 4.2) else png(f, width = 1330, height = 650, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

@@ -137,7 +137,7 @@ draw <- function() {
 
   mtext("so every even multipole is zero", side = 3, line = 0.4, cex = 0.86, col = ink)
 }
-for (f in c("paper/fig_companion_reciprocal.pdf", "paper/fig_companion_reciprocal.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_reciprocal.pdf", "papers/2_over_the_horizon/fig_companion_reciprocal.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 8.4, height = 3.9) else png(f, width = 1300, height = 620, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

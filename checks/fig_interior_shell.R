@@ -106,7 +106,7 @@ draw <- function() {
 }
 
 for (dev in c("pdf", "png")) {
-  out <- sprintf("paper/fig_interior_shell.%s", dev)
+  out <- sprintf("papers/1_separate_ways/fig_interior_shell.%s", dev)
   if (dev == "pdf") pdf(out, width = 9.6, height = 4.8, pointsize = 12)
   else png(out, width = 9.6, height = 4.8, units = "in", res = 200, pointsize = 12)
   draw(); invisible(dev.off())

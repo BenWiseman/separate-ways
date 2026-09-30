@@ -95,7 +95,7 @@ draw <- function() {
   mtext("the class is a curve with an exact end, not a point", side = 3, line = 0.7,
         cex = 0.88, col = ink)
 }
-for (f in c("paper/fig_companion_spinbranch.pdf", "paper/fig_companion_spinbranch.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_spinbranch.pdf", "papers/2_over_the_horizon/fig_companion_spinbranch.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 7.4, height = 4.5) else png(f, width = 1150, height = 700, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

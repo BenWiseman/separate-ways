@@ -111,7 +111,7 @@ checks/calc/caustic_amplitude.R	heat kernel at the antipode agree on it to	3\tim
 checks/calc/caustic_amplitude_form.R	running over	2;4;2;8;3
 checks/calc/caustic_amplitude_profile.R	would need between	0.73;1.50
 checks/calc/universality_local_fold.R	Measured by geodesic shooting on a surface with	2.9994;0.168936;0.168939;5.0406;1.4435
-checks/calc/desitter_contact_budget.R	The same budget answers a different question at the other horizon	27.47;50.08
+checks/calc/desitter_contact_sweep.R	The same sweep answers a different question at the other horizon	27.47;50.08
 checks/calc/bang_image_scale.R	Rescaling $\eta=s/\sqrt\gamma$, $p=q\sqrt\gamma$ removes	81.4
 checks/calc/perp_is_unique.R	A free involutive isometry of a round $B$ is an element of	0.998
 checks/calc/eta_is_universal.R	Both halves of that input, since Jacobson needs the	251;0.025
@@ -152,3 +152,7 @@ checks/calc/the_in_vacuum_leaves_the_band.R	$\Theta$-invariance settles it befor
 checks/calc/conservation_admits_one_scaling.R	Nothing in that is chosen. Writing the three as powers of $D$, conservation matches them as	1.1
 checks/calc/the_phase_freedom_has_a_price.R	the release retains $I=0.0127596673634$ as a quadrature check	0.0127596673634
 checks/calc/decoherence_power_is_exact.R	a power carrying no free parameter, and exact rather than fitted	1e-15
+checks/calc/entropy_release_moves_the_line.py	The last of those has a number, and it is about as tight as the compact-object one above	1.02 324.3
+checks/calc/half_period_match.R	What the step is worth turns on a distinction the companion draws	6.2831853072
+checks/calc/lifetime_from_planck_breaking.py	The first question about a decaying relic is why it is still present	1.58e31 3.14e29
+checks/calc/neutrino_floor_and_growth.py	A floor on the neutrino mass constrains structure growth	0.0044 1.76 0.036

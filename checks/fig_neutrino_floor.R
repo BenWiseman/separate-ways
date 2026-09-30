@@ -81,7 +81,7 @@ draw <- function() {
        col = ink, cex = 0.82, adj = 0.5)
   mtext("and the sum then has nothing left to choose", side = 3, line = 0.8, cex = 0.88, col = ink)
 }
-for (f in c("paper/fig_companion_neutrino.pdf", "paper/fig_companion_neutrino.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_neutrino.pdf", "papers/2_over_the_horizon/fig_companion_neutrino.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 9.0, height = 3.7) else png(f, width = 1390, height = 575, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

@@ -36,7 +36,7 @@ sys.path.insert(0, os.path.expanduser("~/benlm/tools"))
 import number_provenance as np
 
 ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAPER = os.path.join(ROOT, "paper/PAPER2_v4_draft.md")
+PAPER = os.path.join(ROOT, "papers/1_separate_ways/PAPER2_v4_draft.md")
 
 # Known and benign, each with the reason it is not a script's job to produce.
 ALLOW = {

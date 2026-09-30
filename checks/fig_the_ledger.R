@@ -92,7 +92,7 @@ draw <- function() {
 }
 
 for (dev in c("pdf", "png")) {
-  out <- sprintf("paper/fig_ledger.%s", dev)
+  out <- sprintf("papers/1_separate_ways/fig_ledger.%s", dev)
   if (dev == "pdf") pdf(out, width = 9.8, height = 5.4, pointsize = 12)
   else png(out, width = 9.8, height = 5.4, units = "in", res = 200, pointsize = 12)
   draw(); invisible(dev.off())

@@ -3,18 +3,46 @@
 # Run from the repository root:   bash checks/check_all.sh
 # Exit status 0 means all of them passed. Each section prints what it checked.
 set -u
-PAPER="${1:-paper/COMPANION_v1.md}"
+PAPER="${1:-papers/2_over_the_horizon/COMPANION_v1.md}"
 BENLM="${BENLM:-/home/ben/benlm}"
 fail=0
-# About a third of the fail=1 assignments below are bare shell comparisons that print nothing
+
+# Say what is missing before running anything. checks/reproduce.sh has had this preflight for
+# a while and this pass did not, so on 2026-09-30 a python3 without mpmath produced fourteen
+# claims reading "number not in the output of ..." and an hour went into looking for a
+# numerical discrepancy that was never there. claims_check now names a script that died, and
+# this stops the run before it can mislead anyone in the first place.
+_miss=$(python3 - <<'PYDEP'
+import importlib.util
+print(" ".join(m for m in ("numpy", "scipy", "sympy", "mpmath")
+               if importlib.util.find_spec(m) is None))
+PYDEP
+)
+if [ -n "$_miss" ]; then
+  echo "This interpreter is missing:$_miss" >&2
+  echo "  python3 -m pip install -r checks/requirements.txt" >&2
+  echo "Claims behind the Python scripts cannot be checked without them; stopping." >&2
+  exit 2
+fi
+# About a third of the failure assignments below are bare shell comparisons that print nothing
 # distinctive, so a failing run showed only self-test plants and the gate had to be found by
-# sweeping every checker's exit code by hand. That cost an hour on 2026-09-29. hdr now compares
-# the flag against its value at the previous gate and names whichever gate raised it.
+# sweeping every checker's exit code by hand. That cost an hour on 2026-09-29. hdr compares the
+# count against its value at the previous gate and names whichever gate raised it.
+#
+# It is a COUNT and not a flag, and that is the whole point. It was a flag until 2026-09-29, so
+# the comparison below could fire exactly once: the first gate to fail was named and every gate
+# failing after it was silent. Gate 5 and gate 9 both failed that afternoon, gate 9 was invisible,
+# and the run was reported as one failure. A flag cannot say "and also". The footer now lists
+# every gate that raised a failure, and the logic was tested by planting three failures among
+# five gates and requiring all three names and neither of the two passing ones.
 _prev_fail=0
 _gate="(startup)"
+_failed=""
 hdr () {
   if [ "$fail" != "$_prev_fail" ]; then
     printf '\033[1m   ^^ GATE RAISED THE FAILURE: %s\033[0m\n' "$_gate"
+    _failed="$_failed
+   $_gate"
     _prev_fail=$fail
   fi
   _gate="$1"
@@ -22,19 +50,19 @@ hdr () {
 }
 
 hdr "1. arXiv abstract cap"
-python3 checks/calc/abstract_len.py "$PAPER" || fail=1
+python3 checks/calc/abstract_len.py "$PAPER" || fail=$((fail+1))
 
 hdr "2. internal and external cross-references"
-python3 checks/calc/xref_check.py || fail=1
+python3 checks/calc/xref_check.py || fail=$((fail+1))
 # And across the two papers, in both directions. This existed as a function from 2026-09-23,
 # sat below the __main__ block's sys.exit so it could not run, and was called by nothing.
-python3 checks/calc/xref_check.py --external || fail=1
+python3 checks/calc/xref_check.py --external || fail=$((fail+1))
 
 # A reference to a document the release does not carry is worse than a dangling internal one,
 # because a reader can see at once that it is missing. Three had accumulated: two to a "Supplement"
 # and one to "Supplement S11.8", none of which ships. The gate names the words that must not appear
 # and carries a plant, since a grep for something absent passes trivially.
-python3 - paper/COMPANION_v1.md paper/PAPER2_v4_draft.md <<'PYSUP'
+python3 - papers/2_over_the_horizon/COMPANION_v1.md papers/1_separate_ways/PAPER2_v4_draft.md <<'PYSUP'
 import io, re, sys
 # "the supplement" in lower case slipped past a capital-S ban for a day and pointed at a
 # document the release does not carry. The angle sense, "an angle with its supplement", is
@@ -61,14 +89,14 @@ if not spared:
     bad = 1
 sys.exit(1 if bad else 0)
 PYSUP
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 # And a number the cosmology paper ATTRIBUTES to the companion has to be in the companion. On
 # 2026-09-27 it said "the companion retains I = 0.0127596673634 as a quadrature check"; that
-# number appears nowhere in the companion. It lives in paper/companion/dm_clock.R, a
+# number appears nowhere in the companion. It lives in archive/release_4_2_scripts/cross_checks/dm_clock.R, a
 # directory whose name is not the paper's, which is almost certainly how it got there. A referee
 # who follows the reference finds nothing, and no gate could see it.
-python3 - paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY2B'
+python3 - papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY2B'
 import io, re, sys
 cos = " ".join(io.open(sys.argv[1], encoding="utf-8").read().split())
 com = " ".join(io.open(sys.argv[2], encoding="utf-8").read().split())
@@ -95,10 +123,10 @@ assert not misses(cos + " The companion computes 3.51656 for that.", com), \
 print("   plant: a credited number absent from the companion is caught, one present is spared: yes")
 sys.exit(1 if bad else 0)
 PY2B
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "3. citations point at the papers the prose names"
-python3 checks/calc/citation_check.py "$PAPER" || fail=1
+python3 checks/calc/citation_check.py "$PAPER" || fail=$((fail+1))
 
 hdr "4. every claim in CLAIMS.tsv reproduces, and still lands in the paper"
 # Ben, 2026-09-22 and again 2026-09-24: "you can't have script paths in a manuscript at all."
@@ -106,7 +134,7 @@ hdr "4. every claim in CLAIMS.tsv reproduces, and still lands in the paper"
 # to checks/CLAIMS.tsv and this checks both halves of every row: the passage is still there, and
 # the script named for it still prints the numbers it claims.
 python3 checks/claims_check.py "$PAPER"
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "5. machine-prose tics"
 python3 "$BENLM/tools/llm_tics.py" "$PAPER" 2>&1 | tail -3
@@ -119,18 +147,32 @@ ticrate=$(python3 "$BENLM/tools/tic_count.py" "$PAPER" 2>&1 | head -1 \
           | awk '{printf "%.4f", $2 / $7 * 1000}')
 echo "   density $ticrate per 1000, bar 4.0000"
 awk -v r="$ticrate" 'BEGIN { exit !(r > 4.0) }' && {
-  echo "   ABOVE THE BAR  <-- ISSUE"; fail=1; }
+  echo "   ABOVE THE BAR  <-- ISSUE"; fail=$((fail+1)); }
+
+# Register frequency, added 2026-09-30. Ben: "instead of computed say calculated more often,
+# you say computed a LOT". Not a ban, a mix: tic_count carries the watchlist and the rate bar.
+# Enforced for the companion and the Letter. PAPER2_v4_draft.md sits at 0.68 against a bar of
+# 0.60 and is NOT edited to fit: it is the submitted manuscript, frozen at commit b1054c3.
+for _rf in "$PAPER" papers/3_road_to_nowhere/LETTER2_CONTACT_v1.md; do
+  [ -f "$_rf" ] || continue
+  _line=$(python3 "$BENLM/tools/tic_count.py" "$_rf" 2>&1 | grep '^   register' || true)
+  [ -n "$_line" ] && echo "   $(basename "$_rf"): ${_line#   register: }"
+  case "$_line" in *OVER*) echo "   ABOVE THE REGISTER BAR  <-- ISSUE"; fail=$((fail+1));; esac
+done
+_line=$(python3 "$BENLM/tools/tic_count.py" papers/1_separate_ways/PAPER2_v4_draft.md 2>&1 \
+        | grep '^   register' || true)
+echo "   PAPER2_v4_draft.md (submitted, not edited): ${_line#   register: }"
 
 # The bar above was only ever applied to $PAPER, so the cosmology paper's own density was
 # ungated and drifted from the 4.0 it sat at when the bar was written to 4.4. Most of its
 # constructions are scope statements doing real work ("a posterior upper limit and not a hard
 # edge"), so the number to hold is its own and not the companion's; what this stops is any
 # further drift. Cutting it toward 4.0 means cutting precision and is not worth it.
-cosrate=$(python3 "$BENLM/tools/tic_count.py" paper/PAPER2_v4_draft.md 2>&1 | head -1 \
+cosrate=$(python3 "$BENLM/tools/tic_count.py" papers/1_separate_ways/PAPER2_v4_draft.md 2>&1 | head -1 \
           | awk '{printf "%.4f", $2 / $7 * 1000}')
 echo "   cosmology paper density $cosrate per 1000, its own bar 4.4100"
 awk -v r="$cosrate" 'BEGIN { exit !(r > 4.41) }' && {
-  echo "   THE COSMOLOGY PAPER IS ABOVE ITS BAR  <-- ISSUE"; fail=1; }
+  echo "   THE COSMOLOGY PAPER IS ABOVE ITS BAR  <-- ISSUE"; fail=$((fail+1)); }
 # Drama fragments. llm_tics only catches the "Their result? Wrong." form and missed
 # "Then the useful question.", "Three limits." and "Two consequences." sitting in the body.
 # Baseline is ONE allowed fragment: "Outside a horizon, nothing.", which opens 5.1 under the
@@ -139,14 +181,14 @@ awk -v r="$cosrate" 'BEGIN { exit !(r > 4.41) }' && {
 # here rather than silently rewritten or silently ignored. Any second fragment fails.
 nfrag=$(python3 "$BENLM/tools/fragment_check.py" "$PAPER" 2>&1 | grep -oE '^  [0-9]+ short' | grep -oE '[0-9]+')
 echo "   $nfrag verbless short sentence(s) (1 allowed, 5.1's three-word answer)"
-[ "${nfrag:-9}" -gt 1 ] && { python3 "$BENLM/tools/fragment_check.py" "$PAPER" | tail -n +3; fail=1; }
+[ "${nfrag:-9}" -gt 1 ] && { python3 "$BENLM/tools/fragment_check.py" "$PAPER" | tail -n +3; fail=$((fail+1)); }
 # Repeated sentence openings. Both rulesets said llm_tics measured this; it never did.
 # Baseline is ONE allowed run: A.12's "If the two anticommute... If the swap is trivial...
 # If the swap IS the time reversal...", which is a three-case enumeration and not cadence.
 # Any run beyond that is new and fails.
 nrun=$(python3 "$BENLM/tools/opener_runs.py" "$PAPER" 2>&1 | grep -oE 'same word: [0-9]+' | grep -oE '[0-9]+')
 echo "   $nrun run(s) of 3+ sentences opening on the same word (1 allowed, A.12's three cases)"
-[ "${nrun:-9}" -gt 1 ] && { python3 "$BENLM/tools/opener_runs.py" "$PAPER" | sed -n '3,20p'; fail=1; }
+[ "${nrun:-9}" -gt 1 ] && { python3 "$BENLM/tools/opener_runs.py" "$PAPER" | sed -n '3,20p'; fail=$((fail+1)); }
 # The same check on the cosmology paper, which it had never been applied to. It carried TEN runs
 # on 2026-09-27, among them six consecutive sentences opening on "the" in 4.5. Six were rewritten
 # by varying the opening word only. The four that remain are enumerations where the parallel
@@ -159,21 +201,21 @@ echo "   $nrun run(s) of 3+ sentences opening on the same word (1 allowed, A.12'
 # judge that against, but consecutive runs are the failure mode and neither body has one, so the
 # bar is zero. The two that exist are in appendices, where a numbered series of distinctions is
 # the content.
-python3 checks/caveat_runs.py --selftest || fail=1
-python3 checks/caveat_runs.py paper/PAPER2_v4_draft.md paper/COMPANION_v1.md || fail=1
+python3 checks/caveat_runs.py --selftest || fail=$((fail+1))
+python3 checks/caveat_runs.py papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md || fail=$((fail+1))
 
-cosrun=$(python3 "$BENLM/tools/opener_runs.py" paper/PAPER2_v4_draft.md 2>&1 \
+cosrun=$(python3 "$BENLM/tools/opener_runs.py" papers/1_separate_ways/PAPER2_v4_draft.md 2>&1 \
          | grep -oE 'same word: [0-9]+' | grep -oE '[0-9]+')
 echo "   $cosrun run(s) in the cosmology paper (4 allowed, all of them enumerations)"
-[ "${cosrun:-9}" -gt 4 ] && { python3 "$BENLM/tools/opener_runs.py" paper/PAPER2_v4_draft.md \
-                              | sed -n '3,24p'; fail=1; }
+[ "${cosrun:-9}" -gt 4 ] && { python3 "$BENLM/tools/opener_runs.py" papers/1_separate_ways/PAPER2_v4_draft.md \
+                              | sed -n '3,24p'; fail=$((fail+1)); }
 
 hdr "6. paragraph lengths"
 # This ran on $PAPER alone, so the cosmology paper, which is the one a reader meets first, had
 # nine paragraphs between 257 and 368 words and nothing to say so. Both manuscripts are measured
 # now, and the appendix anchor is matched on the prefix because one says "Appendices" and the
 # other "Appendix A".
-python3 - "$PAPER" paper/PAPER2_v4_draft.md <<'PY'
+python3 - "$PAPER" papers/1_separate_ways/PAPER2_v4_draft.md <<'PY'
 import io,re,sys
 BAR=250
 def longest(lines):
@@ -207,7 +249,7 @@ print("   plant: a %d-word paragraph is spared: %s" % (short, "yes" if short<=BA
 if short>BAR: bad=1
 sys.exit(1 if bad else 0)
 PY
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 PY=python3; [ -x .venv/bin/python ] && PY=.venv/bin/python
 hdr "7. every script runs (note: the fig_*.R generators rewrite their PDFs)"
@@ -220,12 +262,12 @@ for f in checks/calc/*.R checks/calc/*.py checks/*.R; do
     *)    Rscript "$f" >/dev/null 2>&1 || { echo "   FAIL $f"; bad=1; } ;;
   esac
 done
-[ $bad -eq 0 ] && echo "   $n scripts, all pass" || fail=1
+[ $bad -eq 0 ] && echo "   $n scripts, all pass" || fail=$((fail+1))
 
 hdr "8. the arXiv metadata has not drifted from the manuscript"
 python3 - "$PAPER" <<'PY4'
 import io, re, sys, os
-meta = "paper/ARXIV_METADATA_COMPANION.txt"
+meta = "papers/2_over_the_horizon/ARXIV_METADATA_COMPANION.txt"
 if not os.path.exists(meta):
     print("   %s missing" % meta); sys.exit(1)
 c = io.open(sys.argv[1], encoding="utf-8").read()
@@ -269,7 +311,7 @@ if ok:
           (nw, napp, nfig, nref))
 sys.exit(0 if ok else 1)
 PY4
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "17. the positions the release takes are not contradicted somewhere else"
 # Every other gate here checks a number, a reference or a word. None of them can see two paragraphs
@@ -278,7 +320,7 @@ hdr "17. the positions the release takes are not contradicted somewhere else"
 # to appear and the phrases that must not, and it carries the standing bans too: no draft-history
 # narration, no reference to a Supplement neither release has, no script paths. Both failure modes
 # were made to fire on the real manuscripts before this was installed.
-python3 - paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY17'
+python3 - papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY17'
 # gate: the positions the release takes are stated once and never contradicted
 import io, re, sys
 COS, COM = sys.argv[1], sys.argv[2]
@@ -315,13 +357,13 @@ print("   plant: a planted draft-history phrase is caught: yes")
 print("   plant: a deleted position is caught: yes")
 sys.exit(0 if ok else 1)
 PY17
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 # And three of those positions have to come LAST, not merely appear. Ben, 2026-09-27: the abstract
 # and the conclusions should finish on the field equations following without gravity being
 # quantised, because that is the stronger claim and it was landing on a DESI neutrino bound
 # instead. A phrase check cannot see that; this reads the final sentence and the final paragraph.
-python3 - paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY17B'
+python3 - papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY17B'
 import io, re, sys
 cos, com = (io.open(f, encoding="utf-8").read() for f in sys.argv[1:3])
 
@@ -358,7 +400,7 @@ assert "gravity did not have to be quantised" not in "a paragraph about somethin
 print("   plant: a last paragraph that does not land is caught: yes")
 sys.exit(0 if ok else 1)
 PY17B
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "9. superseded scripts announce it when run"
 # A script declares its OWN status with one of these forms. Merely mentioning a
@@ -374,19 +416,19 @@ for f in checks/calc/*.R; do
   if [ "$h" -ge 1 ] && [ "$t" -ge 1 ]; then
     echo "   $(basename "$f"): banner at both ends"
   else
-    echo "   $(basename "$f"): HEADER SAYS SUPERSEDED BUT THE OUTPUT DOES NOT"; fail=1
+    echo "   $(basename "$f"): HEADER SAYS SUPERSEDED BUT THE OUTPUT DOES NOT"; fail=$((fail+1))
   fi
 done
 # The cosmology paper states that count about itself, and a number a paper states about its own
 # repository is a number that goes stale. It said 178 scripts when there were 166, so this is
 # gated now rather than trusted.
-if grep -q "^$nsup of those files carry a banner\|. $nsup of those files carry a banner" paper/PAPER2_v4_draft.md; then
+if grep -q "^$nsup of those files carry a banner\|. $nsup of those files carry a banner" papers/1_separate_ways/PAPER2_v4_draft.md; then
   echo "   the cosmology paper's count of $nsup is current"
 else
-  echo "   THE COSMOLOGY PAPER DOES NOT SAY $nsup OF THOSE FILES CARRY A BANNER  <-- ISSUE"; fail=1
+  echo "   THE COSMOLOGY PAPER DOES NOT SAY $nsup OF THOSE FILES CARRY A BANNER  <-- ISSUE"; fail=$((fail+1))
 fi
-if grep -q "$((nsup+1)) of those files carry a banner" paper/PAPER2_v4_draft.md; then
-  echo "   plant: an off-by-one count would be caught: no, it is already there"; fail=1
+if grep -q "$((nsup+1)) of those files carry a banner" papers/1_separate_ways/PAPER2_v4_draft.md; then
+  echo "   plant: an off-by-one count would be caught: no, it is already there"; fail=$((fail+1))
 else
   echo "   plant: an off-by-one count would be caught: yes"
 fi
@@ -403,7 +445,7 @@ print("   %d appendices, %d referenced from the body" % (len(heads), len(heads &
 if orph: print("   NEVER REFERENCED: %s" % ", ".join(orph))
 sys.exit(1 if orph else 0)
 PY3
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "11. figure type is above the legibility floor"
 python3 - <<'PY2'
@@ -421,13 +463,13 @@ for f in sorted(glob.glob("checks/fig_*.R")):
     bad |= pt < floor
 sys.exit(1 if bad else 0)
 PY2
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "12. the availability note's counts match the tree"
 # These drifted: the note said 33 files under checks/calc/ when there were 42, and never
 # mentioned the figure generators at all. Every number a paper states about itself is a number
 # that can go stale, including the ones about its own repository.
-python3 - "$PAPER" paper/PAPER2_v4_draft.md <<'PY13'
+python3 - "$PAPER" papers/1_separate_ways/PAPER2_v4_draft.md <<'PY13'
 import io, re, sys, glob
 t = io.open(sys.argv[1], encoding="utf-8").read()
 cosmo = io.open(sys.argv[2], encoding="utf-8").read()
@@ -466,25 +508,25 @@ if ok:
     print("   plant: an off-by-one count in either manuscript would be caught: yes")
 sys.exit(0 if ok else 1)
 PY13
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "22. a computed constant and its copies agree"
 # J2end = 47.561945 is computed in contact_vanvleck.R and typed into eight other files,
 # and it sits under fork 9's calibration target and under kappa, which sets the shell.
 # Nothing was comparing the copies with the computation.
-python3 checks/shared_constants.py --selftest || fail=1
-python3 checks/shared_constants.py || fail=1
+python3 checks/shared_constants.py --selftest || fail=$((fail+1))
+python3 checks/shared_constants.py || fail=$((fail+1))
 
 hdr "14. no sentence appears twice"
-python3 checks/repeat_check.py "$PAPER" || fail=1
+python3 checks/repeat_check.py "$PAPER" || fail=$((fail+1))
 
 hdr "15. the maths closes and every figure is where it says"
-python3 checks/structure_check.py "$PAPER" || fail=1
+python3 checks/structure_check.py "$PAPER" || fail=$((fail+1))
 # And the display maths must be in the form the TeX build can read. Balanced dollars are not
 # enough: on 2026-09-27 the companion carried one display written as a blockquote with a lone "$"
 # on each side, which structure_check counted as balanced and pandoc escaped into literal dollar
 # signs, giving three TeX errors and a dropped glyph the first time the companion was ever built.
-python3 - paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY15'
+python3 - papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY15'
 import io, re, sys
 LONE = re.compile(r"^(?:>\s*)*\$\s*$")          # a single dollar alone on a line, blockquoted or not
 DELIM = re.compile(r"^(?:>\s*)*\$\$\s*$")       # the form pandoc reads, at column zero or in a quote
@@ -528,22 +570,28 @@ for good in ("an em-dash free line", "# A heading-", "$x$ = -"):
 print("   plant: a lone $ is caught and a $$ delimiter is spared: yes")
 sys.exit(0 if ok else 1)
 PY15
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "16. the cosmology paper's arXiv metadata has not drifted either"
 # This gate covers the OTHER paper. Gate 8 has guarded the companion's metadata since
 # the day it was written and nothing guarded Separate Ways', which is why on 2026-09-24
 # its metadata still carried the v3 title and a v3 abstract differing from the draft's
 # from the first character. That is what would have been pasted into arXiv.
-python3 paper/sync_metadata_paper2.py --check || fail=1
+python3 checks/sync_metadata_paper2.py --check || fail=$((fail+1))
 
 hdr "18. the nominator brief has not drifted from the release"
+# The brief is outreach material and the public export does not carry it, so this gate has
+# nothing to measure there. Skipping beats failing: a repository whose own suite reports 41
+# failures teaches a reader to ignore the suite.
+if [ ! -f pub/paper2/NOMINATOR_BRIEF.md ]; then
+  echo "   not in this repository (outreach material); gate does not apply here"
+else
 # The brief is what a nominator reads, and it drifts exactly the way the arXiv metadata drifted.
 # On 2026-09-27 it still carried an entanglement witness at 270.30 PeV that v4.5 does not claim,
 # "178 scripts" against 173, "thirty-two checks" against 17, and led with the mass ceiling rather
 # than the field equations. Two halves: every physics number in the brief must appear in one of
 # the manuscripts, and every count it states about the tree must match the tree.
-python3 - paper/NOMINATOR_BRIEF.md paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY18'
+python3 - pub/paper2/NOMINATOR_BRIEF.md papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY18'
 import io, re, sys, os, glob
 brief, cos, com = sys.argv[1], sys.argv[2], sys.argv[3]
 flat = lambda p: " ".join(io.open(p, encoding="utf-8").read().split())
@@ -609,7 +657,8 @@ print("   plant: a number the papers dropped is caught: yes")
 print("   plant: a tree count off by one is caught: yes")
 sys.exit(0 if ok else 1)
 PY18
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
+fi
 
 hdr "21. no body sentence runs past the word cap"
 # Nothing measured sentence length and the cosmology paper carried one of 113 words in its
@@ -617,13 +666,13 @@ hdr "21. no body sentence runs past the word cap"
 # item. Four of the worst were split on 2026-09-27, taking the maximum to 69 against the
 # companion's 79. The cap is 80, which stops the next runaway without forcing a rewrite of
 # nineteen sentences that are long because they carry qualifiers a referee wants.
-python3 checks/sentence_length.py --selftest || fail=1
-python3 checks/sentence_length.py paper/PAPER2_v4_draft.md paper/COMPANION_v1.md || fail=1
+python3 checks/sentence_length.py --selftest || fail=$((fail+1))
+python3 checks/sentence_length.py papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md || fail=$((fail+1))
 # The word cap is coarse: a long sentence broken by semicolons and colons gives the reader
 # somewhere to put the first half down. What forces a re-read is a long run of clauses with no
 # hard break in it, so that run is measured and capped too.
-python3 checks/clause_stretch.py --selftest || fail=1
-python3 checks/clause_stretch.py paper/PAPER2_v4_draft.md paper/COMPANION_v1.md || fail=1
+python3 checks/clause_stretch.py --selftest || fail=$((fail+1))
+python3 checks/clause_stretch.py papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md || fail=$((fail+1))
 
 hdr "20. the release describes its own dependencies correctly"
 # Both manuscripts told a reader the code needs "base R and base Python with nothing imported
@@ -631,7 +680,7 @@ hdr "20. the release describes its own dependencies correctly"
 # or mpmath, and gate 7 had been passing because it quietly prefers .venv/bin/python. A referee who
 # tries to run the code is exactly the reader who finds that out. Gate 12 counts files; this one
 # reads what the files actually import and what the manuscripts actually promise.
-python3 - paper/PAPER2_v4_draft.md paper/COMPANION_v1.md <<'PY20'
+python3 - papers/1_separate_ways/PAPER2_v4_draft.md papers/2_over_the_horizon/COMPANION_v1.md <<'PY20'
 import io, re, sys, glob
 flat = lambda p: " ".join(io.open(p, encoding="utf-8").read().split())
 docs = {p.split("/")[-1]: flat(p) for p in sys.argv[1:]}
@@ -697,27 +746,27 @@ assert used, "plant: the import scan found nothing, so the gate would pass on an
 print("   plant: the retired standard-library promise is caught, and the scan is not empty: yes")
 sys.exit(0 if ok else 1)
 PY20
-[ $? -ne 0 ] && fail=1
+[ $? -ne 0 ] && fail=$((fail+1))
 
 hdr "19. every label fits inside its panel"
 # Gate 11 measures type SIZE and passed every figure. R clips text at the plot region and
 # says nothing, so width went unmeasured until the companion was built and page 20 carried
 # an annotation cut off mid-word. Two figures were affected.
-Rscript checks/label_fit_check.R --selftest || fail=1
-Rscript checks/label_fit_check.R checks/fig_*.R 2>/dev/null || fail=1
+Rscript checks/label_fit_check.R --selftest || fail=$((fail+1))
+Rscript checks/label_fit_check.R checks/fig_*.R 2>/dev/null || fail=$((fail+1))
 
 hdr "23. every term of art is glossed where the reader first meets it"
 # Ben, 2026-09-27: the paper has to read exceptionally well and get through peer review, so a
 # term of art must arrive with its plain-English gloss the first time a reader sees it. This
 # pins each gloss to the first use, so a later edit that adds an earlier bare use is caught.
-python3 checks/first_use_gloss.py || fail=1
+python3 checks/first_use_gloss.py || fail=$((fail+1))
 
 hdr "24. Appendix E carries the same lines as the file that computes the ledger"
 # The paper's headline structural claim is a count, nineteen out and four in, and a referee
 # could see the nineteen only as compressed labels on a figure. Appendix E lists them at full
 # wording; this checks membership both ways so the hand-written list cannot drift from the
 # file that produces the count.
-python3 checks/ledger_appendix_check.py || fail=1
+python3 checks/ledger_appendix_check.py || fail=$((fail+1))
 
 hdr "25. no label is printed over by its own figure's ink"
 # Gate 19 measures a label against its PANEL and catches text running off the edge. It says
@@ -725,23 +774,27 @@ hdr "25. no label is printed over by its own figure's ink"
 # Figure 5's "double-precision floor" was printed over by the bars at l = 5, 7 and 9: inside
 # the panel, correctly sized, unreadable. Sixteen labels across nine generators were in that
 # state and gate 19 passed all of them.
-Rscript checks/label_ink_check.R checks/fig_*.R 2>/dev/null || fail=1
+Rscript checks/label_ink_check.R checks/fig_*.R 2>/dev/null || fail=$((fail+1))
 
 hdr "26. the PRL Letter fits, and quotes nothing the paper does not"
 # The Letter is carved out of section 3.6 for a venue with a hard length limit, and it is a
 # second place for a number to live. Two ways that goes wrong: it grows past 3750 words while
 # nobody is counting equations and figures against the cap, and a number gets retyped a digit
 # short of the manuscript it came from. Writing it, 1.417e-32 s had already become 1.4e-32.
-LETTER=paper/LETTER_PRL_v1.md
-python3 checks/letter_length_check.py || fail=1
-python3 checks/letter_numbers_check.py || fail=1
+if [ ! -f pub/paper2/LETTER_PRL_v1.md ]; then
+  echo "   not in this repository (duplicates paper 1); gate does not apply here"
+else
+LETTER=pub/paper2/LETTER_PRL_v1.md
+python3 checks/letter_length_check.py || fail=$((fail+1))
+python3 checks/letter_numbers_check.py || fail=$((fail+1))
 lt=$(python3 "$BENLM/tools/llm_tics.py" "$LETTER" 2>&1 | grep -oE 'total hits: [0-9]+' | grep -oE '[0-9]+')
 echo "   machine-prose tics: ${lt:-?} (0 allowed)"
-[ "${lt:-9}" -gt 0 ] && { python3 "$BENLM/tools/llm_tics.py" "$LETTER" | tail -12; fail=1; }
+[ "${lt:-9}" -gt 0 ] && { python3 "$BENLM/tools/llm_tics.py" "$LETTER" | tail -12; fail=$((fail+1)); }
 lr=$(python3 "$BENLM/tools/opener_runs.py" "$LETTER" 2>&1 | grep -oE 'same word: [0-9]+' | grep -oE '[0-9]+')
 echo "   runs of 3+ sentences opening on the same word: ${lr:-?} (0 allowed)"
-[ "${lr:-9}" -gt 0 ] && { python3 "$BENLM/tools/opener_runs.py" "$LETTER" | sed -n '3,14p'; fail=1; }
-python3 checks/repeat_check.py "$LETTER" || fail=1
+[ "${lr:-9}" -gt 0 ] && { python3 "$BENLM/tools/opener_runs.py" "$LETTER" | sed -n '3,14p'; fail=$((fail+1)); }
+python3 checks/repeat_check.py "$LETTER" || fail=$((fail+1))
+fi
 
 hdr "27. the paper does not narrate its own rhetoric, and every figure is cited first"
 # Ben, 2026-09-29, on finding "One separation is worth stating before that list, because a referee
@@ -750,10 +803,10 @@ hdr "27. the paper does not narrate its own rhetoric, and every figure is cited 
 # referee, told the reader how to read, or explained why the paper is arranged as it is. Nothing
 # measured any of it. The same pass found three of five figures never cited before they appeared,
 # two never cited at all.
-python3 checks/editorial_voice.py --selftest || fail=1
-python3 checks/editorial_voice.py || fail=1
-python3 checks/figure_order_check.py --selftest || fail=1
-python3 checks/figure_order_check.py || fail=1
+python3 checks/editorial_voice.py --selftest || fail=$((fail+1))
+python3 checks/editorial_voice.py || fail=$((fail+1))
+python3 checks/figure_order_check.py --selftest || fail=$((fail+1))
+python3 checks/figure_order_check.py || fail=$((fail+1))
 
 hdr "28. the exported repository is not behind this one"
 # Ben, 2026-09-29: "The PDF in seperate_ways says it hasn't been updated since yesterday and it
@@ -761,47 +814,61 @@ hdr "28. the exported repository is not behind this one"
 # afternoon against a working tree at 47, so a night's work was missing from the repository both
 # manuscripts print on their own pages. Nothing watched it, the same gap that left the Zenodo
 # record two versions behind. This is the half that can be closed mechanically.
-python3 checks/export_freshness.py --selftest || fail=1
-python3 checks/export_freshness.py || fail=1
+python3 checks/export_freshness.py --selftest || fail=$((fail+1))
+python3 checks/export_freshness.py || fail=$((fail+1))
 
 hdr "13. the checkers can still fail"
 python3 checks/calc/xref_check.py --validate-external >/dev/null 2>&1 \
   && echo "  xref_check --external: both directions catch their plant" \
-  || { echo "  xref_check --external: A PLANTED CASE WAS MISSED"; fail=1; }
+  || { echo "  xref_check --external: A PLANTED CASE WAS MISSED"; fail=$((fail+1)); }
 for v in checks/calc/abstract_len.py checks/calc/xref_check.py checks/calc/citation_check.py; do
   out=$(python3 "$v" --validate 2>&1 | tail -1)
   echo "   $(basename "$v"): $out"
 done
-python3 "$BENLM/tools/llm_tics.py" --validate >/dev/null 2>&1 && echo "   llm_tics: every branch fired" || { echo "   llm_tics: A BRANCH IS BLIND"; fail=1; }
-python3 "$BENLM/tools/fragment_check.py" --validate >/dev/null 2>&1 && echo "   fragment_check: catches its plants and spares its exceptions" || { echo "   fragment_check: A PLANTED CASE MISBEHAVED"; fail=1; }
-python3 "$BENLM/tools/opener_runs.py" --validate >/dev/null 2>&1 && echo "   opener_runs: catches runs, density and abstract subjects; spares the clean control" || { echo "   opener_runs: A PLANTED CASE MISBEHAVED"; fail=1; }
-python3 checks/repeat_check.py "$PAPER" --selftest || fail=1
+python3 "$BENLM/tools/llm_tics.py" --validate >/dev/null 2>&1 && echo "   llm_tics: every branch fired" || { echo "   llm_tics: A BRANCH IS BLIND"; fail=$((fail+1)); }
+python3 "$BENLM/tools/fragment_check.py" --validate >/dev/null 2>&1 && echo "   fragment_check: catches its plants and spares its exceptions" || { echo "   fragment_check: A PLANTED CASE MISBEHAVED"; fail=$((fail+1)); }
+python3 "$BENLM/tools/opener_runs.py" --validate >/dev/null 2>&1 && echo "   opener_runs: catches runs, density and abstract subjects; spares the clean control" || { echo "   opener_runs: A PLANTED CASE MISBEHAVED"; fail=$((fail+1)); }
+python3 checks/repeat_check.py "$PAPER" --selftest || fail=$((fail+1))
 # Gate 4 is the gate that matters most and nothing validated it until now.
-python3 checks/claims_check.py "$PAPER" --selftest || fail=1
+python3 checks/claims_check.py "$PAPER" --selftest || fail=$((fail+1))
 # The contrastive bar is a threshold rather than a script, so its self-test is the
 # comparison itself: it must spare a rate under the bar and catch one over it.
 ticok=1
 awk 'BEGIN { exit !(3.9999 > 4.0) }' && ticok=0          # must NOT fire
 awk 'BEGIN { exit !(4.0001 > 4.0) }' || ticok=0          # must fire
 [ "$ticok" = 1 ] && echo "  contrastive bar: spares 3.9999 and catches 4.0001" \
-                 || { echo "  contrastive bar: THE THRESHOLD IS INERT"; fail=1; }
+                 || { echo "  contrastive bar: THE THRESHOLD IS INERT"; fail=$((fail+1)); }
 # Gate 16 by planting a drift in the real file, checking it is caught, then restoring it.
-metasrc=paper/ARXIV_METADATA.txt
+metasrc=papers/1_separate_ways/ARXIV_METADATA.txt
 metatmp=$(mktemp); cp "$metasrc" "$metatmp"
 sed -i 's/pages, [0-9]* figures\./pages, 99 figures./' "$metasrc"
-python3 paper/sync_metadata_paper2.py --check >/dev/null 2>&1 && metaok=0 || metaok=1
+python3 checks/sync_metadata_paper2.py --check >/dev/null 2>&1 && metacaught=0 || metacaught=1
 cp "$metatmp" "$metasrc"; rm -f "$metatmp"
-python3 paper/sync_metadata_paper2.py --check >/dev/null 2>&1 || metaok=0
-[ "$metaok" = 1 ] && echo "  paper2 metadata: catches a planted drift and spares the real file" \
-                  || { echo "  paper2 metadata: THE CHECK IS INERT"; fail=1; }
-python3 checks/structure_check.py "$PAPER" --selftest || fail=1
-python3 checks/first_use_gloss.py --selftest || fail=1
-python3 checks/ledger_appendix_check.py --selftest || fail=1
-Rscript checks/label_ink_check.R --selftest || fail=1
+python3 checks/sync_metadata_paper2.py --check >/dev/null 2>&1 && metareal=1 || metareal=0
+# These two are different failures and the old message called both of them INERT. On 2026-09-29
+# the abstract was rewritten, the metadata legitimately drifted, and the suite reported that a
+# working checker had gone inert. Say which one happened.
+if [ "$metacaught" = 1 ] && [ "$metareal" = 1 ]; then
+  echo "  paper2 metadata: catches a planted drift and spares the real file"
+elif [ "$metacaught" != 1 ]; then
+  echo "  paper2 metadata: THE CHECK IS INERT, it did not catch a planted 99-figure drift"; fail=$((fail+1))
+else
+  echo "  paper2 metadata: the checker works, but ARXIV_METADATA.txt HAS DRIFTED from the manuscript"
+  echo "     run: python3 checks/sync_metadata_paper2.py"; fail=$((fail+1))
+fi
+python3 checks/structure_check.py "$PAPER" --selftest || fail=$((fail+1))
+python3 checks/first_use_gloss.py --selftest || fail=$((fail+1))
+python3 checks/ledger_appendix_check.py --selftest || fail=$((fail+1))
+Rscript checks/label_ink_check.R --selftest || fail=$((fail+1))
 # Gate 26 validates itself when it runs: both Letter checkers print their plants above,
 # and both exit non-zero if one fails to fire, so nothing more is needed here.
 
 printf '\n'
-[ "$fail" != "$_prev_fail" ] && printf '\033[1m   ^^ GATE RAISED THE FAILURE: %s\033[0m\n' "$_gate"
-[ $fail -eq 0 ] && echo "ALL GATES PASSED" || echo "SOMETHING FAILED, see above"
+[ "$fail" != "$_prev_fail" ] && { printf '\033[1m   ^^ GATE RAISED THE FAILURE: %s\033[0m\n' "$_gate"; _failed="$_failed
+   $_gate"; }
+if [ $fail -eq 0 ]; then echo "ALL GATES PASSED"
+# $fail counts FAILURES, not gates: one gate can increment it once per offending file, so the
+# first version of this line read "THE 5 GATE(S)" above a list of two. Report both numbers.
+else printf 'SOMETHING FAILED. %d failure(s), raised by these gate(s):%s\n' "$fail" "$_failed"
+fi
 exit $fail

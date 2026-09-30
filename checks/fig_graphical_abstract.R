@@ -76,8 +76,8 @@ draw <- function() {
   mtext("A CPT-folded universe is sealed at every horizon by a theorem, and opens in one place only: inside a black hole that has a past, in the inner half of an uncharged one.",
         outer=TRUE, side=1, line=0.6, cex=0.98, col=ink)
 }
-for (f in c("paper/fig_companion_graphical_abstract.pdf",
-            "paper/fig_companion_graphical_abstract.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_graphical_abstract.pdf",
+            "papers/2_over_the_horizon/fig_companion_graphical_abstract.png")) {
   if (grepl("pdf$", f)) pdf(f, width=13.2, height=4.9) else png(f, width=1900, height=706, res=144)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

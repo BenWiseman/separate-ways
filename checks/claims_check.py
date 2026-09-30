@@ -12,8 +12,8 @@ rewrite that moves a passage out from under its script is caught. And every numb
 appear in that script's output at the precision the paper states it, which is what the inline
 citations used to buy.
 
-    python3 checks/claims_check.py paper/COMPANION_v1.md
-    python3 checks/claims_check.py paper/COMPANION_v1.md --reanchor
+    python3 checks/claims_check.py papers/2_over_the_horizon/COMPANION_v1.md
+    python3 checks/claims_check.py papers/2_over_the_horizon/COMPANION_v1.md --reanchor
 
 An anchor is a phrase, so it breaks whenever the passage it names is reworded. That is the point:
 a passage moving out from under its script has to be noticed. But it must not become a wall, so
@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import number_provenance as np
 
 # Paths are overridable so the same checker runs in the export repository, where the
-# release sits under paper/ and checks/ instead of paper/ and checks/. The defaults
+# release sits under paper/ and checks/ instead of pub/paper2/ and checks/. The defaults
 # are the working-tree layout, so nothing here changes for a plain run. Without this the
 # export carried a README promising a pass that could not start.
 TSV   = os.environ.get("CLAIMS_TSV", "checks/CLAIMS.tsv")
@@ -60,8 +60,27 @@ assert rows, "CLAIMS.tsv is empty: the check would pass by matching nothing"
 # looked like a regression; that happened three times in one session before this was changed.
 # Both files are searched, which keeps the moved-anchor plant working because a planted anchor is
 # in neither.
-SIBLING = os.path.join(PAPERS, "PAPER2_v4_draft.md" if "COMPANION" in PAPER
-                              else "COMPANION_v1.md")
+def _find(name):
+    """Locate a manuscript by name. The two no longer share a directory: the export splits
+    them into papers/1_separate_ways/ and papers/2_over_the_horizon/. Joining a single
+    PAPERS directory silently produced a path that was not there, and every anchor in the
+    sibling then reported as missing from the paper, eleven of them at once."""
+    here = os.path.dirname(os.path.abspath(PAPER))
+    roots = [here, os.path.dirname(here), PAPERS]
+    for r in roots:
+        c = os.path.join(r, name)
+        if os.path.exists(c):
+            return c
+    for r in roots:                              # one level down, papers/<paper>/<name>
+        if not os.path.isdir(r):
+            continue
+        for d in sorted(os.listdir(r)):
+            c = os.path.join(r, d, name)
+            if os.path.exists(c):
+                return c
+    return os.path.join(PAPERS, name)            # report the path we looked for
+
+SIBLING = _find("PAPER2_v4_draft.md" if "COMPANION" in PAPER else "COMPANION_v1.md")
 paper = " ".join(io.open(PAPER, encoding="utf-8").read().split())
 if os.path.exists(SIBLING):
     paper = paper + "  " + " ".join(io.open(SIBLING, encoding="utf-8").read().split())
@@ -145,7 +164,31 @@ if "--selftest" in sys.argv:
 print(f"  {len(rows)} claims, {checked} numbers checked against the script named for them")
 for s, a in lost_anchor:
     print(f"      anchor no longer in the paper: {s}  <-- ISSUE\n        \"{a[:78]}\"")
+def _died(script):
+    """True when the script exited non-zero, so its output is a traceback, not numbers."""
+    rc = os.path.join(cache, remap(script).replace("/", "_") + ".out.rc")
+    try:
+        return io.open(rc).read().strip() not in ("0", "")
+    except OSError:
+        return False
+
+dead = sorted({s for s, _ in not_found if _died(s)})
+for s in dead:
+    tail = ""
+    try:
+        lines = [l.rstrip() for l in io.open(
+            os.path.join(cache, remap(s).replace("/", "_") + ".out"),
+            encoding="utf-8", errors="replace") if l.strip()]
+        tail = lines[-1][:88] if lines else ""
+    except OSError:
+        pass
+    n_here = len([1 for t, _ in not_found if t == s])
+    print(f"      DID NOT RUN: {s}  ({n_here} claim(s) unverifiable)   <-- ISSUE")
+    if tail:
+        print(f"        {tail}")
 for s, l in not_found:
+    if s in dead:
+        continue
     print(f"      {l:>20}  not in the output of {s}   <-- ISSUE")
 if not lost_anchor and not not_found:
     print("  every anchor still lands and every number reproduces")

@@ -13,12 +13,12 @@ the wrong day is the submission itself.
 A figure file nobody references. Harmless to a build and a sign that something moved and left its
 picture behind, which is how the dimension figure came to sit two thousand lines from its claim.
 
-    python3 checks/structure_check.py paper/COMPANION_v1.md
-    python3 checks/structure_check.py paper/COMPANION_v1.md --selftest
+    python3 checks/structure_check.py papers/2_over_the_horizon/COMPANION_v1.md
+    python3 checks/structure_check.py papers/2_over_the_horizon/COMPANION_v1.md --selftest
 """
 import io, os, re, sys
 
-PAPER = sys.argv[1] if len(sys.argv) > 1 else "paper/COMPANION_v1.md"
+PAPER = sys.argv[1] if len(sys.argv) > 1 else "papers/2_over_the_horizon/COMPANION_v1.md"
 
 
 def maths_faults(text):

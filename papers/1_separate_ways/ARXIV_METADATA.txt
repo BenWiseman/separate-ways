@@ -1,0 +1,52 @@
+# arXiv submission metadata for Paper 2. Ben fills the bracketed fields and submits himself.
+# arXiv metadata fields accept ASCII only; use TeX math in $...$ and no Markdown in the abstract.
+# Current TeX-form paste paragraph: 1911 ASCII characters (sync_metadata_paper2.py, 2026-09-24);
+# arXiv's 1920-character cap still must be checked in the submission UI after any edits.
+
+TITLE
+Separate Ways and the Upside Down: the classical world and the field equations from a CPT fold, and the neutrino line that would break it
+
+AUTHORS
+B. H. Wiseman
+
+AFFILIATION
+Independent researcher, Sydney, Australia
+
+EMAIL
+[Ben's choice of contact address]
+
+PRIMARY CATEGORY (Ben to decide; gr-qc is the current manuscript category, astro-ph.CO is an alternative)
+gr-qc [not final until Ben chooses]
+
+CROSS-LISTS (conditional on primary choice)
+astro-ph.CO, hep-th [if gr-qc is primary; swap gr-qc for astro-ph.CO if Ben changes primary]
+
+COMMENTS (arXiv "Comments" field; keep short)
+[PDF page count after final render] pages, 5 figures. Companion code and data: [Ben-approved live repository URL]
+
+ABSTRACT (paste as one paragraph)
+Einstein's field equations have been assumed since 1915. Here they are derived from CPT, charge conjugation with spatial reflection and time reversal, taken of the universe and not only of its laws. That cosmology is fused with the algebraic account of a wedge, whose modular conjugation is a reflection, and each supplies what the other leaves open. The fold is an involution, so every field has an average of its two readings and a difference: the classical and quantum variables. At a bifurcate Killing horizon the fold's map is a half-period thermal shift, making the cross-sheet correlator a thermofield double at $\tanh r=e^{-\beta\omega/2}$, pure taken whole and thermal to either side alone. Jacobson's 1995 derivation takes a horizon temperature, an area entropy and horizons everywhere; the fold supplies all three. The area law is the entanglement entropy of that double and never Bekenstein-Hawking, so no result of general relativity enters its own derivation, and the graph is audited. Nineteen properties of general relativity come out, among them $G>0$, four dimensions and $\Lambda$ as an integration constant; four go in, two what a metric theory is and two the measured constants. The same fusion, stress-tested at the bang, makes the mode equation an avoided crossing, where a fold-invariant state sits half in each branch and floors particle production. The observed abundance turns that floor into a ceiling: the dark-matter fermion weighs at most $491.6\pm2.0$ PeV, its two-body neutrino line at $245.8\pm1.0$ PeV, and the neutrino-mass sum is floored at 58.8 meV with the $w_0w_a$ escape shut. It departs from relativity only inside a black hole, in a $2.1$ micron shell at a solar mass, where relativity predicts its own breakdown. Nothing gravitational is quantised anywhere, so they arrive as a consequence of the symmetry and not as something a quantum theory of gravity still needs.
+
+REPORT-NO / DOI / JOURNAL-REF
+(none at v1)
+
+LICENSE
+[Ben's choice; CC BY 4.0 is the usual one for a paper meant to be shared and cited]
+
+ENDORSEMENT
+gr-qc needs an endorser who knows the author. The endorsement request is generated from the
+submission form and sent by arXiv to the endorser's address; Ben supplies the address.
+
+PRE-SUBMISSION CHECKS (tick on the day)
+[ ] TeX source generated from final markdown and built to a PDF preview; all six images embedded.
+    pandoc and XeLaTeX are installed locally. arXiv prefers the TeX source and does not accept a PDF
+    created from TeX as a PDF-only submission. Select XeLaTeX for the TeX source; arXiv's font-name
+    lookup is restricted, so set DejaVuSerif.ttf and its style files by filename in that source.
+    Preview locally, then package the source and five used figures only.
+[ ] Abstract in the PDF is semantically identical to the TeX-form metadata paragraph above; verify the actual arXiv field render and 1920-character cap
+[ ] Acknowledgements section present in the PDF, including the AI-assistance sentence
+[ ] Reference list resolves (159 entries, contiguous and every one cited; the stored
+    verification records predate 35 of them, so the identifier-carrying entries are re-checked
+    against arXiv in tangents/refs_audit/)
+[ ] Repository URL live and its README current
+[ ] Byline, affiliation, email decided

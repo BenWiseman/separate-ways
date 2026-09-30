@@ -34,8 +34,8 @@ DST = os.environ.get("SEPARATE_WAYS", os.path.expanduser("~/separate_ways"))
 # The PRL Letter is not on this list because it is deliberately not exported; see the
 # DO_NOT_PUBLISH block in tools/export_to_separate_ways.sh.
 PAIRS = [
-    ("paper/PAPER2_v4_draft.md", "paper/PAPER2_v4_draft.md"),
-    ("paper/COMPANION_v1.md", "paper/COMPANION_v1.md"),
+    ("papers/1_separate_ways/PAPER2_v4_draft.md", "paper/PAPER2_v4_draft.md"),
+    ("papers/2_over_the_horizon/COMPANION_v1.md", "paper/COMPANION_v1.md"),
     ("checks/CLAIMS.tsv", "checks/CLAIMS.tsv"),
     ("checks/check_all.sh", "checks/check_all.sh"),
 ]

@@ -11,8 +11,8 @@ Sentences of six words or more, normalised for whitespace and case, must be uniq
 exempt because "That is the point." is allowed to recur and "The proof is one substitution." is a
 statement of fact rather than a flourish.
 
-    python3 checks/repeat_check.py paper/COMPANION_v1.md
-    python3 checks/repeat_check.py paper/COMPANION_v1.md --selftest
+    python3 checks/repeat_check.py papers/2_over_the_horizon/COMPANION_v1.md
+    python3 checks/repeat_check.py papers/2_over_the_horizon/COMPANION_v1.md --selftest
 """
 import io, re, sys
 from collections import defaultdict
@@ -43,7 +43,7 @@ def duplicates(text):
 
 
 if __name__ == "__main__":
-    path = sys.argv[1] if len(sys.argv) > 1 else "paper/COMPANION_v1.md"
+    path = sys.argv[1] if len(sys.argv) > 1 else "papers/2_over_the_horizon/COMPANION_v1.md"
     text = io.open(path, encoding="utf-8").read()
 
     if "--selftest" in sys.argv:

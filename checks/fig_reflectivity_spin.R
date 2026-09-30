@@ -59,7 +59,7 @@ draw <- function() {
   text(0.04, -7.97, "away from it the term reverses the answer rather than shifting it.",
        col = ink, cex = 0.82, adj = 0)
 }
-for (f in c("paper/fig_companion_reflectivity.pdf", "paper/fig_companion_reflectivity.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_reflectivity.pdf", "papers/2_over_the_horizon/fig_companion_reflectivity.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 7.6, height = 4.4) else png(f, width = 1180, height = 690, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

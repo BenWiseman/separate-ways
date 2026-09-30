@@ -50,5 +50,5 @@ def validate():
 if __name__ == "__main__":
     if "--validate" in sys.argv:
         sys.exit(validate())
-    paths = [a for a in sys.argv[1:] if not a.startswith("--")] or ["paper/COMPANION_v1.md"]
+    paths = [a for a in sys.argv[1:] if not a.startswith("--")] or ["papers/2_over_the_horizon/COMPANION_v1.md"]
     sys.exit(0 if all(check(p) for p in paths) else 1)

@@ -79,7 +79,7 @@ draw <- function() {
   mtext("and the sum that takes it away again", side = 3, line = 0.6,
         cex = 0.88, col = ink)
 }
-for (f in c("paper/fig_companion_growth.pdf", "paper/fig_companion_growth.png")) {
+for (f in c("papers/2_over_the_horizon/fig_companion_growth.pdf", "papers/2_over_the_horizon/fig_companion_growth.png")) {
   if (grepl("pdf$", f)) pdf(f, width = 8.6, height = 4.2) else png(f, width = 1330, height = 650, res = 150)
   draw(); invisible(dev.off()); cat("  wrote", f, "\n")
 }

@@ -99,7 +99,7 @@ def check(path, quiet=False):
 
 def validate():
     import tempfile
-    src = io.open("paper/COMPANION_v1.md", encoding="utf-8").read()
+    src = io.open("papers/2_over_the_horizon/COMPANION_v1.md", encoding="utf-8").read()
     i = src.find("\n## References")
     body, rest = src[:i], src[i:]
     # swap two entries so the numbers point at the wrong papers
@@ -110,11 +110,11 @@ def validate():
     caught = not check(p, quiet=True)
     print("  detector fired: %s" % ("yes" if caught else "NO, THE CHECK IS BLIND"))
     print("=== and the real file, which must pass ===")
-    clean = check("paper/COMPANION_v1.md", quiet=True)
+    clean = check("papers/2_over_the_horizon/COMPANION_v1.md", quiet=True)
     print("  real file passes: %s" % ("yes" if clean else "no"))
     return 0 if (caught and clean) else 1
 
 if __name__ == "__main__":
     if "--validate" in sys.argv: sys.exit(validate())
-    args = [a for a in sys.argv[1:] if not a.startswith("--")] or ["paper/COMPANION_v1.md"]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")] or ["papers/2_over_the_horizon/COMPANION_v1.md"]
     sys.exit(0 if all(check(a) for a in args) else 1)
