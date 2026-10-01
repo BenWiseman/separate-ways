@@ -25,34 +25,34 @@ JOURNAL REFERENCE
 [none]
 
 COMMENTS
-Companion to arXiv:[Separate Ways identifier, once assigned]. about 59000 words, of which about 34900 are
+Companion to arXiv:[Separate Ways identifier, once assigned]. about 58800 words, of which about 34900 are
 the appendices; 17 figures; 38 references. Code, figure sources and checks:
 https://github.com/BenWiseman/separate-ways
 
 ABSTRACT
-A horizon surrounds every observer, and the mathematics sealing its far side seals a black hole.
-The cosmology paper this accompanies takes CPT to hold of the universe, so the Big Bang has a far
-side and Einstein's equations follow with nothing quantised. That fixes everything at our horizon
-and more than one at a hole's, starting with where the halves touch.
+A horizon surrounds every observer, and the mathematics that seals its far side seals a black hole.
+Its companion paper takes CPT as a symmetry of the universe, so the Big Bang has a far side, a
+mirror sheet, and Einstein's equations follow with nothing quantised. Here we ask what the fold does
+at horizons and where the sheets touch.
 
-Nothing is chosen at our horizon and a reciprocal law follows: the correlation across a reflected
-separation over the direct one, times the same reflected again, is one
-for every state, metric and involution. Its logarithm is odd, so all even multipoles vanish. The fold's map is the square root of the thermal transformation at the primitive period.
-Its parity is the classical-quantum split and its horizon squeeze is fixed by
-temperature. Three readings of it as a copy of our own fail: positivity, the first law,
-the binary pulsar.
+At our own horizon nothing is left to choose, and a reciprocal law follows: the correlation across a
+reflected separation over the direct one, times the same ratio reflected, is one for every state,
+metric and involution. Its logarithm is odd, so even multipoles vanish. The fold's map is the square
+root of the thermal transformation, its parity is the classical-quantum split, and its horizon
+squeeze is fixed by temperature. Three readings of the mirror as a copy of ours fail, on positivity,
+the first law and the binary pulsar.
 
-They cannot touch outside a horizon, where the commutator vanishes, and can inside a hole with a
-past. Reaching it needs half a turn of the sphere and a fall, and causality caps the turn
-at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$ required,
-so contact fills the inner half at any charge, and the quotient carries closed causal curves. Five give exactly $\pi$, never attained: only four large ones let the sheets touch.
-Where they touch it turns imaginary: a decay rate, pair creation.
+The sheets cannot touch outside a horizon, where the commutator vanishes. They can inside a hole
+with a past. Reaching the image takes half a turn of the sphere and a fall, and causality caps the
+turn at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$
+required, so contact fills the inner half at any charge, and the quotient carries closed causal
+curves. Five dimensions give exactly $\pi$, never attained, so only four large ones let the sheets
+touch. Where they touch the image term turns imaginary, a decay rate, so pairs form.
 
-A hole with a past takes matter from our side and antimatter from the mirror, and the fold
-must map it to itself, forcing a second exterior. In Schwarzschild-de Sitter only
-the maximal hole qualifies, ten billion light years in radius; charge and spin widen
-it to a branch ending at $a/M=1.10092$. Contact fills $0.991$ of the interior. Only the transparent
-seam absorbs no momentum, and it is adopted; it predicts zero ringdown damping-time
-deviation, testable at twice present exposure.
+Such a hole takes matter from our side and antimatter from the mirror, and the fold must map it to
+itself, forcing a second exterior. In Schwarzschild-de Sitter only the maximal hole qualifies, ten
+billion light years in radius; charge and spin widen it to a branch ending at $a/M=1.10092$. Contact
+fills $0.991$ of the interior. Only the transparent seam absorbs no momentum, and it is adopted,
+predicting zero ringdown damping-time deviation, testable at twice present exposure.
 
 # Abstract length: 1918 characters, against arXiv's 1920-character limit.

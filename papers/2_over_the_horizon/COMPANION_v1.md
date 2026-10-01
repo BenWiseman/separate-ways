@@ -22,30 +22,30 @@ it, and falls short above. No parameter enters either side of the comparison.*
 
 ## Abstract
 
-A horizon surrounds every observer, and the mathematics sealing its far side seals a black hole.
-The cosmology paper this accompanies takes CPT to hold of the universe, so the Big Bang has a far
-side and Einstein's equations follow with nothing quantised. That fixes everything at our horizon
-and more than one at a hole's, starting with where the halves touch.
+A horizon surrounds every observer, and the mathematics that seals its far side seals a black hole.
+Its companion paper takes CPT as a symmetry of the universe, so the Big Bang has a far side, a
+mirror sheet, and Einstein's equations follow with nothing quantised. Here we ask what the fold does
+at horizons and where the sheets touch.
 
-Nothing is chosen at our horizon and a reciprocal law follows: the correlation across a reflected
-separation over the direct one, times the same reflected again, is one
-for every state, metric and involution. Its logarithm is odd, so all even multipoles vanish. The fold's map is the square root of the thermal transformation at the primitive period.
-Its parity is the classical-quantum split and its horizon squeeze is fixed by
-temperature. Three readings of it as a copy of our own fail: positivity, the first law,
-the binary pulsar.
+At our own horizon nothing is left to choose, and a reciprocal law follows: the correlation across a
+reflected separation over the direct one, times the same ratio reflected, is one for every state,
+metric and involution. Its logarithm is odd, so even multipoles vanish. The fold's map is the square
+root of the thermal transformation, its parity is the classical-quantum split, and its horizon
+squeeze is fixed by temperature. Three readings of the mirror as a copy of ours fail, on positivity,
+the first law and the binary pulsar.
 
-They cannot touch outside a horizon, where the commutator vanishes, and can inside a hole with a
-past. Reaching it needs half a turn of the sphere and a fall, and causality caps the turn
-at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$ required,
-so contact fills the inner half at any charge, and the quotient carries closed causal curves. Five give exactly $\pi$, never attained: only four large ones let the sheets touch.
-Where they touch it turns imaginary: a decay rate, pair creation.
+The sheets cannot touch outside a horizon, where the commutator vanishes. They can inside a hole
+with a past. Reaching the image takes half a turn of the sphere and a fall, and causality caps the
+turn at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$
+required, so contact fills the inner half at any charge, and the quotient carries closed causal
+curves. Five dimensions give exactly $\pi$, never attained, so only four large ones let the sheets
+touch. Where they touch the image term turns imaginary, a decay rate, so pairs form.
 
-A hole with a past takes matter from our side and antimatter from the mirror, and the fold
-must map it to itself, forcing a second exterior. In Schwarzschild-de Sitter only
-the maximal hole qualifies, ten billion light years in radius; charge and spin widen
-it to a branch ending at $a/M=1.10092$. Contact fills $0.991$ of the interior. Only the transparent
-seam absorbs no momentum, and it is adopted; it predicts zero ringdown damping-time
-deviation, testable at twice present exposure.
+Such a hole takes matter from our side and antimatter from the mirror, and the fold must map it to
+itself, forcing a second exterior. In Schwarzschild-de Sitter only the maximal hole qualifies, ten
+billion light years in radius; charge and spin widen it to a branch ending at $a/M=1.10092$. Contact
+fills $0.991$ of the interior. Only the transparent seam absorbs no momentum, and it is adopted,
+predicting zero ringdown damping-time deviation, testable at twice present exposure.
 
 ## 1. Introduction
 
@@ -58,10 +58,10 @@ far away in the usual sense. It surrounds you.
 The cosmology paper this accompanies takes CPT, the symmetry that swaps matter for antimatter and
 reflects space and runs time backwards, to hold of the universe rather than only of the physics
 inside it. The Big Bang then has a far side, and what is over there is our own universe with all
-three reversed. Einstein's field equations come out of that symmetry, with the metric a
-fixed background at every step and nothing gravitational ever promoted to an operator, so they
-were never waiting on a quantum theory of gravity. The same picture caps the dark matter's mass
-at 491.6 PeV, and the cap is derived rather than fitted.
+three reversed. Einstein's field equations come out of that symmetry, with the metric a fixed
+background at every step and nothing gravitational ever promoted to an operator, so that derivation
+did not need a quantum theory of gravity. The same picture caps the dark matter's mass at 491.6 PeV,
+and the cap is derived.
 
 One structural consequence comes before any result, because several of the results are instances of it. The cosmology paper's §2.1 splits every field into the average of
 its two sheet readings and their difference,
@@ -71,27 +71,27 @@ $$\Phi_c=\frac{\Phi+\Theta\Phi}{2},\qquad \Phi_q=\Phi-\Theta\Phi,$$
 which are the closed-time-path variables and obey $[\Phi_c,\Phi_c]=[\Phi_q,\Phi_q]=0$ and
 $[\Phi_c,\Phi_q]=i\Delta$. Since $\Theta^2=1$, the average is exactly the fold-even part of the
 field and the difference exactly the fold-odd part. The fold's parity is therefore the
-classical-quantum split itself: what survives the quotient is the classical content, and what the
+classical-quantum split itself. What survives the quotient is the classical content, and what the
 quotient discards is where the commutator lives.
 
-Two of this paper's results are instances of that, and reading them together is the point of
-saying it here. Section 1's silence is the statement that the cross-sheet commutator vanishes
-outside a horizon, so the quantum variable has nothing to act on there and the classical world is
-classical for a reason rather than by assumption. And the two modes that destabilise the maximal
-hole of Section 6 are fold-odd, which is to say they are quantum-sector modes: they do not appear
-in the classical geometry at all, which is why the fold removes them without anything being tuned.
-A.8 then closes the loop the subtitle opens. The fold's map is a half-period thermal shift, so at
-a horizon in equilibrium the cross-sheet correlator is the direct one shifted by $i\beta/2$, which
-fixes the two-sheet squeeze at $\tanh r=e^{-\beta\omega/2}$ with nothing left to choose. So the
-quantum half of the split has an amplitude, and that amplitude is a temperature.
+Two of this paper's results are instances of that, and reading them together is the point of saying
+it here. Section 1's silence is the statement that the cross-sheet commutator vanishes outside a
+horizon, so the quantum variable has nothing to act on there and the classical world is classical
+for a reason. And the two modes that destabilise the maximal hole of Section 6 are fold-odd, which
+is to say they are quantum-sector modes: they do not appear in the classical geometry at all, which
+is why the fold removes them without anything being tuned. A.8 then closes the loop the subtitle
+opens. The fold's map is a half-period thermal shift, so at a horizon in equilibrium the cross-sheet
+correlator is the direct one shifted by $i\beta/2$, which fixes the two-sheet squeeze at $\tanh
+r=e^{-\beta\omega/2}$ with nothing left to choose. So the quantum half of the split has an
+amplitude, and that amplitude is a temperature.
 
-The obvious objection to a mirror sheet is that nobody has ever seen one. This paper's first
-result answers that objection with a calculation, and the calculation is short. The cosmology
-paper's §2.1 builds its algebra on the premise that a point and its fold image are causally
-disjoint. On the geometry we actually inhabit that premise is free: elliptic de Sitter space puts
-every point spacelike to its own antipode, so the commutator between a field at a point and the
-same field at the folded image vanishes identically. The two sheets are correlated everywhere and
-can signal nowhere. The silence is a theorem.
+The obvious objection to a mirror sheet is that nobody has ever seen one. This paper's first result
+answers that objection with a calculation. The cosmology paper's §2.1 builds its algebra on the
+premise that a point and its fold image are causally disjoint. On the geometry we actually inhabit
+that premise is free: elliptic de Sitter space puts every point spacelike to its own antipode, so
+the commutator between a field at a point and the same field at the folded image vanishes
+identically. The two sheets are correlated everywhere and can signal nowhere. The silence is a
+theorem.
 
 ![Why. de Sitter is conformal to a piece of the Einstein static cylinder, with round
 three-spheres for spatial slices and a conformal time running over an interval of length $\pi$.
@@ -107,9 +107,9 @@ spacetime and reaches zero only at conformal infinity. Equivalently and with no 
 $Z=X\cdot Y/\ell^2$ is one at coincidence and exceeds one for timelike separation, and
 $Z(X,-X)=-1$. A map turning through only half as much of the sphere fails this.](fig_companion_silence.pdf)
 
-If the seal is exact, the useful question is whether it breaks anywhere. There is exactly one kind
-of place, and finding it takes one line. Carry the same construction to a black hole, where the
-fold's map is the wedge reflection $J:(U,V)\mapsto(-U,-V)$, and
+If the seal is exact, the useful question is whether it breaks anywhere. There is one kind of place.
+Carry the same construction to a black hole, where the fold's map is the wedge reflection
+$J:(U,V)\mapsto(-U,-V)$, and
 
 $$
 dU = 2U,\qquad dV = 2V \qquad\Longrightarrow\qquad dU\,dV = 4UV,
@@ -124,22 +124,22 @@ to commute can signal, so if the two halves of a folded universe can touch anywh
 only place is inside a black hole, where no outside observer can ever look.
 
 Contact does not begin at the horizon either, and how far in it begins is a pure number. The fold
-pairs each point with its antipode, so reaching the mirror sheet's causal region means covering
-half a turn of the transverse sphere as well as falling, and causality caps what a curve can
-cover. Section 5 works the cap out. It reaches the inner half of the interior at every
-charge, and reaches nothing outside it when the hole is uncharged, and the same calculation in $D$
-dimensions gives four large spacetime dimensions and no others, with small ones a separate case that 5.2 works through and that the count constrains rather
-than forbids. Since the fold is a free involution, that region is also where the quotient carries
-closed causal curves, so what is being located is the causality-violating core of the folded hole,
-sealed behind a horizon and then behind half of what is left.
+pairs each point with its antipode, so reaching the mirror sheet's causal region means covering half
+a turn of the transverse sphere as well as falling, and causality caps what a curve can cover.
+Section 5 works the cap out. It reaches the inner half of the interior at every charge, and reaches
+nothing outside it when the hole is uncharged, and the same calculation in $D$ dimensions gives four
+large spacetime dimensions and no others, with small ones a separate case that 5.2 works through and
+that the count constrains without forbidding. Since the fold is a free involution, that region is
+also where the quotient carries closed causal curves, so what is being located is the
+causality-violating core of the folded hole, sealed behind a horizon and then behind half of what is
+left.
 
-What happens inside that core is the strongest statement the fold makes about matter. The image term
-is finite and real between the horizon and the contact radius, diverges as $\delta^{-3/2}$ at
-the radius itself, and inside it the geodesic interval turns negative, so $\sigma^{-3/2}$
-continues to $i|\sigma|^{-3/2}$ and the term becomes imaginary. An imaginary energy is a decay
-rate, and a decaying vacuum makes pairs. Where the two sheets touch, the touching makes matter
-and antimatter, and it does so because of the causal structure and not because anything was added
-to produce it, which A.19 computes.
+What happens inside that core bears on matter. The image term is finite and real between the horizon
+and the contact radius, diverges as $\delta^{-3/2}$ at the radius itself, and inside it the geodesic
+interval turns negative, so $\sigma^{-3/2}$ continues to $i|\sigma|^{-3/2}$ and the term becomes
+imaginary. An imaginary energy is a decay rate, and a decaying vacuum makes pairs. Where the two
+sheets touch, the touching makes matter and antimatter, and it does so because of the causal
+structure alone, which A.19 computes.
 
 ![Kruskal diagram of an eternal hole. The fold's wedge reflection is the point reflection through
 the origin, so it swaps the two exteriors and swaps the two interiors. Under it the null
@@ -158,20 +158,20 @@ determined results is about black holes.
 **What the fold determines at our own horizon.** There the fold has no free choices in it.
 The reflection is fixed by the wedge-reflection theorems, and the transverse part is then the
 antipodal parity their composition leaves behind, chosen by nothing. Out of that comes a
-reciprocal law: writing $R$ for the ratio of the correlation between a point and a reflected point
+reciprocal law. Writing $R$ for the ratio of the correlation between a point and a reflected point
 to the correlation between that point and an unreflected one, $R$ times its own reflection is
 exactly one, for every state, every metric on the horizon and every free involution. The proof is
 one substitution. Its consequence is that $\log R$ is odd under the same reflection, which on a
 round horizon exchanges an angle with its supplement and so puts every even multipole at zero
 identically. The equality at ninety degrees is the law's own fixed point. Section 3 states it.
 
-No temperature is put in by hand, and requiring a geometric object to be a thermal half-period
-shift returns one. Be exact about which half of that is the content: the match is made against a
-state whose period is already $2\pi/H$, so what it establishes is the half, that the fold's map is
-the square root of the thermal transformation and not an addition to it, with primitivity picking
-the fundamental period and no odd multiple of it. Three readings of the mirror sheet as a single copy
-of our own space are then tested and each fails on stated grounds, one of them against the orbital
-decay of the Hulse-Taylor binary pulsar, measured to three decimal places.
+No temperature is put in by hand, and requiring a geometric object to be a thermal half-period shift
+returns one. Only half of that is content: the match is made against a state whose period is already
+$2\pi/H$, so what it establishes is the half, that the fold's map is the square root of the thermal
+transformation and not an addition to it, with primitivity picking the fundamental period and no odd
+multiple of it. Three readings of the mirror sheet as a single copy of our own space are then tested
+and each fails on stated grounds, one of them against the orbital decay of the Hulse-Taylor binary
+pulsar, measured to three decimal places.
 
 **What the fold determines at a black hole.** Where the two sheets can reach each other at all is
 fixed by causality and by the antipodal map, with no seam, no coefficient and nothing adopted. It
@@ -194,7 +194,7 @@ the transparent value is its identity. Reject either and the other still stands.
 That single commitment is where the interesting objects come from. A hole formed by collapse has
 no past singularity, no second exterior and no bifurcation surface, so none of this machinery
 describes it. A hole possessing a past has all three. The fold therefore sorts black holes into
-two classes, and the sorting is invisible from outside: a transparent seam predicts ordinary Kerr
+two classes, and the sorting is invisible from outside. A transparent seam predicts ordinary Kerr
 behaviour either way, and the no-hair theorem guarantees that mass, charge and spin are all an
 exterior observer gets. Two holes of the same mass and spin, one of each class, are identical to
 every measurement made outside them.
@@ -206,35 +206,35 @@ a question whose answer does not depend on the hole's mass, from a stellar remna
 Nothing from it can ever reach an outside observer. It is no source of luminosity and no way
 around the Eddington limit, and it should be quoted with that limit attached or not quoted at all.
 
-And it would not grow any faster for having two sides. The opposite is the natural guess, and this paper made it twice before checking. Both
-exteriors draw on the mass they share, so a doubled supply would multiply the exponent of the
-growth law rather than its rate, and over the window in which JWST finds its overmassive early
-black holes that is a factor of $10^5$ in final mass. Section 6.1 shows the factor is not
-available, and the two arguments that remove it are a sign and a sum. The fold reverses time
-orientation, so each sheet's infall deposits its mass on its own side of the seam and our exterior
-never meets theirs. And where the contact does let matter across, fold invariance makes the two
-streams equal and a crossing is a swap, so we keep a fraction of ours and receive the same
-fraction of theirs and the total does not move. The mirror sheet could add to our hole only by
-carrying negative energy on its own clock.
+And it would not grow any faster for having two sides. The opposite is the natural guess. Both
+exteriors draw on the mass they share, so a doubled supply would multiply the exponent of the growth
+law rather than its rate, and over the window in which JWST finds its overmassive early black holes
+that is a factor of $10^5$ in final mass. Section 6.1 shows the factor is not available, and the two
+arguments that remove it are a sign and a sum. The fold reverses time orientation, so each sheet's
+infall deposits its mass on its own side of the seam and our exterior never meets theirs. And where
+the contact does let matter across, fold invariance makes the two streams equal and a crossing is a
+swap, so we keep a fraction of ours and receive the same fraction of theirs and the total does not
+move. The mirror sheet could add to our hole only by carrying negative energy on its own clock.
 
 Whether any such hole exists is the hard part, and it is not the question it looks like. It looks
-like a question about the primordial density field, since the class seems to need formation
-through a throat rather than by collapse, which the primordial black hole literature simulates and
-calls type II-B. But a type II-B hole evolves from regular data and has no past region for the mirror sheet to occupy, so counting them counts the wrong thing. What the fold asks is whether it
-maps a hole to itself, and A.15 shows that single statement forces the map and hands over the
-second exterior with it. It also counts the class. In Schwarzschild-de Sitter, the one exactly
-solvable background with both a black-hole horizon and a cosmological one, no involution serves
-both below the Nariai limit and one does at it. Charge and spin widen that point to a branch and
-change nothing else, so the class is the boundary of the parameter space rather than its interior:
-maximal holes, black-hole horizon coincident with cosmological, out to a spin $a/M=1.10092$ that
-is the same number in every de Sitter background. Section 6 reports it.
+like a question about the primordial density field, since the class seems to need formation through
+a throat rather than by collapse, which the primordial black hole literature simulates and calls
+type II-B. But a type II-B hole evolves from regular data and has no past region for the mirror
+sheet to occupy, so counting them counts the wrong thing. What the fold asks is whether it maps a
+hole to itself, and A.15 shows that single statement forces the map and hands over the second
+exterior with it. It also counts the class. In Schwarzschild-de Sitter, the one exactly solvable
+background with both a black-hole horizon and a cosmological one, no involution serves both below
+the Nariai limit and one does at it. Charge and spin widen that point to a branch and change nothing
+else, so the class is the boundary of the parameter space: maximal holes, black-hole horizon
+coincident with cosmological, out to a spin $a/M=1.10092$ that is the same number in every de Sitter
+background. Section 6 reports it.
 
 That is a thin result, and the section stands on it. It is a uniqueness statement where a
 tail estimate would have been a guess. Two other calculations, run for different reasons, pick out
 the same configuration: the region where the sheets can touch grows with mass and fills the whole
 interior exactly there, and the two modes that destroy such a configuration in the sector where
 its instability lives are odd under the fold and do not descend to the quotient. That second one
-reaches less far than it reads, and 6.2 says how much less: it holds inside a static patch, the
+reaches less far than it reads, and 6.2 says how much less. It holds inside a static patch, the
 non-spherical sectors had no instability to remove, and the Euclidean negative mode survives every
 isometry, so the semiclassical decay is untouched. And a hole is two-sided exactly when its
 horizon is the cosmological horizon, which makes Sections 2 and 6 one structure seen at the two
@@ -261,7 +261,7 @@ Before any of that, the two sheets have to be two. Hartle and Hawking's wavefunc
 real-valued, and a real wavefunction contains both an expanding and a contracting WKB branch [1].
 Inhomogeneous modes can decohere them, as in the work of Halliwell, Hawking and Kiefer [2-5]. Here
 the two branches are compared by an explicit overlap instead. Two settings appear below and they
-are not the same calculation: the closed-de Sitter throat, and the radiation-dominated bang the
+are not the same calculation, the closed-de Sitter throat, and the radiation-dominated bang the
 cosmology paper adopts. Each carries its own notion of time, so a threshold quoted in one does not
 transfer to the other, and the sections below say which is in use.
 
@@ -279,13 +279,13 @@ $a(t)=\cosh Ht/H$. Both exchanges are the same involution acting on two coordina
 the assignment of the right patch and the expanding branch to one sheet, and the left patch and
 the contracting branch to the other, requires no second map and makes no choice twice.
 
-One further thing follows, and one does not. An antiunitary relates the two patch algebras:
-conjugation composed with a geometric map. What relates the two branch states is also conjugation:
+One further thing follows, and one does not. An antiunitary relates the two patch algebras,
+conjugation composed with a geometric map. What relates the two branch states is also conjugation,
 §2.1 obtains them as complex conjugates because the Wheeler-DeWitt operator is real. Both are
 conjugation, and $\alpha$ performs it. Its time reversal sends $\eta\to-\eta$, and the
 environment's frequency function obeys $\Omega_n(-\eta)=\overline{\Omega_n(\eta)}$.
 
-That identity is algebraically empty on its own and we do not offer it as evidence: every function
+That identity is algebraically empty on its own and we do not offer it as evidence, every function
 of the form (even $+\,i\,$odd)$/$even satisfies it. What is not empty is that $\Omega_n$ has that
 form. Its real part carries the $\eta$ dependence only through an even denominator and its
 imaginary part is odd, and the reason is narrower than the reality of the Wheeler-DeWitt operator,
@@ -302,7 +302,7 @@ conditioned on the two branches, and no state on any other space, and its restri
 patch is KMS at $T=H/2\pi$ by Gibbons-Hawking, which A.6 already uses.
 
 What is still not shown is the identification itself, and the obstruction is specific. The two
-pairs are different partitions of the same manifold: the patch pair is $X_1>|X_0|$ and its image,
+pairs are different partitions of the same manifold. The patch pair is $X_1>|X_0|$ and its image,
 the branch pair is $X_0>0$ and $X_0<0$, and the right static patch meets both branches. One
 involution exchanging the members of each does not make them one pair. Conditioning a state on a
 WKB branch is also not the same operation as restricting it to a region, and we have now done the
@@ -334,14 +334,14 @@ compose, and the identification cannot be made this way.
 
 What survives is exact and is what we claim. There is one state, the Bunch-Davies state, and it
 carries two splittings: by causal position into the two patches, and by global time into the two
-branches. $\alpha$ exchanges the members of each. The patch restriction is KMS at $T=H/2\pi$ and
-the branch conditioning returns complex conjugates. Those are true statements about a single state
-with two splittings that one involution relates, and the splittings cross rather than coincide.
-The horizon results of §§2 and 3 use the first splitting, and the cosmology paper's results use
-neither, taking their inputs from the adopted cosmology instead, so nothing below rests on an
-identification we have just shown cannot be made. Nothing has to be asserted to match, because the contracting
-branch's environment state is $\alpha$'s image of the expanding one: one structure appears in two
-sectors, and no map from a region to a solution is required.
+branches. $\alpha$ exchanges the members of each. The patch restriction is KMS at $T=H/2\pi$ and the
+branch conditioning returns complex conjugates. Those are true statements about a single state with
+two splittings that one involution relates, and the splittings cross. The horizon results of §§2 and
+3 use the first splitting, and the cosmology paper's results use neither, taking their inputs from
+the adopted cosmology instead, so nothing below rests on an identification we have just shown cannot
+be made. Nothing has to be asserted to match, because the contracting branch's environment state is
+$\alpha$'s image of the expanding one. One structure appears in two sectors, and no map from a
+region to a solution is required.
 
 The limit is the setting. This is the free nonconformal environment of §2.1 on closed de Sitter,
 and the check is that the antilinear lift acts as conjugation on that environment's frequency
@@ -427,7 +427,7 @@ itself, where the states would be the natural place to look, and that is a stron
 than the one the cosmology paper's C.2 adopts and one this paper does not derive. Keeping whole
 levels of odd $n$ gives $2.59538$ instead, and that is the parity of the full antipodal map rather
 than of $P_\perp$, which is not the map the fold quotients by. Nothing has to be
-added back: gauging a discrete group introduces sectors classified by $H^1(M;\mathbb Z_2)$, and
+added back. Gauging a discrete group introduces sectors classified by $H^1(M;\mathbb Z_2)$, and
 the cosmology paper's C.2 establishes that this vanishes on the cover, so there is one bundle, no
 twisted sector, and the invariant subspace is the whole physical space. The cosmology paper's C.2
 records that vanishing as a negative, against a holonomy route to the stabilising rule; here it is
@@ -491,7 +491,7 @@ out, and there, requiring the geometric image kernel to be a thermal half-period
 Bunch-Davies kernel fixes the period: the mismatch is $4\times10^{-17}$ at $\beta=2\pi/H$ and
 $0.115$ ten per cent away on either side, a factor $2.6\times10^{15}$ worse. No temperature was
 put in anywhere. What that does and does not establish is §3.4's subject, A.10 has the derivation,
-and A.12 collects how far the law reaches beyond the surface: its algebraic form on any algebra
+and A.12 collects how far the law reaches beyond the surface. Its algebraic form on any algebra
 with an involution, the relative entropy it supplies as a measure of a state falling short of its
 own fold image, and what that measure says about §2.1's branch weights.
 
@@ -528,7 +528,7 @@ covariance and the two inequalities.
 
 The second test is thermodynamic. The proposed elliptic pairing $(T_H,\mathcal A/8G)$, where
 $\mathcal A$ is the cover horizon area, fails the Smarr relation $M=2TS$ and the first law
-$dM=T\,dS$. For example, in Schwarzschild units $G=M=1$, $T_H=1/(8\pi)$ and $\mathcal A=16\pi$:
+$dM=T\,dS$. For example, in Schwarzschild units $G=M=1$, $T_H=1/(8\pi)$ and $\mathcal A=16\pi$,
 the proposed pair gives $2TS=1/2$ and $T_Hd(\mathcal A/8G)=dM/2$. The two-copy pairing
 $(T_H,\mathcal A/4G)$ and 't Hooft's pairing $(2T_H,\mathcal A/8G)$ both give $2TS=M$ and the
 correct first law. The quotient two-point function used in the comparison has imaginary period
@@ -555,7 +555,7 @@ A.9 derives that vanishing, and checks the Wheeler-Feynman exchange of the retar
 kernels under the antipode numerically alongside it. If this kernel is the binary's complete
 effective gravitational response, with no independent homogeneous drive or environmental
 contribution, the binary has no secular radiation damping. The observed orbital decay of PSR
-B1913+16 excludes that response: Weisberg and Huang report an observed-to-GR ratio of
+B1913+16 excludes that response, Weisberg and Huang report an observed-to-GR ratio of
 $0.9983\pm0.0016$ [8].
 
 Quotient descent does not fix the complete response. An invariant homogeneous solution can change
@@ -570,7 +570,7 @@ A twisted Green kernel is odd under the antipode in each argument and even under
 action on both arguments. Its identity distribution is the twisted delta. There is no
 contradiction of the form $\delta=-\delta$.
 
-One observational test survives, and within its premises it is exact: a complete reciprocal
+One observational test survives, and within its premises it is exact. A complete reciprocal
 time-symmetric response has no secular dissipative work and fails the pulsar measurement. A more
 general quotient response requires its own boundary and source problem. Friedman and Higuchi's
 locally defined quotient theory makes the distinction between local physics and global
@@ -582,7 +582,7 @@ Everything in Sections 2 and 3 is exact and none of it predicts a measurement, a
 is not covered by what follows; it predicts no measurement either, but for a different reason,
 which is that the region it describes is sealed behind a horizon.
 
-Every cosmological observable is built from same-leg correlators, $W(x,y)$ or $W(x,x)$: galaxy
+Every cosmological observable is built from same-leg correlators, $W(x,y)$ or $W(x,x)$, galaxy
 clustering, the microwave background spectra, detector noise, the stochastic gravitational-wave
 background. The reciprocal law is a statement about the cross-leg kernel $W(x,P_\perp y)$, which
 lives in the doubled Hilbert space. That object is an influence functional only if the mirror sheet
@@ -591,11 +591,12 @@ attempts to find an observable anyway both fail, and for compatible reasons: the
 identification compares the wrong object and is excluded outright if forced, and the discrepancy between the two kernels
 selects no axis, so it cannot produce a number-count dipole at any amplitude.
 
-So the horizon law is valuable because it is exact, forced and independent of the state.
-Predicting is not what it does. It belongs in the family of Bisognano and Wichmann's duality
-theorem [10] and of the thermofield-double structure of the eternal black hole [11]: results that
-fix what a theory must look like without telling an experimenter what to do. The number to take from this paper is Section 4's ringdown null, which a running instrument is
-testing. It is not a consequence of the reciprocal law either.
+So the horizon law is valuable because it is exact, forced and independent of the state. Predicting
+is not what it does. It belongs in the family of Bisognano and Wichmann's duality theorem [10] and
+of the thermofield-double structure of the eternal black hole [11]: results that fix what a theory
+must look like without telling an experimenter what to do. The testable number in this paper is
+Section 4's ringdown null, which a running instrument is testing. It is not a consequence of the
+reciprocal law either.
 
 The family resemblance is not an identity, and the stronger claim was tried and dropped. Reading
 $\Theta$ as the Tomita-Takesaki modular conjugation would need a local net of algebras, a wedge, a
@@ -618,7 +619,7 @@ is exactly what $\Theta=J\circ P_{\perp}$ is by construction.
 The same pair carries the repair, and that is the more interesting half. $\Theta$ is the modular
 conjugation of a *different* purification, $\Omega'=\rho^{1/2}P$, whose restriction to either
 factor is the same $\rho$. Against $\Omega'$ the twisted conjugation has zero defect and the
-untwisted one has $1.7889$: the two have exchanged roles. The global vector has moved, overlapping
+untwisted one has $1.7889$, the two have exchanged roles. The global vector has moved, overlapping
 the old one at $0.6$, and a cross-sheet correlation has changed sign from $+0.4$ to $-0.4$, while
 neither sheet's own state has moved at all. A parity-twisted fold is therefore the modular
 conjugation of a parity-twisted purification, indistinguishable from the ordinary one on either
@@ -632,10 +633,10 @@ it would have to be established for.
 
 Two things would break the horizon law. The first is the wedge-reflection theorems. A.10 takes $J$
 to be fixed by them and $P_\perp$ to be whatever their composition leaves; if the fold's setting
-does not meet their hypotheses, the transverse involution stops being forced and the whole
-"nothing is chosen" claim goes with it. The second is the Hadamard condition, which several
-results above assume and which the alpha-vacuum family does not satisfy, as 3.1 notes. Both are
-carried in the open, and either one failing takes this half with it.
+does not meet their hypotheses, the transverse involution stops being forced and the whole "nothing
+is chosen" claim goes with it. The second is the Hadamard condition, which several results above
+assume and which the alpha-vacuum family does not satisfy, as 3.1 notes. Both are stated openly, and
+either one failing takes this half with it.
 
 ## 4. Minimal black-hole response
 
@@ -644,24 +645,23 @@ absorbing horizon boundary condition. We add no seam interaction. At the order t
 therefore predicts no additional horizon reflectivity and no fold-induced shift of the Kerr
 quasinormal spectrum.
 
-That boundary condition is adopted. The obvious route to deriving it looks available and is
-not, and closing it takes a paragraph. Where the geometry is
-two-sided, which covers the cosmological horizon and an eternal hole, a constant reflectivity
-does put an image term between mirror-placed points at spacelike separation, and no admissible
-state is singular there. A.11 follows that route and closes it: neither accounting of the mode
-sum supports the conclusion, and in the one that gives a nonzero coefficient the transparent
-seam is the worst offender, where the argument needs it to be the only clean one. A hole formed
-by collapse has one exterior, so there are no mirror-placed points and the route does not even
-start. The absorbing condition is therefore the standard choice in both cases, as it is
-throughout the ringdown literature, and the prediction is the same. A.17 asks the question that identifying
-the two singular branches invites, whether matter may transit the locus and make the Hawking
-temperature dispensable, and finds the obstruction is the fold's own.
+That boundary condition is adopted. The obvious route to deriving it looks available and is not, and
+closing it takes a paragraph. Where the geometry is two-sided, which covers the cosmological horizon
+and an eternal hole, a constant reflectivity does put an image term between mirror-placed points at
+spacelike separation, and no admissible state is singular there. A.11 follows that route and closes
+it: neither way of counting the mode sum supports the conclusion, and in the one that gives a
+nonzero coefficient the transparent seam is the worst offender, where the argument needs it to be
+the only clean one. A hole formed by collapse has one exterior, so there are no mirror-placed points
+and the route does not even start. The absorbing condition is therefore the standard choice in both
+cases, as it is throughout the ringdown literature, and the prediction is the same. A.17 asks the
+question that identifying the two singular branches invites, whether matter may transit the locus
+and make the Hawking temperature dispensable, and finds the obstruction is the fold's own.
 
 The boundary condition is a physical commitment of this implementation. Covariance under the fold
-and conservation of energy do not select it: energy crosses the seam at every reflectivity, and the
+and conservation of energy do not select it. Energy crosses the seam at every reflectivity, and the
 allowed seam matrices include a continuous range of them. Momentum crosses freely at one only, and
 that is the narrowing A.11 uses, under a premise about the seam rather than a consequence of the
-fold. The remaining structure does not narrow that range: symmetry under the fold and
+fold. The remaining structure does not narrow that range, symmetry under the fold and
 closure of the constraint algebra admit the whole family. Nor does topology. On the de Sitter
 cover, which is simply connected with $H^1$ vanishing for every coefficient group, there are no
 periods to quantise a coefficient against (the cosmology paper's C.2). That argument is about the
@@ -700,7 +700,7 @@ against is the seam it selects; and the image-kernel argument that replaced it i
 the image term and the singularity it forbids never occupy the same region. Transparency is
 adopted there, and A.11 says what deriving it would take. Completing a seam action in the
 ultraviolet comes before fixing its coefficient for any seam that reflects. For the corner term
-the question does not arise, because nothing here reflects: within the corner term $r$ cannot
+the question does not arise, because nothing here reflects. Within the corner term $r$ cannot
 depend on frequency, and the transparent member $\kappa=1$, $t=1$ is the one this paper adopts.
 A.11 records that the boundary condition is a commitment chosen from a range that fold covariance
 and energy conservation leave open, narrowed to the transparent point only by the premise that the
@@ -711,7 +711,7 @@ not a free one.
 
 The second is structural, and it says what a seam would have to be, where the usual argument says
 what it cannot be. Iyer-Wald entropy survives at a bifurcation surface because the Noether charge
-is built from the Killing field and its derivative: the field vanishes there while the
+is built from the Killing field and its derivative, the field vanishes there while the
 antisymmetrised derivative does not. A connection inherits that surviving piece through the second
 term of its Lie derivative; a matter field does not, since its Lie derivative is $\xi^a\partial_a$
 of the field and dies with $\xi$. Computed in Kruskal, the one-form's Lie derivative holds at
@@ -756,8 +756,7 @@ $m\Omega_H$ returns the $10^{-6}$ for the same mode.
 $|R|=\exp[-|\omega-m\Omega_H|/2T_H]$; dashed, the same expression with $m\Omega_H$ dropped.
 Both use the Berti-Cardoso-Will fit [14] for the fundamental $l=m=2$ mode. The two agree only at
 zero spin, where $\Omega_H$ vanishes, and thereafter run in opposite directions: $\omega$ and
-$m\Omega_H$ both grow with spin and their difference shrinks, so the reflectivity rises rather
-than falls. At $a/M=0.9$ the horizon returns about a fifth of the incident energy where the
+$m\Omega_H$ both grow with spin and their difference shrinks, so the reflectivity rises. At $a/M=0.9$ the horizon returns about a fifth of the incident energy where the
 dropped-term expression gives $10^{-6}$. The shaded band is what a damping-time excess
 $\delta\hat\tau_{220}=0.14$ would need under the most generous model, in which all ringdown
 damping is horizon absorption; the corrected curve enters it above $a/M\simeq0.87$. No exclusion follows either way, for the reason given below: a reflectivity magnitude is not a quasinormal
@@ -766,7 +765,7 @@ spectrum.](fig_companion_reflectivity.pdf)
 No exclusion follows. Under the most generous damping model, in which all ringdown damping is
 horizon absorption and returning $|R|^2$ lengthens the damping time to $\tau/(1-|R|^2)$,
 reproducing $\delta\hat\tau_{220}=0.14$ needs $|R|=0.35$. A reflectivity fixed by $T_H$ supplies
-that at $a\gtrsim0.9$ with no extra heat at all: the horizon it asks for is $0.77\,T_H$ at $a=0.9$
+that at $a\gtrsim0.9$ with no extra heat at all. The horizon it asks for is $0.77\,T_H$ at $a=0.9$
 and $0.39\,T_H$ at $a=0.95$, cooler than Hawking, where the earlier figure had it several times
 hotter. The earlier claim that a $T_H$-fixed reflectivity could not reach the reported excess was
 an artefact of the dropped co-rotation term. What survives is narrower and cuts both ways: a
@@ -814,43 +813,43 @@ the second includes it. The analysis discusses positive bias and possible prior 
 not claim a violation of GR. We do not convert the quoted interval width into a
 one-standard-deviation error.
 
-Stated the other way round, this is this paper's most definite near-term commitment, left implicit by a null. Every gravitational-wave signature the fold
-could produce, a horizon reflectivity, the $\ell\to\ell\pm1$ mixing of A.13, the
-$\omega\to\omega^*$ spectral action of A.14, requires a nonzero seam weight, and this
-implementation sets that weight to zero. So it predicts an ordinary Kerr ringdown: no echo, and a
-damping-time deviation of exactly zero. Zero lies outside the posterior-multiplication interval
-and inside the hierarchical one, so the prediction is neither excluded nor comfortable. Holding
-the central value fixed, shrinking the interval far enough to separate the two cases needs roughly
-twice the current exposure, which places the decision inside a single observing run. If the excess
-firms up, the transparent seam adopted here is excluded and the reflecting branch set out above
-takes its place, with the spin dependence that distinguishes them. If the ringdown settles onto
-Kerr, the reflecting proposals are the ones in difficulty.
+Stated the other way round, this is the paper's most definite near-term commitment, and it is a
+null. Every gravitational-wave signature the fold could produce, a horizon reflectivity, the
+$\ell\to\ell\pm1$ mixing of A.13, the $\omega\to\omega^*$ spectral action of A.14, requires a
+nonzero seam weight, and this implementation sets that weight to zero. So it predicts an ordinary
+Kerr ringdown, no echo, and a damping-time deviation of exactly zero. Zero lies outside the
+posterior-multiplication interval and inside the hierarchical one, so the prediction is neither
+excluded nor comfortable. Holding the central value fixed, shrinking the interval far enough to
+separate the two cases needs roughly twice the current exposure, which places the decision inside a
+single observing run. If the excess firms up, the transparent seam adopted here is excluded and the
+reflecting branch set out above takes its place, with the spin dependence that distinguishes them.
+If the ringdown settles onto Kerr, the reflecting proposals are the ones in difficulty.
 
 A robust intrinsic departure from the predicted Kerr response, after the relevant astrophysical
 and waveform effects are accounted for, would challenge the adopted minimal implementation. It
 would not identify reflection as the cause or prove a particular quotient geometry. Echo-like
 propagation effects must likewise be distinguished from a new horizon reflection law.
 
-Setting the seam weight to zero IS a choice within this action, and A.11 makes it explicitly,
-having withdrawn the two arguments that would have removed the choice; the structure a nonzero
-weight would carry is worked out separately anyway, because a seam action carrying a scale is not
-excluded and its reader is owed the shape a reflecting implementation would have. A.10, A.13 and
-A.14 do that in three steps. A.10 asks what the kernel ratio of A.6's worked instance becomes at a
-general bifurcate Killing horizon, and how much of it survives without de Sitter's maximal
-symmetry. A.13 asks what a latitude-dependent horizon response does to the multipoles. For a
-*scalar* field that is an $\ell\to\ell\pm2$ mixing at fixed $m$, forced by the evenness of the
-transverse parity and switched on by spin alone; it does not carry over to gravitational
-perturbations, whose spin-weighted harmonics admit $\ell\to\ell\pm1$. A.14 asks what the
-antilinear lift's action $\omega\to\omega^*$ requires of a reflecting horizon's spectrum: for a
-constant reflectivity, a complex value breaks the $\omega\to-\omega^*$ mirror symmetry and a real
-value preserves it. None of the three supplies an amplitude; the matching law above would have to
-do that. They constrain the shape a reflecting implementation must have, and the minimal
-implementation adopted here sets all three to zero.
+Setting the seam weight to zero is a choice within this action, and A.11 makes it explicitly, having
+withdrawn the two arguments that would have removed the choice; the structure a nonzero weight would
+carry is worked out separately anyway, because a seam action carrying a scale is not excluded and
+its reader should be shown the shape a reflecting implementation would have. A.10, A.13 and A.14 do
+that in three steps. A.10 asks what the kernel ratio of A.6's worked instance becomes at a general
+bifurcate Killing horizon, and how much of it survives without de Sitter's maximal symmetry. A.13
+asks what a latitude-dependent horizon response does to the multipoles. For a *scalar* field that is
+an $\ell\to\ell\pm2$ mixing at fixed $m$, forced by the evenness of the transverse parity and
+switched on by spin alone; it does not carry over to gravitational perturbations, whose
+spin-weighted harmonics admit $\ell\to\ell\pm1$. A.14 asks what the antilinear lift's action
+$\omega\to\omega^*$ requires of a reflecting horizon's spectrum: for a constant reflectivity, a
+complex value breaks the $\omega\to-\omega^*$ mirror symmetry and a real value preserves it. None of
+the three supplies an amplitude; the matching law above would have to do that. They constrain the
+shape a reflecting implementation must have, and the minimal implementation adopted here sets all
+three to zero.
 
 ## 5. Where the two sheets can touch
 
 Section 4 adopted a transparent seam and predicted an ordinary Kerr ringdown. That is what the
-fold does at a horizon it is given. This section asks the prior question: where in a spacetime can
+fold does at a horizon it is given. This section asks the prior question, where in a spacetime can
 a point influence its own fold image at all? That one has an exact answer, it needs no seam
 coefficient, and nothing in it was adopted.
 
@@ -861,20 +860,20 @@ dimensional cases, and the limits; what follows is the result and what it means.
 
 ### 5.1 The answer, and what charge does to it
 
-Outside a horizon, nothing. A point and its image are spacelike separated at every pair, which is
-Section 1's theorem and the reason its silence is a theorem. Inside one the radial part of
-the separation turns timelike, so what is left to settle is the transverse sphere. There the fold's
-map is the antipode, which puts a point half a turn of angle from its own image, and causality caps
-how far round a falling curve can get. The cap works out to
+Outside a horizon, nothing. A point and its image are spacelike separated for every such pair, which
+is Section 1's theorem and the reason its silence is a theorem. Inside one the radial part of the
+separation turns timelike, so what is left to settle is the transverse sphere. There the fold's map
+is the antipode, which puts a point half a turn of angle from its own image, and causality caps how
+far round a falling curve can get. The cap works out to
 
 $$
 \Delta\phi_{\max}(r)=2\pi-4\arcsin\sqrt{\frac{r}{2M}},
 $$
 
 which reaches $\pi$ at $r=M$. So the two sheets can reach each other in the inner half of a
-Schwarzschild interior and nowhere else in that spacetime, and the bound is attained rather than
-approached, by a null geodesic sitting at $X\equiv0$ in Kruskal coordinates and spiralling, which is what makes the
-statement an equivalence rather than half of one.
+Schwarzschild interior and nowhere else in that spacetime, and the bound is attained, by a null
+geodesic sitting at $X\equiv0$ in Kruskal coordinates and spiralling, which is what makes the
+statement an equivalence.
 
 ![The contact region drawn through the interior. Each band is one sixteenth of the angle
 $\Delta\phi_{\max}(r)=2\pi-4\arcsin\sqrt{r/2M}$ a causal curve starting at radius $r$ can still
@@ -886,7 +885,7 @@ curve.](fig_companion_interior.pdf)
 
 That derivation and the dimension count of 5.2 are set out for a general reader in a separate
 Letter [38], and A.15 has the full working, the charged and higher-dimensional cases and the
-limits. What the rest of this section does is go where the Letter does not: to compact
+limits. What the rest of this section does is go where the Letter does not, to compact
 extra dimensions, and to the other horizon.
 
 Charge says which half of that sentence is robust. A charged hole has two horizons, and the same
@@ -909,13 +908,13 @@ radius $r$ out to the horizon integrates to $2\arcsin\sqrt{(r_+-r)/(r_+-r_-)}$, 
 that depth fraction the two-leg sweep is $4\arcsin\sqrt{x}$ and the charge has gone entirely:
 one curve, not a family. It crosses the $\pi$ required at $x=1/2$ because
 $\sqrt{x}\geq\sin(\pi/4)$ is the condition, which is why the answer is the inner half of the
-band at every charge and not approximately so. Right, the same result stated two ways. As a
+band at every charge, exactly. Right, the same result stated two ways. As a
 fraction of the band it is one half and does not move; as a fraction of the horizon area it is a
 quarter at zero charge and better than three quarters near extremality. Anything thermodynamic
 would have to survive charge, and the quarter does not, so it is a coincidence of $r_-=0$.](fig_companion_contact.pdf)
 
 A.15 traces both to one algebraic fact about $r^2|f|$ being a quadratic
-whose roots bound the region, and shows what happens when it is not: a positive cosmological
+whose roots bound the region, and shows what happens when it is not. A positive cosmological
 constant pushes the boundary outward, reaching the whole interior at the Nariai point. Hold on to
 that endpoint. Section 6 arrives at it from an unrelated direction.
 
@@ -936,7 +935,7 @@ the hole is a uniform black string, and that product is not an approximation: a 
 Ricci-flat metric times a flat direction is Ricci-flat, so the string is an exact vacuum solution,
 checked numerically to the finite-difference floor against a warped control four orders larger.
 The compact directions then enter the causal bound only as $-dK^2$ under the square root, so
-moving in them subtracts from the angular progress and never adds to it: the maximiser sits still
+moving in them subtracts from the angular progress and never adds to it, the maximiser sits still
 in $K$ and the sweep is the four-dimensional $2\pi$ exactly.
 
 For $r_h\ll R$ the hole does not see the compactification, it is Tangherlini in $D=4+n$, and its
@@ -953,7 +952,7 @@ That threshold locates a linear instability, and where the phase boundary sits i
 question. Gregory and Laflamme offer the fragmentation
 picture as a conjecture, and Lehner and Pretorius, evolving the instability numerically [36], find
 a cascade of necks and bulges rather than a clean handover to a localised hole at one radius. So
-this section claims only what the numerics carry, and that is enough: a crossover
+this section claims only what the numerics carry, and that is enough. A crossover
 exists, it sits at $r_h/R$ of order one, and above it the fold has its four-dimensional sweep
 while below it the hole is genuinely higher-dimensional and the sweep falls short. Where the
 handover finishes is a question for that literature and nothing here turns on the answer. The
@@ -1005,26 +1004,26 @@ That is one power softer because a mass carries one power of the world function,
 because the conformal coupling is, on this geometry, the value at which the leading mass parts
 cancel.
 
-Two things travel with that and A.15 states both. First, the fold reverses time orientation, so
-the quotient is not time-orientable and the loop closes with the transported arrow flipped, which
-makes the phrase "closed timelike curve" a convention that has to be argued for. That reversal is a theorem of the fold rather than a posit. The modular flow of a wedge
-is the boost, whose generator gives $dX_0/ds=X_1$. Sampling four thousand points of the right
-static patch and four thousand of its antipode returns a positive value at every point of the
-first and a negative one at every point of the second, while a rotation generator returns no
-sign and points outside both patches return both. Its two limits are checked in a finite-dimensional model where each modular operator
-is built from $S(a\Psi)=a^\dagger\Psi$ rather than written down: the entropy is constant along the
-flow to twelve figures, and $J$ commutes with the flow, so what runs the two patches oppositely is
+Two things travel with that and A.15 states both. First, the fold reverses time orientation, so the
+quotient is not time-orientable and the loop closes with the transported arrow flipped, which makes
+the phrase "closed timelike curve" a convention that has to be argued for. That reversal is a
+theorem of the fold. The modular flow of a wedge is the boost, whose generator gives $dX_0/ds=X_1$.
+Sampling four thousand points of the right static patch and four thousand of its antipode returns a
+positive value at every point of the first and a negative one at every point of the second, while a
+rotation generator returns no sign and points outside both patches return both. Its two limits are
+checked in a finite-dimensional model where each modular operator is built from
+$S(a\Psi)=a^\dagger\Psi$ rather than written down: the entropy is constant along the flow to twelve
+figures, and $J$ commutes with the flow, so what runs the two patches oppositely is
 $\Delta_{A'}=\Delta_A^{-1}$ and not anything $J$ does. Second, surfaces of constant $r$ are
 spacelike inside, so this chronology horizon is spacelike rather than the null kind Hawking's
 theorems produce, and those assume the time-orientability this quotient lacks.
 
 Hawking's chronology protection conjecture [37] holds that the laws of physics prevent closed
-timelike curves from forming, and it has stood without a general proof. The
-theorems that support it assume a null chronology horizon on an orientable spacetime. This case
-is neither. The horizon is spacelike, because surfaces of constant $r$ are spacelike inside, and
-the quotient is not time-orientable, because the fold reverses time orientation. So those theorems
-reach no verdict here in either direction, and whatever the interior does is a fresh case rather
-than an instance of a settled one.
+timelike curves from forming, and it has stood without a general proof. The theorems that support it
+assume a null chronology horizon on an orientable spacetime. This case is neither. The horizon is
+spacelike, because surfaces of constant $r$ are spacelike inside, and the quotient is not
+time-orientable, because the fold reverses time orientation. So those theorems reach no verdict here
+in either direction, and whatever the interior does is a fresh case.
 
 What the fold does here is support the conjecture from a geometry it was not framed for. The
 null-null contraction is negative at the caustic and that sign carries to a hole, so the image
@@ -1069,7 +1068,7 @@ of $(-1)^{\ell}$ on the cross-sheet term. The insertion and the antipodal map ar
 The second thing is a geometry in which the sum closes, and A.18 supplies one.
 
 A.18 uses the smallest geometry carrying the feature at issue, which is not Schwarzschild and is
-not offered as it: null geodesics leaving a point spread over every great circle and refocus
+not offered as it. Null geodesics leaving a point spread over every great circle and refocus
 together after exactly $\pi$ of transverse angle, the same one-parameter connecting family the
 contact sphere has. A generic null pair in it returns $-1.0095$ against the known $-1$, which
 is the control that could have failed. The image pair returns $-3/2$, sharpening on that value as
@@ -1083,7 +1082,7 @@ is what decides whether the divergence closes the region or merely marks it, tak
 and A.19 supplies one. Point-split against
 the image kernel, the fold's own pullbacks assemble the energy density into the wave operator,
 which annihilates the two-point function, so in A.18's geometry the density vanishes identically.
-That zero belongs to the constant transverse radius: let the radius vary and there is nothing for
+That zero belongs to the constant transverse radius, let the radius vary and there is nothing for
 the cancellation to be. Flat space is that case and is exact, its fold being the time reflection
 composed with the spatial point reflection, and the image energy density there is
 $(8r^2+6\xi^2)/4\pi^2D^3$ with $D=4r^2-\xi^2$, positive everywhere and diverging positively at
@@ -1122,15 +1121,15 @@ answer is a one-dimensional integral. In units $2M=1$ the separation is $\pi$ at
 $6.054$ at $r=2$, $8.519$ at $r=3$ and $23.80$ at $r=10$, monotone outward, with $|\nabla s|\to2$
 far away because leaving the hole moves you away from your image twice over.
 
-Two features follow, and the first carries a qualifier. On this slice
-the floor is $\pi r_h$ exactly, half the horizon circumference, because the angular half-turn has
-to be paid for and the sphere is smallest at the throat. That is a bound on *spacelike* separation
-across the bridge and not on separation in general: 5.1's whole point is that inside $r=M$ a point
-and its image are causally connected, so the separation there is null or timelike and the exterior
-floor says nothing about it. The two statements are about different regions and different signs.
-And the whole structure is switched on by mass. In empty de Sitter the same invariant is
-$Z(x,\mathcal Ax)=-1$ at every point, so the separation is the same everywhere and its gradient
-vanishes identically; there is no local fold structure in an empty universe at all.
+Two features follow, and the first carries a qualifier. On this slice the floor is $\pi r_h$
+exactly, half the horizon circumference, because the angular half-turn has to be covered and the
+sphere is smallest at the throat. That is a bound on *spacelike* separation across the bridge and
+not on separation in general: 5.1's whole point is that inside $r=M$ a point and its image are
+causally connected, so the separation there is null or timelike and the exterior floor says nothing
+about it. The two statements are about different regions and different signs. And the whole
+structure is switched on by mass. In empty de Sitter the same invariant is $Z(x,\mathcal Ax)=-1$ at
+every point, so the separation is the same everywhere and its gradient vanishes identically; there
+is no local fold structure in an empty universe at all.
 
 How the separation reaches that floor takes one more line, and ties the field to something familiar. For a static observer the redshift factor is $\sqrt f$ with
 $f=1-r_h/r$, so $f$ is the square of the local clock rate, and near the horizon
@@ -1150,12 +1149,11 @@ onto $2\sqrt2\coth(\pi/2\sqrt2)=3.5166$. The two integrals are redone in R for t
 reproduce the values quoted here to four decimals, which makes the figure a check on its own
 numbers as well as a picture of them.](fig_companion_fold_reach.pdf)
 
-The coefficient is a pure number with no mass in it, and it is a limit rather than a fit: the
-residual against it falls linearly in $r/r_h-1$ over four decades, while a near-miss such as
-$9\pi/8$ leaves a residual that does not go to zero at all. So the fold's reach above its floor
-and the local clock rate are not two facts about the geometry. They are one quantity, and the
-horizon is where both arrive: the clock stops exactly where the separation to one's image can fall
-no further.
+The coefficient is a pure number with no mass in it, and it is a limit. The residual against it
+falls linearly in $r/r_h-1$ over four decades, while a near-miss such as $9\pi/8$ leaves a residual
+that does not go to zero at all. So the fold's reach above its floor and the local clock rate are
+not two facts about the geometry. They are one quantity, and the horizon is where both arrive, the
+clock stops exactly where the separation to one's image can fall no further.
 
 That is a geometric fact and not yet a force. For the field to act it has to enter an effective
 action, and the only place it does is the image term of a two-point function, whose coefficient
@@ -1168,7 +1166,7 @@ does not allow is a singularity at a pair that is not null-related in the first 
 image-null locus is full of such pairs, including spacelike ones. That argument is local and
 survives away from maximal symmetry.
 
-Narrower: nothing in that argument reaches a smooth image correlation, and A.8 now records why.
+Narrower, nothing in that argument reaches a smooth image correlation, and A.8 now records why.
 Squeeze a single smooth mode, $v=\cosh r\,u+\sinh r\,\bar u$, and the two-point function changes
 by $2\sinh^2 r\,\mathrm{Re}[u(x)\overline{u(y)}]+\sinh 2r\,\mathrm{Re}[u(x)u(y)]$. If the mode is
 fold-real, so that $u(\Theta y)=\overline{u(y)}$, the second term is an image correlation and
@@ -1191,7 +1189,7 @@ that would hold the mirror sheet's matter never exists. So the fold does not mod
 hole. It sorts them into two classes: one-sided holes, which is everything we have ever observed,
 and two-sided holes, which have both sides in place.
 
-All of it rests on A.15's hypothesis (H), which that appendix reduces to a single statement: the
+All of it rests on A.15's hypothesis (H), which that appendix reduces to a single statement, the
 fold maps the hole to itself. That is a commitment, and a programme that replaces the interior with structure at the horizon denies exactly it. A hole with
 no interior has no past region for a mirror sheet to occupy and no bifurcate Killing horizon for
 an involution to fix, so the second class would be empty and Sections 5 and 6 would describe
@@ -1220,12 +1218,12 @@ that family is open. So read what follows as the structure's consequences. No su
 to be there.
 
 That leaves a question to answer, since the overmassive holes are not hypothetical. They exist, so a cosmology that is right has to be consistent with them.
-This one is, and by having nothing to say: they are one-sided; one-sided holes in a folded
+This one is, and by having nothing to say, they are one-sided; one-sided holes in a folded
 universe obey ordinary general relativity, and the fold modifies none of it. Consistency is not
 explanation, and the two routes by which the fold might have explained them are both shut
 and were shut by checking. The formation channel is withdrawn in 6.2 below, for reasons that are
 about structure rather than about counting. And the other route, an enhanced primordial tail, is
-closed in the cosmology paper: the linear fold map adds no connected three-point function to the
+closed in the cosmology paper. The linear fold map adds no connected three-point function to the
 Gaussian free state, so the fold supplies no bispectrum to steepen a tail with. What the fold does
 offer here is a constraint rather than a mechanism, and it runs from the data to the theory.
 
@@ -1274,17 +1272,16 @@ $\dot m<0$ in the mirror sheet's own advanced time and so a negative energy dens
 sign has to serve both sheets, so a fold-invariant state cannot have it both ways. The step from
 "their infall is the image of ours" to a doubled exponent counts one shell twice.
 
-That argument assumes the sheets are disjoint images glued along a bifurcation surface, which is
-the one thing Section 5 is at length denying, so it is not the end of the matter. Inside the
-contact radius a point and its fold image are joined by a causal curve, and matter crossing there
-reaches our hole without passing through our exterior. Let $p$ be the fraction that crosses. Here
-the second argument bites, and it is only bookkeeping. Fold invariance makes the two sheets'
-infall equal, and a crossing is a swap and not a duplication, so our hole receives $(1-p)$ of our
-own stream and $p$ of theirs, which is $(1-p)F+pF=F$ for every $p$. The version that gains, in
-which we keep all of our own inflow and add $p$ of theirs, turns $(F,F)$ into $((1+p)F,(1+p)F)$
-and creates $2pF$ from nothing. The multiplier is one whatever the contact geometry turns out to
-be, and the transmitted-fraction reading fails for the same reason the symmetric reading did: it
-counts one stream twice.
+That argument assumes the sheets are disjoint images glued along a bifurcation surface, which is the
+one thing Section 5 is at length denying, so it is not the end of the matter. Inside the contact
+radius a point and its fold image are joined by a causal curve, and matter crossing there reaches
+our hole without passing through our exterior. Let $p$ be the fraction that crosses. Here the second
+argument bites, and it is only counting. Fold invariance makes the two sheets' infall equal, and a
+crossing is a swap, so our hole receives $(1-p)$ of our own stream and $p$ of theirs, which is
+$(1-p)F+pF=F$ for every $p$. The version that gains, in which we keep all of our own inflow and add
+$p$ of theirs, turns $(F,F)$ into $((1+p)F,(1+p)F)$ and creates $2pF$ from nothing. The multiplier
+is one whatever the contact geometry turns out to be, and the transmitted-fraction reading fails for
+the same reason the symmetric reading did, it counts one stream twice.
 
 ![What a second supply would have given, and the count that removes it. Left: growth from a
 $100\,M_\odot$ seed between $z=20$ and $z=7$, Eddington-limited at radiative efficiency $0.1$. A
@@ -1303,27 +1300,25 @@ untouched. Read as a place carrying its own content, the total content of the tw
 genuinely is twice what either sheet accounts for. It shows up
 nowhere, and the reason is the same one every time. Our future horizon is $U=0$ and theirs is
 $V=0$: two different null surfaces, each of area $16\pi M^2$. Their infall lands in their future
-interior, which is our past interior: different events. Their radiation contributes at events we
+interior, which is our past interior, different events. Their radiation contributes at events we
 do not occupy, which is why $N_{\rm eff}$ does not move. Nothing is shared except the bifurcation
 surface, and a two-surface carries no energy. The doubling is real and it is invisible, and those
 two facts are the same fact.
 
-So accretion cannot tell a two-sided hole from a one-sided one, and it cannot do so for reasons
-that survive every quantity this paper has left uncomputed. Section 4 reached the same verdict
-through the other channel, where a transparent seam rings down as Kerr whatever the hole's class,
-which is the null prediction stated there against GWTC-3. Both of the observational routes we can
-construct return nothing. What the section keeps is the classification itself, which none of this
-touches: the fold sorts holes into those with a past region and those without, and 6.2's one
-derived member of the second class is the maximal hole. The little red dots are not evidence for
-it, and after this they were never going to be.
+So accretion cannot tell a two-sided hole from a one-sided one, and it cannot do so for reasons that
+survive every quantity this paper has left uncomputed. Section 4 reached the same verdict through
+the other channel, where a transparent seam rings down as Kerr whatever the hole's class, which is
+the null prediction stated there against GWTC-3. Both of the observational routes we can construct
+return nothing. What the section keeps is the classification itself, which none of this touches: the
+fold sorts holes into those with a past region and those without, and 6.2's one derived member of
+the second class is the maximal hole. The little red dots are not evidence for it, and this is why.
 
 A doubled exponent over this window is a factor of $10^5$, which is exactly the size of effect a
-theory wants to be able to claim, and the two arguments that remove it are a sign and a sum.
-Neither needed a measurement and neither will go away. Section 6.2 goes further:
-every member of the class this paper can derive is maximal, and far too large for any accretion
-argument to touch, so even had the count come out the other way there would have been no object
-to apply it to. The arithmetic stays in because it is short, because it is the first thing anyone tries unaided, and because recording flatly what a structure cannot do does more for
-this paper than the effect would have been.
+theory wants to be able to claim, and the two arguments that remove it are a sign and a sum. Neither
+needed a measurement and neither will go away. Section 6.2 goes further. Every member of the class
+this paper can derive is maximal, and far too large for any accretion argument to touch, so even had
+the count come out the other way there would have been no object to apply it to. The arithmetic
+stays in because it is short and it is the first thing anyone tries.
 
 ### 6.2 Counting, and why the obvious channel was the wrong question
 
@@ -1341,12 +1336,12 @@ mechanism.
 
 The first reason is structural. A type II-B hole evolves from regular data on a spacelike slice, and
 such a spacetime has no white-hole region. What the throat opens onto is reached to the future, an
-inflating baby universe, and matter falls from our side into it rather than arriving from it. That
-is not a second exterior feeding a shared interior, which is what 6.1 uses, and it is not the past
-interior $P$ that Section 5's contact needs. It is wrong on the terminology too. A bifurcating
-trapping horizon is an apparent horizon splitting into branches in a dynamical spacetime, while
-A.10's reduction and A.15's boost gauge both need a bifurcate *Killing* horizon, with a Killing
-field vanishing on a two-surface. Sharing the word is the whole of the resemblance.
+inflating baby universe, and matter falls from our side into it. That is not a second exterior
+feeding a shared interior, which is what 6.1 uses, and it is not the past interior $P$ that Section
+5's contact needs. It is wrong on the terminology too. A bifurcating trapping horizon is an apparent
+horizon splitting into branches in a dynamical spacetime, while A.10's reduction and A.15's boost
+gauge both need a bifurcate *Killing* horizon, with a Killing field vanishing on a two-surface.
+Sharing the word is the whole of the resemblance.
 
 The type II-B arithmetic is kept because it answers a different question correctly.
 Normalised to the observed rate of ordinary primordial black hole formation, and separating the
@@ -1360,18 +1355,18 @@ $p=0.5$. What none of those numbers measure is the population of this section.
 
 What does populate it is a question about the fold and not about a tail. A.15 reduces the
 requirement to one statement, that the fold maps the hole to itself, and shows that statement
-carries the rest: the map is then forced, and the second exterior, the past interior and the
-bifurcation surface arrive with it rather than having to be manufactured. No formation channel has
-to supply a white-hole region, which is why no formation channel was ever going to settle this.
+carries the rest. The map is then forced, and the second exterior, the past interior and the
+bifurcation surface arrive with it. No formation channel has to supply a white-hole region, which is
+why no formation channel was ever going to settle this.
 
 A.15 then counts the class, and the count is one. Schwarzschild-de Sitter is the one exactly
 solvable background carrying a black-hole horizon and a cosmological one together, so it is where
-the question can be settled rather than argued. Below the Nariai limit it admits no single
-involution serving both horizons: the two wedge reflections compose to a timelike translation, so
-identifying them closes timelike curves, and the surface gravities differ as well. At Nariai the
-geometry is the product $\mathrm{dS}_2\times S^2$, both bifurcation surfaces sit in one
-$\mathrm{dS}_2$ at $X_0=X_1=0$, and the single linear map $(X_0,X_1,X_2)\mapsto(-X_0,-X_1,X_2)$
-fixes both while reversing time orientation and carrying our static patch to the other one.
+the question can be settled. Below the Nariai limit it admits no single involution serving both
+horizons: the two wedge reflections compose to a timelike translation, so identifying them closes
+timelike curves, and the surface gravities differ as well. At Nariai the geometry is the product
+$\mathrm{dS}_2\times S^2$, both bifurcation surfaces sit in one $\mathrm{dS}_2$ at $X_0=X_1=0$, and
+the single linear map $(X_0,X_1,X_2)\mapsto(-X_0,-X_1,X_2)$ fixes both while reversing time
+orientation and carrying our static patch to the other one.
 
 So the second class has exactly one member in the uncharged family, and it is the largest hole
 that family holds: $M=1/(3\sqrt\Lambda)$, about $2.2\times10^{22}$ solar masses at the observed
@@ -1432,11 +1427,11 @@ never a separate population. Sections 2 and 6 are looking at a single structure 
 and Section 5's contact radius climbing from half the horizon radius to all of it is the parameter
 between them made visible.
 
-Two claims do not survive that. A measurement of the primordial curvature tail does not falsify
-this: it measures the wrong quantity, and no test of the fold can be built on it.
-Sections 2 and 3 are untouched because they never needed a black hole, and Section 5's contact
-condition is untouched. What changes is that the object it describes is one configuration rather
-than a class with an abundance.
+Two claims do not survive that. A measurement of the primordial curvature tail does not falsify the
+fold: it measures the wrong quantity, and no test of the fold can be built on it. Sections 2 and 3
+are untouched because they never needed a black hole, and Section 5's contact condition is
+untouched. What changes is that the object it describes is one configuration rather than a class
+with an abundance.
 
 ![Two quantities that were computed for unrelated reasons, across the Schwarzschild-de Sitter
 family from Schwarzschild at the left to Nariai at the right. In blue, the contact radius of
@@ -1454,7 +1449,7 @@ one hole the fold can fix is also the one whose interior is entirely in contact,
 shell left where the sheets cannot reach.
 
 And the objection a maximal configuration invites, that it does not last, turns the same way,
-though not as far as it first appears to. Unfolded Nariai is unstable: the sphere-radius
+though not as far as it first appears to. Unfolded Nariai is unstable. The sphere-radius
 perturbation has exactly three modes and two of them run away, which is the known decay toward
 Schwarzschild-de Sitter. Both runaways are odd under the fold map and neither descends to the
 quotient, so the folded solution does not carry them. Section 9 sets out how narrow that is, and
@@ -1593,7 +1588,7 @@ showering, propagation and detector response, none of which is done here. Visibi
 the tree-level sense and genuinely conditional on everything downstream of it.
 
 The part that needs nothing is the lock. That $0.5$ is fixed by the $1:1:2$ tree-level ratio and
-by nothing else: not the Yukawa column, not the lifetime, not the halo profile, not the
+by nothing else, not the Yukawa column, not the lifetime, not the halo profile, not the
 fragmentation. The prediction is therefore not a ratio but a constraint, that the line strength
 and the decay rate are tied at a fixed fraction, two hard neutrinos per four decays. An
 astrophysical population has no reason to tie a line-like feature to its own continuum
@@ -1601,7 +1596,7 @@ normalisation at any fixed value, which is what makes this a discriminant where 
 is a population-level statement, since measuring a lock requires both the line and the continuum
 it is locked to, so it belongs with the cosmology paper's §3.2 directional requirement, where the
 single-event test is a different instrument. The two sit in the same regime and need the same
-order of exposure, which is the useful part: a population that can place the events on the sky can
+order of exposure, which is the useful part. A population that can place the events on the sky can
 also weigh the line against its own continuum, and the two discriminants come together or not at
 all. KM3NeT's broad reconstructed event-energy interval [26] is not evidence for this decay
 assignment; no likelihood preference over an astrophysical population is claimed.
@@ -1637,7 +1632,7 @@ None of that changes the radiation arithmetic below, and the reason it does not 
 the rest of this section. The two readings disagree about how much radiation the universe
 contains, and that quantity has been measured.
 
-A copy contributes nothing to the expansion rate: the mirror sheet is the same content described
+A copy contributes nothing to the expansion rate. The mirror sheet is the same content described
 twice, so the effective relativistic count is the Standard Model's, $g_*=106.75$, which is what
 the cosmology paper uses. A place contributes its own. Recombination tests that more cleanly than
 the bang does, since the radiation there is measured directly as $N_{\rm eff}$, the
@@ -1645,7 +1640,7 @@ effective number of neutrino species. A mirror sheet carrying the same content a
 radiation density while adding no photons we can see, and that is exactly the quantity $N_{\rm
 eff}$ counts. Writing the radiation density as $\rho_{\rm rad}=\rho_\gamma(1+0.2271\,N_{\rm
 eff})$, the Standard Model's $1.691\rho_\gamma$ is duplicated, which in $N_{\rm eff}$ units is an
-addition of $7.45$:
+addition of $7.45$,
 
 $$
 N_{\rm eff}^{\rm copy}=3.044,\qquad N_{\rm eff}^{\rm place}=10.49.
@@ -1684,10 +1679,10 @@ the sheets ever co-located at all? Geometry answers no, everywhere except the ba
 is the one surface they share.
 
 What survives runs the other way, and counts for more than the test. If the geometry forbids the
-place reading from contributing locally, then the cosmology paper's $g_*=106.75$ follows from the fold instead of being chosen, and its dark-matter ceiling of $491.6$ PeV does not carry
-the factor-of-two ambiguity that this section was written to resolve. That question dissolves
-rather than being decided by data. That is a smaller claim than a passed measurement and a
-defensible one.
+place reading from contributing locally, then the cosmology paper's $g_*=106.75$ follows from the
+fold instead of being chosen, and its dark-matter ceiling of $491.6$ PeV does not carry the
+factor-of-two ambiguity that this section was written to resolve. That question dissolves rather
+than being decided by data. That is a smaller claim than a passed measurement and a defensible one.
 
 Two things would put a real test back. An argument that the sheets are co-located at the bang in
 the sense the production calculation needs, which would make $g_*$ the observable and the
@@ -1720,50 +1715,52 @@ made, and we would rather say so than carry it as an asset.
 
 ## 9. Conclusions
 
-A horizon surrounds every observer. Ours is cosmological rather than gravitational, and the
-mathematics sealing its far side is the mathematics that seals a black hole. This paper asked what
-a mirror-symmetric universe does at such a surface, and the answer divides sharply into what the
-symmetry determines and what it merely permits.
+A horizon surrounds every observer. Ours is cosmological and a black hole's is not, and the
+mathematics sealing its far side is the mathematics that seals a black hole. This paper asked what a
+mirror-symmetric universe does at such a surface, and the answer divides into what the symmetry
+determines and what it only permits.
 
-At our own horizon nothing is chosen. The reflection is fixed by theorems and the transverse part
-is the antipodal parity their composition leaves behind, and out of that comes a reciprocal law.
-Take the correlation across a reflected separation over the correlation across the direct one,
-then multiply by the same ratio with the reflection applied once more, and the answer is exactly
-one. Every state, every metric on the surface, every free involution, one substitution to prove
-it. Its logarithm is therefore odd about ninety degrees, so all even multipoles vanish identically, at every order. Nobody put a temperature into any of this and one comes out, and we should be exact about which half of that is the content. The match is made against a state whose
-period is $2\pi/H$ already, so what it can establish is that the fold's map is a HALF-period shift
-and not a whole one, which makes it the square root of the thermal transformation rather than an
-addition to it. That the square root is what a geometric involution has to be, and that
-primitivity then picks the fundamental period rather than an odd multiple of it, is the part that
-was not put in.
+At our own horizon nothing is chosen. The reflection is fixed by theorems and the transverse part is
+the antipodal parity their composition leaves behind, and out of that comes a reciprocal law. Take
+the correlation across a reflected separation over the correlation across the direct one, then
+multiply by the same ratio with the reflection applied once more, and the answer is exactly one. It
+holds for every state, every metric on the surface and every free involution, and one substitution
+proves it. Its logarithm is therefore odd about ninety degrees, so all even multipoles vanish
+identically, at every order. No temperature was put into any of this and one comes out, though only
+half of that is content. The match is made against a state whose period is $2\pi/H$ already, so what
+it can establish is that the fold's map is a half-period shift and not a whole one, which makes it
+the square root of the thermal transformation rather than an addition to it. That the square root is
+what a geometric involution has to be, and that primitivity then picks the fundamental period rather
+than an odd multiple of it, is the part that was not put in.
 
 Three readings of the mirror sheet as a single copy of our own space were tested and all three fail,
 by algebra, by thermodynamics, and against the orbital decay of a binary pulsar measured to three
 decimal places. Three unrelated attacks falling the same way counts for more than any one of them.
 
-Past that, one thing is not supplied and we say so. Carrying the fold to a black hole
-requires a choice the theory does not make, and the coefficient it governs is adopted rather than
-derived. Two arguments that would have derived it are withdrawn alongside the calculations
-refuting them, and a third route is closed rather than merely failed: the seam action is
-fold-invariant at every value of the coefficient, so no symmetry can pick one out. What does pick
-one out is a premise about the seam rather than a symmetry of it. Energy crosses the seam freely
-at every coefficient and momentum does so only at the transparent one, whose stress tensor is
-continuous, so exactly one member of the family is a topological interface rather than a material
-one. The adoption rests on that premise, which the fold does not supply, and rejecting it removes one sentence.
+Past that, one thing is not supplied. Carrying the fold to a black hole requires a choice the theory
+does not make, and the coefficient it governs is adopted rather than derived. Two arguments that
+would have derived it are withdrawn alongside the calculations refuting them, and a third route is
+closed: the seam action is fold-invariant at every value of the coefficient, so no symmetry can pick
+one out. What does pick one out is a premise about the seam rather than a symmetry of it. Energy
+crosses the seam freely at every coefficient and momentum does so only at the transparent one, whose
+stress tensor is continuous, so exactly one member of the family is a topological interface rather
+than a material one. The adoption rests on that premise, which the fold does not supply, and
+rejecting it removes one sentence.
 
-The next result needs none of that, and the two are independent, though they sit next to each other. Where the two halves of a folded universe can touch is settled by causality alone,
-with no seam, no coefficient and no choice. Outside any horizon they cannot, because a point and
-its image are spacelike separated and the commutator vanishes; the silence is a theorem. Inside a
-hole possessing a past the product of the null coordinates changes sign and the radial separation
-turns timelike, but that much is two-dimensional and too generous. The fold's transverse map is
-antipodal, so contact needs half a turn of the sphere as well as a fall, and causality caps the
-angular path of any causal curve at $2\pi-4\arcsin\sqrt{r/2M}$. That reaches $\pi$ at the midpoint
-of the interior, which for an uncharged hole is $r=M$ and for a charged one is $(r_++r_-)/2$, the
-same fraction at every charge. So the sheets touch in the inner half of the interior, and nowhere
-else when the hole is uncharged, the mass cancels, and the one curve that does it never leaves the interior: it touches the
-horizon once, at the bifurcation surface, which at the outer edge of the region is the only route
-there is. Since the fold is a free involution, that region is where the quotient carries closed
-causal curves, so what the calculation locates is the folded hole's causality-violating core.
+The next result needs none of that, and the two are independent, though they sit next to each other.
+Where the two halves of a folded universe can touch is settled by causality alone, with no seam, no
+coefficient and no choice. Outside any horizon they cannot, because a point and its image are
+spacelike separated and the commutator vanishes; the silence is a theorem. Inside a hole possessing
+a past the product of the null coordinates changes sign and the radial separation turns timelike,
+but that much is two-dimensional and too generous. The fold's transverse map is antipodal, so
+contact needs half a turn of the sphere as well as a fall, and causality caps the angular path of
+any causal curve at $2\pi-4\arcsin\sqrt{r/2M}$. That reaches $\pi$ at the midpoint of the interior,
+which for an uncharged hole is $r=M$ and for a charged one is $(r_++r_-)/2$, the same fraction at
+every charge. So the sheets touch in the inner half of the interior, and nowhere else when the hole
+is uncharged. The mass cancels, and the one curve that does it never leaves the interior. It touches
+the horizon once, at the bifurcation surface, which at the outer edge of the region is the only
+route there is. Since the fold is a free involution, that region is where the quotient carries
+closed causal curves, so what the calculation locates is the folded hole's causality-violating core.
 
 And the core is not inert. Outside the contact radius the image term is real; at the radius it
 diverges as $\delta^{-3/2}$; inside it the interval is spacelike no longer and the term turns
@@ -1772,21 +1769,21 @@ region where the sheets touch is a region that makes matter and antimatter, from
 structure alone. Of everything in this paper that is the result we would most like to see
 someone find a way to test, and we see none.
 
-The same calculation run in $D$ dimensions selects the dimension. A Schwarzschild interior
-supplies exactly $\pi/(D-3)$ of turning to any causal curve crossing it, whatever the mass, and
-the connecting curve gets two legs of it. The antipodal map asks for $\pi$. The sweep covers it
-at $2\pi$ in four dimensions. In five it equals it, which a curve approaches and never
-attains, so the contact set is already empty there; above five it falls short outright. Four large
-dimensions is the only case in which the two sheets reach each other at all. Nothing was tuned to
-arrange that. The distance required is fixed by the antipode being an involution of a sphere and the sweep by
-$f$ having a simple zero and falling as $r^{-(D-3)}$, and the two meet in the dimension we are in,
-with a factor of two to spare. Everything this paper says about a black hole is empty one
-dimension up and two. Small extra dimensions are a separate case and Section 5.2 works it: above
-the compactification scale the sweep is the four-dimensional one and nothing changes, below it
-the hole is genuinely higher-dimensional and the contact set is empty, so what the count
-constrains is the size of hole the fold can reach inside rather than the existence of the
-dimensions. Where the cosmology paper derives a ceiling on a mass, this derives a depth, and
-neither has anything fitted in it.
+The same calculation run in $D$ dimensions selects the dimension. A Schwarzschild interior supplies
+exactly $\pi/(D-3)$ of turning to any causal curve crossing it, whatever the mass, and the
+connecting curve gets two legs of it. The antipodal map asks for $\pi$. The sweep covers it at
+$2\pi$ in four dimensions. In five it equals it, which a curve approaches and never attains, so the
+contact set is already empty there; above five it falls short outright. Four large dimensions is the
+only case in which the two sheets reach each other at all. Nothing was tuned to arrange that. The
+distance required is fixed by the antipode being an involution of a sphere and the sweep by $f$
+having a simple zero and falling as $r^{-(D-3)}$, and the two meet in the dimension we are in, with
+a factor of two to spare. Everything this paper says about a black hole is empty in five dimensions
+and in six. Small extra dimensions are a separate case and Section 5.2 works it: above the
+compactification scale the sweep is the four-dimensional one and nothing changes, below it the hole
+is genuinely higher-dimensional and the contact set is empty, so what the count constrains is the
+size of hole the fold can reach inside rather than the existence of the dimensions. Where the
+cosmology paper derives a ceiling on a mass, this derives a depth, and neither has anything fitted
+in it.
 
 Whether the fold then closes the core it locates is a further question, and two counts of it
 disagree. A parametrix count gives the region a divergent stress tensor at $s^{-3}$, and that
@@ -1798,17 +1795,16 @@ decides whether the divergence closes the region or merely marks it, comes from 
 which the whole calculation is closed form: the image energy density there is positive everywhere
 and diverges positively at contact. That model has no caustic, so it has the sign and not the
 power, while the one that has the power has no sign. Neither is a black hole, and what would settle it there is
-now known to be radial: the transverse sphere supplies the angular part of the potential at every
+now known to be radial. The transverse sphere supplies the angular part of the potential at every
 static spherically symmetric metric, so the sphere and its caustic drop out of the sign entirely.
 
 Such a hole would swallow matter from our side and antimatter from the mirror, and whether they
-finish annihilating before the singularity has a mass-independent answer, which is an odd thing
-for a black-hole calculation to have. What it would not do is grow any faster than a one-sided
-hole, which 6.1 settles rather than assumes: the fold's own time reversal puts each sheet's infall
-on its own side of the seam, and where the contact lets matter across, a swap of equal streams
-leaves both totals where they were. A doubled exponent over the window the overmassive early holes
-occupy would have been the difference between twelve e-folds and twenty-three, a factor of $10^5$,
-and it is not available.
+finish annihilating before the singularity has a mass-independent answer, which is an odd thing for
+a black-hole calculation to have. What it would not do is grow any faster than a one-sided hole,
+which 6.1 settles: the fold's own time reversal puts each sheet's infall on its own side of the
+seam, and where the contact lets matter across, a swap of equal streams leaves both totals where
+they were. A doubled exponent over the window the overmassive early holes occupy would have been the
+difference between twelve e-folds and twenty-three, a factor of $10^5$, and it is not available.
 
 Whether the universe contains one is where this half of the paper stops. The natural way to ask
 it is as a question about the tail of the primordial density field, counting holes that form
@@ -1821,14 +1817,13 @@ else, the second exterior included.
 
 It also counts the class. Schwarzschild-de Sitter is the one exactly solvable background holding a
 black-hole horizon and a cosmological one at once, and below the Nariai limit no single involution
-serves both: the two wedge reflections compose to a timelike translation, so identifying them
-closes timelike curves. At Nariai one does, because the geometry is a product and both bifurcation
-surfaces sit in a single two-dimensional de Sitter where one linear map fixes them together. So
-the class is the maximal hole, $2.2\times10^{22}$ solar masses at the observed $\Lambda$, its
-horizon ten billion light years in radius. Charge and spin widen that point to a branch and change
-nothing else about it, out to a spin $a/M=3/(4\sqrt{2\sqrt3-3})=1.10092$ that is the same number
-in every de Sitter background. Where a survey would go there is the boundary of
-the parameter space instead, and every object on it is a whole universe of geometry.
+serves both. The two wedge reflections compose to a timelike translation, so identifying them closes
+timelike curves. At Nariai one does, because the geometry is a product and both bifurcation surfaces
+sit in a single two-dimensional de Sitter where one linear map fixes them together. So the class is
+the maximal hole, $2.2\times10^{22}$ solar masses at the observed $\Lambda$, its horizon ten billion
+light years in radius. Charge and spin widen that point to a branch and change nothing else about
+it, out to a spin $a/M=3/(4\sqrt{2\sqrt3-3})=1.10092$ that is the same number in every de Sitter
+background. Where a survey would go there is the boundary of the parameter space instead.
 
 That is less of a special case than it sounds. The fold acts at the cosmological horizon whatever
 the mass, which is the map Section 2 works with, and a hole joins the second class precisely when
@@ -1838,7 +1833,7 @@ from opposite ends of a single parameter.
 Two further calculations, neither run for this purpose, arrive at the same configuration. The
 contact radius, swept against $\Lambda$, climbs from half the horizon radius to $0.991$ of it as
 Nariai is approached, so the hole the fold singles out has no shell left where the sheets fail to
-reach. And Nariai on its own decays: its sphere-radius perturbation has three modes and two of
+reach. And Nariai on its own decays, its sphere-radius perturbation has three modes and two of
 them run away. Both runaways change sign under the fold and neither descends to the quotient, so
 in that sector the configuration the fold singles out is also the one it holds still.
 
@@ -1856,17 +1851,18 @@ the relative radius of the two spheres of $S^2\times S^2$, constant on both fact
 constant is invariant under every isometry, so no free involution can project it out. The fold
 removes two runaway modes in one sector inside one patch. It does not make Nariai stable.
 
-One question looks as though data should settle it and does not, and the reason matters more than
-the answer would have been. Counting the radiation would separate a copy of our degrees of freedom
-from a place carrying its own only if the two contributed at the same events, and the fold puts
-them at different ones, which is the same fact that makes the silence a theorem. So $N_{\rm eff}$
-is $3.044$ under either reading and Planck does not discriminate. The question itself is settled elsewhere in this paper, so the null result here is not agnosticism: Section 3's three tests fail three implementations of the copy reading, and A.8 makes the mirror sheet a purification, an algebra
-that is the commutant of ours with every expectation in it fixed by our own state. What that
-leaves is not nothing: if the geometry forbids the mirror sheet from contributing locally, the
-cosmology paper's $g_*=106.75$ is forced rather than chosen, and its dark-matter ceiling carries
-no factor-of-two ambiguity on that account. The same choice shifts the predicted neutrino line by
-seven per cent, which is a real prediction and not a near-term one, since that measurement is
-limited by an absolute energy scale uncertain at fifteen to twenty-five per cent and no amount of
+One question looks as though data should settle it and does not. Counting the radiation would
+separate a copy of our degrees of freedom from a place carrying its own only if the two contributed
+at the same events, and the fold puts them at different ones, which is the same fact that makes the
+silence a theorem. So $N_{\rm eff}$ is $3.044$ under either reading and Planck does not
+discriminate. The question itself is settled elsewhere in this paper, so the null result here is not
+agnosticism: Section 3's three tests fail three implementations of the copy reading, and A.8 makes
+the mirror sheet a purification, an algebra that is the commutant of ours with every expectation in
+it fixed by our own state. What that leaves is not nothing: if the geometry forbids the mirror sheet
+from contributing locally, the cosmology paper's $g_*=106.75$ is forced, and its dark-matter ceiling
+carries no factor-of-two ambiguity on that account. The same choice shifts the predicted neutrino
+line by seven per cent, which is a real prediction and not a near-term one, since that measurement
+is limited by an absolute energy scale uncertain at fifteen to twenty-five per cent and no amount of
 exposure reduces a common-mode systematic.
 
 This work also commits itself somewhere a current instrument can reach. Every gravitational-wave
@@ -1881,18 +1877,18 @@ One thing that falls out of settling the seam's spectral response matters more t
 gravitational-wave reader than the null prediction, because it applies whatever the fold turns out
 to be. A.14 computes $M\,d\omega/d\mathcal R_h=0.00735845-0.0646771\,i$ for the fundamental
 $\ell=2$ Schwarzschild mode, so a horizon reflectivity moves the damping time by $-0.727\,\mathcal
-R_h$ and the real frequency by $+0.0197\,\mathcal R_h$: thirty-seven times harder on the decay
+R_h$ and the real frequency by $+0.0197\,\mathcal R_h$, thirty-seven times harder on the decay
 than on the note. The response is linear and signed, so a reflecting horizon can shorten a
 ringdown as readily as lengthen one, and the absorption model in common use,
 $\tau\to\tau/(1-|\mathcal R|^2)$, is quadratic and signless and therefore wrong at leading order.
 At $|\mathcal R|=0.1$ the linear term is $7.2$ times the quadratic one. A searcher should take the
 derivative from this paper whatever they make of the fold.
 
-One thing this paper arrived at late concerns the divide itself. Since $\Theta^2=1$, the average of a field's two sheet readings is exactly its
-fold-even part and the difference exactly its fold-odd part, so the fold's parity is the
-classical-quantum split: where the sheets agree the difference vanishes and the physics is
-classical, and where they disagree is where the commutator lives. No interpretation has been laid
-over the algebra to get there. The algebra says it once the second contour leg is a place.
+One more result concerns the divide itself. Since $\Theta^2=1$, the average of a field's two sheet
+readings is exactly its fold-even part and the difference exactly its fold-odd part, so the fold's
+parity is the classical-quantum split. Where the sheets agree the difference vanishes and the
+physics is classical, and where they disagree is where the commutator lives. No interpretation has
+been laid over the algebra to get there. The algebra says it once the second contour leg is a place.
 
 Nor is the amplitude of the quantum half free. Fold-invariance forces $\langle\Theta
 A\Theta\rangle=\langle A\rangle$ for Hermitian $A$, so wherever $\Theta$ exchanges two things
@@ -1904,20 +1900,22 @@ correlator the direct one shifted by $i\beta/2$, hence a thermofield double with
 r=e^{-\beta\omega/2}$ and $\sinh^2r=1/(e^{\beta\omega}-1)$ exactly. A bifurcate horizon's
 two-sheet squeeze is its temperature's, with nothing to choose.
 
-Two ends of the fold then meet at one frequency. The crossing's ceiling
-$\mathrm{arcsinh}(1/\sqrt2)$ is the horizon's own value at $\beta\omega=\ln3$, to
-$8\times10^{-22}$, and the agreement is arithmetic rather than arranged. Two assumptions stand behind saying it, equilibrium at the horizon and the fold being $J\circ P_\perp$ rather than $J$, and A.8 carries both. Against that, the fold does not quantise
-gravity and does not need to: the divide it was meant to explain comes out of the fold's own
-parity, and the one number that looked adopted turns out to be a temperature.
+The bang and the horizon, the two ends of the fold, then meet at one frequency. The crossing's
+ceiling $\mathrm{arcsinh}(1/\sqrt2)$ is the horizon's own value at $\beta\omega=\ln3$, to
+$8\times10^{-22}$, and the agreement is arithmetic. Two assumptions stand behind saying it,
+equilibrium at the horizon and the fold being $J\circ P_\perp$ rather than $J$, and A.8 carries
+both. The fold does not quantise gravity, and for these results it does not need to: the divide it
+was meant to explain comes out of the fold's own parity, and the one number that looked adopted
+turns out to be a temperature.
 
 What stays open is named where it arises. The seam coefficient is adopted. The reduction Appendix
 A.10 rests on is not proved there, since a restriction to a codimension-two surface is not
-automatic. Section 6's count is made inside the Kerr-Newman-de Sitter family, and nothing outside
-it has been looked at; and the embedding argument is not done inside the warped rotating
-near-horizon geometry, which the uncharged case has in full. And the interior algebra, which is
-the one place the two sheets can actually reach each other, is not built here: whether anything
-crosses the singularity, whether Hawking radiation is needed if it does, and what a two-sided hole
-looks like from outside are one question wearing three faces, and nobody has done it.
+automatic. Section 6's count is made inside the Kerr-Newman-de Sitter family, and nothing outside it
+has been looked at; and the embedding argument is not done inside the warped rotating near-horizon
+geometry, which the uncharged case has in full. And the interior algebra, which is the one place the
+two sheets can actually reach each other, is not built here. Whether anything crosses the
+singularity, whether Hawking radiation is needed if it does, and what a two-sided hole looks like
+from outside are one question asked three ways, and it has not been answered.
 
 Rotation is half settled. The fold map carries to Kerr exactly: the wedge reflection built from
 the horizon generator, composed with the flow of the axial Killing field through $\pi$ and the
@@ -1930,20 +1928,19 @@ stays a conjecture at spin. Nor does the reading carry, because the bang is a sp
 crossed in time and a ring is crossed in space,
 and no further algebra will settle a question that was never algebraic.
 
-What this paper adds, said once. The fold is not ours. The fold comes from the
-CPT-symmetric cosmology, the elliptic interpretation of a black hole from Gibbons [29] and Sanchez
-and Whiting [30], the gauging of a spacetime inversion from Harlow and Numasawa [6]. What is new
-is one question and its answer: where, if anywhere, can a point reach its own fold image. Outside
-a horizon the answer is nowhere, and it is a theorem rather than a failure of imagination. Inside
-one it is the inner half of the interior, at every charge, in four large spacetime dimensions and
-no others, from a causal sweep, which A.15 places against the four-dimensions genre and against
-its closest relative, a century old and resting on the degree of a form rather than on causality.
-Everything else here follows from that question being asked precisely.
+The fold itself is not new here. It comes from the CPT-symmetric cosmology, the elliptic
+interpretation of a black hole from Gibbons [29] and Sanchez and Whiting [30], the gauging of a
+spacetime inversion from Harlow and Numasawa [6]. What is new is one question and its answer, where,
+if anywhere, can a point reach its own fold image. Outside a horizon the answer is nowhere, and it
+is a theorem. Inside one it is the inner half of the interior, at every charge, in four large
+spacetime dimensions and no others, from a causal sweep, which A.15 places against the
+four-dimensions genre and against its closest relative, a century old and resting on the degree of a
+form rather than on causality.
 
 The fold's map near a hole it fixes is forced and carries no free parameter; the second exterior
-arrives with it rather than having to be made; the holes it can fix are the maximal ones alone,
-out to a spin that is the same number in every de Sitter background; and the configuration it
-singles out is the one it holds still.
+arrives with it; the holes it can fix are the maximal ones alone, out to a spin that is the same
+number in every de Sitter background; and in one sector the configuration it singles out is the one
+it holds still.
 
 One more item belongs on that list with a qualification attached to it. The state that map forces is the state whose image term diverges on the very
 region the same map creates, so the fold polices its own causality violation and nothing
@@ -1968,8 +1965,8 @@ through the WKB mode count in the observer's proper variables, the Jacobian $d\o
 $\beta$ runs from $251$ to $0.025$, four decades. The wedge metric in boost coordinates has no $\kappa$ in it
 and the modular temperature is $2\pi$ there at every wedge, which is the same theorem $J$ is read
 from. What $S/A$ does carry is the cutoff, as $1/\epsilon^2$, and that divergence is the
-dimension-two constant no dimension-zero input could have returned. One condition comes with it:
-because of that $1/\epsilon^2$, the cutoff has to be a single proper length rather than one per
+dimension-two constant no dimension-zero input could have returned. One condition comes with it.
+Because of that $1/\epsilon^2$, the cutoff has to be a single proper length rather than one per
 horizon, a cutoff tracking $\kappa$ moving $S/A$ by a factor of $52$ over the same range. The
 mode-counting prescription is not a condition: weighting the transverse density by
 $e^{-k\epsilon}$ or $1/(1+k^2\epsilon^2)$ moves $S/A$ from $2.137$ to $1.629$ and $1.931$ while
@@ -1986,7 +1983,7 @@ geodesic shooting on a surface with $\nabla K\ne0$, the residual $G_{\mu\nu}(v)-
 fitted exponent $2.9994$ against $3$, and its coefficient extrapolates to $0.168936$ against the
 closed form $\tfrac13(\nabla K\cdot v)(|v|^2\delta_{\mu\nu}-v_\mu v_\nu)$, which gives $0.168939$.
 On a surface whose cubic part is harmonic, so that the curvature varies while $\nabla K$ vanishes
-at the point, the exponent moves to $5.0406$ and the cubic is gone: what the residual tracks is
+at the point, the exponent moves to $5.0406$ and the cubic is gone, what the residual tracks is
 $\nabla R$ at the point and nothing else. Set against the second-order term the balance uses, the
 ratio extrapolates to $1.4435$ times the patch size and vanishes with it, and the field equation is
 that limit.
@@ -2003,7 +2000,7 @@ $(\pi/2+1)M$ inside the horizon, thirty-eight orders of magnitude above the Plan
 flat space, where the local Rindler horizons live, the Van Vleck determinant is one everywhere and
 no such locus exists. So the field equations follow from the fold and one constant where they had
 followed from a temperature, an entropy law and a constant. That the argument does not assume its
-own conclusion is a graph property and is treated as one: thirty derived nodes over six
+own conclusion is a graph property and is treated as one. Thirty derived nodes over six
 declared roots, acyclic, with no path from the field equations reaching general relativity or
 Bekenstein-Hawking, and both ways of breaking it detected when planted. The sixth root is the
 Hadamard condition on states, which the graph did not carry until it was asked to, and which is a
@@ -2050,18 +2047,18 @@ disagreeing rather than the size of the difference between the metrics. None of 
 universe could not carry two metrics. It says the derivation would stop where it stands and hand back no
 field equation at all, which is what it looks like for an assumption to be load-bearing.
 
-Where that constant might have come from needs two sentences, because both places have now been
-looked at. In the late universe §5.2's sweep is short at every finite radius, so the image stress
-is zero and sources nothing. At the bang, $\Theta:\eta\to-\eta$ is an isometry only for $a$ odd
-in $\eta$, which admits a fluid exactly where $-3w$ is an odd integer and excludes dust, so the
-fold requires a hot bang and permits any $\Lambda$. The one remaining route runs through $m^2$,
-which shares the Hadamard slot with $(\xi-1/6)R$ and so keeps an image stress alive for massive
-content. Rescaling $\eta=s/\sqrt\gamma$, $p=q\sqrt\gamma$ removes $\gamma=M_1a_1$, with $a_1$ the scale factor's leading coefficient near the bang, from the
-crossing, identically to seven figures over two decades in $\gamma$, leaving
+Where that constant might have come from has been looked at in both places. In the late universe
+§5.2's sweep is short at every finite radius, so the image stress is zero and sources nothing. At
+the bang, $\Theta:\eta\to-\eta$ is an isometry only for $a$ odd in $\eta$, which admits a fluid
+exactly where $-3w$ is an odd integer and excludes dust, so the fold requires a hot bang and permits
+any $\Lambda$. The one remaining route runs through $m^2$, which shares the Hadamard slot with
+$(\xi-1/6)R$ and so keeps an image stress alive for massive content. Rescaling $\eta=s/\sqrt\gamma$,
+$p=q\sqrt\gamma$ removes $\gamma=M_1a_1$, with $a_1$ the scale factor's leading coefficient near the
+bang, from the crossing, identically to seven figures over two decades in $\gamma$, leaving
 $\rho_{\rm img}=\gamma^2H(s)/a^4$ with $s$ proportional to $a$. Constancy in $a$ then demands
 $H\propto s^4$ and returns $cM_1^4$, which is $81.4$ orders of magnitude above the observed
-$\rho_\Lambda$. The fold has no scale near $2.2$ meV, so $\Lambda$ is a boundary datum
-and nothing here was ever going to produce it.
+$\rho_\Lambda$. The fold has no scale near $2.2$ meV, so $\Lambda$ is a boundary datum and nothing
+here was ever going to produce it.
 
 None of that needed the seam coefficient, and none of it is
 a measurement. It is what taking CPT seriously turns out to commit you to at a horizon, which is
@@ -2163,7 +2160,7 @@ at the de Sitter horizon belongs to the thermal contour's cross-leg kernel, and 
 the fold kernel is half of it. The transverse parity flips the sign of the $r^2$ term, which is
 what cancels the radial dependence. This is a statement about $\gamma=0$ and does not generalise
 as it stands. At the horizon $1-Z_J\to1-\cos\gamma$ and $1-Z_\alpha\to1+\cos\gamma$, so each
-kernel is singular exactly where its own map brings the two points together: the thermal contour's
+kernel is singular exactly where its own map brings the two points together, the thermal contour's
 at coincident directions, the fold's at antipodal ones. Neither is the better behaved overall. The
 general statement is the horizon ratio,
 
@@ -2181,7 +2178,7 @@ $$
 the squared chord between the two points over the squared chord from one to the other's antipode.
 $J$ leaves the transverse direction alone, while $\alpha$ carries it to the antipodal one, so each
 kernel is controlled by the separation of its own pair of arguments. The three features the
-cosmology paper's A.1 states then need no calculation here: each is the ordinary short-distance
+cosmology paper's A.1 states then need no calculation here. Each is the ordinary short-distance
 singularity of a two-point function, appearing at the angle its own identification selects. The
 $1-Z_\alpha=2$ identity is specific to $\gamma=0$ and $\Delta t=0$; the $\tan^2(\gamma/2)$ ratio
 holds at every angle. Both are statements about the conformally coupled massless scalar in the
@@ -2206,12 +2203,12 @@ Contamination by higher multipoles belongs to the variable. The fold does not pr
 discrepancy is a difference of kernels; the ratio is not, and by the reciprocal law of A.10
 $\log(G_\alpha/G_J)$ is odd about $\gamma=\pi/2$ for any Hadamard state, so its even multipoles
 vanish *identically* at every radius and every time separation, rather than only while $b/a$ is
-small. That is algebra and not a measurement: a projection at $r=0.9$, where the quadrupole of the
-discrepancy is 53% of its dipole, returns even coefficients below $10^{-15}$ for four unrelated
-profiles, which tests the quadrature and not the claim. The quantity that matters is the truncation error, since the logarithmic endpoints make the series converge in $L^2$ but not
-pointwise there, and a truncated reconstruction rings within $O(1/\ell_{\max})$ of $\gamma=0$ and
-$\pi$. The dipole dominance that has to be argued for in the difference is exact in the logarithm,
-away from the two endpoints.
+small. That is algebra. A projection at $r=0.9$, where the quadrupole of the discrepancy is 53% of
+its dipole, returns even coefficients below $10^{-15}$ for four unrelated profiles, which tests the
+quadrature and not the claim. The quantity that matters is the truncation error, since the
+logarithmic endpoints make the series converge in $L^2$ but not pointwise there, and a truncated
+reconstruction rings within $O(1/\ell_{\max})$ of $\gamma=0$ and $\pi$. The dipole dominance that
+has to be argued for in the difference is exact in the logarithm, away from the two endpoints.
 
 Two readings have to be excluded. The discrepancy depends on $r_1$, $r_2$, $\gamma$ and $\Delta t$
 alone, so it is invariant under a rigid rotation of both points and selects no axis; $P_\perp$ is
@@ -2301,14 +2298,12 @@ time-odd order parameter, while |*D*| depends on $\dot a ^2$ alone, as time reve
 summing the mode overlaps over the $S^3$ tower with degeneracy $n^2$ gives the closed form. At
 large *A* the summand depends on *n* only through *u* = *n*/*A*, so the sum becomes
 $A^3\int_0^\infty u^2\ln(1+u^{-6})\,du=\pi A^3/3$, and the asymptote is already good to 0.07 per
-cent at *A* = 10: the sum is $-261.627$ against $-261.799$, a gap of $0.066$ per cent. The
+cent at *A* = 10, the sum is $-261.627$ against $-261.799$, a gap of $0.066$ per cent. The
 integral is $\pi/3$ to $2\times10^{-16}$ and the sum is converged in the truncation.
 
-The main paper keeps a six-line pointer in place of this material, and the reason is not
-presentational: of the conclusions this programme reversed under adversarial review, four of five
-were here and one was in the cosmology paper. It is the least settled part of the work and the
-part the cosmological results do not depend on. Keeping it here lets the paper carry the bound,
-and lets this document carry the horizon question at whatever length it needs.
+The cosmology paper keeps a short pointer in place of this material. It is the least settled part of
+the work and the part the cosmological results do not depend on, and keeping it here lets that paper
+carry the bound while this one carries the horizon question at whatever length it needs.
 
 **A.8 The image term: what positivity and Hadamard forbid, what they allow, and what sets its
 size.** §3.1's two inequalities, derived. Let $\mathcal{A}$ be the antipodal map (*A* is reserved
@@ -2373,7 +2368,7 @@ $\cosh^2r-\sinh^2r=1$, so the commutator and positivity are untouched; $\Delta W
 of products of smooth mode functions, so the short-distance singularity is untouched and the state
 remains Hadamard; and the local stress moves. Constancy across the spectrum is what the argument
 above excludes, not image correlation as such. Nor is the fold confined to a parity-blind
-spherical mode: a transversely odd $\ell=1$ mode, for which $u(\Theta x)=-\overline{u(x)}$, flips
+spherical mode. A transversely odd $\ell=1$ mode, for which $u(\Theta x)=-\overline{u(x)}$, flips
 the sign of the image coefficient and still gives a nonzero stress shift.
 
 Nor does it need a mass, which was the first thing suspected of it. Running the same construction
@@ -2396,14 +2391,13 @@ ambiguity is the familiar infrared one of a minimally coupled massless field in 
 this model's clothes, and it does not touch the conformally coupled case worked above, where $\xi
 R$ acts as a mass and there is no zero mode to argue about.
 
-What that leaves is a selection problem rather than an exclusion, and we should be exact
-about which kind, because the fold is not silent on selection in general. For an antiunitary
-$\Theta$ with $\Theta^2=1$, a $\Theta$-invariant state and a Hermitian $A$, $\langle\Theta
-A\Theta\rangle=\overline{\langle A\rangle}=\langle A\rangle$. That is antilinearity and
-hermiticity and nothing else. Where $\Theta$ *exchanges* two things it therefore forces their
-expectations equal, which is how the cosmology paper's contact condition $\langle
-N_+\rangle=\langle N_-\rangle$ arises at the bang: a consequence rather than a prescription, and
-with it a definite occupation.
+What that leaves is a selection problem rather than an exclusion, and we should be exact about which
+kind, because the fold is not silent on selection in general. For an antiunitary $\Theta$ with
+$\Theta^2=1$, a $\Theta$-invariant state and a Hermitian $A$, $\langle\Theta
+A\Theta\rangle=\overline{\langle A\rangle}=\langle A\rangle$. That is antilinearity and hermiticity
+and nothing else. Where $\Theta$ *exchanges* two things it therefore forces their expectations
+equal, which is how the cosmology paper's contact condition $\langle N_+\rangle=\langle N_-\rangle$
+arises at the bang, a consequence, and with it a definite occupation.
 
 Where $\Theta$ *fixes* the object instead, the same identity constrains nothing, and a fold-real
 mode at a horizon is that case. A squeezed vacuum with real $r$ has real Fock amplitudes, so it is
@@ -2413,19 +2407,18 @@ where it exchanges and not where it fixes.
 
 So the squeeze parameter is not a foundational gap waiting for a new principle. The state at a
 horizon is whatever the selected bang state evolves into, which makes this a propagation question
-and not a question about what selects. What survives as genuine freedom is the phase the bang
-leaves per mode, and that is a smaller and better-posed object than a free amplitude. It is also
-bounded rather than open. A squeeze is measured by its occupation, $\langle N\rangle=\sinh^2r$, so
-the occupation the bang selects is a squeeze it selects, $r=\mathrm{arcsinh}\sqrt{n_*}$ with
-$n_*=(1-\sqrt{1-P})/2$ the cosmology paper's floor; and since $n_*\leq\tfrac12$,
-$r\leq\mathrm{arcsinh}(1/\sqrt2)=0.65848$, a pure number. Reading that as a ceiling here needs two
-things neither paper establishes, that the crossing's invariance reaches the mode and that its
-squeeze is inherited rather than regenerated, and both are stated rather than assumed. That
-propagation is short, because §3's horizon law, derived in A.10, has already done its hard half. The fold's map is the
-square root of the thermal transformation at the primitive period, so for a state in equilibrium
-at a horizon the cross-sheet correlator is the direct one shifted by half a period, which is a
-consequence and not a choice. Carrying it through for one mode of frequency $\omega$ at inverse
-temperature $\beta$,
+and not a question about what selects. What survives as genuine freedom is the phase the bang leaves
+per mode, and that is a smaller and better-posed object than a free amplitude. It is also bounded. A
+squeeze is measured by its occupation, $\langle N\rangle=\sinh^2r$, so the occupation the bang
+selects is a squeeze it selects, $r=\mathrm{arcsinh}\sqrt{n_*}$ with $n_*=(1-\sqrt{1-P})/2$ the
+cosmology paper's floor; and since $n_*\leq\tfrac12$, $r\leq\mathrm{arcsinh}(1/\sqrt2)=0.65848$, a
+pure number. Reading that as a ceiling here needs two things neither paper establishes, that the
+crossing's invariance reaches the mode and that its squeeze is inherited rather than regenerated,
+and both are stated as assumptions. That propagation is short, because §3's horizon law, derived in
+A.10, has already done its hard half. The fold's map is the square root of the thermal
+transformation at the primitive period, so for a state in equilibrium at a horizon the cross-sheet
+correlator is the direct one shifted by half a period, which is a consequence. Carrying it through
+for one mode of frequency $\omega$ at inverse temperature $\beta$,
 
 $$W\!\left(t-\tfrac{i\beta}{2}\right)=\frac{\cos\omega t}{2\omega\sinh(\beta\omega/2)},$$
 
@@ -2437,34 +2430,32 @@ double is a two-mode squeezed vacuum at
 $$\tanh r(\omega)=e^{-\beta\omega/2},\qquad
 \langle N\rangle=\sinh^2 r=\frac{1}{e^{\beta\omega}-1},$$
 
-the second identity exact rather than approximate. So the squeeze the fold carries at a horizon is
-fixed by the mode frequency and the surface gravity and nothing else. The amplitude left open
-above is not open.
+the second identity exact. So the squeeze the fold carries at a horizon is fixed by the mode
+frequency and the surface gravity and nothing else. The amplitude left open above is not open.
 
-Two things travel with that and both are stated rather than buried. The fold is $J\circ P_\perp$
-and not $J$, and the embedding settles that: on the de Sitter hyperboloid
-in $\mathbb R^{1,4}$ the two factors compose to $-\mathrm{Id}$ to machine zero, $J$ alone has a
-three-dimensional $+1$ eigenspace whose restricted form is positive definite and therefore a whole
-two-sphere of fixed points, $P_\perp$ alone fixes a hyperbola, and a $\pi$ rotation put in place
-of the parity fixes two points. A fold pairs two sheets, so a fixed point is a point that is its
-own mirror and none is allowed; total inversion is the only one of the four with no $+1$
-eigenvalue, and its differential on the tangent space has trace $-4$. Scaling one transverse
-direction by $1.1$ inside the reflection breaks the isometry by $0.210$, so the enumeration is over
-isometries and not over maps. What travels with the choice being forced is that the state is the
-thermofield double carrying an extra transverse parity: the
+Two things travel with that and both are stated. The fold is $J\circ P_\perp$ and not $J$, and the
+embedding settles that: on the de Sitter hyperboloid in $\mathbb R^{1,4}$ the two factors compose to
+$-\mathrm{Id}$ to machine zero, $J$ alone has a three-dimensional $+1$ eigenspace whose restricted
+form is positive definite and therefore a whole two-sphere of fixed points, $P_\perp$ alone fixes a
+hyperbola, and a $\pi$ rotation put in place of the parity fixes two points. A fold pairs two
+sheets, so a fixed point is a point that is its own mirror and none is allowed; total inversion is
+the only one of the four with no $+1$ eigenvalue, and its differential on the tangent space has
+trace $-4$. Scaling one transverse direction by $1.1$ inside the reflection breaks the isometry by
+$0.210$, so the enumeration is over isometries and not over maps. What travels with the choice being
+forced is that the state is the thermofield double carrying an extra transverse parity. The
 marginals on either sheet are unchanged while the cross-sheet term picks up $(-1)^{\ell}$ per
-multipole, which is why a stress evaluated at a single squeeze comes out with opposite signs at
-the pole and at the equator. And equilibrium at the horizon is not a theorem about every state,
-though it is a weaker assumption than that sentence used to admit.
+multipole, which is why a stress evaluated at a single squeeze comes out with opposite signs at the
+pole and at the equator. And equilibrium at the horizon is not a theorem about every state, though
+it is a weak assumption, as the next paragraph shows.
 
-The Hadamard condition, imposed on every state calculated with here, makes the singular part of a
-two-point function a matter of geometry and the state-dependent part smooth, and the temperature
-comes from the singular part. On a patch of proper size $r$ the state-dependent part reaches the
-ratio $W_{\rm reg}/W_{\rm sing}$ only at order $r^2$: a thermal state at temperature $T$ gives
-$\pi^2r^2T^2/3$, with the coefficient $3.2898681$ against $\pi^2/3$ and the exponent
-$2.000000$ fitted over five decades, and a classical background gives $4\pi^2r^2\phi_{\rm cl}^2$
-at $1.999972$. Since the balance is already first order in the patch, an error of relative order
-$(rT)^2$ in the temperature falls one order below the equation returned.
+The Hadamard condition, imposed on every state used here, makes the singular part of a two-point
+function a matter of geometry and the state-dependent part smooth, and the temperature comes from
+the singular part. On a patch of proper size $r$ the state-dependent part reaches the ratio $W_{\rm
+reg}/W_{\rm sing}$ only at order $r^2$: a thermal state at temperature $T$ gives $\pi^2r^2T^2/3$,
+with the coefficient $3.2898681$ against $\pi^2/3$ and the exponent $2.000000$ fitted over five
+decades, and a classical background gives $4\pi^2r^2\phi_{\rm cl}^2$ at $1.999972$. Since the
+balance is already first order in the patch, an error of relative order $(rT)^2$ in the temperature
+falls one order below the equation returned.
 
 Alter the singular
 coefficient, which is what leaving the Hadamard class does, and the ratio goes to the alteration
@@ -2473,7 +2464,7 @@ statement about a shrinking patch and not about a whole horizon, a stellar-mass 
 microwave background having $rT$ near $3.57\times10^6$; and it quantifies the deviation rather than removing it, so a state with no KMS property at the horizon remains a state the fold has
 nothing to say about. A third qualifier belongs with those two and is a restriction on *which* horizons the
 result describes. The half-period shift is A.10's statement at a bifurcate Killing horizon, and a
-hole formed by collapse has none: no past singularity, no second exterior, no bifurcation surface.
+hole formed by collapse has none, no past singularity, no second exterior, no bifurcation surface.
 So the squeeze computed here is the squeeze at the cosmological horizon and at a two-sided hole,
 and Section 6 counts that class at one member. What the result does not do is assign a two-sheet
 correlation to the horizon of an ordinary astrophysical black hole, where the fold still pairs our
@@ -2482,17 +2473,17 @@ its own.
 
 ![The two ends of the fold, and the one frequency where they agree. Left: what the crossing at the bang selects. Fold-invariance forces half-and-half occupancy, so the pair-block floor is $n_*(P)=(1-\sqrt{1-P})/2$, and since a squeeze carries $\langle N\rangle=\sinh^2 r$ the selected occupation is a selected squeeze $r=\mathrm{arcsinh}\sqrt{n_*}$, topping out at $\mathrm{arcsinh}(1/\sqrt2)=0.6585$ when the crossing is complete. Right: what equilibrium at a bifurcate horizon fixes, the half-period shift making the state a thermofield double with $\tanh r=e^{-\beta\omega/2}$. The dashed line is the same in both panels, and the horizon curve crosses it at $\beta\omega=\ln3$ exactly, to machine zero. The reason is that both ends are statements about one half: $\Theta$-invariance caps the crossing at half occupancy, a horizon mode is half occupied where the Bose factor is one half, and that is $e^{\beta\omega}=3$. The curves meet because they say the same thing.](fig_companion_two_ends.pdf)
 
-One number joins this to the other end of the fold. The cosmology paper's crossing bounds
-the squeeze at the bang by $\mathrm{arcsinh}(1/\sqrt2)=0.65848$, and that is exactly the horizon's
-own value at $\beta\omega=\ln3$, since $\sinh r=1/\sqrt2$ gives $\cosh r=\sqrt{3/2}$ and therefore
-$\tanh r=1/\sqrt3=e^{-\ln3/2}$; the two agree to $8\times10^{-22}$. That agreement is no coincidence, and it is better for not being one: the ceiling is half occupancy, the Bose factor
+One number joins this to the other end of the fold. The cosmology paper's crossing bounds the
+squeeze at the bang by $\mathrm{arcsinh}(1/\sqrt2)=0.65848$, and that is exactly the horizon's own
+value at $\beta\omega=\ln3$, since $\sinh r=1/\sqrt2$ gives $\cosh r=\sqrt{3/2}$ and therefore
+$\tanh r=1/\sqrt3=e^{-\ln3/2}$; the two agree to $8\times10^{-22}$. That agreement is no
+coincidence, and it is better for not being one: the ceiling is half occupancy, the Bose factor
 reaches half at $e^{\beta\omega}=3$, and the two curves meet there because they are the same
-statement. The ceiling is exactly one half, which is what
-$\Theta$-invariance gives and nothing else chose. Modes softer than $T\ln3$ sit
-above the bang's ceiling and harder ones below it. The two ends of the fold meet at one
-frequency, and the meeting is arithmetic rather than arranged.
+statement. The ceiling is exactly one half, which is what $\Theta$-invariance gives and nothing else
+chose. Modes softer than $T\ln3$ sit above the bang's ceiling and harder ones below it. The two ends
+of the fold meet at one frequency, and the meeting is arithmetic.
 
-The Hadamard step is short-distance: the image term is regular as *Z* $\to$ 1; its only pole sits
+The Hadamard step is short-distance, the image term is regular as *Z* $\to$ 1; its only pole sits
 at *Z* = $-1,$ which a pair of points reaches only on the horizon; so the whole coincidence
 singularity of *W* is *A* times the cover's, and fixing it to the cover's geometric value *is* *A*
 = 1, whence *B* = 0. Against that, the tested projected image prescription, (*A*,*B*) = (1,1) or
@@ -2507,7 +2498,7 @@ normalisation *A* = 1.
 **A.9 A selected time-symmetric response has zero net dissipative work.** §3.3's vanishing,
 derived. The antipode is an isometry that reverses time orientation, so it exchanges the past and
 future light cones and therefore $G_{\mathrm{ret}}$ $\circ$ (*A*×*A*) = $G_{\mathrm{adv}}$. The
-Wheeler–Feynman exchange [27] is also checked numerically: max |$G_{\mathrm{ret}}$(*Ax*,*Ay*) $-$
+Wheeler–Feynman exchange [27] is also checked numerically, max |$G_{\mathrm{ret}}$(*Ax*,*Ay*) $-$
 $G_{\mathrm{adv}}$(*x*,*y*)| = 0.000e+00 for four masses; hence **within the retarded/advanced
 affine family** the unique invariant combination is the even one. This does not make the complete
 quotient Green problem unique without boundary data. For two sources at separation *R* coupled
@@ -2559,37 +2550,36 @@ complete-response implementation is excluded by it.
 
 **A.10 The law is the KMS condition off the surface, and how far the horizon ratio carries.** §3's
 law, derived, and how far it carries. The objection to meet first is that the reciprocal law is
-definitional: it holds for any involution and any positive kernel, so on $B$ it constrains
-nothing. That objection is right, and it is right off $B$ as well. With $R(x,y)=W(x,JP_\perp
-y)/W(x,Jy)$ and $P_\perp^2=\mathbb 1$, substitution alone gives $R(x,P_\perp y)=R(x,y)^{-1}$ at
-every separation, so the identity carries no information anywhere and no temperature enters it.
-What carries the argument off $B$ is a match and never the identity, and the boost separation that
-has not yet dropped out is what leaves room for one. A.6 derives the image kernel $G_{\rm
+definitional. It holds for any involution and any positive kernel, so on $B$ it constrains nothing.
+That objection is right, and it is right off $B$ as well. With $R(x,y)=W(x,JP_\perp y)/W(x,Jy)$ and
+$P_\perp^2=\mathbb 1$, substitution alone gives $R(x,P_\perp y)=R(x,y)^{-1}$ at every separation, so
+the identity carries no information anywhere and no temperature enters it. What carries the argument
+off $B$ is a match and never the identity, and the boost separation that has not yet dropped out is
+what leaves room for one. A.6 derives the image kernel $G_{\rm
 img}\propto\operatorname{sech}^2(Ht/2)$ from the geometry of the antipodal map on the central
 worldline, with no temperature anywhere in that derivation; the form is quoted here because what
 follows uses only the form. Requiring that geometric object to be a thermal half-period shift
-$W(t-i\beta/2)$ of the Bunch-Davies kernel then fixes $\beta$. The match holds to
-$4\times10^{-17}$ at $\beta=2\pi/H$ and fails by $0.115$ ten per cent away on either side, a
-factor $2.6\times10^{15}$ worse and symmetric in the two directions. Minimising the match itself
-over $\beta$, with $2\pi/H$ nowhere in the search, returns $6.2831853072$; minimising the
-$\alpha^2=1$ condition instead returns $6.2832000828$. Two conditions, two minimisations, one
-temperature. But it holds equally at every odd multiple $\beta=(2j+1)2\pi/H$, because
-$\sinh(z-i(2j+1)\pi/2)=(-1)^{j+1}i\cosh z$ and squaring removes the sign, so the match alone
-determines $\beta$ only modulo odd multiples; checked to $3\times10^{-16}$ at $j=0,1,2,3$ and
-failing at $25.6$ at every even multiple. What picks the fundamental is primitivity, which the KMS
-condition already contains: a function of period $2\pi/H$ has period $3\times2\pi/H$ as well, and
-the KMS temperature is the primitive period. No match occurs below the fundamental, which is what
-primitivity requires and is checked. The temperature is returned by that match and is not
-inserted. Only then does $\alpha^2=1$ read $W(t-i\beta)=W(t)$, which is the KMS condition; and we
-note plainly that this last step is a consistency check rather than a derivation, since
-$\operatorname{csch}^2$ has period $2\pi i/H$ however it was obtained. In the frequency domain the
-same statement is that $e^{\beta E/2}$ squares to the KMS factor $e^{\beta E}$: the fold's map is
-the square root of the KMS transformation, and the horizon temperature is returned rather than
-assumed.
+$W(t-i\beta/2)$ of the Bunch-Davies kernel then fixes $\beta$. The match holds to $4\times10^{-17}$
+at $\beta=2\pi/H$ and fails by $0.115$ ten per cent away on either side, a factor $2.6\times10^{15}$
+worse and symmetric in the two directions. Minimising the match itself over $\beta$, with $2\pi/H$
+nowhere in the search, returns $6.2831853072$; minimising the $\alpha^2=1$ condition instead returns
+$6.2832000828$. Two conditions, two minimisations, one temperature. But it holds equally at every
+odd multiple $\beta=(2j+1)2\pi/H$, because $\sinh(z-i(2j+1)\pi/2)=(-1)^{j+1}i\cosh z$ and squaring
+removes the sign, so the match alone determines $\beta$ only modulo odd multiples; checked to
+$3\times10^{-16}$ at $j=0,1,2,3$ and failing at $25.6$ at every even multiple. What picks the
+fundamental is primitivity, which the KMS condition already contains: a function of period $2\pi/H$
+has period $3\times2\pi/H$ as well, and the KMS temperature is the primitive period. No match occurs
+below the fundamental, which is what primitivity requires and is checked. The temperature is
+returned by that match and is not inserted. Only then does $\alpha^2=1$ read $W(t-i\beta)=W(t)$,
+which is the KMS condition; and we note plainly that this last step is a consistency check rather
+than a derivation, since $\operatorname{csch}^2$ has period $2\pi i/H$ however it was obtained. In
+the frequency domain the same statement is that $e^{\beta E/2}$ squares to the KMS factor $e^{\beta
+E}$: the fold's map is the square root of the KMS transformation, and the horizon temperature is
+returned.
 
 None of that is new physics and it is not offered as any. $\alpha$ contains the wedge reflection,
 which is the boost through imaginary angle $\pi$, so $\alpha^2=1$ says a $2\pi$ Euclidean rotation
-is the identity, and obtaining a horizon temperature from smoothness is standard. The point is defensive and stands anyway: the fold's $\mathbb Z_2$ *is* that condition, so the law's
+is the identity, and obtaining a horizon temperature from smoothness is standard. The point is defensive and stands anyway. The fold's $\mathbb Z_2$ *is* that condition, so the law's
 triviality on $B$ is a constraint degenerating rather than a constraint missing, and the
 ninety-degree equality is the boundary value of something that fixes a temperature. What none of
 it touches is the reduction to $W_B$ itself, which is the step this appendix rests on and does not
@@ -2638,20 +2628,20 @@ G_J=\sum_{I,K} R_{IK}(\Delta\tau)\,Y_I(x)Y_K(y)^*,\qquad
 G_\alpha=\sum_{I,K} R_{IK}(\Delta\tau)\,Y_I(x)Y_K(P_\perp y)^*.
 $$
 
-Since $P_\perp$ is an isometry of $B$ it acts on the transverse labels alone, and since it
-commutes with the boost, $R_{IK}(\Delta\tau)$ is one common matrix for both kernels, whatever it
-is. At $\Delta\tau=0$, which is both points on $B$, $R_{IK}(0)$ is exactly what defines the
-restriction $W_B$, so the ratio is $W_B(x,P_\perp y)/W_B(x,y)$ and no diagonality was used to get
-there. Checked on a dense random kernel with more than half its weight off the diagonal: the
-reciprocal law holds to $2\times10^{-16}$ on it, while the diagonal truncation of the same kernel
-gives a visibly different ratio, so the two expansions are not the same object and the narrower
-one was never needed. Specialise to a round $B$ and the statement becomes visible by hand. There
-the antipodal insertion is $(-1)^\ell$, and the Legendre polynomials obey $P_\ell(-x)=(-1)^\ell
-P_\ell(x)$, so the two signs are the same sign and cancel term by term: the reflected sum at
-$\gamma$ is the direct sum at $\pi-\gamma$ for every boost profile whatever, and three well-chosen
-ones prove less than that. Four profiles, one of them random, confirm it to $9\times10^{-15}$,
-which is roundoff. The round case is the easy illustration and not the content: the argument above
-used no maximal symmetry, no round $B$, no particular state and no closed form.
+Since $P_\perp$ is an isometry of $B$ it acts on the transverse labels alone, and since it commutes
+with the boost, $R_{IK}(\Delta\tau)$ is one common matrix for both kernels, whatever it is. At
+$\Delta\tau=0$, which is both points on $B$, $R_{IK}(0)$ is exactly what defines the restriction
+$W_B$, so the ratio is $W_B(x,P_\perp y)/W_B(x,y)$ and no diagonality was used to get there. Checked
+on a dense random kernel with more than half its weight off the diagonal: the reciprocal law holds
+to $2\times10^{-16}$ on it, while the diagonal truncation of the same kernel gives a visibly
+different ratio, so the two expansions are not the same object and the narrower one was never
+needed. Specialise to a round $B$ and the statement becomes visible by hand. There the antipodal
+insertion is $(-1)^\ell$, and the Legendre polynomials obey $P_\ell(-x)=(-1)^\ell P_\ell(x)$, so the
+two signs are the same sign and cancel term by term: the reflected sum at $\gamma$ is the direct sum
+at $\pi-\gamma$ for every boost profile whatever, and three well-chosen ones prove less than that.
+Four profiles, one of them random, confirm it to $9\times10^{-15}$, which is roundoff. A round
+horizon is only the easy illustration. The argument above used no maximal symmetry, no round $B$, no
+particular state and no closed form.
 
 The same check makes plain how little the identity itself demands. It holds on modes of the wrong
 parity and on involutions of $B$ that are not free, because it follows from $P_\perp^2=\mathbb 1$
@@ -2677,17 +2667,17 @@ with $\Delta t$ the static-patch time separation. The measured constants at $rH=
 that formula says they should be: $12.1$ at $60^\circ$ and the same $12.1$ at $120^\circ$, because
 $|\cos\gamma|/\sin^2\gamma$ is even about a right angle; $61.8$ at $150^\circ$; $517$ at
 $170^\circ$, where $\sin^2\gamma$ is running out; and exactly zero at $90^\circ$. Fixing the one
-free boost from the $60^\circ$ entry alone reproduces the other three to better than three per
-cent, with nothing left to adjust. With $N^2\simeq d^2/16M^2$ for a proper distance $d$ above a
-Schwarzschild horizon, a per cent needs $d=0.4M/\sqrt c$ in terms of the $N^2$ coefficient $c$, which is $0.058$ of a Schwarzschild
-radius at the moderate-angle coefficient, $0.025$ at $150^\circ$ and $0.009$ at $170^\circ$ where
-the fold kernel's own pole is being approached. Moderate angles are the forgiving case and the
-near-antipodal ones the tight case, by about a factor of two and then again by three. So the
-reduction is a controlled limit with a calculable correction, and the ninety-degree equality is
-exact at every radius and at every boost rather than first order small. A right angle sends
-$\cos\gamma$ to zero, which removes the transverse term from $Z_J$ and $Z_\alpha$ at once, so the
-two kernels are the same function and their ratio is one identically. That angle alone carries no
-truncation error, which is a second reason to lean on it.
+free boost from the $60^\circ$ entry alone reproduces the other three to better than three per cent,
+with nothing left to adjust. With $N^2\simeq d^2/16M^2$ for a proper distance $d$ above a
+Schwarzschild horizon, a per cent needs $d=0.4M/\sqrt c$ in terms of the $N^2$ coefficient $c$,
+which is $0.058$ of a Schwarzschild radius at the moderate-angle coefficient, $0.025$ at $150^\circ$
+and $0.009$ at $170^\circ$ where the fold kernel's own pole is being approached. Moderate angles are
+the forgiving case and the near-antipodal ones the tight case, by about a factor of two and then
+again by three. So the reduction is a controlled limit with a calculable correction, and the
+ninety-degree equality is exact at every radius and at every boost. A right angle sends $\cos\gamma$
+to zero, which removes the transverse term from $Z_J$ and $Z_\alpha$ at once, so the two kernels are
+the same function and their ratio is one identically. That angle alone carries no truncation error,
+which is a second reason to lean on it.
 
 One more statement is general, and it was missed because the earlier work asked for a value rather
 than a law. Write $R(x,y)=W_B(x,P_\perp y)/W_B(x,y)$. Replacing $y$ by $P_\perp y$ and using
@@ -2723,20 +2713,19 @@ that locus. Magnitude belongs to the state and the spacetime; the sign and the l
 
 How far the law reaches, what it measures when a state falls short of its own fold image, and what
 it says about the closed-de Sitter overlap's branch weights are taken up separately in A.12, so
-that this appendix can return to the question it set: how much of that value survives.
+that this appendix can return to the question it set, how much of that value survives.
 
 The value at a given angle is not. On a round $B$ with an isotropic state the ratio is
 $G(\pi-\gamma)/G(\gamma)$, and three features of it hold for every such state: it vanishes like
 $\gamma^2$, it equals exactly one at $\gamma=\pi/2$, and it has a $(\pi-\gamma)^{-2}$ pole. The
-first and third are the Hadamard singularity at each coincidence; the second needs only that a
-point at $\pi/2$ from $x$ has its antipode at $\pi/2$ as well. Nothing beyond those three is
-universal. Three profiles with the same short-distance behaviour at both coincidences give 3.00,
-4.00 and 2.75 at $\gamma=2\pi/3$: the chordal form $1/(1-\cos\gamma)$, the arclength form
-$1/\gamma^2$, and a chordal form carrying an asymmetric finite-separation factor (log-slopes
-$+2.000$ and $-2.000$ at the two ends for all three, and unity at $\pi/2$ to twelve digits).
-$\tan^2(\gamma/2)$ is the first of them, exact on de Sitter because that state's two-point
-function is exactly $1/(1-Z)$ at every separation, which is a consequence of maximal symmetry and
-not of the horizon.
+first and third are the Hadamard singularity at each coincidence; the second needs only that a point
+at $\pi/2$ from $x$ has its antipode at $\pi/2$ as well. Nothing beyond those three is universal.
+Three profiles with the same short-distance behaviour at both coincidences give 3.00, 4.00 and 2.75
+at $\gamma=2\pi/3$. They are the chordal form $1/(1-\cos\gamma)$, the arclength form $1/\gamma^2$,
+and a chordal form carrying an asymmetric finite-separation factor (log-slopes $+2.000$ and $-2.000$
+at the two ends for all three, and unity at $\pi/2$ to twelve digits). The first of them gives
+$\tan^2(\gamma/2)$, exact on de Sitter because that state's two-point function is exactly $1/(1-Z)$
+at every separation, which is a consequence of maximal symmetry and not of the horizon.
 
 It is therefore not established for the Hartle-Hawking state on Schwarzschild. The near-horizon
 route obtains it there by expanding about $r=2M$ to ${\rm Rindler}\times
@@ -2771,7 +2760,7 @@ rotation by $\pi$ about the axis composed with the equatorial reflection
 $\theta\mapsto\pi-\theta$, and Kerr has both symmetries, so an axisymmetric equatorially symmetric
 restriction is $P_\perp$-invariant without that having to be assumed; kernels built from the
 invariants such a state may depend on are invariant to $10^{-15}$ over $2\times10^4$ random pairs.
-Then $W_B(x,P_\perp y)=W_B(P_\perp x,y)$ and the locus where $R=1$ exists and is well defined: it
+Then $W_B(x,P_\perp y)=W_B(P_\perp x,y)$ and the locus where $R=1$ exists and is well defined, it
 is the set on which $P_\perp x$ and $x$ correlate equally with $y$.
 
 What does fail is its identification with the *geodesic* equidistant curve, and the reason is a
@@ -2797,13 +2786,14 @@ concession allows. Within that action $r$ cannot depend on frequency, and unitar
 matching to $r(\kappa)=(1-\kappa^2)/(1+\kappa^2)$, $t(\kappa)=2\kappa/(1+\kappa^2)$.
 
 What does *not* hold is a derivation of $\kappa=1$ from regularity. Three routes to one are set out
-and closed below, two of them ours: an argument from finite relative entropy, which is circular; an
-argument from an image singularity at spacelike separation, which fails in both accountings of the
-mode sum and fails the second time by picking out the transparent seam as the worst case rather than
-the only clean one; and the fold's own sheet symmetry, which the whole family satisfies. What does
-select the transparent point is variational and soft: it maximises the entanglement across the seam,
-and a five per cent reflection retains $99.7$ per cent of that. So $\kappa=1$ is adopted, with the
-corner term's uniqueness among scale-free seams behind it and a maximum rather than an exclusion.
+and closed below, two of them ours, an argument from finite relative entropy, which is circular; an
+argument from an image singularity at spacelike separation, which fails whichever way the mode sum
+is counted and fails the second time by picking out the transparent seam as the worst case rather
+than the only clean one; and the fold's own sheet symmetry, which the whole family satisfies. What
+does select the transparent point is variational and soft: it maximises the entanglement across the
+seam, and a five per cent reflection retains $99.7$ per cent of that. So $\kappa=1$ is adopted, with
+the corner term's uniqueness among scale-free seams behind it and a maximum rather than an
+exclusion.
 
 There is a third route, and it is the one tried first, so it is closed here. Demand that the fold be a symmetry of the seam, on the ground that
 the seam is the fold locus and cannot be less symmetric than the map defining it. That demand
@@ -2838,7 +2828,7 @@ carrying the exchange of incoming and outgoing channels, that matrix is invarian
 $\kappa$, which is the same no-selection result arrived at from the matrix side.
 
 Now take the two fluxes across the join, from the same matching conditions. The energy defect
-$T_{tx}(0^-)-T_{tx}(0^+)$ is identically zero at every $\kappa$: the seam conserves energy for
+$T_{tx}(0^-)-T_{tx}(0^+)$ is identically zero at every $\kappa$, the seam conserves energy for
 free. The momentum defect is not,
 
 $$T_{xx}(0^-)-T_{xx}(0^+)=\tfrac12\left(1-\kappa^2\right)\left(\dot q_1^2-\dot q_2^2\right),$$
@@ -2846,8 +2836,8 @@ $$T_{xx}(0^-)-T_{xx}(0^+)=\tfrac12\left(1-\kappa^2\right)\left(\dot q_1^2-\dot q
 so for general data the seam pushes, and the push vanishes for arbitrary data at exactly
 $|\kappa|=1$. That is the transparent member. The coefficient is $3/8$ at $\kappa=\tfrac12$ and
 $-3/2$ at $\kappa=2$, and a self-coupled matching in place of the cross-coupled one gives
-$\tfrac12(1+\kappa^2)(\dot q_1^2-\dot q_2^2)$, which never vanishes, so the selection belongs to
-the cross coupling rather than to the bookkeeping.
+$\tfrac12(1+\kappa^2)(\dot q_1^2-\dot q_2^2)$, which never vanishes, so the selection belongs to the
+cross coupling rather than to the counting.
 
 What that momentum is, written in the variables the cosmology paper's §2.1 splits fields into, takes a line, because it is not what the raw expression looks like. Putting $q_1=\Phi_c+\Phi_q/2$
 and $q_2=\Phi_c-\Phi_q/2$ into the defect gives
@@ -2863,7 +2853,7 @@ the one interaction in the fold that is not gravity and does not reach.
 An interface that absorbs no momentum is one whose stress tensor is continuous across it, which is
 what distinguishes a topological interface from a material one. So the family has exactly one
 topological member and the paper adopts it. That is not a derivation of $\kappa=1$ from the fold,
-and the difference needs stating exactly: the fold does not imply that its seam is
+and the difference needs stating exactly, the fold does not imply that its seam is
 topological. What is established is that if the seam is topological then $\kappa=1$ uniquely, so
 the adoption rests on a stated physical premise with a name rather than on a choice of number. Reject the premise and one sentence goes; the rest stands.
 
@@ -2874,8 +2864,8 @@ obstacle among several.
 
 So transparency is adopted here, with A.11 saying what deriving it would take. The null Kerr
 implementation the rest of the paper uses is unaffected, since it only ever needed a
-frequency-independent reflectivity and a stated choice of it. Recovering a derivation would need:
-the covariance of the actual seam action, with both incident channels and its actual domain,
+frequency-independent reflectivity and a stated choice of it. Recovering a derivation would need.
+The covariance of the actual seam action, with both incident channels and its actual domain,
 calculated rather than modelled by a one-dimensional image ansatz.
 
 What follows is how that was reached and what remains open, because the corner term is
@@ -2912,7 +2902,7 @@ two perfect mirrors.
 
 Because $\kappa$ is dimensionless and the corner term carries no other scale, $r$ and $t$ cannot
 depend on frequency. That is the whole problem. A seam reflecting with the same amplitude at every
-frequency, including arbitrarily short wavelengths, is not a physical interface: real interfaces
+frequency, including arbitrarily short wavelengths, is not a physical interface, real interfaces
 become transparent in the ultraviolet. The corner term as written therefore needs a scale it does
 not have.
 
@@ -2925,12 +2915,12 @@ C(a)=\frac{\int dk\,\cos 2ka/2\omega_k}{\int dk\,1/2\omega_k}.
 $$
 
 Its numerator converges while its denominator diverges logarithmically, so $C$ is not a property
-of the port geometry at all: it falls steadily as the cutoff is lifted, running $0.958$, $0.603$,
+of the port geometry at all. It falls steadily as the cutoff is lifted, running $0.958$, $0.603$,
 $0.497$, $0.441$, $0.371$, $0.315$ at $a=0.02$ for $k_{\max}$ from $20$ to $2\times10^4$. In the
 limit the cutoff is removed $C\to0$ and the ratio tends to $tr$, which vanishes at $\kappa=1$
 where A.6's established central-worldline result has magnitude one. The local kernel in that model
 is itself logarithmically divergent with no seam at all, while A.6's $A_0=1/12\pi^2$ is finite,
-which shows the one-dimensional model was never a model of A.6's object: a force-noise kernel is
+which shows the one-dimensional model was never a model of A.6's object, a force-noise kernel is
 not a field two-point function.
 
 No measurement protocol is available in which two even/odd measurements at different port
@@ -2942,18 +2932,18 @@ coefficient, and no regularity condition does. That is computed here, because th
 
 The route argues that a constant reflectivity puts an image term in the two-point function which
 diverges between mirror-placed points, that no Hadamard state is singular at spacelike separation,
-and so that $r$ must vanish. Two accountings of the mode sum are available and neither supports it.
-Sum both incident channels of the two-port, as completeness of the mode basis requires, and the
-cross-seam image coefficient is $rt+tr'$; unitarity of $S=\left(\begin{smallmatrix}r&t\\
+and so that $r$ must vanish. The mode sum can be counted two ways and neither supports it. Sum both
+incident channels of the two-port, as completeness of the mode basis requires, and the cross-seam
+image coefficient is $rt+tr'$; unitarity of $S=\left(\begin{smallmatrix}r&t\\
 t&r'\end{smallmatrix}\right)$ forces $r'=-r$ whenever $t$ is nonzero, so that coefficient is
 identically zero at every $\kappa$, checked by reading it off the mode functions at
-$\kappa=\tfrac14,\tfrac12,1,2,4$ and returning $10^{-17}$ each time. The alternative $r'=+r$
-leaves $2rt$ behind, which is the plant that makes the zero mean something. Project the mode space
-instead, as a $\mathbb Z_2$ quotient does, and the coefficient becomes $(t^2-r^2)/2$: nonzero, and
-*largest at the transparent point*, where it is exactly $\tfrac12$ against $-0.2785$ at
-$\kappa=\tfrac14$ and zero at $|r|=|t|$. So in the first accounting nothing is singular at any
-$\kappa$, and in the second the transparent seam is the worst offender, where the argument needs it
-to be the only clean one. The conclusion does not depend on which accounting is right.
+$\kappa=\tfrac14,\tfrac12,1,2,4$ and returning $10^{-17}$ each time. The alternative $r'=+r$ leaves
+$2rt$ behind, which is the plant that makes the zero mean something. Project the mode space instead,
+as a $\mathbb Z_2$ quotient does, and the coefficient becomes $(t^2-r^2)/2$: nonzero, and *largest
+at the transparent point*, where it is exactly $\tfrac12$ against $-0.2785$ at $\kappa=\tfrac14$ and
+zero at $|r|=|t|$. So counted the first way nothing is singular at any $\kappa$, and in the second
+the transparent seam is the worst offender, where the argument needs it to be the only clean one.
+The conclusion does not depend on which count is right.
 
 The reflection term's own locus is out of reach in any case. It is singular at $x+y=0$ and has
 same-side support, and two points on the same side give a sum of one sign, which never reaches
@@ -2972,22 +2962,22 @@ One criterion does select the transparent point, and it is variational rather th
 condition, which is what keeps it in play once the regularity routes are closed. A free-fermion chain with a defect
 bond is the same two-port scattering problem, with transmission $T=4t_d^2/(1+t_d^2)^2$, in a
 setting where entanglement is computable exactly. Total entropy across the defect is *not* a
-function of $T$: a strong bond builds a dimer across the cut whose local contribution swamps the
+function of $T$. A strong bond builds a dimer across the cut whose local contribution swamps the
 transmission-dependent part, and $t_d=0.5$ and $t_d=2$ give entropies differing by more than a
 factor of two at identical $T$.
 
-The coefficient of $\log L$ is a function of $T$ and of nothing else, established below.
-A bond defect and a site defect tuned to the same transmission perturb the chain differently and
-return the same coefficient to within $0.63$ per cent, at $T=0.95$, $0.88$, $0.64$ and $0.30$; the
-$T=0.88$ pair is $0.15363$ against $0.15460$. Defects at *different* transmissions differ by tens
-of per cent, so the agreement is not an artefact of the fit. The absolute coefficient depends on
-the chain's boundary conditions and on how many cut points the entropy counts; what is comparable
+The coefficient of $\log L$ is a function of $T$ and of nothing else, established below. A bond
+defect and a site defect tuned to the same transmission perturb the chain differently and return the
+same coefficient to within $0.63$ per cent, at $T=0.95$, $0.88$, $0.64$ and $0.30$; the $T=0.88$
+pair is $0.15363$ against $0.15460$. Defects at *different* transmissions differ by tens of per
+cent, so the agreement is not an artefact of the fit. The absolute coefficient depends on the
+chain's boundary conditions and on how many cut points the entropy counts; what is comparable
 between two defects is the percentage, and that is what the claim uses. These are finite-size fits
 and not a proof of universality. That coefficient is maximal at $T=1$, with both neighbours below
-it. Its symmetry under $t_d\to1/t_d$ is inherited from the symmetry of $T$ under that map, so it
-is the seam's rapidity inversion seen again and not a second fact. The transparent seam is
-therefore the one that maximises the entanglement between the two sides, which for a framework
-claiming the sheets are joined is the natural way to say how strongly.
+it. Its symmetry under $t_d\to1/t_d$ is inherited from the symmetry of $T$ under that map, so it is
+the seam's rapidity inversion seen again. The transparent seam is therefore the one that maximises
+the entanglement between the two sides, which for a framework claiming the sheets are joined is the
+natural way to say how strongly.
 
 Selection here is soft and should not be oversold: a five per cent reflection retains $99.7$ per
 cent of the coefficient, so this identifies the maximum without excluding its neighbourhood, and
@@ -2997,13 +2987,13 @@ scattering problem; the dynamics differ, and the entropy calculated is the chain
 The classification reaches further than the constant case, which needs showing because the obvious
 objection is that it does not. A seam might be non-linear, with a reflectivity that vanishes at
 small field amplitude and switches on above some $A_0$; such a seam is transparent wherever the
-field is weak, and it looks like a way of having a reflecting seam without introducing a scale. It is
-not, and the reason is that short distance is not small amplitude. Vacuum fluctuations diverge as
+field is weak, and it looks like a way of having a reflecting seam without introducing a scale. It
+is not, and the reason is that short distance is not small amplitude. Vacuum fluctuations diverge as
 the separation closes, the amplitude a probe at separation $s$ samples running as $1/2\pi s$, so for
-any finite $A_0$ the seam is switched on below $s_*=1/2\pi A_0$ and its reflectivity tends to one
-as the separation shrinks further: $0.99$ at $s_*/10$ and $0.9999$ at $s_*/100$, independently of
+any finite $A_0$ the seam is switched on below $s_*=1/2\pi A_0$ and its reflectivity tends to one as
+the separation shrinks further, $0.99$ at $s_*/10$ and $0.9999$ at $s_*/100$, independently of
 $A_0$. So $A_0$ is a scale and the seam is a scaled seam whatever the field-dependence looks like at
-weak field, which is the case already covered: it falls outside the corner term and owes its own
+weak field, which is the case already covered, it falls outside the corner term and needs its own
 matching law.
 
 Scale dependence is real and runs opposite to the intuition that suggests it. A seam reflecting at
@@ -3021,7 +3011,7 @@ microscopic one in its place; the letter is subscripted throughout this appendix
 of the cosmological constant, which is $\Lambda$ everywhere else in this paper. Astrophysical
 ringdown sits at $\omega/\Lambda_P\simeq4\times10^{-40}$ for $10M_\odot$ and $4\times10^{-48}$ for
 $10^9M_\odot$, which is the deep *infrared* of that function and not its ultraviolet. A condition
-forcing $r\to0$ at large argument constrains nothing there: $r(x)=e^{-x}$ obeys it and equals one
+forcing $r\to0$ at large argument constrains nothing there, $r(x)=e^{-x}$ obeys it and equals one
 to forty significant figures at these arguments. A microscopic scale therefore does not make a
 seam invisible at ringdown, and no statement about astrophysical waveforms follows from an
 ultraviolet condition alone.
@@ -3054,7 +3044,7 @@ Relatedly, $r(\omega)\to0$ is not by itself Hadamard regularity, since removing 
 divergence does not remove a wavefront singularity, and a proper microlocal treatment is not
 attempted here.
 
-So the statement to make is narrow and is stated narrowly: the dimensional counting above concerns
+So the statement to make is narrow and is stated narrowly. The dimensional counting above concerns
 a specified codimension-one interface and does not classify every action that could live on the
 bifurcation surface. What the three steps of this appendix need, and use, is a reflectivity that
 does not depend on frequency; what they do not supply is a classification of seams.
@@ -3069,7 +3059,7 @@ scale-free seam and not only the one written here, and it does not cover a seam 
 of its own, which §4 already separates out. Hadamard regularity is the standard admissibility
 condition for a state in curved spacetime and is assumed here rather than derived. And the
 image-term structure is generic to a reflecting interface, which is why it survives A.11's own
-warning that the one-dimensional model is not a model of A.6's object: what is used is the
+warning that the one-dimensional model is not a model of A.6's object, what is used is the
 scattering parametrisation and the existence of an image term. The model's kernel plays no part.
 
 **A symmetry route, and why it fails.** It is natural to ask whether the fold's own identification
@@ -3089,27 +3079,26 @@ corner term's uniqueness among scale-free seams together with the entanglement m
 locates it without excluding its neighbourhood.
 
 **The group has an identity, and it is the transparent seam.** The composition law above carries a
-consequence the symmetry route passed over. A one-parameter group has an identity element, and
-here it is $u=0$, which is $\kappa=1$. The transparent seam is the member that composes with any
-other seam and leaves it where it was, and it is the only member that does. That is what having no
-seam means as an operation on the theory. So adopting $\kappa=1$ adds no boundary term to the
-action, which is the choice the minimal implementation makes wherever else the fold leaves
-room, in taking a linear fold map and a Gaussian free state. A reflecting seam is an addition
-owing a matching law of its own, and the question to press is what
-would require one. None of this derives $\kappa=1$. A theory may add a boundary term, and an
-identity element is privileged by minimality and by nothing else. What it settles is where the
-burden sits, which the three closed routes above leave unclear on their own. Adopting the identity
-is adopting nothing, and that is a lighter thing to have to defend than a choice among a
-continuum.
+consequence the symmetry route passed over. A one-parameter group has an identity element, and here
+it is $u=0$, which is $\kappa=1$. The transparent seam is the member that composes with any other
+seam and leaves it where it was, and it is the only member that does. That is what having no seam
+means as an operation on the theory. So adopting $\kappa=1$ adds no boundary term to the action,
+which is the choice the minimal implementation makes wherever else the fold leaves room, in taking a
+linear fold map and a Gaussian free state. A reflecting seam is an addition needing a matching law
+of its own, and the question to press is what would require one. None of this derives $\kappa=1$. A
+theory may add a boundary term, and an identity element is privileged by minimality and by nothing
+else. What it settles is where the burden sits, which the three closed routes above leave unclear on
+their own. Adopting the identity is adopting nothing, and that is a lighter thing to have to defend
+than a choice among a continuum.
 
 **If the seam carries the horizon's own scale.** The one escape from the above is the one the
 argument itself points at: $r$ cannot depend on frequency *because the corner term supplies no
 scale*, and a horizon supplies several. A seam matched at the horizon may carry $T_H$, and then
 $r=r(\omega/T_H)$ with $r(\infty)=0$ satisfies Hadamard regularity without being transparent. That
-is a different action owing its own matching law, but it is not free, because two predictions
+is a different action needing its own matching law, but it is not free, because two predictions
 follow before any amplitude is chosen. Both $M\omega$ and $MT_H$ are dimensionless functions of
-$a/M$ alone, so $\omega/T_H$ depends on spin and not on mass: such a seam reflects identically for
-a $10\,M_\odot$ and a $10^{9}\,M_\odot$ hole at the same spin, which is a null test across eight
+$a/M$ alone, so $\omega/T_H$ depends on spin and not on mass: such a seam reflects identically for a
+$10\,M_\odot$ and a $10^{9}\,M_\odot$ hole at the same spin, which is a null test across eight
 orders of magnitude available from ringdowns in matching spin bins. And with
 
 $$
@@ -3119,7 +3108,7 @@ $$
 equal to $8\pi M\omega$ at $a=0$ and diverging at extremality, spinning the hole up pushes the
 ringdown to larger argument, where $r$ is smaller. Horizon reflectivity effects are therefore
 largest at low spin and vanish as extremality is approached *for a response depending on
-$\omega/T_H$ alone*, which §4's corrected co-rotating case is not: there the amplitude rises from
+$\omega/T_H$ alone*, which §4's corrected co-rotating case is not, there the amplitude rises from
 $9.8\times10^{-3}$ at zero spin to $0.444$ at $a=0.9$. An asymptotic falloff does not imply global
 monotonicity, and a rotating response can depend on $(\omega-m\Omega_H)/T_H$. What follows is
 therefore a property of the assumed response law, for every fall-off; three unrelated ones give
@@ -3141,7 +3130,7 @@ and give a nearly flat trend instead. Attaching the extremality behaviour
 to any horizon scale is therefore wrong. So the spin dependence discriminates among reflecting
 implementations built from horizon scales, while the mass independence is common to all of them.
 
-We do not establish that the scale must be the horizon's, and the obvious reply is one word long: Planck. A seam could carry a
+We do not establish that the scale must be the horizon's, and the obvious reply is one word long, Planck. A seam could carry a
 scale of external origin, and such a seam is neither transparent nor built from the horizon. It
 does not escape the statement, but it changes it from a prohibition into a classification. An
 external scale far above the horizon's puts the ringdown at $\omega/\Lambda_P$ between
@@ -3162,7 +3151,7 @@ measurement programme, it requires no amplitude, and unlike the dichotomy it doe
 lemma we cannot prove.
 
 **A.12 How far the reciprocal law reaches.** A.10 establishes the law and its immediate
-consequences. This appendix collects what it reaches beyond the bifurcation surface: its algebraic
+consequences. This appendix collects what it reaches beyond the bifurcation surface. Its algebraic
 form, the measure it supplies for a state falling short of its own fold image, and what that
 measure says about the branch weights of §2.1.
 
@@ -3187,14 +3176,13 @@ $1.998$ as $\epsilon$ falls from $10^{-1}$ to $3\times10^{-4}$. It vanishes only
 symmetry. Fold-symmetric states are therefore a stationary point of this divergence and not merely
 its zero set.
 
-Second-order behaviour is the part with consequences, because it fixes how misalignment
-accumulates. Independent departures of size $\epsilon$ over $N$ events sum to order $N\epsilon^2$
-rather than $(N\epsilon)^2$, so the accumulation is diffusive, and a universe-wide tally comes out
-far smaller than a naive addition of amplitudes suggests. We do not compute $\epsilon$ for any
-process and nothing in the fold supplies it, so this is a scaling and not a number; turning it
-into one means calculating the misalignment a definite process produces, for which the branch
-decoherence of §2.1's closed-de Sitter overlap is the natural first case and is not attempted
-here.
+Second-order behaviour is the part with consequences, because it fixes how misalignment accumulates.
+Independent departures of size $\epsilon$ over $N$ events sum to order $N\epsilon^2$ rather than
+$(N\epsilon)^2$, so the accumulation is diffusive, and a universe-wide tally comes out far smaller
+than a naive addition of amplitudes suggests. We do not compute $\epsilon$ for any process and
+nothing in the fold supplies it, so this is a scaling only; turning it into one means calculating
+the misalignment a definite process produces, for which the branch decoherence of §2.1's closed-de
+Sitter overlap is the natural first case and is not attempted here.
 
 Applying it to a definite process closes that gap. The two branches of §2.1 carry environment
 states of overlap $s$; writing the branch-label state as $a\lvert+\rangle\lvert
@@ -3204,7 +3192,7 @@ Because $\Theta$ is antilinear *and* exchanges the branches, $\Theta\rho\Theta$ 
 two weights swapped. The misalignment therefore turns on the branch weight and not on the
 coherence, and vanishes identically at equal weight, at every overlap.
 
-Decoherence regulates the divergence without causing it: at unequal weight a coherent
+Decoherence regulates the divergence without causing it. At unequal weight a coherent
 superposition is pure, and a pure state has infinite relative entropy against anything off its
 support, while the fully decohered value is finite and closed form, $S=(2p-1)\log[p/(1-p)]$, which
 is $8(p-\tfrac12)^2$ to leading order and reproduces the coefficient the general argument gave.
@@ -3222,7 +3210,7 @@ and not a quantity that grows.
 That last claim was too quick, and checking it reversed it. Equal weight at the fold point does
 not propagate. $\Theta$ is antiunitary, and CPT covariance gives $\Theta U\Theta^{-1}=U^{-1}$,
 which is not $[\Theta,U]=0$, so a state that is $\Theta$-invariant at the fold point is not
-$\Theta$-invariant afterwards: $\Theta\lvert\psi(t)\rangle=\lvert\psi(-t)\rangle$. The branch
+$\Theta$-invariant afterwards, $\Theta\lvert\psi(t)\rangle=\lvert\psi(-t)\rangle$. The branch
 imbalance $\langle N\rangle$ is therefore an odd function of time, zero at the fold point and
 nonzero away from it, checked to $2\times10^{-15}$ on a Hamiltonian built to satisfy $\Theta
 H\Theta^{-1}=H$.
@@ -3231,7 +3219,7 @@ What the oddness means is more useful than what it removes. $\langle N\rangle$ i
 conserved nor zero on either sheet; what vanishes exactly is the sum over the pair, since the
 mirror sheet's value at its time $t$ is ours at $-t$. The two sheets carry equal and opposite
 branch imbalance at every time and the pair carries none. That is a joining of a kind not
-otherwise in this paper: not a force between the sheets and not a shared boundary condition, but a
+otherwise in this paper. Not a force between the sheets and not a shared boundary condition, but a
 conserved quantity that exists only when both are counted.
 
 It also corrects how the divergence should be read. $S(\omega\,\|\,\omega\circ\sigma)$ is not a
@@ -3257,18 +3245,17 @@ physical states. What survives either way is the cross-sheet statement, since $\
 N\rangle(t)+\langle N\rangle(-t)=0$ holds trivially when both vanish. The conservation law is
 therefore the more robust of the two claims, and the equal weight on a single sheet is the weaker.
 
-That weaker claim can be improved, though not to a theorem. Reality of the wavefunction need not
-be borrowed from the no-boundary proposal, because $\Theta$ is antilinear and imposing
-$\Theta\lvert\psi\rangle=\lvert\psi\rangle$ *is* a reality condition. Writing $\Theta=K\circ S$
-with $K$ complex conjugation and $S$ linear, $\Theta^2=1$ requires $S\bar S=1$, and in the branch
-basis with $S$ the branch swap the condition reads $\psi_-=\bar\psi_+$, which is the no-boundary
-form and forces $\lvert\psi_-\rvert=\lvert\psi_+\rvert$. Equal branch weight and
-$\Theta$-invariance are the same condition, not two. The restriction is well defined: the
-Wheeler-DeWitt operator is real, so its solution space is closed under conjugation, checked
-directly, and the invariant part carries exactly half the real dimension, measured as the rank of
-$(1+\Theta)/2$ applied to a complex basis at $d=1,2,3,5$. That is the same halving A.16 obtains at
-the singularity through $(1+JU)/2$: two loci, one mechanism, an involution keeping its even
-sector.
+That weaker claim can be improved, though not to a theorem. Reality of the wavefunction need not be
+borrowed from the no-boundary proposal, because $\Theta$ is antilinear and imposing
+$\Theta\lvert\psi\rangle=\lvert\psi\rangle$ *is* a reality condition. Writing $\Theta=K\circ S$ with
+$K$ complex conjugation and $S$ linear, $\Theta^2=1$ requires $S\bar S=1$, and in the branch basis
+with $S$ the branch swap the condition reads $\psi_-=\bar\psi_+$, which is the no-boundary form and
+forces $\lvert\psi_-\rvert=\lvert\psi_+\rvert$. Equal branch weight and $\Theta$-invariance are the
+same condition. The restriction is well defined. The Wheeler-DeWitt operator is real, so its
+solution space is closed under conjugation, checked directly, and the invariant part carries exactly
+half the real dimension, measured as the rank of $(1+\Theta)/2$ applied to a complex basis at
+$d=1,2,3,5$. That is the same halving A.16 obtains at the singularity through $(1+JU)/2$, two loci,
+one mechanism, an involution keeping its even sector.
 
 What this changes is where the assumption comes from. Its status is unaffected. It is no longer
 borrowed from Hartle and Hawking but stated in the fold's own terms. Two things it does not do. It
@@ -3292,7 +3279,7 @@ transfers to a collapse hole, whose settled exterior is stationary and axisymmet
 transverse antipodal map is an automorphism of the exterior algebra, while $\alpha=J\circ P_\perp$
 as the second Keldysh leg does not, because no algebra supplies a mirror sheet.
 
-An obvious objection is that the law is definitional: it holds for any involution and any positive
+An obvious objection is that the law is definitional, it holds for any involution and any positive
 kernel, so it constrains nothing. That is correct on $B$ and, as A.10 now records, off it too, the
 identity being algebraic at every separation; and the two are one equation in different limits.
 Off $B$ the boost separation has not dropped out, and A.6's identification makes $\alpha$ act as
@@ -3329,10 +3316,10 @@ $1+a^2/r_+^2$ of A.10, at every spin tested. The two statements are one function
 
 Teukolsky's separation puts the horizon condition on the radial function alone, which works
 because that condition is the same at every latitude. A response weighted by $A$ is not, so it
-cannot be imposed mode by mode: it couples different $\ell$ at fixed $m$. Because $A$ is even in
+cannot be imposed mode by mode, it couples different $\ell$ at fixed $m$. Because $A$ is even in
 $\cos\theta$, its Legendre expansion carries even terms only, so on a *scalar* field the coupling
 is $\ell\to\ell\pm2$, $\ell\pm4$ and never $\ell\pm1$. Computed on a 200-node Gauss-Legendre rule,
-every odd coefficient of $\langle P_\ell|A|P_{\ell'}\rangle$ vanishes: the largest such entry sits
+every odd coefficient of $\langle P_\ell|A|P_{\ell'}\rangle$ vanishes. The largest such entry sits
 at $4\times10^{-15}$ and does not move whether the cut-off is $\ell=6$ or $\ell=12$, which is the
 rule's own floor and not a residual, since its Legendre orthogonality holds only to the same
 figure. Validated by planting an anisotropy odd in $\cos\theta$, which lifts the odd entries to
@@ -3364,7 +3351,7 @@ It is not a discriminator on somebody's positive detection either, and that is t
 withdrawn. The multipole structure of a ringdown anomaly does not decide whether the fold could be
 its cause: a parity-even transverse map can produce $\ell\pm1$ mixing for spin-weighted modes, by
 the element above, so an $\ell\pm1$ admixture rules nothing out and its absence confirms nothing.
-What remains is the scalar statement and the general one: a response that depends on latitude
+What remains is the scalar statement and the general one. A response that depends on latitude
 couples different $\ell$ at fixed $m$, and the size of that coupling still has no law to fix it.
 
 A selection rule that says nothing about detectability is not yet a prediction, so here is one, and the
@@ -3396,23 +3383,22 @@ it: the mirror sheet carries the opposite time orientation, so each sheet sees o
 on its own clock, and the growth exists only when one sheet is described in the other's.
 
 That action has a consequence for a reflecting horizon, and we state it before computing it. The
-Schwarzschild spectrum has the mirror symmetry $\omega\to-\omega^*$: if $\omega$ is a quasinormal
+Schwarzschild spectrum has the mirror symmetry $\omega\to-\omega^*$, if $\omega$ is a quasinormal
 frequency then so is $-\omega^*$. The fold sends $\omega\to\omega^*$, so composing the two gives
-$\omega\to-\omega$, and whether the fold's action is compatible with the spectrum's own symmetry
-is therefore a question about the boundary condition. It has a two-line answer. Leaver's
-coefficients are real polynomials in $\rho=-i\omega$, so the continued fraction obeys
-$\overline{F(\omega)}=F(-\omega^*)$, and the same argument gives it for $G$. Checked for $F$ at
-six frequencies, real and complex, with a defect of zero rather than a small number, since the two
-sides run the identical arithmetic; the check is validated by planting an imaginary part in
-$\beta_n$, which breaks it. The $G$ half is the argument and not a computation, because $G$ is not
-built anywhere here, which is said again below. Conjugating the quasinormal condition
-$F(\omega)+\mathcal R\,G(\omega)=0$ then gives $F(-\omega^*)+\overline{\mathcal
-R}\,G(-\omega^*)=0$, so $-\omega^*$ solves the same equation exactly when $\mathcal
-R(-\omega^*)=\overline{\mathcal R(\omega)}$. For a *constant* reflectivity that condition is
-$\overline{\mathcal R}=\mathcal R$, and everything below is that case. It is not the general
-condition: a delayed response $\mathcal R(\omega)=r_0e^{i\omega\tau}$ with real $r_0$ and $\tau$
-is complex at every real frequency and satisfies it exactly, as does any $\mathcal R$ with real
-Taylor coefficients in $i\omega$. Reality is sufficient and not necessary.
+$\omega\to-\omega$, and whether the fold's action is compatible with the spectrum's own symmetry is
+therefore a question about the boundary condition. It has a two-line answer. Leaver's coefficients
+are real polynomials in $\rho=-i\omega$, so the continued fraction obeys
+$\overline{F(\omega)}=F(-\omega^*)$, and the same argument gives it for $G$. Checked for $F$ at six
+frequencies, real and complex, with a defect of exactly zero, since the two sides run the identical
+arithmetic; the check is validated by planting an imaginary part in $\beta_n$, which breaks it. The
+$G$ half is the argument and not a computation, because $G$ is not built anywhere here, which is
+said again below. Conjugating the quasinormal condition $F(\omega)+\mathcal R\,G(\omega)=0$ then
+gives $F(-\omega^*)+\overline{\mathcal R}\,G(-\omega^*)=0$, so $-\omega^*$ solves the same equation
+exactly when $\mathcal R(-\omega^*)=\overline{\mathcal R(\omega)}$. For a *constant* reflectivity
+that condition is $\overline{\mathcal R}=\mathcal R$, and everything below is that case. It is not
+the general condition. A delayed response $\mathcal R(\omega)=r_0e^{i\omega\tau}$ with real $r_0$
+and $\tau$ is complex at every real frequency and satisfies it exactly, as does any $\mathcal R$
+with real Taylor coefficients in $i\omega$. Reality is sufficient and not necessary.
 
 To test this, write the horizon behaviour in powers of $x=r-1$, with $2M=1$ and $\rho=-i\omega$.
 The two Frobenius solutions there go as $x^{\rho}$ and $x^{-\rho}$, the first carrying the wave
@@ -3481,7 +3467,7 @@ in the imaginary part and equal to twice it times the response above. Within the
 constant-reflectivity case, then, reality preserves the mirror symmetry and an imaginary part
 breaks it. Nothing here extends that to a frequency-dependent seam.
 
-Two limits bound what this shows. It is a check of internal consistency: the prediction and the
+Two limits bound what this shows. It is a check of internal consistency, the prediction and the
 test are both ours, and no measurement enters. And it does not favour a reflecting horizon, which
 the minimal implementation of §4 does not adopt; it says what a reflecting implementation would
 have to look like, namely that a complex reflectivity carries a spectral signature a real one
@@ -3497,7 +3483,7 @@ Near an isolated hole the geometry is Kruskal. Both $r$ and the conformal factor
 $U$ and $V$ only through the product $UV$, so a linear map of the $(U,V)$ plane is an isometry
 exactly when it preserves $UV$ and the form $dU\,dV$. That leaves the diagonal maps
 $(U,V)\mapsto(\lambda U,V/\lambda)$ and the swaps $(U,V)\mapsto(\lambda V,U/\lambda)$, and nothing
-else. Squaring picks out the involutions: among the diagonals only $\lambda=-1$, which is
+else. Squaring picks out the involutions, among the diagonals only $\lambda=-1$, which is
 $N:(U,V)\mapsto(-U,-V)$; among the swaps every $\lambda$, a one-parameter family that conjugation
 by a boost collapses to two representatives, $S:(U,V)\mapsto(V,U)$ for $\lambda>0$ and
 $SN:(U,V)\mapsto(-V,-U)$ for $\lambda<0$. Up to a boost those three exhaust the involutions.
@@ -3515,7 +3501,7 @@ script checks that all three preserve $UV$ and square to the identity, and that 
 neither.](fig_companion_involutions.pdf)
 
 Two of the three go, for different reasons. The fold is a CPT map and has to exchange past and
-future, which removes $S$: it fixes $T$, preserves time orientation and carries the future
+future, which removes $S$, it fixes $T$, preserves time orientation and carries the future
 interior to itself. $S$ is the $\mathbb{RP}^3$ geon map of Louko, Mann and Marolf [28], whose
 quotient is globally hyperbolic and well behaved, and substituting it gives a different
 question with a different answer. $SN$ passes the CPT test, since it reverses time orientation and
@@ -3533,7 +3519,7 @@ since the quotient is a closed surface of Euler characteristic one and $\mathbb{
 one.
 
 The same count answers a question one step earlier, which is why an involution rather than
-something of higher order: why two sheets and not four. A free action of a finite group $G$ on a
+something of higher order, why two sheets and not four. A free action of a finite group $G$ on a
 compact manifold $M$ has $\chi(M)=|G|\,\chi(M/G)$, so $|G|$ divides $\chi(M)$. The transverse
 sphere in $D$ dimensions is $S^{D-2}$ and $\chi(S^n)=1+(-1)^n$, which is two for even $n$ and zero
 for odd. In four dimensions that is $\chi(S^2)=2$, so $|G|$ divides two and the fold is
@@ -3580,7 +3566,7 @@ closes into four regions, with no chain and no translation to obstruct.
 
 So the family contains exactly one fold-invariant hole and it is the largest one the family holds.
 At the observed $\Lambda$ that is $M=1/(3\sqrt\Lambda)$, some $2.2\times10^{22}$ solar masses,
-with a horizon ten billion light years in radius: not an object inside a universe but a
+with a horizon ten billion light years in radius, not an object inside a universe but a
 configuration of one. Two calculations run for unrelated reasons agree on the point. The contact
 radius of Section 5, swept against $\Lambda$, runs from half the horizon radius at $\Lambda=0$ to
 $0.778$, $0.919$ and $0.991$ of it as $9\Lambda M^2$ reaches $0.9$, $0.99$ and $0.9999$. The one
@@ -3623,7 +3609,7 @@ condition is $\varphi(N_\ell x)=\varphi(x)$. Under $(X_0,X_1,X_2)\mapsto(-X_0,-X
 growing modes are odd and the bounded one is even, so neither runaway is a perturbation of the
 folded solution at all. The one hole the fold can fix is the one the fold makes stable, in the
 sector where the instability lives. That is linear stability in the spherically symmetric sector
-and no more: non-spherical modes and the semiclassical decay are different questions and are not
+and no more, non-spherical modes and the semiclassical decay are different questions and are not
 treated here.
 
 Charge turns that point into a curve. In Reissner-Nordström-de Sitter a degenerate horizon needs
@@ -3631,7 +3617,7 @@ $f(r_0)=f'(r_0)=0$, and eliminating $M$ leaves $Q^2=r_0^2(1-\Lambda r_0^2)$ with
 $M=Q^2/r_0+\Lambda r_0^3/3$. That curve has two halves. Above $r_0=1/\sqrt{2\Lambda}$ the merged
 pair is $r_+=r_c$ and $f''(r_0)<0$, so $f\leq0$ on both sides of the double root, $r$ is timelike
 there, and the near-horizon factor is $\mathrm{dS}_2$. The argument above used nothing but that
-factor, so it applies verbatim. Below it the merged pair is $r_-=r_+$ and $f''(r_0)>0$: the factor
+factor, so it applies verbatim. Below it the merged pair is $r_-=r_+$ and $f''(r_0)>0$. The factor
 is $\mathrm{AdS}_2$, the horizon is extremal with zero surface gravity, and there is no bifurcate
 Killing horizon for a wedge reflection to act on at all. The halves meet at the ultracold point
 where all three horizons coincide, at the largest charge the family admits, $Q=1/(2\sqrt\Lambda)$.
@@ -3656,7 +3642,7 @@ $$
 
 the same in every de Sitter background and past the Kerr extremal bound, which a positive
 $\Lambda$ permits. What is not done there is the embedding argument inside the warped rotating
-near-horizon geometry: what is established is that its two ingredients survive rotation.
+near-horizon geometry, what is established is that its two ingredients survive rotation.
 
 One check came free there, and neither side of it was arranged. Reducing
 with a radial field, the angular equation reads $1-(\nabla R)^2-R\nabla^2R=\Lambda R^2+Q^2/R^2$,
@@ -3674,7 +3660,7 @@ asymptotic region on our own sheet related to us by no fold map at all.
 A second thing the comparison makes clear is where the content sits. Drop $P_\perp$ and keep only
 the $(U,V)\mapsto(-U,-V)$ part, and a point and its image share an angular position, so the
 required path falls from $\pi$ to zero and the line $X\equiv0$ connects them for every interior
-point: the answer becomes the whole interior. The sphere's antipodal map is therefore the entire
+point, the answer becomes the whole interior. The sphere's antipodal map is therefore the entire
 content of the question. Without it the sheets reach each other throughout the interior; with it,
 only inside $r=M$.
 
@@ -3747,7 +3733,7 @@ $$
 \Delta\phi=\int_{-T_0}^{T_0} g\,\sqrt{1-X'^2}\;dT.
 $$
 
-Both factors are largest at $X\equiv0$: $g$ falls with $r$, since $d\log g^2/dr=-1/2M-3/r<0$,
+Both factors are largest at $X\equiv0$, $g$ falls with $r$, since $d\log g^2/dr=-1/2M-3/r<0$,
 while $r$ rises as $T^2-X^2$ falls. So the maximiser is $X\equiv0$, uniquely, and it is also the
 fixed set of $X\mapsto-X$ and hence a geodesic. On it every exponential cancels,
 $g\,|dT/dr|=1/\sqrt{r(2M-r)}$, and the integral is elementary:
@@ -3771,15 +3757,16 @@ Kruskal manifold [29], written in the form used here by Sanchez and Whiting [30]
 Numasawa [6], whose gauging of a spacetime inversion §2.1 already leans on, pose it again for the same quotient
 and call the objects self-intersecting timelike curves, conjecturing that quantum gravity permits
 them only where the self-intersections sit behind horizons. The result above is an instance
-of that conjecture and says more than it does: behind the horizon, and then inside $r=M$ as well.
+of that conjecture and says more than it does, behind the horizon, and then inside $r=M$ as well.
 
-We have not found a radius stated in any of them, and the search went this far and no further: not far. Harlow and Numasawa is available and was read at
-source. Gibbons 1986 and Sanchez and Whiting 1987 are pre-arXiv, and neither was read at source
-here; both were reached through abstracts and secondary citation, and repeated attempts at a
-full-text route found the publisher copies gated and no repository holding either. So the claim
-that $r=M$ is new rests on a sweep that did not open two of its doors, and we make no statement at
-all about what the text of either paper says. It is plausible that the radius is new. It is not
-established, and nothing else in this appendix depends on which way it goes.
+We have not found a radius stated in any of them, and the search was not exhaustive. Harlow and
+Numasawa is available and was read at source. Gibbons 1986 and Sanchez and Whiting 1987 are
+pre-arXiv, and neither was read at source here; both were reached through abstracts and secondary
+citation, and repeated attempts at a full-text route found the publisher copies gated and no
+repository holding either. So the claim that $r=M$ is new rests on a sweep that did not open two of
+its doors, and we make no statement at all about what the text of either paper says. It is plausible
+that the radius is new. It is not established, and nothing else in this appendix depends on which
+way it goes.
 
 Put in words the result stops looking like a coincidence of arcsines. The antipodal map asks for half
 a revolution. The journey has two interior legs and the fold's own symmetry splits it evenly
@@ -3791,23 +3778,22 @@ singularity, gives one full revolution and no more. The antipodal map asks for h
 Half a revolution takes half the interior, and a fold through a general angle $\alpha$ would take $\cos^2(\alpha/4)$ of it.
 
 Three things follow immediately. The commutator is nonzero only for $UV\geq\sqrt e/2=0.8244$,
-against the singularity at $UV=1$, so the two-dimensional claim that it is nonzero throughout
-$UV>0$ is too generous by half. The bound is attained rather than approached, since the curve
-$X\equiv0$ with $d\phi=g\,dT$ is null, and it is the one that does it.
+against the singularity at $UV=1$, so the two-dimensional claim that it is nonzero throughout $UV>0$
+is too generous by half. The bound is attained, since the curve $X\equiv0$ with $d\phi=g\,dT$ is
+null, and it is the one that does it.
 
 That the maximiser is a geodesic and not merely a null curve is what makes the statement an
 equivalence rather than one direction of one. If the maximiser were null and not geodesic, Hawking
 and Ellis' 4.5.10 would put its endpoint in the chronological future, which is open, and contact
-would leak past $r=M$. It is the $E=0$ branch, whose $d\phi/dr=1/(r\sqrt{|f|})$ saturates the
-bound exactly; structurally, $\{U=V\}$ is the fixed-point set of $t\mapsto-t$ and so totally
-geodesic, a great circle inside it is totally geodesic, and in the remaining two dimensions every
-null curve is a null pregeodesic. So at $r=M$ the image sits in $J^+(\Theta x)$ and not in
-$I^+(\Theta x)$, and $\leq$ is the right sign. And the bounding sphere carries exactly a quarter
-of the horizon area, which is an identity and not a coincidence: the threshold is
-$\arcsin\sqrt{r/2M}=\pi/4$, so $\sqrt{r/2M}=1/\sqrt2$, and the quarter in the area is the square
-of the half in the radius. Whether the echo of $S=A/4G$ is anything is a question we raise and do
-not answer. What weighs against it is that the quarter here is a bare area ratio with no $G$ and
-no $\hbar$ in it.
+would leak past $r=M$. It is the $E=0$ branch, whose $d\phi/dr=1/(r\sqrt{|f|})$ saturates the bound
+exactly; structurally, $\{U=V\}$ is the fixed-point set of $t\mapsto-t$ and so totally geodesic, a
+great circle inside it is totally geodesic, and in the remaining two dimensions every null curve is
+a null pregeodesic. So at $r=M$ the image sits in $J^+(\Theta x)$ and not in $I^+(\Theta x)$, and
+$\leq$ is the right sign. And the bounding sphere carries exactly a quarter of the horizon area,
+which is an identity: the threshold is $\arcsin\sqrt{r/2M}=\pi/4$, so $\sqrt{r/2M}=1/\sqrt2$, and
+the quarter in the area is the square of the half in the radius. Whether the echo of $S=A/4G$ is
+anything is a question we raise and do not answer. What weighs against it is that the quarter here
+is a bare area ratio with no $G$ and no $\hbar$ in it.
 
 *One candidate for that number, ruled out.* It is the first optimisation anyone tries, so it gets a paragraph. Let the connecting curve sweep its angle where the angle comes fastest, at the photon
 sphere: $d\phi/dt=\sqrt{1-2M/r}/r$ is maximised at exactly $r=3M$,
@@ -3815,7 +3801,7 @@ giving a minimum coordinate time $3\sqrt3\,\pi M$ and a Kruskal ratio $e^{3\sqrt
 The optimisation is right and the photon sphere is out of reach. Along a future-directed causal
 curve $dU\,dV\geq0$ with $dT>0$, so both $U$ and $V$ increase, and a curve joining $\Theta x$
 to $x$ is confined to $|UV|\leq UV(r)\leq1$, while at $r=3M$, $|UV|=2.241$. No curve that does
-the job gets there. What the candidate has right is the shape: contact needs the angle covered
+the job gets there. What the candidate has right is the shape. Contact needs the angle covered
 as well as the fall, it does not open at the horizon, and how deep it opens is a pure number
 free of the mass. Once the constraint is imposed that number is one half, not $59.21$.
 
@@ -3873,10 +3859,10 @@ the point-split energy density the fold's pullbacks reproduce the wave operator,
 cancels except the part of the radial potential the transverse sphere does not account for.
 
 That zero is the constant transverse radius's doing, and where the radius varies there is no
-cancellation: in flat space, whose fold is the time reflection composed with the spatial point
+cancellation. In flat space, whose fold is the time reflection composed with the spatial point
 reflection, the image energy density is exactly $(8r^2+6\xi^2)/4\pi^2D^3$, positive everywhere and
 diverging positively at contact. So the sign the conjecture wanted is the sign it gets, in the one
-setting where the whole thing is closed form. Neither model is a black hole: one has the caustic
+setting where the whole thing is closed form. Neither model is a black hole, one has the caustic
 and no sign, the other the sign and no caustic. On Schwarzschild the remainder is radial and nothing else.
 A.19 carries the fold through for any static spherically symmetric metric and the transverse
 sphere supplies the angular part of the potential exactly, at every one of them, so no $\ell$
@@ -3898,12 +3884,12 @@ Penrose's argument uses to carry a trapped surface to an incomplete geodesic. So
 along Penrose's own congruence it does two things at once: it delays the conjugate point, which is
 what shrinks the contact region and polices the causality violation, and it removes the hypothesis
 of the singularity theorem in the one region where the theorem's conclusion lives. The antecedent is
-not free: the paragraphs below make it the whole question, and the evidence there points against it. How much would be needed, were it to hold, is definite. An ingoing radial null congruence in the interior is shear-free and enters the contact
+not free. The paragraphs below make it the whole question, and the evidence there points against it. How much would be needed, were it to hold, is definite. An ingoing radial null congruence in the interior is shear-free and enters the contact
 region with $\theta=-4/r_h$, so $\theta'=-\theta^2/2-R_{ab}k^ak^b$ turns the expansion around
 where $-R_{ab}k^ak^b$ exceeds $8/r_h^2$. Because the region is half the interior and
 $\theta'=-\theta^2/2$ resumes on the far side, the expansion has to reach zero before the
 congruence leaves, which is $\mathrm{artanh}(1/u)=u$ at $u=1.1997$ and raises the requirement to
-$11.5138/r_h^2$, a factor $1.439$ above the pointwise one. In the vacuum the bound is saturated:
+$11.5138/r_h^2$, a factor $1.439$ above the pointwise one. In the vacuum the bound is saturated,
 $\theta=-2/r$ with $dr/d\lambda=-1$ diverges at exactly $\lambda=2/|\theta_0|$.
 
 Both of those are requirements on a constant stress and the stress is not constant. A.19's world
@@ -3952,11 +3938,11 @@ The further power the mass slot appeared to lose is the coupling's doing. Where 
 vanishes the null stress is $(1-4\xi)P-Q$, so the leading mass parts cancel exactly when $1-4\xi$
 equals $dQ/dP$ at the caustic, and here that ratio is $0.33018$, putting the cancelling coupling at
 $\xi=0.16746$, which is the conformal one to three figures. That is a property of a conformally flat
-geometry and not of the mass: at $\xi=0$, $1/12$, $0.2$ and $0.25$ the mass slot measures $-2.97$,
-$-2.97$, $-3.00$ and $-2.99$, and $\xi=1/6+0.02$ already gives $-3.01$, so the cancellation is a
-point and not a neighbourhood. At a hole the caustic is order one, so the leading stress is
-$\delta^{-7/2}$ and the mass part is $\delta^{-5/2}$, and the lower reading survives only as a
-fine-tuning of $\xi$ to a hole's own $dQ/dP$, a number nobody has calculated.
+geometry and not of the mass. At $\xi=0$, $1/12$, $0.2$ and $0.25$ the mass slot measures $-2.97$,
+$-2.97$, $-3.00$ and $-2.99$, and $\xi=1/6+0.02$ already gives $-3.01$, so the cancellation holds at
+a point only. The caustic at a hole is order one, so the leading stress is $\delta^{-7/2}$ and the
+mass part is $\delta^{-5/2}$, and the lower reading survives only as a fine-tuning of $\xi$ to a
+hole's own $dQ/dP$, a number nobody has calculated.
 
 At $p=5/2$, $\kappa$ is no longer open either, because every ingredient of it is already here. The
 caustic amplitude is $\Delta^{1/2}\to3.9004\,M\,s^{-1/2}$, on A.19's projection arc length
@@ -3970,25 +3956,25 @@ $\tfrac34A\,m^2\sigma^{-5/2}(\partial_k\sigma)^2$, whose $D$ dependence is
 $|\sigma|^{-1/2}D^{-5/2}$. In units of $r_h^{1/2}$ that is $\kappa=0.0039329$.
 
 At one solar mass the shell is then $2.1\times10^{-6}$ m for the $491.6$ PeV fermion,
-$1.5\times10^{-11}$ m for a top quark, $2.3\times10^{-13}$ m for a proton and
-$5.5\times10^{-16}$ m for an electron, a factor $0.1091$ below the unit-$\kappa$ values because the
-thickness goes as $\kappa^{2/5}$, and it drops below a Planck length only for masses under
-$2.0\times10^{-19}$ eV. So the shell is a real length for every field there is. It also widens with
-the hole rather than narrowing, since $D_*$ is proportional to $r_h$, which puts the effect at its
-largest in the largest holes. One thing the coefficient does not settle and one it now does. The
-radial sign, which A.18's components settle below, rests on conservation rather than on a sum done
-in the interior. The order-unity factor that used to stand beside $\kappa$, from keeping only the
-leading derivative pairing, is measured at one: with $G=F(\sigma)$ the null-null second derivative
-is $F''(k\cdot\nabla\sigma)^2+F'k^ak^b\nabla_a\nabla_b\sigma$ and the second piece carries two
-fewer powers of $\sigma$, so it cannot reach the leading coefficient. Against A.18's exact tower,
-in the geometry where A.19's rule leaves nothing to choose, the leading pairing agrees to twelve
-digits for the massless part and to $0.2$ per cent for the mass part.
+$1.5\times10^{-11}$ m for a top quark, $2.3\times10^{-13}$ m for a proton and $5.5\times10^{-16}$ m
+for an electron, a factor $0.1091$ below the unit-$\kappa$ values because the thickness goes as
+$\kappa^{2/5}$, and it drops below a Planck length only for masses under $2.0\times10^{-19}$ eV. So
+the shell is a real length for every field there is. It also widens with the hole, since $D_*$ is
+proportional to $r_h$, which puts the effect at its largest in the largest holes. One thing the
+coefficient does not settle and one it now does. The radial sign, which A.18's components settle
+below, rests on conservation rather than on a sum done in the interior. The order-unity factor that
+used to stand beside $\kappa$, from keeping only the leading derivative pairing, is measured at one:
+with $G=F(\sigma)$ the null-null second derivative is
+$F''(k\cdot\nabla\sigma)^2+F'k^ak^b\nabla_a\nabla_b\sigma$ and the second piece carries two fewer
+powers of $\sigma$, so it cannot reach the leading coefficient. Against A.18's exact tower, in the
+geometry where A.19's rule leaves nothing to choose, the leading pairing agrees to twelve digits for
+the massless part and to $0.2$ per cent for the mass part.
 
 The reduction that sign goes through is pure algebra. A stress invariant under the interior's isometries has only $T^t{}_t$,
 $T^r{}_r$ and $T^\theta{}_\theta=T^\varphi{}_\varphi$, and contracting with a null vector without
 and with a transverse part gives
 $T_{kk}=|f|(k^t)^2(T^t{}_t-T^r{}_r)$ and that same expression plus
-$r^2(k^\theta)^2(T^\theta{}_\theta-T^r{}_r)$: the radial answer is the contact answer less the
+$r^2(k^\theta)^2(T^\theta{}_\theta-T^r{}_r)$, the radial answer is the contact answer less the
 anisotropy. Conservation supplies the anisotropy outright,
 $T^\theta{}_\theta-T^r{}_r=(r/2)[\partial_rT^r{}_r-(f'/2f)(T^t{}_t-T^r{}_r)]$, verified against the
 Reissner-Nordström electromagnetic stress to $10^{-11}$ and broken at $1.1$ when the transverse
@@ -4028,7 +4014,7 @@ Which combination the computed sign belongs to is settled by a symmetry, and the
 calibration geometry cannot distinguish them. On $\mathbb R\times S^3$ the rotations fixing a point
 also fix its antipode, a rotation about an axis fixing both ends of it, so the isotropy group there is
 the whole of $SO(3)$ and it fixes the image. A symmetric spatial tensor invariant under $SO(3)$ is a
-multiple of the identity, which the twenty-four octahedral rotations enforce exactly: a test tensor
+multiple of the identity, which the twenty-four octahedral rotations enforce exactly. A test tensor
 of trace $4$ averages to $1.3333333333$ on every diagonal entry with the off-diagonals at machine
 zero, so the image stress there is isotropic and its anisotropy is identically zero. Inside a hole
 the isotropy is only the $SO(2)$ about the radial direction, which fixes the contact image too but
@@ -4063,8 +4049,8 @@ Tangherlini $n$ and fails for every $Q\neq0$ in a shell outside the Cauchy horiz
 one line: $r_+r_-=Q^2$ and $r_++r_-=2M$ give $f'(r_-)=-2\sqrt{M^2-Q^2}/r_-^2$, finite but negative
 because $f$ falls through zero going outward, so $C(r_-)=2\kappa r_-+2\sqrt{M^2-Q^2}/r_-$ is
 positive at every nonzero charge, with no threshold anywhere. At the radius the result is about it
-survives longer: $C(M)=2s/(1+s)^2-4s^2$ with $s=\sqrt{1-Q^2/M^2}$, which stays negative until the
-root of $2s^3+4s^2+2s-1=0$ at $Q/M=0.9548$. What survives at charge is one direction: the $E=0$
+survives longer, $C(M)=2s/(1+s)^2-4s^2$ with $s=\sqrt{1-Q^2/M^2}$, which stays negative until the
+root of $2s^3+4s^2+2s-1=0$ at $Q/M=0.9548$. What survives at charge is one direction. The $E=0$
 null geodesic is an explicit curve reaching $\pi$ at $r=M$, so contact holds for $r\leq M$ at
 every charge. Whether it also reaches somewhere in $(M,r_+)$ is open, and settling it means
 maximising over $X(T)$ in the charged chart, where this argument assumes the fixed-point curve
@@ -4133,7 +4119,7 @@ and it cannot visit both exteriors because every point of $R$ is spacelike to ev
 The itinerary is $P$, then at most one exterior, then $F$: one leg in each interior and no more.
 
 The same monotonicity settles the count for spacetimes whose maximal extension is an infinite
-tower, which was the obvious worry about charge and about $\Lambda$: a curve that could cross an
+tower, which was the obvious worry about charge and about $\Lambda$. A curve that could cross an
 inner horizon into a fresh universe could accumulate angle without limit. It cannot. Both null
 coordinates increase, so the curve joining $\Theta x$ to $x$ is confined to $|UV|\leq UV(r)$, and
 a second horizon is reachable only if it sits at finite $|UV|$ in the patch built on the horizon
@@ -4196,15 +4182,14 @@ $r^2|f|=2Mr-r^2+(\Lambda/3)r^4$, a quartic, so the midpoint rule does not apply 
 moves. It moves outward, monotonically: at $9\Lambda M^2=0.1$ the contact radius is $1.047M$ and
 $0.515$ of the horizon, at $0.5$ it is $1.311M$ and $0.597$, and at $0.9$ it is $1.990M$ and
 $0.778$, with the total turn rising from $\pi$ to $4.21$ over the same range. So a positive
-cosmological constant deepens the contact region rather than shrinking it, and at the Nariai
-point, where the two horizons merge and the quartic acquires a double root, the sweep diverges
-and the whole interior becomes contact-capable. The ratio runs $0.919$ at $9\Lambda M^2=0.99$ and
-$0.991$ at $0.9999$. Above $9\Lambda M^2=1/2$ those figures are lower bounds rather than suprema,
-for the reason given with the charged case above, and they climb toward one either way. That last
-statement was worked out here for its own sake and it turns out to name the same configuration the
-involution count later picks: Nariai is both the only member of the Schwarzschild-de Sitter family
-the fold can fix and the only one with no forbidden outer shell. Neither calculation was looking
-for the other.
+cosmological constant deepens the contact region, and at the Nariai point, where the two horizons
+merge and the quartic acquires a double root, the sweep diverges and the whole interior becomes
+contact-capable. The ratio runs $0.919$ at $9\Lambda M^2=0.99$ and $0.991$ at $0.9999$. Above
+$9\Lambda M^2=1/2$ those figures are lower bounds rather than suprema, for the reason given with the
+charged case above, and they climb toward one either way. That last statement was worked out here
+for its own sake and it turns out to name the same configuration the involution count later picks:
+Nariai is both the only member of the Schwarzschild-de Sitter family the fold can fix and the only
+one with no forbidden outer shell. Neither calculation was looking for the other.
 
 Set beside the charged case that makes a clean pair. Charge leaves the fraction at exactly one
 half because it keeps $r^2f$ quadratic; $\Lambda$ moves it because it does not; and extra
@@ -4252,14 +4237,14 @@ at $a=0$ to about $0.89M$ at $a=0.9$, with the fraction of the interior band it 
 monotonically from exactly one half to about a third. So spin shrinks the contact region where
 charge left it alone.
 
-Which isometry the fold uses is settled, and the apparent ambiguity came from naming the angle
-shift by a coordinate instead of by a flow. Take it to be the flow of the axial Killing field
+Which isometry the fold uses is settled, and the apparent ambiguity came from naming the angle shift
+by a coordinate instead of by a flow. Take it to be the flow of the axial Killing field
 $\psi=\partial_\phi$ through parameter $\pi$, composed with the equatorial reflection
-$E:\theta\mapsto\pi-\theta$, and there is one map rather than two. It commutes with the wedge
-reflection $N$ for a reason that needs no calculation: $N$ is built from the horizon generator
+$E:\theta\mapsto\pi-\theta$, and there is one map. It commutes with the wedge reflection $N$ for a
+reason that needs no calculation: $N$ is built from the horizon generator
 $\xi=\partial_t+\Omega_H\partial_\phi$, so any isometry preserving $\xi$ preserves the Kruskal
-structure and commutes with $N$; $\psi$ preserves $\xi$ because $[\partial_t,\partial_\phi]=0$
-with $\Omega_H$ constant, and $E$ preserves $\partial_t$ and $\partial_\phi$ separately. So
+structure and commutes with $N$; $\psi$ preserves $\xi$ because $[\partial_t,\partial_\phi]=0$ with
+$\Omega_H$ constant, and $E$ preserves $\partial_t$ and $\partial_\phi$ separately. So
 $\Theta=N\circ e^{\pi\psi}\circ E$ squares to $N^2\circ e^{2\pi\psi}\circ E^2=\mathbb{1}$, with
 nothing left to choose.
 
@@ -4283,12 +4268,12 @@ shape already used in §3.3 and A.9.
 
 What this narrows is the domain. These results do not all lean on the same thing, and separating
 them narrows it further. The reciprocal law needs $P_\perp^2=1$ and positivity, so it is
-indifferent to the state: five states, thermal, flux-carrying, wildly non-thermal, oscillating,
+indifferent to the state. Five states, thermal, flux-carrying, wildly non-thermal, oscillating,
 and a power law with no temperature at all, each satisfy $R(x,y)R(x,P_\perp y)=1$ to machine
 precision. The ninety-degree equality and the odd-multipole statement follow from it and inherit
 that indifference, as does the mass-independence in the cosmology paper's §3. A.10's reduction
 needs $B$. Exactly one claim in these appendices needs the KMS property, that $\alpha^2=1$ fixes
-the temperature, and four need the two-sided structure: that same claim, the transparent seam, the
+the temperature, and four need the two-sided structure, that same claim, the transparent seam, the
 meeting region above, and A.16's consistency condition.
 
 Evaporation, which is what breaks KMS, therefore threatens one line of it. The appendix survives.
@@ -4317,7 +4302,7 @@ coordinates the curvature singularity is the hyperbola $T^2-X^2=1$, whose future
 and whose past branch bounds $P$; since $J$ is $(T,X)\mapsto(-T,-X)$ it exchanges the two
 branches, verified on $2\times10^4$ points of the locus. So under the fold the black hole's future
 singularity and the white hole's past singularity are one locus, and the fold has exactly two loci
-where it joins the two sheets structurally: the bifurcation surface and the singularity. Only the
+where it joins the two sheets structurally, the bifurcation surface and the singularity. Only the
 first has been worked out here.
 
 That is a different sense of joining from A.15's, and the two should not be run together. A.15
@@ -4325,7 +4310,7 @@ asks where a point can causally influence its own image and answers $r\leq M$; t
 fold's map relates the sheets at all, and answers at two surfaces. The singularity lies inside
 A.15's region and the bifurcation surface lies outside it, at $r=2M$, so a point of $B$ is not
 causally connected to its own image even though the fold carries $B$ to itself. What $B$ does is
-carry the curve: the one that attains A.15's bound passes through it. A.15's domain caveat applies
+carry the curve, the one that attains A.15's bound passes through it. A.15's domain caveat applies
 with full force: a hole formed by collapse has no past singularity to be identified with, so for
 an astrophysical black hole this section says nothing.
 
@@ -4333,7 +4318,7 @@ That changes the character of the interior boundary condition without resolving 
 single-sheet theory must say what happens at the singularity as a terminal condition. The fold
 instead requires the data on that locus to be compatible with its own image under $J$, which is a
 self-consistency requirement of the kind §3.3 already uses, and which is the interior counterpart
-of $\alpha^2=1$ being the smoothness condition at $B$. It does not resolve the singularity: the
+of $\alpha^2=1$ being the smoothness condition at $B$. It does not resolve the singularity. The
 curvature still diverges there in both sheets, and identifying two divergences does not remove
 them.
 
@@ -4367,13 +4352,12 @@ identification. What the interior wants is a projection, and the projection is t
 a $\mathbb{Z}_2$, as at $B$.
 
 Covariance is load-bearing here. Adding to $A$ a piece that commutes with $J$ instead of
-anticommuting, with strength $\epsilon$, destroys the involution and the solution space with it:
-the kernel has dimension $n$ at $\epsilon=0$ and is empty at $\epsilon=10^{-6}$ and above, with
-the smallest singular value of $JU-1$ bounded away from zero rather than nearly degenerate. The
-covariance at issue is not $T$ but $\Theta$, which is CPT, so it comes from a theorem and is
-untouched by $T$ violation in the kaon system. The interior condition has solutions because CPT
-holds and would have none otherwise, which puts weight on that assumption in a second place
-independent of §2's.
+anticommuting, with strength $\epsilon$, destroys the involution and the solution space with it: the
+kernel has dimension $n$ at $\epsilon=0$ and is empty at $\epsilon=10^{-6}$ and above, with the
+smallest singular value of $JU-1$ bounded away from zero. The covariance at issue is not $T$ but
+$\Theta$, which is CPT, so it comes from a theorem and is untouched by $T$ violation in the kaon
+system. The interior condition has solutions because CPT holds and would have none otherwise, which
+puts weight on that assumption in a second place independent of §2's.
 
 One reading of that projector needs checking, because it is the natural one and it is wrong in
 general. A projection that keeps half the data invites being read as a measurement, with the
@@ -4423,7 +4407,7 @@ commuting involutions, which is a statement about the geometry and is true whate
 field is in. The involution itself does not break, which reopens the question it was meant to
 settle. In frequency space that is detailed balance, $\widetilde
 W(-\omega)=e^{-\beta\omega}\widetilde W(\omega)$, and a departure from the thermal occupation
-violates it at first order with no tolerant window: a fractional departure $10^{-4}$ gives a
+violates it at first order with no tolerant window, a fractional departure $10^{-4}$ gives a
 violation $8.55\times10^{-5}$, and $10^{-2}$ gives $8.55\times10^{-3}$. So a state that departs
 from the thermal occupation loses the detailed-balance reading quickly. What it does not lose is
 $\alpha^2=1$. The fold's involution property therefore does not by itself make the Hawking
@@ -4450,8 +4434,8 @@ and is not done here.
 
 
 **A.18 The image singularity at a caustic, computed without a parametrix.** §5.3's withdrawn
-power, recovered. The reading under test is that the fold censors its own closed causal curves:
-the world function between a point and its image vanishes linearly at the contact sphere, so the
+power, recovered. The reading under test is that the fold censors its own closed causal curves.
+The world function between a point and its image vanishes linearly at the contact sphere, so the
 image term of the two-point function blows up there and the stress tensor with it. Counting the
 blow-up through the Hadamard parametrix gives an image term $\Delta^{1/2}/\sigma$ and a stress
 tensor $s^{-3}$, and that count needs $\Delta$ finite at the image point, which it is not. The fold's transverse factor is the antipodal map on a round $S^2$, every great
@@ -4494,7 +4478,7 @@ is also the variable §5.3's linear zero of $\sigma$ is written in. A generic nu
 pair, no caustic, returns a fitted power $-1.0095$ against the known $-1$, which is the case that
 could have failed and the reason the other number means anything. The image pair returns $-1.4920$
 on the widest window and sharpens to $-1.49674$ and then $-1.49874$ as the window closes, with the
-largest log-residual falling from $2.6\times10^{-3}$ to $4\times10^{-4}$: the power is $-3/2$.
+largest log-residual falling from $2.6\times10^{-3}$ to $4\times10^{-4}$, the power is $-3/2$.
 Removing the antipodal parity by hand, leaving the configuration otherwise untouched, removes the
 divergence altogether at $+0.0004$.
 
@@ -4504,7 +4488,7 @@ regulator constant to $3\times10^{-3}$, so the phase belongs to the regulator an
 on the positive real axis while the magnitude holds at $502$. The divergence is real and positive
 and does not oscillate.
 
-So the caustic steepens the divergence by half a power: its image term
+So the caustic steepens the divergence by half a power. Its image term
 goes as $s^{-3/2}$ where the parametrix had $s^{-1}$, and a stress tensor quadratic in derivatives
 goes as $s^{-7/2}$ where the parametrix count had $s^{-3}$. So the self-censoring reading holds with a steeper
 exponent than the parametrix count gives it, on a calculation that carries no Van Vleck factor at
@@ -4538,7 +4522,7 @@ non-caustic controls return $-0.9934$ and $-2.999$ where the parametrix predicts
 What comes out is a traceless, zero-density, purely anisotropic divergence. $D$ and $Q$ both go as
 $s^{-7/2}$ with $Q=-D/2$, $E$ goes as $s^{-5/2}$ and drops out, and the components are
 $\rho=-15s^{-7/2}/32\pi\sqrt{2\pi}=-0.059525\,s^{-7/2}$, $T^r{}_r=0$ and
-$T^\theta{}_\theta=-\rho/2$: a pattern
+$T^\theta{}_\theta=-\rho/2$, a pattern
 $T^t{}_t:T^r{}_r:T^\theta{}_\theta=2:0:-1$, returned as $1.9997:0.0003:-1$. Both of that
 geometry's null contractions are negative, $-D$ along its radial direction and $-D+Q$ along the
 contact one, in the ratio $1.5003$ against $3/2$. Neither sign moves with the coupling or the mass, checked at
@@ -4575,7 +4559,7 @@ powers soft; the transverse pressures are equal, from the $SO(2)$ about the radi
 $T^r{}_r$ vanishes at leading order, which is what $Y'=(f'/2f)X+2A/r$ gives, putting $Y$ one power
 below $X$ and $A$ so that $Y/X$ falls as $D$. The trace then reads
 $T^t{}_t+2T^\theta{}_\theta=0$ and the pattern is forced. So both geometries empty the same slot
-and both are traceless, for reasons with nothing in common: here because the radial direction is
+and both are traceless, for reasons with nothing in common. Here because the radial direction is
 not in the connecting tangent at all, at a hole because conservation empties it while the tangent
 runs straight through it. Two unrelated routes to one pattern counts for more than a transfer would
 have been.
@@ -4609,7 +4593,7 @@ something to catch.
 Equal counts, so no relative phase from a conjugate point. One difference between the two geometries
 has to be named and disposed of before that means anything. On Schwarzschild the connecting curve
 turns in $r$, its $\dot r$ vanishing at the horizon where $|f|$ does, and nothing here corresponds.
-That turning belongs to the Killing slicing and not to the curve: in Kruskal coordinates the
+That turning belongs to the Killing slicing and not to the curve. In Kruskal coordinates the
 bifurcation region is smooth, the connecting curve runs through it as one smooth null geodesic, and
 $r$ merely happens to take a maximum along the way. A caustic is where a Jacobi field vanishes and
 none does there. Reality caps what could still go wrong: a Wightman function at spacelike separation
@@ -4617,17 +4601,16 @@ is real, so any residual phase is a multiple of $\pi$ and the sign either carrie
 over exactly, with nothing between.
 
 And it carries, because the quantity whose phase this is can be calculated both ways and comes out
-the same. A.19's rule replaces the divergent Van Vleck factor at a
-caustic by $\Delta^{1/2}\to\Delta'^{1/2}\sqrt\pi\,Ls^{-1/2}$, with $L$ the projection's arc length
-and $\Delta'^{1/2}$ the reduced factor of the one non-degenerate transverse direction. Applied to
-A.18's geometry that direction is flat, so $\Delta'^{1/2}=1$ exactly, the projection is a great
-semicircle, and the rule predicts $\pi^{3/2}$ with nothing left to choose. Feeding it through the
-proper-time integral at $\sigma=\pi s$ returns $1/8\pi\sqrt{2\pi}$, which is A.18's mode-sum
-coefficient, to sixteen digits and as an exact cancellation rather than a numerical match. The
-affine total in place of $L$ misses by $2.773$, a Van Vleck factor of $0.428$ by that factor, and
-dropping the $\sqrt\pi$ by $0.564$. So the image term is the same positive expression in both, for
-the same reason: a reduced Van Vleck factor is a square root, $\sqrt\pi$ is positive and an arc
-length is positive.
+the same. A.19's rule replaces the divergent Van Vleck factor at a caustic by
+$\Delta^{1/2}\to\Delta'^{1/2}\sqrt\pi\,Ls^{-1/2}$, with $L$ the projection's arc length and
+$\Delta'^{1/2}$ the reduced factor of the one non-degenerate transverse direction. Applied to A.18's
+geometry that direction is flat, so $\Delta'^{1/2}=1$ exactly, the projection is a great semicircle,
+and the rule predicts $\pi^{3/2}$ with nothing left to choose. Feeding it through the proper-time
+integral at $\sigma=\pi s$ returns $1/8\pi\sqrt{2\pi}$, which is A.18's mode-sum coefficient, to
+sixteen digits and as an exact cancellation. The affine total in place of $L$ misses by $2.773$, a
+Van Vleck factor of $0.428$ by that factor, and dropping the $\sqrt\pi$ by $0.564$. So the image
+term is the same positive expression in both, for the same reason: a reduced Van Vleck factor is a
+square root, $\sqrt\pi$ is positive and an arc length is positive.
 
 Were it to turn over, the two contractions would swap roles, since A.15's conservation chain makes
 exactly one of them negative whichever way this goes. The
@@ -4639,7 +4622,7 @@ hypergeometric with exponents $\{0,2\}$ at the singularity and the double expone
 horizon, and its regular branch is the polynomial $\psi_\ell=r^2P^{(2,0)}_{\ell-1}(1-2r)$. Jacobi
 asymptotics then give the phase in closed form, $2\nu\arcsin\sqrt r-5\pi/4$ with $\nu=\ell+1/2$,
 whose variable part is exactly §5's leg from $r$ out to the horizon. Zeros fix a phase only modulo
-$\pi$, so the constant is pinned by the amplitude as well: the full Darboux form matches to
+$\pi$, so the constant is pinned by the amplitude as well. The full Darboux form matches to
 $0.0040$ at $\ell=800$ against $1.9991$ for the candidate a half-turn away, which is as far apart
 as two cosines reach. What the fold still needs beyond it is the measure and the saddle of the
 frequency integral, whose stationary point for equal-time endpoints is $E=0$.
@@ -4666,7 +4649,7 @@ the last because the antipodal map's differential is minus the identity.
 
 The angular contraction is the piece that decides everything. At the antipode the first term of
 the mixed derivative of $P_\ell(\cos\gamma)$ drops, since the projection of $n'$ off $n$ vanishes
-when $n'=-n$, and what survives is $2P_\ell'(-1)=-(-1)^{\ell}\ell(\ell+1)$: the transverse sphere
+when $n'=-n$, and what survives is $2P_\ell'(-1)=-(-1)^{\ell}\ell(\ell+1)$, the transverse sphere
 hands back exactly its own Laplacian eigenvalue. That is the step the whole cancellation turns on,
 so it is checked by differencing on the sphere rather than by the projection argument alone, and
 agrees for $\ell$ up to twelve to $3.9\times10^{-5}$. So the three pieces are $W_{\tau\tau}$,
@@ -4727,7 +4710,7 @@ calculations overlap and they agree there.
 
 So the sign has an answer in the one setting where everything is exact, and the answer is
 positive. One thing it rests on should be named, because it is a statement about the state and not
-about the geometry: the image term is taken to enter with a positive coefficient, and the
+about the geometry. The image term is taken to enter with a positive coefficient, and the
 propagation of A.8 is what supplies it. The cross-sheet correlator there is the
 direct one shifted by half a period, $W(t-i\beta/2)=\cos\omega t/2\omega\sinh(\beta\omega/2)$,
 positive at coincidence. A negative one would flip the sign of
@@ -4777,11 +4760,11 @@ calculation above is the fold's own fold, at a Rindler horizon, in closed form.*
 positive answer is therefore an exact statement about the fold at a horizon and not about a model
 resembling one.
 
-A third geometry is exactly solvable where the interior is not, and it decides between them. On
-the Einstein static universe a conformally coupled massless scalar has
-$\omega_n=n/a$ exactly with degeneracy $n^2$, and the $S^3$ addition theorem at the antipode
-returns $(2\pi^2a^3)^{-1}n^2(-1)^{n+1}$, so the antipodal parity arrives on its own rather than
-being inserted. The sum closes, and it closes at general angle:
+A third geometry is exactly solvable where the interior is not, and it decides between them. On the
+Einstein static universe a conformally coupled massless scalar has $\omega_n=n/a$ exactly with
+degeneracy $n^2$, and the $S^3$ addition theorem at the antipode returns
+$(2\pi^2a^3)^{-1}n^2(-1)^{n+1}$, so the antipodal parity arrives on its own. The sum closes, and it
+closes at general angle:
 
 > $$
 > G=\frac{1}{8\pi^2a^2(\cos\eta-\cos\gamma)},\qquad
@@ -4828,7 +4811,7 @@ The Hadamard expansion says where that factor comes from. Its log coefficient is
 $V_0=\Delta^{1/2}[m^2+(\xi-\tfrac16)R]/2$, and a massless conformal field in a Ricci-flat
 spacetime has nothing to put in it. Here $R=6/a^2$, so $(\xi-\tfrac16)R$ is the whole of the
 breaking and $1-6\xi$ is its measure. The same slot carries $m^2$, which is why A.18 finds a
-divergence where this finds none: its tower carries masses $m_\ell=\sqrt{\ell(\ell+1)}/a$. So the
+divergence where this finds none, its tower carries masses $m_\ell=\sqrt{\ell(\ell+1)}/a$. So the
 constant-radius zero that opens this appendix is the same phenomenon rather than an artefact of a
 product geometry.
 
@@ -4840,7 +4823,7 @@ vanishes; and its antipodal pair at equal time is spacelike separated, so there 
 $\sigma\to0$ to expand in. A hole's contact is a null caustic in a spacetime that is not
 conformally flat, and there the coupling cancels outright, since $k\cdot k=0$ drops the metric
 terms and the two surviving derivative terms are equal and opposite at leading order, leaving
-$(1-2\xi)(-X)-2\xi X=-X$. A.18's tower agrees: five couplings and four masses return one
+$(1-2\xi)(-X)-2\xi X=-X$, and A.18's tower agrees. Five couplings and four masses return one
 coefficient, $-0.0592$, with a spread of $10^{-5}$ and no zero at $\xi=1/6$. So a massless
 conformal field does feel a contact divergence at a hole. Two derivatives on A.19's own amplitude
 give $T_{kk}=-3.19\times10^{-3}M^{-1/2}(M-r)^{-7/2}$, and against the same $11.5138/r_h^2$ that
@@ -4848,16 +4831,17 @@ leaves a floor under the shell, $(9.85\times10^{-3})^{2/7}\ell_P^{4/7}r_h^{3/7}$
 $1.1\times10^{-19}$ m at a solar mass and $7.8\times10^{-16}$ m at a billion. Mass still decides every shell that matters, beating the floor's term by $3\times10^{46}$ at
 the fold's own fermion, but it no longer decides whether there is one.
 
-The transport along the contact curve matters in its own right, since it fixes how the fold acts there. A.15's contact curve is the $E=0$ null geodesic, and $E=f\,dt/d\lambda=0$ makes $t$ constant, which makes $V/U$
-constant, so in Kruskal the curve is a straight ray through the origin, passing through the
-bifurcation surface where the fold acts and carried to its image by $\lambda\to-\lambda$. The
-contact boundary sits at $UV=\sqrt e/2=0.824361$ and the ray turns the angle by $\pi$ to
-$1.3\times10^{-13}$, reproducing the contact condition rather than assuming it. The Kruskal
-connection coefficients each carry a factor of $U$ or $V$, so they vanish at the crossing and are
-odd along the ray; the transport from $x$ to $\Theta x$ is therefore the identity, while
-transporting only as far as the bifurcation surface departs from it by $1.04$, which is what
-distinguishes a cancellation from an integrator doing nothing. So $P=d\Theta$, with one $+1$
-eigenvalue in the angular direction and $-1$ on both Kruskal directions and on the polar angle.
+The transport along the contact curve matters in its own right, since it fixes how the fold acts
+there. A.15's contact curve is the $E=0$ null geodesic, and $E=f\,dt/d\lambda=0$ makes $t$ constant,
+which makes $V/U$ constant, so in Kruskal the curve is a straight ray through the origin, passing
+through the bifurcation surface where the fold acts and carried to its image by
+$\lambda\to-\lambda$. The contact boundary sits at $UV=\sqrt e/2=0.824361$ and the ray turns the
+angle by $\pi$ to $1.3\times10^{-13}$, reproducing the contact condition. The Kruskal connection
+coefficients each carry a factor of $U$ or $V$, so they vanish at the crossing and are odd along the
+ray; the transport from $x$ to $\Theta x$ is therefore the identity, while transporting only as far
+as the bifurcation surface departs from it by $1.04$, which is what distinguishes a cancellation
+from an integrator doing nothing. So $P=d\Theta$, with one $+1$ eigenvalue in the angular direction
+and $-1$ on both Kruskal directions and on the polar angle.
 
 So the sign at a black hole is open. A.15's conjecture has one exact positive datum, the flat
 inversion, which is the fold's own fold at a Rindler horizon and which carries a positive
@@ -4967,7 +4951,7 @@ binomial series that closes on
 whose $N=3$ member is the Einstein static universe above, which is how the family was found, and
 whose exponent is $-(N-1)$ at every $N$. The Abel-summed modes match that to $8\times10^{-4}$
 relative over twelve points, and the exponents come out as $-(D-2+n)/2$ at $(D,n)=(3,1)$, $(4,2)$,
-$(5,3)$, $(6,4)$ and $(7,5)$. The two measured points are A.18's: its control pair with no caustic
+$(5,3)$, $(6,4)$ and $(7,5)$. The two measured points are A.18's. Its control pair with no caustic
 returns $-1.0095$ against $-1$, and its image pair returns $-1.49874$ against $-3/2$. With $n=D-3$
 for a spherically symmetric hole the four-dimensional answer is $-3/2$ and $-7/2$, which is A.18's
 measurement, so the transfer to Schwarzschild rests on the two configurations sharing a degeneracy.
@@ -4989,8 +4973,7 @@ caustic cannot know about, so it wants rearranging. Rearranged it is $c_n=L^n\,2
 > $$
 
 with $V_{\rm fam}=\mathrm{Vol}(S^n)$ running over $2\pi$, $4\pi$, $2\pi^2$ and $8\pi^2/3$, so the
-linear dependence on the family's volume is tested rather than assumed: any other power of it
-misses by $80\%$ or more.
+linear dependence on the family's volume is tested, any other power of it misses by $80\%$ or more.
 
 Whether the length there is the geodesic's, or some other scale of the Jacobi profile that happens
 to agree with it on a sphere, cannot be settled on a symmetric space. The curvature operator is
@@ -5005,9 +4988,9 @@ both directions, where a profile-dependent amplitude would need between $0.73$ a
 amplitude is the geodesic length and the family's volume and nothing else.**
 
 On the contact geodesic $V_{\rm fam}=2\pi$ as well, a circle of planes through the axis, and the
-tidal matrix is exactly $\mathrm{diag}(+\Psi,-\Psi)$ in a parallel-propagated frame, so the
-Gaussian integral factorises and the single non-degenerate transverse direction contributes the
-$0.183180$ above multiplicatively rather than by assumption.
+tidal matrix is exactly $\mathrm{diag}(+\Psi,-\Psi)$ in a parallel-propagated frame, so the Gaussian
+integral factorises and the single non-degenerate transverse direction contributes the $0.183180$
+above multiplicatively.
 
 The affine parameter is not that length, and a plane wave shows why while confirming the exponent
 on a genuinely null caustic. Take $ds^2=2\,du\,dv+A_{ij}x^ix^jdu^2+dx^2+dy^2$ with $A$ traceless,
@@ -5015,7 +4998,7 @@ which is vacuum and so carries one focusing transverse direction and one spreadi
 contact geodesic's structure. Fourier in $v$ turns the wave equation into a Schr\"odinger equation
 in $u$ with an oscillator of frequency $\omega$ in one transverse direction and an inverted one in
 the other, so the propagator is Mehler's, the caustic sits at $\omega U=\pi$, and the amplitude
-goes as $(\pi-\omega U)^{-1/2}$: the same half power, exactly, on a null vacuum caustic. What it
+goes as $(\pi-\omega U)^{-1/2}$, the same half power, exactly, on a null vacuum caustic. What it
 supplies no candidate for is a length, since under $u\to cu$, $v\to v/c$ the metric keeps its form
 with $\omega\to\omega/c$ and $U\to cU$, so $1/\omega$ and $U$ carry the dimension of $u$.
 
@@ -5054,7 +5037,7 @@ coefficient is $V_0=\Delta^{1/2}[m^2+(\xi-\tfrac16)R]/2$, and the two carry the 
 opposite signs, so the caustic-divergent stress goes as $-V_0$. Schwarzschild is Ricci-flat, which
 shuts the $(\xi-\tfrac16)R$ channel whatever the coupling and leaves $V_0=m^2\Delta^{1/2}/2>0$ for
 any field that is not massless. So $T_{kk}<0$ at the contact surface. Integrating Raychaudhuri, a
-negative $R_{kk}$ pushes the conjugate point away and away entirely: at $R_{kk}=0.5$, $0.2$ and
+negative $R_{kk}$ pushes the conjugate point away and away entirely. At $R_{kk}=0.5$, $0.2$ and
 $0.05$ it sits at $6.28$, $9.94$ and $19.87$, and at zero or below there is none. Contact requires
 a conjugate point at the antipodal angle, so delaying it makes contact harder. **A.15's divergence
 closes the region rather than marking it**, and it does so for the fields that exist rather than
@@ -5063,32 +5046,42 @@ for a chosen coupling. The sign is calibrated on that one exactly solvable caust
 The shape either side of the boundary follows from the sign of $\sigma$ and needs nothing further.
 Outside the horizon the pair is spacelike too, so the term does not stop there: it is suppressed
 rather than absent, exponentially in the mass for anything heavy and quadratically for anything
-light, with the worst case across the whole field content thirty-four orders below the dark
-energy. Section 1's silence is about the commutator and does not reach the stress tensor, which
-§5.4 says in its own words. Between the horizon and $r=M$ the pair is spacelike and the term is finite and real.
-At $r=M$ it diverges as $\delta^{-3/2}$ with the coefficient above. Inside, $\sigma$ is negative
-and $\sigma^{-3/2}$ continues to $i|\sigma|^{-3/2}$, so the image term is imaginary there: **the
-contact region carries a decay rate**, which is pair creation, and it arrives from the causal
-structure rather than from any added assumption.
+light, with the worst case across the whole field content thirty-four orders below the dark energy.
+Section 1's silence is about the commutator and does not reach the stress tensor, which §5.4 says in
+its own words. Between the horizon and $r=M$ the pair is spacelike and the term is finite and real.
+At $r=M$ it diverges as $\delta^{-3/2}$ with the coefficient above. Inside, $\sigma$ is negative and
+$\sigma^{-3/2}$ continues to $i|\sigma|^{-3/2}$, so the image term is imaginary there: **the contact
+region carries a decay rate**, which is pair creation, and it arrives from the causal structure
+alone.
 
-One thing about that treatment: the obvious tool is the wrong one. At a
-generic fold caustic the action has a cubic stationary point in the family parameter and the
-uniform replacement for the failed parametrix is an Airy function. Here the degenerate direction is
-generated by a rotation Killing field, so every member of the family is an isometric image of every
-other and the action is exactly flat along it: the affine length is the same at all nine rotations
-sampled, to $10^{-12}$. A symmetry degeneracy is not resolved by a cubic term, and integrating the
-orbit exactly is what replaces it. The power that follows can be checked against the exponent rule
-without doing the integral, since the Riemannian $\Delta^{1/2}\to c_ns^{-n/2}$ reads in the
-Lorentzian propagator as one extra half power of the null momentum per degenerate direction, and
-that reproduces $-(D-2+n)/2$ at $n=0,1,2,3$, in agreement with the amplitude above reached the
-other way. The sign of the resulting stress still needs A.18's sum redone on the Schwarzschild
-contact geodesic, which is now possible in a way it was not when A.18 was written, since that
-geodesic is the closed-form curve above rather than an unknown.
+One thing about that treatment, the obvious tool is the wrong one. At a generic fold caustic the
+action has a cubic stationary point in the family parameter and the uniform replacement for the
+failed parametrix is an Airy function. Here the degenerate direction is generated by a rotation
+Killing field, so every member of the family is an isometric image of every other and the action is
+exactly flat along it, the affine length is the same at all nine rotations sampled, to $10^{-12}$. A
+symmetry degeneracy is not resolved by a cubic term, and integrating the orbit exactly is what
+replaces it. The power that follows can be checked against the exponent rule without doing the
+integral, since the Riemannian $\Delta^{1/2}\to c_ns^{-n/2}$ reads in the Lorentzian propagator as
+one extra half power of the null momentum per degenerate direction, and that reproduces $-(D-2+n)/2$
+at $n=0,1,2,3$, in agreement with the amplitude above reached the other way. The sign of the
+resulting stress still needs A.18's sum redone on the Schwarzschild contact geodesic, which is now
+possible in a way it was not when A.18 was written, since that geodesic is the closed-form curve
+above.
 
 
 ## Acknowledgements
 
-The cosmology paper this accompanies carries the thanks; they hold here too.
+I thank Debbie Guimarães, Will Gittoes, Julie Wood, Emily Fountain, Sophie Bordson, and Jared
+Young, and Nita Mannering who did not let me give up, and Angela Spina, who encouraged me to
+follow this when the idea of past and future as folds first arrived, and who has backed it at
+every point since. I thank Patricia Karr for her love, support, and always having my back. Ambre
+Hammond for being the best cheerleader I could ask for. Joe Hanna for encouraging me to get back
+into writing and publishing. I also thank my friends at Kandi Luxe, who have listened to more
+cosmology over a cocktail bar than anyone signed up for: Jamila, Te, Gigi, Tuna, Layla, Claudia,
+James, Pat, Jay, Michelle, Vesna, Amy, Adam, Mish, Bri, Hetti, Mehreen, Charlie, Petros, Blue,
+Noah, Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or endured, my tangents and
+rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
+is no more loyal configuration of matter in the cosmos. You are a good dog.
 
 **AI disclosure.** The author is responsible for every claim and decision in this paper.
 Anthropic's Claude Opus 5 and Claude Sonnet 5 drafted prose the author then rewrote, wrote and

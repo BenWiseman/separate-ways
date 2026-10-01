@@ -49,13 +49,13 @@ checks/calc/two_sheet_accretion.py	Ingoing Vaidya has $8\pi T_{vv}=2\dot m/r^2$ 
 checks/calc/gl_crossover.R	threshold wavenumber is $k_{\rm GL}r_h\simeq0.876$ [35], so a periodic unstable mode fits once the	0.876;7.17
 checks/calc/horizon_reflectivity_derivative.py	of $-0.727\,\mathcal R_h$ in the damping time against $+0.0197\,\mathcal R_h$ in the real	0.727;0.0197
 checks/calc/horizon_reflectivity_derivative.py	one and at $0.01$ it is $73$. Reproducing	7.2;73;0.19;0.35;1.8
-checks/calc/horizon_reflectivity_derivative.py	R_h$ and the real frequency by $+0.0197\,\mathcal R_h$: thirty-seven times harder on the decay	0.727;0.0197
+checks/calc/horizon_reflectivity_derivative.py	R_h$ and the real frequency by $+0.0197\,\mathcal R_h$, thirty-seven times harder on the decay	0.727;0.0197
 checks/calc/modular_twist.py	defines the conjugation, $S(A\Omega)=A^{\dagger}\Omega$ with $S=J\Delta^{1/2}$, fails by	1.7889;0.8;0.2
 checks/calc/modular_twist.py	the old one at $0.6$, and a cross-sheet correlation has changed sign from $+0.4$ to $-0.4$	0.6;0.4
 checks/calc/seam_symmetry.py	Those two flips cancel for any coefficient, which is checked directly on profiles with no parity	
 checks/calc/seam_selection.py	so for general data the seam pushes, and the push vanishes for arbitrary data at exactly	1
 checks/calc/fold_reach.py	separation is $\pi$ at the horizon, $6.054$ at $r=2$, $8.519$ at $r=3$ and $23.80$ at $r=10$	6.054;8.519;23.80
-checks/calc/fold_reach.py	The coefficient is a pure number with no mass in it, and it is a limit rather than a fit	3.51656
+checks/calc/fold_reach.py	The coefficient is a pure number with no mass in it, and it is a limit	3.51656
 checks/calc/massless_zero_mode.py	carries unit Klein-Gordon norm for every $\alpha>0$, the $\cosh t$ of the circle cancelling	
 checks/calc/theta_selects_where.py	The fold selects where it exchanges and not where it fixes	
 checks/calc/theta_selects_where.py	the cosmology paper's floor; and since	0.65848
@@ -75,7 +75,7 @@ checks/calc/image_stress_sign.py	which the assembled sum reproduces to	2.6\times
 checks/calc/image_stress_sign.py	so it is checked by differencing on the sphere rather than by the projection argument alone, and agrees for $\ell$ up to twelve to	3.9\times10^{-5}
 checks/calc/image_stress_flat.py	the image energy density there is $(8r^2+6\xi^2)/4\pi^2D^3$ with $D=4r^2-\xi^2$, positive everywhere and diverging positively at contact. The exponent is the generic	8;6;4;2;3
 checks/calc/image_stress_flat.py	at a fitted power of	3.000052;31.994;32
-checks/calc/port_cutoff_ratio.py	it falls steadily as the cutoff is lifted, running	0.958;0.603;0.497;0.441;0.371;0.315;0.02
+checks/calc/port_cutoff_ratio.py	It falls steadily as the cutoff is lifted, running	0.958;0.603;0.497;0.441;0.371;0.315;0.02
 checks/calc/horizon_reflectivity_spin.R	vanishes and the two expressions agree, then	0.148;0.7;0.444;0.9
 checks/calc/contact_charged.R	runs from $0.250$ at $Q=0$ to	0.250;0.768;0.99
 checks/calc/fold_map_classification.R	The contact radius of Section 5, swept against $\Lambda$, runs from half the horizon radius	0.778;0.919;0.991
@@ -84,7 +84,7 @@ checks/fig_overlap_threshold.R	Deleting the odd-parity	2.43912;1.53984
 checks/calc/a12_algebraic_law.R	the log-log slope running	1.913;1.953;1.980;1.993;1.998
 checks/calc/world_function_zero.R	The deepest loop, at $r\to0$, has proper length	5.8839;5.4414
 checks/calc/half_period_match.R	condition instead returns	6.2832000828
-checks/calc/first_tick_sum.R	at *A* = 10: the sum is	261.627;261.799;0.0657
+checks/calc/first_tick_sum.R	at *A* = 10, the sum is	261.627;261.799;0.0657
 checks/calc/horizon_reflectivity_derivative.py	Ringdown sits at	0.374
 checks/calc/kerr_de_sitter_nariai.R	It ends at $a/M=3/(4\sqrt{2\sqrt3-3})=1.10092$, where the double root	3;4;2;3;1.10092
 checks/calc/pinch_4d_exact.R	is confined to $|UV|\leq UV(r)\leq1$, while at $r=3M$, $|UV|=	2.241;3
@@ -119,8 +119,8 @@ checks/calc/derivation_is_acyclic.R	That the argument does not assume its own co
 checks/calc/equivalence_from_one_metric.R	not assumed, because the eikonal characteristics of a field on a metric are that metric's	0.5
 checks/calc/bianchi_is_a_theorem.R	Bianchi identity, is a theorem about the Levi-Civita connection of any metric, measured at	0.05
 checks/calc/signature_or_the_fold_is_nothing.R	The signature entry is not indifferent either	1.0000001;4969
-checks/calc/eta_is_universal.R	One condition comes with it: because of that	52;2.137;1.629;1.931
-checks/calc/opposite_orientation.R	That reversal is a theorem of the fold rather than a posit	4000
+checks/calc/eta_is_universal.R	One condition comes with it. Because of that	52;2.137;1.629;1.931
+checks/calc/opposite_orientation.R	That reversal is a theorem of the fold	4000
 checks/calc/one_time_direction.R	Counted over all five four-dimensional signatures the rule is	4
 checks/calc/sign_through_the_mass_slot.R	The sign of the image stress no longer rests on a single Hadamard slot	2.005;1.018
 checks/calc/one_metric_is_forced.R	Two metrics differing by a constant factor share a connection	1.7
