@@ -43,12 +43,61 @@ print(f"  {META}: {nw} words, {napp} appendix, {nfig} figures, {nref} references
 # being written, so gate 12 went red on every commit that added a script. Sync it here rather
 # than by hand: the count is still checked, it just stops being a chore that teaches me to
 # ignore a red gate.
-import glob
-ncalc = len(glob.glob("checks/calc/*.R")) + len(glob.glob("checks/calc/*.py"))
-nfg   = len(glob.glob("checks/fig_*.R"))
-c2, n = re.subn(r"the \d+ calculation files and the \d+ figure generators",
-                f"the {ncalc} calculation files and the {nfg} figure generators", c, count=1)
-assert n == 1, "the availability note no longer reads as this script expects"
+import glob, os
+calcs = sorted(glob.glob("checks/calc/*.R") + glob.glob("checks/calc/*.py"))
+ncalc = len(calcs)
+npy   = len([f for f in calcs if f.endswith(".py")])
+nR    = ncalc - npy
+
+# Only four of these five counts were ever synced, and the other four were typed. All four were
+# wrong: the note claimed 21 generators where the tree has 22, said all of them were R where
+# three are Python, said three of the Python calculations used the standard library alone where
+# six do, and said 15 generators draw the figures here where 17 do. Counted now, so they cannot
+# drift again. A fig_*.R that never opens a device is a helper, not a generator: fig_label.R
+# masks labels for five others and draws nothing itself.
+def _draws(f):
+    return "dev.off()" in io.open(f, encoding="utf-8", errors="replace").read() \
+        or "savefig(" in io.open(f, encoding="utf-8", errors="replace").read()
+gens   = [f for f in sorted(glob.glob("checks/fig_*.R") + glob.glob("checks/fig_*.py"))
+          if _draws(f)]
+ngen   = len(gens)
+ngen_R = len([f for f in gens if f.endswith(".R")])
+# R that loads no package: base R is then enough to run it.
+ngen_R_base = len([f for f in gens if f.endswith(".R")
+                   and not re.search(r"(?m)^\s*(library|require)\s*\(",
+                                     io.open(f, encoding="utf-8", errors="replace").read())])
+# Python calculations importing nothing outside the standard library.
+_SCI = re.compile(r"(?m)^\s*(?:import|from)\s+(numpy|scipy|sympy|mpmath|matplotlib|pandas)\b")
+nstd = len([f for f in calcs if f.endswith(".py")
+            and not _SCI.search(io.open(f, encoding="utf-8", errors="replace").read())])
+# Generators that draw a figure this paper actually embeds.
+embedded = set(re.findall(r"\]\((fig_[a-z0-9_]+\.pdf)\)", c))
+# Match on the stem, not the full filename: three generators build the name as
+# sprintf("papers/2_over_the_horizon/fig_companion_two_ends.%s", dev), so ".pdf" never appears in them. A
+# loose substring fallback overcounted by one, because "contact" sits in two generator names.
+stems = {pdf[:-4] for pdf in embedded}
+ndraw = len({f for f in gens
+             if any(stem in io.open(f, encoding="utf-8", errors="replace").read()
+                    for stem in stems)})
+
+c2 = c
+subs = [
+  (r"the \d+ calculation files and the \d+ figure generators",
+   f"the {ncalc} calculation files and the {ngen} figure generators"),
+  (r"Of those, \d+ calculations and (?:all \d+|\d+ of the) generators are R and load no package",
+   f"Of those, {nR} calculations and {ngen_R_base} of the generators are R and load no package"),
+  (r"the other \d+ calculations are Python, (?:three|four|five|six|seven|eight|nine|ten|\d+) using the standard library alone",
+   f"the other {npy} calculations are Python, {nstd} using the standard library alone"),
+  (r"\d+ of those generators draw the figures here",
+   f"{ndraw} of those generators draw the figures here"),
+]
+WS = re.compile(r"[ ]")
+for pat, rep in subs:
+    # hard-wrapped prose: a space in the pattern may be a newline in the file
+    c2, n = re.subn(WS.sub(r"\\s+", pat), rep, c2, count=1)
+    assert n == 1, "the availability note no longer reads as this script expects: " + pat
 if c2 != c:
     io.open(PAPER, "w", encoding="utf-8").write(c2)
-print(f"  {PAPER}: availability note says {ncalc} calculation files, {nfg} figure generators")
+print(f"  {PAPER}: availability note says {ncalc} calculations ({nR} R, {npy} Python, "
+      f"{nstd} stdlib-only), {ngen} generators ({ngen_R} R, {ngen_R_base} needing base R only), "
+      f"{ndraw} drawing figures here")

@@ -230,6 +230,22 @@ if (length(.ink$hits)) {
   cat(sprintf("   %d label(s) printed over\n", length(unique(.ink$hits))))
   quit(status = 1)
 }
+# A row on the accept list that never fires is worse than no row: it stands ready to excuse a
+# label that drifts onto a line later, and nothing says it is dead. Two rows outlived the
+# overlap they described when a figure was repositioned, and the run reported a clean pass.
+# Only say it when the whole set ran, since a single-file run cannot see the other rows.
+.fired <- unique(.ink$ok)
+.stale <- character(0)
+if (length(.probe.files) >= length(Sys.glob("checks/fig_*.R")))
+  for (a in .accept)
+    if (!(sprintf('%s: "%s"', a[1], a[2]) %in% .fired))
+      .stale <- c(.stale, sprintf('%s: "%s"', a[1], a[2]))
 cat(sprintf("   %d generators, no label printed over by the figure's own ink", length(.probe.files)))
-if (length(.ink$ok)) cat(sprintf(" (%d accepted, with reasons in %s)", length(unique(.ink$ok)), .acc.f))
+if (length(.fired)) cat(sprintf(" (%d accepted, with reasons in %s)", length(.fired), .acc.f))
 cat("\n")
+if (length(.stale)) {
+  for (h in .stale)
+    cat("  ", h, "is on the accept list but no longer overlaps anything  <-- ISSUE\n")
+  cat(sprintf("   %d stale row(s) in %s; delete them\n", length(.stale), .acc.f))
+  quit(status = 1)
+}

@@ -4,7 +4,7 @@ Colour carries a quantity and not a mood. Every band is shaded by
 
     dphi_max(r) = 2 pi - 4 arcsin sqrt(r / 2M),
 
-the angle a causal curve starting at radius r can still sweep on its two interior legs
+the angle a causal curve starting at radius r can still sweep on its two interior crossings
 before it reaches the singularity. The antipodal map puts a point half a turn from its
 own image, so the sheets touch wherever that angle reaches pi, which happens at r = M and
 holds everywhere inside. Bands outside r = M are held in a flat sepia and bands inside it

@@ -3,7 +3,4 @@
 # labels were found printed over and thirteen were fixed by moving or masking them.
 #
 # generator	label	why it is accepted
-fig_kruskal_contact.R	commutator nonzero, but the	The label is wider than the interior region is at its height, so the contact geodesic crosses it wherever it sits. A mask was tried and looks worse, because the label straddles the edge of the shaded region and a single-colour patch shows as a box. The crossing line is one thin red geodesic.
-fig_kruskal_contact.R	angle cannot be covered here	As above, same label block.
-fig_contact_universal.R	what the antipodal map bills	Crossed by the dotted midpoint guide at x = 0.5. The label straddles the edge of the shaded right half, so a mask would show as a box, and moving it would take it away from the line it names.
-fig_interior_shell.R	the shell	The line crossing it is the arrow drawn from the label to the ring it names, which is what the label is for.
+fig_contact_universal.R	what the antipodal map asks for	Crossed by the dotted midpoint guide at x = 0.5. The label straddles the edge of the shaded right half, so a mask would show as a box, and moving it would take it away from the line it names.

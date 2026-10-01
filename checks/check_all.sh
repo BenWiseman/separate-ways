@@ -153,7 +153,7 @@ awk -v r="$ticrate" 'BEGIN { exit !(r > 4.0) }' && {
 # you say computed a LOT". Not a ban, a mix: tic_count carries the watchlist and the rate bar.
 # Enforced for the companion and the Letter. PAPER2_v4_draft.md sits at 0.68 against a bar of
 # 0.60 and is NOT edited to fit: it is the submitted manuscript, frozen at commit b1054c3.
-for _rf in "$PAPER" papers/3_road_to_nowhere/LETTER2_CONTACT_v1.md; do
+for _rf in "$PAPER" papers/3_road_to_nowhere/LETTER2_CONTACT_v2.md; do
   [ -f "$_rf" ] || continue
   _line=$(python3 "$BENLM/tools/tic_count.py" "$_rf" 2>&1 | grep '^   register' || true)
   [ -n "$_line" ] && echo "   $(basename "$_rf"): ${_line#   register: }"
@@ -611,7 +611,7 @@ sys.path.insert(0, os.path.expanduser("~/benlm/tools"))
 import number_provenance as _np          # count numbers the way claims_check counts them,
 nnum = sum(1 for r in rows               # so the two can never disagree
            for lit in r.rstrip("\n").split("\t")[2].split(";")
-           if lit and _np.nums_from_text(lit))
+           if lit and _np.nums_from_claim(lit))
 prows = [l.rstrip("\n").split("\t") for l in io.open("checks/POSITIONS.tsv", encoding="utf-8")
          if l.strip() and not l.startswith("#")]
 npos = len(prows)

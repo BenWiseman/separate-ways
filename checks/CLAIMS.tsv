@@ -11,7 +11,7 @@ checks/calc/two_sided_growth.R	Between $z=20$ and $z=7$, a window of $0.582$ Gyr
 checks/calc/tail_from_lrd.R	Xiv:2401.06329's profiles imply, a Gaussian curvature field	twenty per cent;one per cent;eleven per cent;7\times10^{-4};2401.06329;1.5;0.5
 checks/calc/nariai_size.R	So the second class has exactly one member in the uncharged family, and it is the largest hole that family hol	2.2\times10^{22}
 checks/fig_spin_branch.R	At $\alpha=0$ it is $\rho^3(\rho-3)$, so $\rho=3$ and $9\Lambda M^2=1$, which	7\times10^{-16};1.1009173688
-checks/fig_spin_branch.R	Sitter background because both $a/M$ and $9\Lambd	1.3756
+checks/fig_spin_branch.R	Sitter background because both $a/M$ and $9\Lambd	1.3755
 checks/calc/contact_charged.R	The second is that two other calculations, run for different reasons and neither looking for the other, single	0.991;0.9999
 checks/fig_neutrino_floor.R	Right, the same spectrum on a linear scale in meV. With $m_1$ at zero the two split	58.78
 checks/calc/weak_breaking_neutrino_bound.R	$10^{27}$ s for very-high-energy Cherenkov telescopes and $10^{30}$ s for neutrino telescopes. T	1.8\times10^{-30};2.1\times10^{-55}
@@ -122,7 +122,7 @@ checks/calc/signature_or_the_fold_is_nothing.R	The signature entry is not indiff
 checks/calc/eta_is_universal.R	One condition comes with it: because of that	52;2.137;1.629;1.931
 checks/calc/opposite_orientation.R	That reversal is a theorem of the fold rather than a posit	4000
 checks/calc/one_time_direction.R	Counted over all five four-dimensional signatures the rule is	4
-checks/calc/sign_through_the_mass_slot.R	The sign of that stress no longer rests on a single slot	2.005;1.018
+checks/calc/sign_through_the_mass_slot.R	The sign of the image stress no longer rests on a single Hadamard slot	2.005;1.018
 checks/calc/one_metric_is_forced.R	Two metrics differing by a constant factor share a connection	1.7
 checks/calc/contour_shift_is_forced.R	The superscript on $G_{+-}$ is not a convention here	0.216;0.256;0.496;0.0259;0.2872;0.905
 checks/calc/equilibrium_is_leading_order.R	And equilibrium at the horizon is not a theorem about every state	3.2898681;2.000000;1.999972;3.57\times10^{6}
@@ -155,4 +155,4 @@ checks/calc/decoherence_power_is_exact.R	a power carrying no free parameter, and
 checks/calc/entropy_release_moves_the_line.py	The last of those has a number, and it is about as tight as the compact-object one above	1.02 324.3
 checks/calc/half_period_match.R	What the step is worth turns on a distinction the companion draws	6.2831853072
 checks/calc/lifetime_from_planck_breaking.py	The first question about a decaying relic is why it is still present	1.58e31 3.14e29
-checks/calc/neutrino_floor_and_growth.py	A floor on the neutrino mass constrains structure growth	0.0044 1.76 0.036
+checks/calc/neutrino_floor_and_growth.py	A floor on the neutrino mass constrains structure growth	0.0044 |1.76| 0.036

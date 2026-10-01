@@ -206,9 +206,15 @@ if __name__ == "__main__":
         sg[idx] = -sg[idx]
         rho, parts = density(np.pi - 0.005, signs=tuple(sg))
         flipped = abs(parts[idx])
+        # The ratio printed to four places showed one part in 1e4 while the assertion below
+        # enforces one part in 1e6, which is what the paper states. The evidence for the
+        # stated precision has to be in the output, or the claim cannot be checked against
+        # the script that backs it.
+        dev = abs(abs(rho) / flipped - 1.0)
         print(f"    {name:<8} flipped: |rho| = {abs(rho):.4g}, the piece itself "
-              f"{flipped:.4g}, ratio {abs(rho) / flipped:.4f}")
-        assert abs(abs(rho) / flipped - 1.0) < 1e-6, f"flipping {name} did not register"
+              f"{flipped:.4g}, ratio {abs(rho) / flipped:.4f}, departing from 1 by "
+              f"{dev:.2e} against a tolerance of one part in 1.0e+06")
+        assert dev < 1e-6, f"flipping {name} did not register"
 
     print("\n[3] drop the time reversal from Theta and the density comes back")
     print("    (antipodal alone is still an isometry and still an involution)")

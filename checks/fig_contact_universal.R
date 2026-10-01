@@ -7,9 +7,9 @@
 #     2 arcsin sqrt( (r_+ - r) / (r_+ - r_-) ) .
 # Write x for that depth fraction, 0 at the outer horizon and 1 at the inner. Two legs give
 #     turn(x) = 4 arcsin sqrt(x)
-# with the charge gone entirely: ONE curve, not a family. The antipodal map bills pi, and
+# with the charge gone entirely: ONE curve, not a family. The antipodal map asks for pi, and
 #     4 arcsin sqrt(x) >= pi  <=>  sqrt(x) >= sin(pi/4)  <=>  x >= 1/2 ,
-# so the budget crosses the bill at the midpoint of the band at every charge, exactly.
+# so the curve crosses the line at the midpoint of the band at every charge, exactly.
 # That is the reaching statement. Confining contact to the inner half needs the maximiser
 # argument, which holds for an uncharged hole and is open at charge; see A.15 and 5.1.
 #
@@ -51,7 +51,7 @@ draw <- function() {
   # crossed by the dotted midpoint guide at x = 0.5, and it straddles the edge of the shaded
   # right half, so a single-colour mask would show as a box. Accepted instead, in
   # checks/ink_overlaps_accepted.tsv.
-  text(0.97, pi - 0.42, "what the antipodal map bills", col = mark, cex = 0.82, adj = 1)
+  text(0.97, pi - 0.42, "what the antipodal map asks for", col = mark, cex = 0.82, adj = 1)
   lines(x, turn(x), col = c1, lwd = 2.8)
   points(0.5, pi, pch = 19, cex = 1.3, col = mark)
   segments(0.5, 0, 0.5, pi, col = mark, lty = 3)
@@ -60,7 +60,7 @@ draw <- function() {
   text(0.47, 5.30, "one curve, not a family:", col = c1, cex = 0.82, adj = 1)
   text(0.47, 4.95, expression(paste("turn = 4 arcsin ", sqrt(italic(x)), ", with")), col = c1, cex = 0.82, adj = 1)
   text(0.47, 4.60, "the charge gone entirely", col = c1, cex = 0.82, adj = 1)
-  mtext("the budget crosses the bill at the midpoint, at every charge", side = 3, line = 0.7,
+  mtext("the curve crosses the line at the midpoint, at every charge", side = 3, line = 0.7,
         cex = 0.86, col = ink)
 
   Qs <- seq(0, 0.995, length.out = 500)

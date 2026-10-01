@@ -54,7 +54,9 @@ draw <- function() {
   points(c(px,-px), c(pt,-pt), pch=19, cex=1.2, col=cool)
   text(px+0.03, pt+0.17, expression(italic(x)), cex=1.15, col=cool)
   text(-px-0.03, -pt-0.20, expression(Theta*italic(x)), cex=1.15, col=cool)
-  text(0.50, -0.015, "spacelike: no signal either way", cex=0.78, col=cool, srt=11.6)
+  # Slid a tenth of a unit along its own line, which is where the dotted curve wants it anyway:
+  # at the old start the descending horizon came down through the leading "s".
+  text(0.598, 0.005, "spacelike: no signal either way", cex=0.78, col=cool, srt=11.6)
 
   qx <- 0.42; qt <- sqrt(0.90 + qx^2)                    # interior pair, inside the band
   segments(qx, qt, -qx, -qt, col=warm, lwd=1.7)
@@ -64,23 +66,39 @@ draw <- function() {
 
   text( 1.10, -0.46, "our sheet", cex=0.94, col="grey25")
   text(-1.10,  0.46, "the mirror sheet", cex=0.94, col="grey25")
-  text( 0.00,  1.21, "singularity", cex=0.86, col=ink)
-  text( 0.00, -1.23, "past singularity", cex=0.86, col=ink)
-  text( 0.00,  1.075, "the sheets can touch", cex=0.78, col=warm)
-  text( 0.00,  0.56, expression(italic(UV) > 0), cex=0.95, col="grey30")
-  # These two are wider than the interior region is at their height, so the geodesic crosses
-  # them wherever they sit. A mask was tried and looked worse: the labels straddle the edge of
-  # the shaded region, so a single-colour patch shows as a box. They are on the accepted list
-  # in checks/ink_overlaps_accepted.tsv instead, the crossing line being a thin one.
-  text( 0.00,  0.42, "commutator nonzero, but the", cex=0.78, col="grey30")
-  text( 0.00,  0.30, "angle cannot be covered here", cex=0.78, col="grey30")
-  text( 0.00, -0.50, expression(italic(UV) > 0), cex=0.95, col="grey30")
-  text( 0.72,  0.79, "horizon", cex=0.78, col=horiz, srt=45)
-  text(-0.72,  0.79, "horizon", cex=0.78, col=horiz, srt=-45)
-  text( 0.00,  0.845, expression(italic(r) == italic(M)), cex=0.84, col=warm)
+  # WHERE THE TEXT SITS, and why it is not where it used to be (2026-09-30). Every label below
+  # was placed by solving for the clear space rather than by eye, because at r = 1 the interior
+  # is only as wide as it is tall and four labels were being written through by the figure's own
+  # lines. The three boundaries that matter, in user units:
+  #   the horizons          x = +y and x = -y
+  #   the singularities     t = +/- sqrt(1 + x^2)
+  #   the contact geodesic  x = 0.4048 t, from (0.42, 1.0375) to (-0.42, -1.0375)
+  # At height y the future interior runs from -y to +y and the geodesic splits it at 0.4048 y,
+  # so the clear part is the LEFT 1.4048 y of it. Everything that has to be a sentence goes
+  # there; short labels keep the axis.
+  text( 0.00,  1.26,  "singularity", cex=0.86, col=ink)
+  text( 0.00, -1.23,  "past singularity", cex=0.86, col=ink)
+  # Above the singularity, not on it: the curve rises to t = 1.039 at the ends of this label,
+  # which is what used to strike out the word "touch".
+  text( 0.00,  1.125, "the sheets can touch", cex=0.78, col=warm)
+  text( 0.00,  0.56,  expression(italic(UV) > 0), cex=0.95, col="grey30")
+  # These two ran across the whole interior on the axis, so the geodesic crossed one and both
+  # horizons crossed the other. Left of the geodesic, at the height the lower line sits, the
+  # clear width is 0.939 of a unit against the 0.806 the wider line needs.
+  text(-0.199, 0.805, "commutator nonzero, but the", cex=0.78, col="grey30")
+  text(-0.199, 0.700, "angle cannot be covered here", cex=0.78, col="grey30")
+  text( 0.00, -0.50,  expression(italic(UV) > 0), cex=0.95, col="grey30")
+  # Centred 0.085 of a unit from the diagonal it names, measured perpendicular, and on the
+  # exterior side of it: about 8 point of white. At the old position the line ran through it.
+  text( 0.815, 0.695, "horizon", cex=0.78, col=horiz, srt=45)
+  text(-0.815, 0.695, "horizon", cex=0.78, col=horiz, srt=-45)
+  # Off the axis to the left, under the warm curve it names and away from the geodesic, which is
+  # the same colour and would otherwise be the nearer line.
+  text(-0.60,  0.97,  expression(italic(r) == italic(M)), cex=0.84, col=warm)
   points(0, 0, pch=1, cex=1.5, col=warm, lwd=1.6)
-  text(0.62, -0.22, "and only through here,", cex=0.78, col=warm)
-  text(0.62, -0.33, "the bifurcation surface", cex=0.78, col=warm)
+  # Clear of the descending horizon, which used to come down through the "t" of the second line.
+  text(0.74, -0.22, "and only through here,", cex=0.78, col=warm)
+  text(0.74, -0.33, "the bifurcation surface", cex=0.78, col=warm)
 }
 
 for (f in c("papers/2_over_the_horizon/fig_companion_kruskal.pdf","papers/2_over_the_horizon/fig_companion_kruskal.png")) {

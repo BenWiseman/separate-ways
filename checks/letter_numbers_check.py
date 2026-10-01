@@ -113,11 +113,22 @@ def _checked_region(letter_text):
         before, rest = body.split("## References", 1)
         after = _find_heading(rest, APPENDIX_HEADINGS)
         if after is None:
-            raise SystemExit(
-                "LETTER: references found but none of %s after them, so the appendix would go "
-                "unchecked. Add the new heading to APPENDIX_HEADINGS rather than letting this "
-                "check pass over an empty string."
-                % ", ".join(repr(h) for h in APPENDIX_HEADINGS))
+            # A Letter is allowed to have no appendix at all: the PRL submission uses no End
+            # Matter, and this guard refused that outright. It exists to catch an appendix
+            # hiding under a heading nobody added to the list, so look for one. If what
+            # follows the references is reference entries and nothing else, there is no
+            # appendix to miss.
+            leftover = [l for l in rest.split("\n")
+                        if l.strip() and not re.match(r"^\d+\\?\.\s", l.strip())
+                        and not l.startswith(("  ", "\t"))]
+            if any(l.lstrip().startswith("#") for l in leftover):
+                raise SystemExit(
+                    "LETTER: references are followed by a heading that is none of %s, so an "
+                    "appendix would go unchecked. Add it to APPENDIX_HEADINGS rather than "
+                    "letting this check pass over an empty string. Found: %s"
+                    % (", ".join(repr(h) for h in APPENDIX_HEADINGS),
+                       next(l.strip()[:48] for l in leftover if l.lstrip().startswith("#"))))
+            return before
         return before + "\n" + after
     return body
 
@@ -161,6 +172,45 @@ def _plants(letter_text, paper_text):
         ("a number in the appendices", "Two of the four are what writing a metric theory means",
                                    "Two of the four, to $7.3194\\times10^{-8}$, are what writing a metric theory means"),
     ]
+    # Every one of the seven above names a literal from LETTER_PRL_v1.md. Run against any
+    # other Letter they all print NOT APPLICABLE, and the gate then validates nothing at all
+    # while still looking like a gate. So build plants out of the document in hand: take one
+    # numeric expression of each shape the checker distinguishes and corrupt its last digit.
+    if not any(a in letter_text for _, a, _ in cases):
+        body = _checked_region(letter_text)
+        seen, cases = set(), []
+        for m in NUM.finditer(body):
+            tok = m.group(0)
+            if _skip(tok, body[max(0, m.start() - 90):m.end() + 30]):
+                continue
+            # Small integers are not plantable and the original table said so: they are
+            # everywhere in the corpus, so corrupting one lands on another real number and
+            # the substring test cannot tell. "1,2" was picked as an integer and is a list.
+            if "." not in tok and "times10" not in tok and "pm" not in tok:
+                continue
+            shape = ("exponent" if "times10" in tok else
+                     "error bar" if "pm" in tok else "decimal")
+            if shape in seen or "," in tok:
+                continue
+            bumped = None
+            for i in range(len(tok) - 1, -1, -1):
+                if tok[i].isdigit():
+                    bumped = tok[:i] + str((int(tok[i]) + 3) % 10) + tok[i + 1:]
+                    break
+            if bumped and bumped != tok and letter_text.count(tok) == 1:
+                seen.add(shape)
+                cases.append(("a corrupted %s from this Letter (%s)" % (shape, tok), tok, bumped))
+        # And one insertion, so the gate is shown to catch a number that is simply not in
+        # any source, which is the failure it exists for.
+        head = _checked_region(letter_text)[:400]
+        anchor = next((l for l in head.split(". ") if len(l) > 40), None)
+        if anchor and letter_text.count(anchor) == 1:
+            cases.append(("a value present in no source", anchor,
+                          anchor + ", to $7.3194\\times10^{-8}$"))
+        if not cases:
+            print("   plant: NO usable numeric expression to corrupt; the gate is unvalidated")
+            return False
+
     ok = True
     for what, a, b in cases:
         if a not in letter_text:
@@ -175,8 +225,31 @@ def _plants(letter_text, paper_text):
 
 
 def main():
-    letter = io.open(LETTER, encoding="utf-8").read()
-    paper = io.open(PAPER, encoding="utf-8").read()
+    # Take the file named on the command line. This read LETTER unconditionally, so every
+    # run against LETTER2_CONTACT_v2.md silently checked LETTER_PRL_v1.md instead and
+    # reported a clean pass on a document nobody had asked about. Its sibling
+    # letter_length_check.py had the same defect. Refuse a path that is not there, rather
+    # than falling back to the default and passing over the wrong paper again.
+    path = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("-") else LETTER
+    if not os.path.exists(path):
+        raise SystemExit("LETTER: no such file: %s" % path)
+    letter = io.open(path, encoding="utf-8").read()
+    print("   reading %s" % os.path.basename(path))
+    # The corpus a Letter's numbers may come from is not one manuscript. "On a road to
+    # nowhere" was carved out of the companion, not out of PAPER2_v4_draft.md, and checking
+    # it against the cosmology paper alone reported three numbers untraced that were all
+    # sound: 0.89M and 6e-4 sit in COMPANION_v1.md, and 0.469 is printed by the Letter's own
+    # Penrose generator and belongs in no manuscript at all. Read the companion and the
+    # figure generators too, so a real orphan stands out instead of being lost in three
+    # false ones.
+    corpus = [PAPER, os.path.join(ROOT, "pub", "paper2", "COMPANION_v1.md")]
+    corpus += [os.path.join(HERE, f) for f in sorted(os.listdir(HERE))
+               if f.startswith("fig_letter_") and f.endswith((".py", ".R"))]
+    paper = "\n".join(io.open(f, encoding="utf-8").read()
+                      for f in corpus if os.path.exists(f))
+    print("   against %d source(s): %s"
+          % (len([f for f in corpus if os.path.exists(f)]),
+             ", ".join(os.path.basename(f) for f in corpus if os.path.exists(f))))
     bad = unmatched(letter, paper)
     total = _counted(letter)
     print("   %d numeric expressions in the Letter, %d not in the manuscript"

@@ -32,7 +32,8 @@ one that survives review belongs in EXEMPT below with its reason.
 import sys, re, io, os, sys, math, subprocess, tempfile, shutil
 from concurrent.futures import ThreadPoolExecutor
 
-DOCS   = tuple(a for a in sys.argv[1:] if not a.startswith("--")) or \
+_CACHE_ARG = sys.argv[sys.argv.index("--cache") + 1] if "--cache" in sys.argv[:-1] else None
+DOCS   = tuple(a for a in sys.argv[1:] if not a.startswith("--") and a != _CACHE_ARG) or \
          ("archive/PAPER2_v3.md", "papers/2_over_the_horizon/COMPANION_v1.md")
 WINDOW = 320          # the sentence the citation sits in, roughly
 
@@ -90,6 +91,17 @@ def nums_from_text(s):
         dec = len(mant.split('.')[1]) if '.' in mant else 0
         out.append((float(mant) * 10**exp, dec, m.group(0), True))
         sci_spans.append(m.span())   # the mantissa is NOT a separate claim
+    # Programmer notation: 1.58e31, 3.14e+29, 1e-15. CLAIMS.tsv rows were written this way
+    # and nums_from_text read only the mantissa, so "1.58e31" was checked as the plain number
+    # 1.58 and reported missing, while "1e-15" parsed to nothing at all and the claim was
+    # skipped without a word. A checker that silently drops a claim is the failure mode Ben
+    # named: it reports success while matching nothing.
+    for m in re.finditer(r'(?<![\w.])(\d+(?:\.\d+)?)[eE]([-+]?\d+)(?![\d.])', s):
+        mant, exp = m.group(1), int(m.group(2))
+        dec = len(mant.split('.')[1]) if '.' in mant else 0
+        out.append((float(mant) * 10**exp, dec, m.group(0), True))
+        sci_spans.append(m.span())
+
     # plain decimals, but not inside a citation [12] or a section ref
     for m in re.finditer(r'(?<![\w^{\u00a7.])(\d+\.\d+)(?![\d}])', s):
         lit = m.group(1)
@@ -101,6 +113,106 @@ def nums_from_text(s):
         out.append((float(lit), len(lit.split('.')[1]), lit, False))
     return out
 
+_WORD_QTY = (r"\b((?:a |an )?(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+             r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|"
+             r"forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand)"
+             r"(?:[- ](?:one|two|three|four|five|six|seven|eight|nine|hundred|thousand))*)"
+             r"\s+(per cent|orders|times|widths)\b")
+
+
+_CLAIM_TOK = re.compile(
+    r"(?P<latex>(?P<lmant>\d+(?:\.\d+)?)\s*\\times\s*10\^\{?(?P<lexp>-?\d+)\}?)"
+    r"|(?P<sci>(?<![\w.])(?P<smant>-?\d+(?:\.\d+)?)[eE](?P<sexp>[-+]?\d+)(?![\d.]))"
+    r"|(?P<pow>10\^\{?(?P<pexp>-?\d+)\}?)"
+    r"|(?P<dec>(?<![\w.eE])-?\d+\.\d+(?!\d))"
+    r"|(?P<int>(?<![\w.eE])-?\d+(?![\d.]))")
+
+
+# A row may write a number as |1.76| to mean "the magnitude, whatever sign the script
+# prints". The cosmology paper quotes "1.76 per cent in S_8" for a reduction and the script
+# prints dS_8 = -1.76, so the two agree and a plain match cannot see it. Writing the bars
+# puts the convention on the page instead of teaching anyone to ignore a red gate. Do NOT
+# reach for this to paper over a sign that ought to agree: a sign error in physics is a
+# result, and this switch is only for a magnitude quoted as a magnitude.
+MAGNITUDE = re.compile(r"\|\s*(-?[\d.]+(?:\\times10\^\{?-?\d+\}?|[eE][-+]?\d+)?)\s*\|")
+
+
+def nums_from_claim_plain(s):
+    return _claim_tokens(s)
+
+
+def nums_from_claim(s):
+    """Every number in a CLAIMS.tsv numbers field, which holds numbers and nothing else.
+
+    nums_from_text has to be careful, because it also scans prose, where a bare integer is
+    usually a section number, a reference or a year. Run over the claim field that care was
+    silently destructive: 51 of 383 claim fields, 13 per cent of the table, parsed to nothing
+    and the checker skipped them without a word while reporting the rest as a pass. A field
+    that contains only numbers can be read greedily, and must be.
+
+    A bare integer comes back with dec = 0, because a figure quoted to the unit is a claim to
+    the unit: "thirty-seven times harder" is a true quote of a computed 36.90. What stops that
+    looseness turning into a coincidence is the caller, which switches off the hundredfold
+    percentage allowance for these, so a bare 4 cannot be satisfied by an unrelated 400.
+    """
+    out = []
+    # Magnitudes first, and their spans blanked, so the bars cannot be read as a plain number.
+    mags = []
+    for m in MAGNITUDE.finditer(s):
+        mags.append((m.start(), m.end(), m.group(1)))
+    for a, b, inner in reversed(mags):
+        for t in nums_from_claim_plain(inner):
+            out.append((abs(t[0]), t[1], "|%s|" % t[2], t[3]))
+        s = s[:a] + " " * (b - a) + s[b:]
+    # Spelled-out quantities first: nine rows say "ten per cent", "four times",
+    # "eighteen per cent". Blank each one out before the digit pass so its span cannot be
+    # read twice, and so "eleven per cent" does not also register as nothing at all.
+    for m in re.finditer(_WORD_QTY, s, re.I):
+        v = _words_to_number(m.group(1))
+        if v is not None:
+            out.append((float(v), 0, m.group(0), False))
+            s = s[:m.start()] + " " * (m.end() - m.start()) + s[m.end():]
+    for m in _CLAIM_TOK.finditer(s):
+        if m.group("latex") is not None:
+            mant, exp = m.group("lmant"), int(m.group("lexp"))
+        elif m.group("sci") is not None:
+            mant, exp = m.group("smant"), int(m.group("sexp"))
+        elif m.group("pow") is not None:
+            # A bare power of ten: "one part in 10^{6}". Read as two integers this came back as
+            # 10 and 6, so the row was checked against two numbers the paper never claimed.
+            out.append((10.0 ** int(m.group("pexp")), 0, m.group(0), True)); continue
+        elif m.group("dec") is not None:
+            lit = m.group(0)
+            out.append((float(lit), len(lit.split(".")[1]), lit, False)); continue
+        else:
+            # dec = 0, so a count quoted to the unit matches a computed 36.90 as "37". The
+            # hundredfold allowance is switched off for these by the caller instead, which is
+            # what stops a bare 4 being satisfied by an unrelated 400 somewhere in the output.
+            out.append((float(m.group(0)), 0, m.group(0), False)); continue
+        dec = len(mant.split(".")[1]) if "." in mant else 0
+        out.append((float(mant) * 10 ** exp, dec, m.group(0), True))
+    return out
+
+
+def _claim_tokens(s):
+    out = []
+    for m in _CLAIM_TOK.finditer(s):
+        if m.group('latex') is not None:
+            mant, exp = m.group('lmant'), int(m.group('lexp'))
+        elif m.group('sci') is not None:
+            mant, exp = m.group('smant'), int(m.group('sexp'))
+        elif m.group('pow') is not None:
+            out.append((10.0 ** int(m.group('pexp')), 0, m.group(0), True)); continue
+        elif m.group('dec') is not None:
+            lit = m.group(0)
+            out.append((float(lit), len(lit.split('.')[1]), lit, False)); continue
+        else:
+            out.append((float(m.group(0)), 0, m.group(0), False)); continue
+        dec = len(mant.split('.')[1]) if '.' in mant else 0
+        out.append((float(mant) * 10 ** exp, dec, m.group(0), True))
+    return out
+
+
 # A script that prints the manuscript's own figure makes every number self-certifying.
 # wdw_weights.R printed "aH = 1.95376 (paper: 1.95374) diff 2.5e-05" for days: the paper's
 # 1.95374 was wrong, the script said so on every run, and the check passed because the wrong
@@ -108,6 +220,10 @@ def nums_from_text(s):
 # quote the paper are therefore not evidence and are dropped before the numbers are read.
 _ECHO = re.compile(r"paper\s*:|paper says|paper quotes|\bquotes\b|quoted:|manuscript says"
                    r"|A\.\d+\s+quotes|\u00a7\s*[\d.]+\s+quotes", re.I)
+
+_WORD_QTY_OUT = _WORD_QTY.replace("per cent|orders|times|widths",
+    "per cent|orders|times|widths|points|values|cases|members|radii|decades|digits|figures")
+
 
 def nums_from_out(s):
     vals = []
@@ -118,19 +234,25 @@ def nums_from_out(s):
             # than the whole line: most of these print both on one line, as in
             # "C = 0.9581   the paper says 0.958".
             line = line[:hit.start()]
+        # A script that printed "worst relative difference over the twelve points" was
+        # invisible to a row recording 12, because this read digits only. nums_from_claim
+        # learned to read words; the output side has to as well or the pair cannot meet.
+        for m in re.finditer(_WORD_QTY_OUT, line, re.I):
+            v = _words_to_number(m.group(1))
+            if v is not None: vals.append(float(v))
         for m in re.finditer(r'-?\d+\.?\d*(?:[eE][-+]?\d+)?', line):
             try: vals.append(float(m.group(0)))
             except ValueError: pass
     return vals
 
-def matches(claim, dec, sci, outs):
+def matches(claim, dec, sci, outs, pct=True):
     """Does some output value agree with the claim at the claim's own precision?
 
     Scripts print fractions where the paper writes percentages (0.6985 against 69.9 per
     cent), so a factor of 100 either way counts as found.
     """
     for v0 in outs:
-      for v in (v0, v0 * 100.0, v0 / 100.0):
+      for v in ((v0, v0 * 100.0, v0 / 100.0) if pct else (v0,)):
         if v == 0 and claim == 0: return True
         if claim == 0: continue
         if sci:

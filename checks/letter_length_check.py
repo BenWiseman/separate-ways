@@ -98,9 +98,18 @@ def _selftest(text):
     print("   plant: a displayed equation is charged %d words: %s"
           % (PER_EQUATION, "yes" if charged else "NO"))
     ok = ok and charged
-    # And so must a figure.
-    with_fig = text.replace("## References", "**FIG. 9.** A plant.\n\n## References", 1)
-    charged_f = measure(with_fig)[3] - base == PER_FIGURE
+    # And so must a figure. The old plant put "**FIG. 9.** A plant." immediately before
+    # "## References", which measure() cuts away before it counts anything, so the delta was
+    # always zero and this line printed NO for as long as it existed: a plant that cannot
+    # fire in the checker that certifies the Letter fits PRL's cap. Two things were wrong.
+    # It has to land inside the core, and it has to use the include form this Letter uses,
+    # where the caption sits inside the image include and not in a separate **FIG.** line.
+    with_fig = text.replace("\n### ", "\n![FIG. 9.](plant.pdf)\n\n### ", 1)
+    b_words, _, b_nfig, b_tot = measure(text)
+    p_words, _, p_nfig, p_tot = measure(with_fig)
+    # Subtract the plant's own prose so the figure charge is measured on its own.
+    charged_f = (p_nfig == b_nfig + 1
+                 and p_tot - b_tot - (p_words - b_words) == PER_FIGURE)
     print("   plant: a figure is charged %d words: %s"
           % (PER_FIGURE, "yes" if charged_f else "NO"))
     ok = ok and charged_f

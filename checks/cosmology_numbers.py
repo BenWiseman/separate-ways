@@ -44,7 +44,7 @@ ALLOW = {
     "2601.19424": "an arXiv identifier, not a quantity",
     "2609.05053": "an arXiv identifier, not a quantity",
     "9.7\\times10^{-48}":  "rho_DM,0, a measured input carried from the cited source",
-    "5.966\\times10^{18}": "the reduced Planck mass, a CODATA constant",
+    "5.966\\times10^{18}": "mu-hat, the Planck-scale mass the production formula carries. NOT the reduced Planck mass, 2.4353e18 GeV: it is sqrt(6) times that, to 1 part in 1e4",
     "0.4142135624": "exactly 1 - sqrt(2); the script checks the agreement, not the digits",
     "4.305": "a log-slope quoted negative; the auditor strips the sign before matching",
     "4.308": "a log-slope quoted negative; the auditor strips the sign before matching",

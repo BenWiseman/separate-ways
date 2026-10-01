@@ -59,8 +59,11 @@ stopifnot(abs(ys[1] - 1) < 1e-8, abs(ys[last] - y_end) < 1e-6, abs(als[last] - a
 cat(sprintf("\n  past the end, at a/M = %.4f: branch returns %s\n", a_end + 0.02,
             ifelse(is.na(branch(a_end + 0.02)[1]), "no merged pair, as it must", "SOMETHING")))
 stopifnot(is.na(branch(a_end + 0.05)[1]))
+# approx() here read the chord between two grid points, not the curve. The grid steps by
+# 0.0073 and the branch is convex, so the chord sat 4.5e-5 high and printed 1.3756 where the
+# branch gives 1.3755. The caption carried the wrong fourth digit for as long as this line did.
 cat(sprintf("  and the Kerr bound a/M = 1 is crossed at 9 Lam M^2 = %.4f, which a positive\n",
-            approx(als[good], ys[good], 1)$y))
+            branch(1)[1]))
 cat("  Lambda permits: extremal Kerr is not the limit here.\n")
 
 ink <- "grey15"; c1 <- "#1f4e79"; mark <- "#a8400f"; grey <- "#8a97a4"

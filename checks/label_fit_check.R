@@ -93,6 +93,15 @@ if ("--selftest" %in% .probe.args) {
   quit(status = 0)
 }
 
+# Run with no arguments this printed "0 generators, every label inside its panel" and exited
+# clean: a pass over nothing at all. label_ink_check.R already falls back to the glob, so match
+# it, and refuse outright if the glob is empty rather than reporting a vacuous success.
+if (!length(.probe.args)) .probe.args <- Sys.glob("checks/fig_*.R")
+if (!length(.probe.args)) {
+  cat("   no generators found: checks/fig_*.R matched nothing  <-- ISSUE\n")
+  quit(status = 1)
+}
+
 for (.probe.f in .probe.args) {
   .probe.name <- basename(.probe.f)
   sink(tempfile()); try(source(.probe.f, local = FALSE), silent = TRUE); sink()

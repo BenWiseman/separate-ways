@@ -124,13 +124,29 @@ for script0, anchor, nums in rows:
     if not os.path.exists(out):
         not_found.append((script, "(script produced no output)")); continue
     outs = np.nums_from_out(io.open(out, encoding="utf-8", errors="replace").read())
+    abs_outs = [abs(v) for v in outs]
     for lit in [x for x in nums.split(";") if x]:
-        got = np.nums_from_text(lit)
-        if not got: continue
-        val, dec, _, sci = got[0]
-        checked += 1
-        if not np.matches(val, dec, sci, outs):
-            not_found.append((script, lit))
+        # nums_from_claim, not nums_from_text: the field holds numbers and nothing else,
+        # and the prose-safe parser silently dropped every bare integer in it.
+        got = np.nums_from_claim(lit)
+        # A field the parser cannot read was skipped here without a word, so the row looked
+        # checked and was not: "1e-15" parsed to nothing for as long as this line said
+        # `continue`. Say so instead, because an unread claim is worse than a failing one.
+        if not got:
+            not_found.append((script, lit + "   (no number the parser could read)")); continue
+        # And check every number in the field, not just the first. One row listed two and the
+        # second went unexamined.
+        for val, dec, lit_tok, sci in got:
+            checked += 1
+            # A bare count is not a fraction written as a percentage, so the hundredfold
+            # allowance has no business applying to it: without this a claim of 4 is satisfied
+            # by any 400 in the output, and dec = 0 would make integer rows nearly vacuous.
+            pct = not re.match(r"^-?\d+$", str(lit_tok).strip())
+            # A row written |1.76| claims the magnitude, so compare against magnitudes.
+            cand = abs_outs if str(lit_tok).startswith("|") else outs
+            if not np.matches(val, dec, sci, cand, pct=pct):
+                not_found.append((script, lit))
+                break
 
 if "--selftest" in sys.argv:
     # Gate 4 is the gate that matters most and nothing validated it, which is how the
@@ -156,6 +172,31 @@ if "--selftest" in sys.argv:
     moved = " ".join("a planted anchor that is not in the manuscript".split()) not in paper
     print("  claims_check: a missing anchor is caught: %s" % ("yes" if moved else "NO"))
     ok &= moved
+    # Programmer notation. Two rows were written as 1.58e31 and 1e-15; the first was checked
+    # as the plain number 1.58 and failed, the second parsed to nothing and was skipped in
+    # silence. Both had to be made to fail on purpose before the fix counted.
+    e31 = np.nums_from_text("1.58e31")
+    e15 = np.nums_from_text("1e-15")
+    reads = (len(e31) == 1 and abs(e31[0][0] - 1.58e31) < 1e20 and e31[0][3]
+             and len(e15) == 1 and abs(e15[0][0] - 1e-15) < 1e-25)
+    print("  claims_check: 1.58e31 and 1e-15 read as numbers, mantissa not double-counted: %s"
+          % ("yes" if reads else "NO"))
+    ok &= reads
+    # A count quoted to the unit must match a computed 36.90, and must NOT be satisfied by a
+    # hundredfold coincidence. Both halves planted, because the first alone would pass with the
+    # allowance still on and the row would look checked when it was only lucky.
+    c37 = np.nums_from_claim("37")[0]
+    rounds = np.matches(c37[0], c37[1], c37[3], np.nums_from_out("ratio 36.9036"), pct=False)
+    nolucky = not np.matches(c37[0], c37[1], c37[3], np.nums_from_out("scale 3700.0"), pct=False)
+    print("  claims_check: 37 matches a computed 36.90 and not a stray 3700: %s"
+          % ("yes" if (rounds and nolucky) else "NO"))
+    ok &= rounds and nolucky
+    fake = np.nums_from_out("tau = 1.579e+31 s")
+    hit = np.matches(e31[0][0], e31[0][1], e31[0][3], fake)
+    miss = not np.matches(2.58e31, 2, True, fake)
+    print("  claims_check: e-notation matches its script and a corrupted one does not: %s"
+          % ("yes" if (hit and miss) else "NO"))
+    ok &= hit and miss
     print("  claims_check: the real table passes: %s"
           % ("yes" if not (lost_anchor or not_found) else "NO"))
     ok &= not (lost_anchor or not_found)
