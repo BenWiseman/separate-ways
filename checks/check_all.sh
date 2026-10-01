@@ -151,17 +151,15 @@ awk -v r="$ticrate" 'BEGIN { exit !(r > 4.0) }' && {
 
 # Register frequency, added 2026-09-30. Ben: "instead of computed say calculated more often,
 # you say computed a LOT". Not a ban, a mix: tic_count carries the watchlist and the rate bar.
-# Enforced for the companion and the Letter. PAPER2_v4_draft.md sits at 0.68 against a bar of
-# 0.60 and is NOT edited to fit: it is the submitted manuscript, frozen at commit b1054c3.
-for _rf in "$PAPER" papers/3_road_to_nowhere/LETTER2_CONTACT_v2.md; do
+# The cosmology paper was exempt on the grounds that it was frozen for submission at commit
+# b1054c3. On 2026-10-01 it was revised for CQG, which voided that, and five "computed"s became
+# "calculated" to bring it from 0.68 to 0.53. It is enforced here with the other two now.
+for _rf in "$PAPER" papers/1_separate_ways/PAPER2_v4_draft.md papers/3_road_to_nowhere/LETTER2_CONTACT_v2.md; do
   [ -f "$_rf" ] || continue
   _line=$(python3 "$BENLM/tools/tic_count.py" "$_rf" 2>&1 | grep '^   register' || true)
   [ -n "$_line" ] && echo "   $(basename "$_rf"): ${_line#   register: }"
   case "$_line" in *OVER*) echo "   ABOVE THE REGISTER BAR  <-- ISSUE"; fail=$((fail+1));; esac
 done
-_line=$(python3 "$BENLM/tools/tic_count.py" papers/1_separate_ways/PAPER2_v4_draft.md 2>&1 \
-        | grep '^   register' || true)
-echo "   PAPER2_v4_draft.md (submitted, not edited): ${_line#   register: }"
 
 # The bar above was only ever applied to $PAPER, so the cosmology paper's own density was
 # ungated and drifted from the 4.0 it sat at when the bar was written to 4.4. Most of its
@@ -473,8 +471,20 @@ python3 - "$PAPER" papers/1_separate_ways/PAPER2_v4_draft.md <<'PY13'
 import io, re, sys, glob
 t = io.open(sys.argv[1], encoding="utf-8").read()
 cosmo = io.open(sys.argv[2], encoding="utf-8").read()
+def _gens():
+    """fig_* scripts that actually open a device. Counting glob("fig_*.R") instead was wrong
+    twice over: it dropped the three Python generators and counted fig_label.R, which masks
+    labels for five others and draws nothing. Four gates and one sync tool carried the same
+    mistake, so the manuscripts were told to say 20 where the tree has 22."""
+    out = []
+    for f in sorted(glob.glob("checks/fig_*.R") + glob.glob("checks/fig_*.py")):
+        t = io.open(f, encoding="utf-8", errors="replace").read()
+        if "dev.off()" in t or "savefig(" in t:
+            out.append(f)
+    return out
+
 calc = len(glob.glob("checks/calc/*.R")) + len(glob.glob("checks/calc/*.py"))
-figs = len(glob.glob("checks/fig_*.R"))
+figs = len(_gens())
 # The manuscript cites nothing inline now, so a count of "uncited" files would be all of them.
 # What the note claims is curated: ten files support no result in this paper, being the three
 # checkers, four superseded scripts, one adjudicator, one that supports the cosmology paper and
@@ -486,9 +496,12 @@ ok = True
 # phrasing carried no noun this gate could match. The count of generators USED here is now stated
 # in a form that can be checked, and is.
 used = 0
-imgs = set(re.findall(r"!\[[^\]]*\]\(([^)]+)\)", t))
-for g in sorted(glob.glob("checks/fig_*.R")):
-    gs = io.open(g, encoding="utf-8").read()
+# [^\]]* stops at the first "]" inside a caption, and these captions are paragraphs with
+# brackets in them, so one figure of seventeen went unseen and the count came out 16. Match
+# across lines from a line-initial include instead, which is how every figure here is written.
+imgs = set(re.findall(r"(?ms)^!\[.*?\]\(([^)]+)\)", t))
+for g in _gens():
+    gs = io.open(g, encoding="utf-8", errors="replace").read()
     if any(im.split("/")[-1].rsplit(".", 1)[0] in gs for im in imgs): used += 1
 for n, what in ((calc, "calculation files"), (figs, "figure generators"),
                 (used, "of those generators")):
@@ -599,11 +612,23 @@ papers = flat(cos) + "  " + flat(com)
 b = flat(brief)
 
 # the counts the brief states about the tree, checked against the tree
+def _gens():
+    """fig_* scripts that actually open a device. Counting glob("fig_*.R") instead was wrong
+    twice over: it dropped the three Python generators and counted fig_label.R, which masks
+    labels for five others and draws nothing. Four gates and one sync tool carried the same
+    mistake, so the manuscripts were told to say 20 where the tree has 22."""
+    out = []
+    for f in sorted(glob.glob("checks/fig_*.R") + glob.glob("checks/fig_*.py")):
+        t = io.open(f, encoding="utf-8", errors="replace").read()
+        if "dev.off()" in t or "savefig(" in t:
+            out.append(f)
+    return out
+
 ncalc = len(glob.glob("checks/calc/*.R")) + len(glob.glob("checks/calc/*.py"))
-nfig  = len(glob.glob("checks/fig_*.R"))
+nfig  = len(_gens())
 nline = sum(sum(1 for _ in io.open(f, encoding="utf-8", errors="replace"))
             for f in sorted(glob.glob("checks/calc/*.R") + glob.glob("checks/calc/*.py")
-                            + glob.glob("checks/fig_*.R")))
+                            + _gens()))
 ngate = len(re.findall(r"(?m)^hdr \"", io.open("checks/check_all.sh", encoding="utf-8").read()))
 rows  = [l for l in io.open("checks/CLAIMS.tsv", encoding="utf-8") if l.strip() and not l.startswith("#")]
 nclaim = len(rows)
@@ -697,8 +722,20 @@ for f in pys:
             if top in THIRD: mods.add(top)
     used |= mods
     if not mods: stdlib_only += 1
+def _gens():
+    """fig_* scripts that actually open a device. Counting glob("fig_*.R") instead was wrong
+    twice over: it dropped the three Python generators and counted fig_label.R, which masks
+    labels for five others and draws nothing. Four gates and one sync tool carried the same
+    mistake, so the manuscripts were told to say 20 where the tree has 22."""
+    out = []
+    for f in sorted(glob.glob("checks/fig_*.R") + glob.glob("checks/fig_*.py")):
+        t = io.open(f, encoding="utf-8", errors="replace").read()
+        if "dev.off()" in t or "savefig(" in t:
+            out.append(f)
+    return out
+
 nR    = len(glob.glob("checks/calc/*.R"))
-nfig  = len(glob.glob("checks/fig_*.R"))
+nfig  = len([f for f in _gens() if f.endswith(".R")])
 ok = True
 
 for name, t in docs.items():
@@ -731,9 +768,17 @@ if ok:
 # Every venue in pub/VENUES.md treats undisclosed AI use as the disqualifying thing, and the
 # companion had no acknowledgements section at all, so it carried no statement. Each manuscript
 # is a separate deposit and needs its own.
+# What IOP's generative-AI policy actually asks for is a labelled disclosure statement in the
+# acknowledgements naming the model. "large language models" alone was the old test and it passed
+# a paragraph that named nothing, then failed the rewritten one that names seven models, because
+# the phrase had gone. Require the label, the models, and the responsibility sentence.
 for name, t in docs.items():
-    if "large language models" not in t:
+    if "**AI disclosure.**" not in t:
+        print("   %s carries no labelled AI disclosure  <-- ISSUE" % name); ok = False
+    elif "large language models" not in t:
         print("   %s carries no AI-use statement  <-- ISSUE" % name); ok = False
+    elif "Claude" not in t:
+        print("   %s discloses AI use without naming a model  <-- ISSUE" % name); ok = False
     elif "responsible for every claim" not in t:
         print("   %s discloses the tools but does not take responsibility  <-- ISSUE" % name)
         ok = False

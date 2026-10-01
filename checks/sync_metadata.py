@@ -31,9 +31,15 @@ abstract = rest[:re.search(r"(?m)^#{1,6}\s+\S", rest).start()].strip()
 t = io.open(META, encoding="utf-8").read()
 before = t
 t = re.sub(r"(?ms)(^ABSTRACT\n).*?(\n\n#)", lambda g: g.group(1) + abstract + g.group(2), t, count=1)
+# "about N", not N. Gate 8 requires the approximate form, because a word count moves on every
+# prose edit and a gate that fails on every edit is a gate somebody deletes. This script was
+# writing the exact form and sync_release_counts.py was writing the approximate one into the
+# same sentence; this one ran second, so the gate failed with both tools reporting success.
+# One owner now, and it is this one.
 t = re.sub(r"Companion to arXiv:\[Separate Ways identifier, once assigned\]\. .*?references\.",
-           f"Companion to arXiv:[Separate Ways identifier, once assigned]. {nw} words, of which "
-           f"{napp} are\nthe appendices; {nfig} figures; {nref} references.", t, flags=re.S, count=1)
+           f"Companion to arXiv:[Separate Ways identifier, once assigned]. about {round(nw, -2)} "
+           f"words, of which about {round(napp, -2)} are\nthe appendices; {nfig} figures; "
+           f"{nref} references.", t, flags=re.S, count=1)
 io.open(META, "w", encoding="utf-8").write(t)
 print(f"  {META}: {nw} words, {napp} appendix, {nfig} figures, {nref} references, "
       f"abstract {len(' '.join(abstract.split()))} chars"

@@ -137,9 +137,9 @@ What happens inside that core is the strongest statement the fold makes about ma
 is finite and real between the horizon and the contact radius, diverges as $\delta^{-3/2}$ at
 the radius itself, and inside it the geodesic interval turns negative, so $\sigma^{-3/2}$
 continues to $i|\sigma|^{-3/2}$ and the term becomes imaginary. An imaginary energy is a decay
-rate, and a vacuum decay rate is pair creation. Where the two sheets touch, the touching makes
-matter and antimatter, and it does so because of the causal structure and not because anything
-was added to produce it. A.19 computes it.
+rate, and a decaying vacuum makes pairs. Where the two sheets touch, the touching makes matter
+and antimatter, and it does so because of the causal structure and not because anything was added
+to produce it, which A.19 computes.
 
 ![Kruskal diagram of an eternal hole. The fold's wedge reflection is the point reflection through
 the origin, so it swaps the two exteriors and swaps the two interiors. Under it the null
@@ -1322,7 +1322,7 @@ theory wants to be able to claim, and the two arguments that remove it are a sig
 Neither needed a measurement and neither will go away. Section 6.2 goes further:
 every member of the class this paper can derive is maximal, and far too large for any accretion
 argument to touch, so even had the ledger come out the other way there would have been no object
-to apply it to. The arithmetic stays in because it is short, because it is the first thing anyone tries unaided, and because recording flatly what a structure cannot do is worth more to
+to apply it to. The arithmetic stays in because it is short, because it is the first thing anyone tries unaided, and because recording flatly what a structure cannot do does more for
 this paper than the effect would have been.
 
 ### 6.2 Counting, and why the obvious channel was the wrong question
@@ -1432,8 +1432,8 @@ never a separate population. Sections 2 and 6 are looking at a single structure 
 and Section 5's contact radius climbing from half the horizon radius to all of it is the parameter
 between them made visible.
 
-Two of the earlier claims do not survive that. The falsifier an earlier version of this paper advertised, a
-measurement of the primordial curvature tail, was measuring the wrong quantity and is withdrawn.
+Two claims do not survive that. A measurement of the primordial curvature tail does not falsify
+this: it measures the wrong quantity, and no test of the fold can be built on it.
 Sections 2 and 3 are untouched because they never needed a black hole, and Section 5's contact
 condition is untouched. What changes is that the object it describes is one configuration rather
 than a class with an abundance.
@@ -5088,10 +5088,16 @@ geodesic is the closed-form curve above rather than an unknown.
 
 ## Acknowledgements
 
-The cosmology paper this accompanies carries the thanks; they hold here too. The author is
-responsible for every claim and decision in this paper. Literature search, grammar, proof
-reading, and automated tests, cross-checks, code revisions and sanity checks used contemporary
-research tools, large language models among them. No such tool is an author. Every number here
+The cosmology paper this accompanies carries the thanks; they hold here too.
+
+**AI disclosure.** The author is responsible for every claim and decision in this paper.
+Anthropic's Claude Opus 5 and Claude Sonnet 5 drafted prose the author then rewrote, wrote and
+revised the R and Python in the release, and ran the checking pass over both manuscripts.
+MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi K3, Zhipu's
+GLM-5.2 and OpenAI's GPT-5.6 (Sol, Terra and Luna) searched the literature and listed objections
+and alternatives to work through. These are large language models, nothing a model proposed was kept
+until it had been redone in a script or checked against a source, and no model is an author.
+Every number here
 is produced by a script in the release, and each check over those scripts was validated by
 planting an error it had to catch, since a check that matches nothing reports success.
 
@@ -5103,8 +5109,8 @@ carries a table, `CLAIMS.tsv`, mapping each claim to the file that produces it. 
 <https://doi.org/10.5281/zenodo.23030633>, the concept DOI, which always resolves to the most
 recent version, with the cosmology paper it accompanies at
 <https://doi.org/10.5281/zenodo.22888119>. The scripts specific to this paper are
-the 172 calculation files and the 22 figure generators, each printing its own results and its
-own limits when run with no arguments. Of those, 147 calculations and 19 of the generators are R and load no package, so base R is enough; the other 25 calculations are Python, 6 using the standard library alone and the rest importing numpy, scipy, sympy or mpmath at the versions the
+the 175 calculation files and the 22 figure generators, each printing its own results and its
+own limits when run with no arguments. Of those, 149 calculations and 19 of the generators are R and load no package, so base R is enough; the other 26 calculations are Python, 7 using the standard library alone and the rest importing numpy, scipy, sympy or mpmath at the versions the
 release records. 17 of those generators draw the figures here, and each re-derives and
 asserts the numbers its own caption states. Several plant deliberate failures and stop if the
 check does not catch them, because a check that cannot fail is worse than none. Two further files

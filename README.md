@@ -64,10 +64,10 @@ actually deposited. Nothing else is in there, and nothing of a paper's is anywhe
 
 Every quantitative claim in the manuscripts is produced by a script in this repository,
 and a checking pass refuses to pass if a quoted number and the script that produces it
-come apart. There are <!--N:calc-->172<!--/N--> such scripts under `checks/calc/`.
+come apart. There are <!--N:calc-->175<!--/N--> such scripts under `checks/calc/`.
 
-<!--N:calcR-->147<!--/N--> of them are R, and not one loads a package, so base R runs them
-all. The remaining <!--N:calcpy-->25<!--/N--> are Python and do use numerical libraries:
+<!--N:calcR-->149<!--/N--> of them are R, and not one loads a package, so base R runs them
+all. The remaining <!--N:calcpy-->26<!--/N--> are Python and do use numerical libraries:
 
 ```bash
 python3 -m pip install -r checks/requirements.txt
@@ -79,7 +79,7 @@ The pass itself runs <!--N:gates-->28<!--/N--> gates over both manuscripts:
 bash checks/check_all.sh
 ```
 
-It reproduces <!--N:claims-->156<!--/N--> claims against the scripts named for them,
+It reproduces <!--N:claims-->157<!--/N--> claims against the scripts named for them,
 checking every number each one names, and it also measures prose. It
 catches an abstract over the arXiv character cap, a cross-reference to a section that does
 not exist, a citation that does not say what the sentence says it says, a figure label

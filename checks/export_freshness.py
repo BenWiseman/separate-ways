@@ -31,11 +31,12 @@ ROOT = os.path.dirname(HERE)
 DST = os.environ.get("SEPARATE_WAYS", os.path.expanduser("~/separate_ways"))
 
 # source in this repository -> where the export puts it
-# The PRL Letter is not on this list because it is deliberately not exported; see the
+# LETTER_PRL_v1.md is not on this list because it is deliberately not exported; see the
 # DO_NOT_PUBLISH block in tools/export_to_separate_ways.sh.
 PAIRS = [
-    ("papers/1_separate_ways/PAPER2_v4_draft.md", "paper/PAPER2_v4_draft.md"),
-    ("papers/2_over_the_horizon/COMPANION_v1.md", "paper/COMPANION_v1.md"),
+    ("papers/1_separate_ways/PAPER2_v4_draft.md", "papers/1_separate_ways/PAPER2_v4_draft.md"),
+    ("papers/2_over_the_horizon/COMPANION_v1.md", "papers/2_over_the_horizon/COMPANION_v1.md"),
+    ("papers/3_road_to_nowhere/LETTER2_CONTACT_v2.md", "papers/3_road_to_nowhere/LETTER2_CONTACT_v2.md"),
     ("checks/CLAIMS.tsv", "checks/CLAIMS.tsv"),
     ("checks/check_all.sh", "checks/check_all.sh"),
 ]
@@ -82,6 +83,16 @@ def main():
         caught = len(audit()) == 1
         DST = keep
         print("   plant: a missing export is caught: %s" % ("yes" if caught else "NO"))
+        # A whole-directory plant cannot see a stale path list. Pair the cosmology paper with
+        # the companion's export slot: the audit must call it different, not pass it.
+        global PAIRS
+        held = PAIRS
+        PAIRS = [(held[0][0], held[1][1])]
+        wrong = [w for _, w in audit()] == ["differs from the working tree"]
+        PAIRS = held
+        print("   plant: a source paired with the wrong export file is caught: %s"
+              % ("yes" if wrong else "NO"))
+        caught = caught and wrong
         real = audit()
         print("   plant: the real export passes: %s" % ("yes" if not real else "NO"))
         sys.exit(0 if (caught and not real) else 1)

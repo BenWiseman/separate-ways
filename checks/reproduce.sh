@@ -32,8 +32,8 @@ if [ -n "$miss" ]; then
 fi
 
 export CLAIMS_TSV=checks/CLAIMS.tsv
-export CLAIMS_PAPERS_DIR=paper
+export CLAIMS_PAPERS_DIR=papers
 export CLAIMS_SCRIPT_MAP='checks/calc/=checks/calc/,checks/=checks/,tangents/=tangents/'
 export PYTHONPATH=checks${PYTHONPATH:+:$PYTHONPATH}
 
-python3 checks/claims_check.py paper/PAPER2_v4_draft.md
+python3 checks/claims_check.py papers/1_separate_ways/PAPER2_v4_draft.md

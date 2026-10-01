@@ -153,6 +153,7 @@ checks/calc/conservation_admits_one_scaling.R	Nothing in that is chosen. Writing
 checks/calc/the_phase_freedom_has_a_price.R	the release retains $I=0.0127596673634$ as a quadrature check	0.0127596673634
 checks/calc/decoherence_power_is_exact.R	a power carrying no free parameter, and exact rather than fitted	1e-15
 checks/calc/entropy_release_moves_the_line.py	The last of those has a number, and it is about as tight as the compact-object one above	1.02 324.3
-checks/calc/half_period_match.R	What the step is worth turns on a distinction the companion draws	6.2831853072
+checks/calc/half_period_match.R	What the step establishes turns on a distinction the companion draws	6.2831853072
 checks/calc/lifetime_from_planck_breaking.py	The first question about a decaying relic is why it is still present	1.58e31 3.14e29
 checks/calc/neutrino_floor_and_growth.py	A floor on the neutrino mass constrains structure growth	0.0044 |1.76| 0.036
+checks/calc/fold_total_energy.R	Over the comoving volume inside the particle horizon it sums to	4.07e-17;46.4

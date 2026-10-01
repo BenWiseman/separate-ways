@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Every number in pub/paper2/findings/BFT_WASHOUT_GAP_20261001.md, recomputed.
+"""The washout step of the Boyle-Finn-Turok leptogenesis argument, recomputed.
+
+This script belongs to neither manuscript. It stands on its own and names what it settles:
+nothing here is quoted in the cosmology paper or its companion, and the working note it was
+written from is not part of the release.
 
 Boyle, Finn and Turok (arXiv:1803.08930) discard the primordial abundance of the two
 unstable right-handed neutrinos because those "equilibrate with the thermal bath". Their

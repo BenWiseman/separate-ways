@@ -114,7 +114,7 @@ That first number is a ceiling on the dark-matter mass over every state the fold
 comes the two-body neutrino line in the decay model of §2.4, sharp enough that one securely
 assigned event above it refutes the model. Last is a floor on the neutrino-mass sum, which the fold cannot relax, having committed to constant dark energy and given up the $w_0w_a$
 freedom that relaxes such a bound. The quoted widths propagate the measured inputs only,
-at fixed production history and particle content; §2.3 gives the budget and says what it leaves
+at fixed production history and particle content; §2.3 sets out what is included and says what it leaves
 out.
 
 The same involution can be carried to a black-hole horizon, and that half of the work is in the
@@ -248,7 +248,7 @@ that. It is a statement about orientation and not about entropy, since an equili
 does not grow entropy. And the relation at work is $\Delta_{A'}=\Delta_A^{-1}$ between an algebra
 and its commutant rather than a property of $J$, since $J\Delta^{is}J=\Delta^{is}$.
 
-All three are computed. Take four thousand points of the right static patch and four thousand of
+All three are calculated. Take four thousand points of the right static patch and four thousand of
 its antipode. On the first $dX_0/ds$ is positive at every point, on the second negative at every
 point. A rotation generator gives no sign at all, and points outside both patches give both signs
 in nearly equal numbers. The definite sign therefore belongs to the patch and to the boost rather
@@ -386,7 +386,7 @@ The mass is already fixed, so the operator dimension is the only discrete freedo
 strongly selected: at $k=3$ the estimate brackets the $10^{29}$ to $10^{31}$ s window left by
 external bounds, returning $1.58\times10^{31}$ s at $P=16\pi$ and $3.14\times10^{29}$ s at $P=1$,
 while $k=2$ gives a particle gone long ago and $k=4$ one that never decays, each missing under
-both conventions by about twenty orders. What that is worth is a dimensional-analysis statement
+both conventions by about twenty orders. What that establishes is a dimensional-analysis statement
 and not a derivation: no dimension-seven operator is written down here and none of its
 coefficients is computed. It also turns on the suppression scale being the ordinary Planck mass,
 since the reduced one puts the same estimate two orders below the window, and that is a
@@ -694,7 +694,7 @@ $M_1\propto(\rho_{\rm DM,0}/s_0)^{2/5}$, a late release multiplying the comoving
 $\gamma$ dilutes the produced ratio by $\gamma$, so matching the observed abundance needs a
 production $\gamma$ times larger and the line rises as $\gamma^{2/5}$. The direction is opposite
 to a compact-object fraction, which lowers it. A release of $1.02$ per cent moves the line by its
-own width, against the $1.01$ per cent of the dark budget in compact objects that does the same,
+own width, against the $1.01$ per cent of the dark matter in compact objects that does the same,
 and a release by a factor of two would put the line at $324.3$ PeV. The two heavier right-handed
 neutrinos are where such a release would come from, and the asymmetry they drive is ordinary
 thermal leptogenesis rather than anything the fold supplies, so their masses and lifetimes are
@@ -825,14 +825,14 @@ them. If the paper is wrong about the matter sector, that is where it will show 
 
 ### 3.4 A closed dark sector
 
-The relic abundance, once it fixes $M_1$, closes the dark-matter budget: every gram is the sterile
+The relic abundance, once it fixes $M_1$, leaves no room in the dark matter: every gram is the sterile
 neutrino, and anything else massive competes for the same total. At $491.6$ PeV each particle
 weighs $8.764\times10^{-19}$ kg, so the measured dark-matter density is met by $2.6$ particles per
 cubic kilometre at a mean spacing of $730$ m, where a hundred-GeV WIMP at the same mass density
 would sit $4.3$ m apart. This dark matter is not a fluid on any scale an instrument spans, and
 that is the picture behind the event count in Appendix D.1.
 
-The place the closed budget is pressed is the population of compact red sources the James Webb Space Telescope (JWST) has found at
+What presses on that is the population of compact red sources the James Webb Space Telescope (JWST) has found at
 $z\sim4$ to $9$, which appear to host black holes heavy for their epoch and which little of the
 literature is yet fitted to. Growth is not the difficulty. Eddington-limited accretion from $z=20$
 to $z=7$ allows $11.6$ Salpeter e-folds, so an $88\,M_\odot$ remnant reaches $10^{7}M_\odot$ if it
@@ -845,7 +845,7 @@ magnitude, and by twenty-seven against an overdensity of order one. The seeds mu
 astrophysical or primordial; what this closes is particle shot noise, not every primordial
 mechanism.
 
-The budget accommodates them, with margin. With one seed per host and a comoving host density of
+There is room for them, with margin. With one seed per host and a comoving host density of
 $10^{-4}\,{\rm Mpc}^{-3}$, seeds of $10^{5}M_\odot$ carry a fraction $3\times10^{-10}$ of the dark
 matter, and even generous variants stay below $10^{-5}$. Since $\rho\sim IM_1^{5/2}$ gives
 $M_1\propto(1-f)^{2/5}$, a fraction $f=10^{-3}$ moves $M_1$ by $0.04\%$, well inside the $\pm2.0$
@@ -853,18 +853,18 @@ PeV of §2.3. A seed population ample enough to account for every such source pe
 far less than its own uncertainty, and the paper neither needs those sources nor is troubled by
 them.
 
-What the budget cannot accommodate is a dark sector made of black holes. At $f=0.1$ the mass falls to
+What there is no room for is a dark sector made of black holes. At $f=0.1$ the mass falls to
 $471.3$ PeV and the two-body line to $235.7$ PeV; at $f=0.5$, to $372.6$ and $186.3$ PeV; at
 $f=0.9$, to $195.7$ and $97.9$ PeV. The line is the observable of §3.2, and the direction runs the way one would not guess. A compact-object fraction lowers the line,
 and KM3NeT's reconstructed energy is below the $f=0$ prediction, so such a fraction moves the line
 *towards* the measurement and not away from it. Solving $245.8(1-f)^{2/5}=220$ gives $f=0.242$: a
-quarter of the dark budget in compact objects would put the line exactly on the reconstructed
+quarter of the dark matter in compact objects would put the line exactly on the reconstructed
 energy. We record that as arithmetic and not as a proposal, and the constraints that bear on a
 compact fraction that large at these masses are somebody else's to apply.
 
-A JWST result and a neutrino-telescope result are formally linked, since a compact-object fraction of the dark budget
+A JWST result and a neutrino-telescope result are formally linked, since a compact-object fraction of the dark matter
 lowers the line as $(1-f)^{2/5}$, but the link is not reachable. To move the line by its own width
-of $1.0$ PeV takes $f=0.01014$, $1.01$ per cent of the dark budget. At the seed budget the little
+of $1.0$ PeV takes $f=0.01014$, $1.01$ per cent of the dark matter. At the seed density the little
 red dots imply, the line moves by $3\times10^{-8}$ PeV, seven orders below its own width; the
 aggregate seed mass would have to be $3.4\times10^{7}$ times larger, some $3\times10^{3}$ seeds of
 $10^5M_\odot$ per Mpc$^3$ against the $10^{-4}$ observed, and even a thousandth duty cycle leaves
@@ -964,7 +964,7 @@ scale is not a new input: the transition probability $e^{-x^2}$ falls to $1/e$ a
 three per cent of the half-entanglement point, so the sheets stop being one object at the scale at
 which the crossing stops being abrupt. The two members of a pair are commuting subalgebras and
 tracing one out is legitimate; the two sheets at the bang are not, since $\eta<0$ and $\eta>0$ are
-one free field at two times, and no entropy between them is computed. At a horizon the
+one free field at two times, and no entropy between them is calculated. At a horizon the
 two-subsystem reading is available because $J$ relates a wedge algebra to its commutant; at the
 bang it is not, and the sheet statement that holds there is the symmetry of §3.1.
 
@@ -1050,7 +1050,7 @@ $\tanh r=e^{-\beta\omega/2}$. No temperature was inserted and one came out; what
 supplies is that the map is a half-period shift rather than a whole one, which makes it the square
 root of the thermal transformation and lets primitivity pick the fundamental period.
 
-What the step is worth turns on a distinction the companion draws and this section needs too.
+What the step establishes turns on a distinction the companion draws and this section needs too.
 Squaring the map gives $\alpha^2=1$, which reads $W(t-i\beta)=W(t)$, the KMS condition, and
 sweeping the shift period the companion finds it fails by $O(25)$ at every value tried and holds
 only at $\beta=2\pi/\kappa$ and its multiples, the minimised residual returning $6.2831853072$
@@ -1094,7 +1094,7 @@ $\beta=2\pi/\kappa$ differs from one to the next, so the occupation visibly carr
 gravity. It cancels. In the observer's own proper frequency the Wentzel-Kramers-Brillouin (WKB) mode count below $\omega$ is
 $(1/\pi)\int_\epsilon^{\omega/\kappa k}\sqrt{\omega^2/\kappa^2\rho^2-k^2}\,d\rho$, which
 carries $\kappa$ in three places, and the Jacobian $d\omega=\kappa\,d\Omega$ cancels the
-$1/\kappa$ the density carries. Computed with $\kappa$ kept throughout, $S/A$ does not move to one
+$1/\kappa$ the density carries. Calculated with $\kappa$ kept throughout, $S/A$ does not move to one
 part in $10^9$ while $\beta$ runs from $251$ to $0.025$, four decades. The reason is the theorem the fold's own
 map is read from: the wedge metric in boost coordinates contains no $\kappa$, and
 Bisognano-Wichmann makes the modular temperature $2\pi$ in boost time at every wedge, so
@@ -1172,7 +1172,7 @@ of $139$ per cent of itself, and the same fitter reproduces a genuinely local st
 That term carries no free parameter. Away from a caustic its size is fixed by the matter's departure from conformal invariance and
 by nothing else. It is proportional to $1-6\xi$ and vanishes for conformally invariant matter,
 and the same slot in the Hadamard coefficient carries $m^2$ for massive fields. That second
-slot is computed here: at conformal coupling with a mass the null-null component is negative at
+slot is calculated here: at conformal coupling with a mass the null-null component is negative at
 every mass and close to proportional to $m^2$, so the sign the companion's A.15 needs holds
 through both slots rather than through the coupling alone. 
 
@@ -1193,7 +1193,11 @@ escape that is light enough for the $m^2$ in the Hadamard slot to finish it, the
 across the whole range sitting at $3\times10^{-34}$ of the dark energy. And a massless
 conformal field has an empty slot and a Weyl-suppressed remainder falling as $r^{-5}$, which is
 integrable and leaves no deficit angle. Inside a horizon the term lives on the inner half of the interior and
-nowhere else.
+nowhere else. At the boundary of that region the companion finds it diverges as
+$\delta^{-3/2}$, and inside, where the interval is no longer spacelike, it continues to
+$i|\sigma|^{-3/2}$ and turns imaginary. An imaginary energy is a decay rate, and a decaying
+vacuum makes pairs, so the region where the two sheets touch makes matter and antimatter out of
+the causal structure with nothing added. That is the companion's result and not used here.
 
 The sign there follows through, because for a null $k$ the trace term and $\Lambda$ drop out of
 the field equations, so $R_{ab}k^ak^b=8\pi G\,T_{ab}k^ak^b$ with no residue and the two signs are
@@ -1320,25 +1324,28 @@ theorem stands untouched. The two contractions are orthogonal combinations of th
 two views of one number, and §4.2 separates them and says which one carries the sign.
 
 One region is still unaccounted for, the interior of a cosmological horizon, and it is where a
-contribution to $\Lambda$ would have to live. There the budget is exactly marginal. Beyond
+contribution to $\Lambda$ would have to live. There the turning is exactly marginal. Beyond
 $r=L$ the turning available is $\int_L^\infty dr/(r\sqrt{|f|})=\pi/2$ per leg, so two legs supply
 exactly the $\pi$ the antipodal map asks for and supply it only as $r\to\infty$; at finite radius
 they fall short by $L/r$. 
 
-That marginality holds in every dimension, since $f=1-r^2/L^2$ does not know $D$, and it sits alongside the black hole's $\pi/(D-3)$, which meets the same bill at $D=4$
+That marginality holds in every dimension, since $f=1-r^2/L^2$ does not know $D$, and it sits alongside the black hole's $\pi/(D-3)$, which meets the same requirement at $D=4$
 alone. Compactifying the extra dimensions does not change that: a hole larger than the
-compactification scale has exactly the four-dimensional budget, since motion in the compact
+compactification scale has exactly the four-dimensional turning, since motion in the compact
 directions only eats into the angular progress left to a causal curve, and a hole smaller than it is
-Tangherlini in $4+n$ with budget $2\pi/(n+1)$ against a bill that does not move. 
+Tangherlini in $4+n$ supplies $2\pi/(n+1)$ against a half turn that does not move. 
 
 Adding a mass changes that. The horizon comes in to $r_c<L$, the run begins where $|f|$ is
 smallest,
-and the budget per leg becomes $\pi/2+2M/L$, which opens contact at $r_*=L^2/2M$. The proper time
+and the turning per leg becomes $\pi/2+2M/L$, which opens contact at $r_*=L^2/2M$. The proper time
 to reach that radius is $L\ln(L/2M)$, between $27$ and $50$ Hubble times for holes from
 $6.6\times10^{10}$ solar masses down to ten. So the fold's extra term reaches nothing in the
 observable universe or its past. What it leaves there is not zero but the de Sitter scale
 $1/16\pi^2L^2$, which is $2\times10^{-71}$ of the dark energy, and no part of $\Lambda$ is sourced
-by it. The value
+by it. That density is hard to picture and its total is not. Over the comoving volume inside the
+particle horizon it sums to $4.07\times10^{-17}$ kg, forty-one femtograms, which is $46.4$ times
+the mass ceiling of §3.1 and more than that if the fermion is lighter. Everything the fold adds to
+the universe we can see weighs about what fifty of its own particles weigh. The value
 of $\Lambda$ is a boundary datum, and the computation forces that reading.
 
 Under the fold, then, the field equations follow from the fold
@@ -1409,7 +1416,7 @@ Only the massive content contributes, since radiation is conformally invariant a
 the scale is the fermion mass and not the bath temperature, which at the epoch $H=M_1$ would have
 been nine orders larger. The mass that would move $N_{\rm eff}$ by its own error bar is
 $7.5\times10^{18}$ GeV, ten orders above the ceiling §3.1 derives, so the same bound that fixes
-the dark matter is what keeps the fold's own term out of the radiation budget. So the bang cannot supply $\Lambda$ either, and no part of the fold carries a scale near $2.2$ meV. The relocation terminates:
+the dark matter is what keeps the fold's own term out of the radiation density. So the bang cannot supply $\Lambda$ either, and no part of the fold carries a scale near $2.2$ meV. The relocation terminates:
 $\Lambda$ is a boundary datum, and there is now no place left in the fold where it could
 have been anything else.
 
@@ -1448,7 +1455,7 @@ cosmological source as such, since a phase transition or a string network after 
 allowed. It forbids the inflationary shape, so the reading that would hurt is one in which the
 nanohertz signal is the low-frequency end of a near scale-invariant spectrum. The measured galaxy
 and black-hole population sets how much of the amplitude the binary reading can supply, and §3.4
-pushes the same way: if JWST's little red dots are accreting black holes, they raise that budget
+pushes the same way: if JWST's little red dots are accreting black holes, they raise that population
 and the astrophysical reading gets easier. Component separation has not been done, so this is a
 test to watch and not a result.
 
@@ -1468,7 +1475,7 @@ sector where the two overlap: geometry, states, horizons and correlators. The we
 theorems select the involution, the involution at the bang returns the state family, and the
 operator bound on that family turns the abundance into a ceiling. Traffic runs both ways. Algebra
 contributes an input to the cosmology, the family, and not only a constraint on what the cosmology
-had already chosen; that is the sharpest form of the claim that the two legs constrain each other.
+had already chosen, which is what it means to say the two legs constrain each other.
 
 The structural
 result of §3.6 and the matter results of §2 and §3.1 to §3.5 share the fold and share nothing else.
@@ -1636,7 +1643,7 @@ The ultraviolet failure of the instantaneous bang vacuum is a statement about wh
 one-sheet cosmology naturally reaches for, not a no-go theorem.
 
 The algebra's causal splitting into a patch and its commutant and the cosmology's temporal
-splitting into branches are different splittings of one state. By direct computation the companion
+splitting into branches are different splittings of one state. By direct calculation the companion
 shows that they cross rather than coincide, and nothing here identifies them.
 
 The contact condition reaches beyond radiation. Nothing in §2.2 used a linear sweep or anything
@@ -1740,7 +1747,7 @@ power, and neither cares which combination carries the sign.
 One limit applies to the whole of §3.6. What a Clausius argument returns is an
 equation of state: the field equations hold at every point and in every null direction, and no
 gravitational action is produced along the way. So nothing here supplies a path integral, a
-graviton propagator, or a route to quantising gravity, and §3.6 shows the field equations do not need one, not that one has been found. The image term sharpens the point, since
+graviton propagator, or a route to quantising gravity, and §3.6 shows the field equations do not need one, not that one has been found. The image term carries the same point, since
 it is non-local and a local gravitational action would not have produced it in any case.
 
 The remaining mathematical tasks are specific: the interacting constraints, the joint
@@ -1756,7 +1763,7 @@ which a hole formed by collapse does not have, so for an astrophysical black hol
 nothing. That divides black holes into two classes, and the division is not observational: a
 transparent seam predicts ordinary Kerr dynamics either way. If the overmassive early population
 of §3.4 needs seeds that did not form by collapse, those seeds are the only objects in this
-framework that could be two-sided, and the budget accommodates them with nine orders to spare. We have
+framework that could be two-sided, and there is room for them with nine orders to spare. We have
 no test that separates the classes and do not propose one; which black holes have a past is left
 open and named.
 
@@ -1871,7 +1878,7 @@ dimensions leaves $(1,3)$ and $(3,1)$, one signature written two ways. None of t
 Lorentzian manifold has to exist. It says that among the arenas one could have written the fold
 on, it has content in exactly one, which is a different kind of assumption from a convenience.
 The dimension selection of §5.2 in the companion and this one are not independent, since a causal
-budget already presumes a signature to be causal in, and together they say only that the pair
+comparison already presumes a signature to be causal in, and together they say only that the pair
 $(4,\ \text{one time direction})$ is the one the fold can live on.
 
 Two coefficients are open, the seam coefficient and the state's residual phase $\mu(p)$, and §4.1 assesses both. They
@@ -1890,8 +1897,8 @@ fixed-history implementation, and about a hundred assigned events give a calibra
 test with power $0.88$ against an endpoint twice as high. A cosmological bound on $\Sigma m_\nu$
 that tightens by more than $8.4$ per cent under $\Lambda$CDM excludes the exact-stabilisation
 sector, and the model cannot move to evolving dark energy to escape it. A compact-object fraction
-above one per cent of the dark budget moves the line by more than its width, and a primordial seed
-population nine orders denser than observed would breach the closed budget. A near scale-invariant
+above one per cent of the dark matter moves the line by more than its width, and a primordial seed
+population nine orders denser than observed would leave none for the sterile neutrino. A near scale-invariant
 primordial tensor spectrum excludes the bang model.
 
 The two dimensionful constants are both frozen, and that is one commitment rather than two.
@@ -2542,9 +2549,9 @@ produces it; the checking pass fails if this list and that file's list come apar
 10. **Null-focusing surfaces for Raychaudhuri to act on.** Contact is conjugacy, so the fold's own
     contact surfaces are caustics, at every charge and in every dimension.
 
-11. **Four large spacetime dimensions and no others.** The causal budget for contact closes only
-    at $D=4$: the bill is $\pi$ because the antipode is an involution of a sphere, and the
-    interior pays $\pi/(D-3)$ per leg, which at $D=5$ reaches the bill only in a limit that is no
+11. **Four large spacetime dimensions and no others.** The turning available for contact closes only
+    at $D=4$: a half turn is required because the antipode is an involution of a sphere, and the
+    interior supplies $\pi/(D-3)$ per leg, which at $D=5$ reaches it only in a limit that is no
     point of the spacetime and from $D=6$ falls short outright. What is derived is that four is
     the only dimension in which the sheets touch anywhere, so a higher-dimensional fold is
     allowed and has nothing to add.
@@ -2591,7 +2598,7 @@ produces it; the checking pass fails if this list and that file's list come apar
    two.
 
 2. **The value of $\Lambda$.** An integration constant of the derivation, and both places it
-   could have come from are closed. The contact budget is short at every finite radius in the
+   could have come from are closed. The turning available is short at every finite radius in the
    late universe, and at the bang an $a$-independent image stress would be of order $M_1^4$,
    some $81.4$ orders above the observed value.
 
@@ -2737,15 +2744,19 @@ every point since. I thank Patricia Karr for her love, support, and always havin
 Hammond for being the best cheerleader I could ask for. Joe Hanna for encouraging me to get back
 into writing and publishing. I also thank my friends at Kandi Luxe, who have listened to more
 cosmology over a cocktail bar than anyone signed up for: Jamila, Te, Gigi, Tuna, Layla, Claudia,
-James, Jay, Michelle, Vesna, Amy, Adam, Mish, Bri, Hetti, Mehreen, Charlie, Petros, Blue, Noah,
-Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or endured, my tangents and
+James, Pat, Jay, Michelle, Vesna, Amy, Adam, Mish, Bri, Hetti, Mehreen, Charlie, Petros, Blue,
+Noah, Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or endured, my tangents and
 rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
 is no more loyal configuration of matter in the cosmos. You are a good dog.
 
-The author is responsible for every claim and decision in this paper. Literature search, grammar,
-proofreading, and automated tests, cross-checks, code revisions, and sanity checks used
-contemporary research tools, large language models among them. No such tool is an author. Every
-number in this paper is produced by one of the 172 calculation files or 21 figure generators in
+**AI disclosure.** The author is responsible for every claim and decision in this paper.
+Anthropic's Claude Opus 5 and Claude Sonnet 5 drafted prose the author then rewrote, wrote and
+revised the R and Python in the release, and ran the checking pass over both manuscripts.
+MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi K3, Zhipu's
+GLM-5.2 and OpenAI's GPT-5.6 (Sol, Terra and Luna) searched the literature and listed objections
+and alternatives to work through. These are large language models, nothing a model proposed was kept
+until it had been redone in a script or checked against a source, and no model is an author. Every
+number in this paper is produced by one of the 175 calculation files or 22 figure generators in
 the release, and each check over them was validated by planting an error it had to catch, since a
 check that matches nothing reports success. 5 of those files carry a banner at both ends saying
 the result they compute has been superseded, and print it when run, with the reason kept in the
@@ -2753,32 +2764,36 @@ file.
 
 ## Code and data availability
 
-Every quantitative claim in this paper is reproduced by a script in the release. There are 193
-of them, 23982 lines in total: 172 calculations and 21 figure generators, each naming in its
-header what it computes and what it does not settle. All 21 generators and 147 of the
+Every quantitative claim in this paper is reproduced by a script in the release. There are 197
+of them, 24903 lines in total: 175 calculations and 22 figure generators, each naming in its
+header what it computes and what it does not settle. 19 of the generators and 149 of the
 calculations are R, and none of them loads a package, so base R is enough; they run to
-completion under R 4.5.2, one taking several minutes. The remaining 25 calculations are Python,
-run under 3.12. Three use only the standard library and the rest import numpy, scipy, sympy or
-mpmath, at the versions the release records. A checking pass runs 28 gates over both
+completion under R 4.5.2, one taking several minutes. The remaining 26 calculations and 3
+generators are Python, run under 3.12. 7 use only the standard library and the rest import
+numpy, scipy, sympy or mpmath, at the versions the release records. A checking pass runs 28 gates over both
 manuscripts and fails if a quoted number has drifted from the script that produces it, if a
-cross-reference lands on a section that does not exist, if a figure is absent or unused, if a
+cross-reference points at a section that does not exist, if a figure is absent or unused, if a
 label runs off the edge of its panel, or if a position stated in one place is contradicted in
 another. Each gate carries a planted case it has to catch, because a check that matches nothing
 reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v4.5), archived with its own DOI at
-<https://doi.org/10.5281/zenodo.23034297>, a concept DOI covering every release. It is not the complete private development history. The exploratory dark-energy fits
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v4.6), archived at
+<https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
+every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the
 R scripts counted above, and Appendix C.1's antipodal series is checked in the companion's release
 rather than this one, since that is where the rest of the antipodal-propagator work sits.
 Pantheon+ data are external inputs, with acquisition instructions,
-provenance and exact hashes in `data/README.md`. The Zenodo record is
-<https://doi.org/10.5281/zenodo.22888119>, the concept DOI, which covers every version and always
-resolves to the most recent; each individual deposit also carries its own version DOI, and that is
+provenance and exact hashes in `data/README.md`. The manuscript has a separate Zenodo record at
+<https://doi.org/10.5281/zenodo.22888119>, again a concept DOI, which covers every version and
+always resolves to the most recent; each individual deposit also carries its own version DOI, and that is
 the one to cite when a specific set of numbers matters. The companion paper, *Somewhere Over the
 Horizon*, has its own Zenodo record at <https://doi.org/10.5281/zenodo.23030633>, also a concept
 DOI.
 
 Passing these checks shows that the stated formulas and inputs give the quoted numbers. It does
-not test the physical assumptions behind them.
+not test the physical assumptions behind them. The scripts and the checks over them were written
+with the help of the language models named in the acknowledgements. That is the reason for the
+discipline above: every script states in its header what it settles and what it does not, and
+every check carries a case it has to fail on.

@@ -104,7 +104,18 @@ def _selftest(text):
     # fire in the checker that certifies the Letter fits PRL's cap. Two things were wrong.
     # It has to land inside the core, and it has to use the include form this Letter uses,
     # where the caption sits inside the image include and not in a separate **FIG.** line.
-    with_fig = text.replace("\n### ", "\n![FIG. 9.](plant.pdf)\n\n### ", 1)
+    # Third time. The first plant sat immediately before "## References", which measure()
+    # cuts away. The second anchored on "\n### ", and this Letter's only "### " headings are
+    # its appendices, which sit AFTER "## References" and are cut away too, so the plant went
+    # on printing NO. Anchor on the core itself, which split_body already locates, and there
+    # is no heading left to rename out from under it.
+    _core = split_body(text, "core")
+    _at = text.index(_core)
+    with_fig = text[:_at] + "\n![FIG. 9.](plant.pdf)\n\n" + text[_at:]
+    if with_fig == text:
+        print("   plant: a figure is charged %d words: NO (the plant did not change the text)"
+              % PER_FIGURE)
+        return False
     b_words, _, b_nfig, b_tot = measure(text)
     p_words, _, p_nfig, p_tot = measure(with_fig)
     # Subtract the plant's own prose so the figure charge is measured on its own.
