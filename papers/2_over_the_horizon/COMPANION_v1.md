@@ -1286,11 +1286,11 @@ and creates $2pF$ from nothing. The multiplier is one whatever the contact geome
 be, and the transmitted-fraction reading fails for the same reason the symmetric reading did: it
 counts one stream twice.
 
-![What a second supply would have given, and the ledger that removes it. Left: growth from a
+![What a second supply would have given, and the count that removes it. Left: growth from a
 $100\,M_\odot$ seed between $z=20$ and $z=7$, Eddington-limited at radiative efficiency $0.1$. A
 supply multiplier does not add to the mass, it multiplies the exponent, so $11.6$ e-folds become
 $23.3$ and the final hole is $10^5$ times heavier. That is the prize, and it is why the section
-checked rather than adopted. Right: the two-channel ledger that forbids it. Fold invariance makes
+checked rather than adopted. Right: the two-channel count that forbids it. Fold invariance makes
 the two sheets' infall equal, and a crossing inside the contact radius is a swap, so our hole
 receives $(1-p)F$ of our own stream and $pF$ of theirs for a total of $F$ at every $p$. The
 alternative, keeping our own and adding theirs, is the dashed line, and it creates $2pF$ from
@@ -1321,7 +1321,7 @@ A doubled exponent over this window is a factor of $10^5$, which is exactly the 
 theory wants to be able to claim, and the two arguments that remove it are a sign and a sum.
 Neither needed a measurement and neither will go away. Section 6.2 goes further:
 every member of the class this paper can derive is maximal, and far too large for any accretion
-argument to touch, so even had the ledger come out the other way there would have been no object
+argument to touch, so even had the count come out the other way there would have been no object
 to apply it to. The arithmetic stays in because it is short, because it is the first thing anyone tries unaided, and because recording flatly what a structure cannot do does more for
 this paper than the effect would have been.
 
@@ -2008,7 +2008,7 @@ declared roots, acyclic, with no path from the field equations reaching general 
 Bekenstein-Hawking, and both ways of breaking it detected when planted. The sixth root is the
 Hadamard condition on states, which the graph did not carry until it was asked to, and which is a
 regularity condition, not one of general relativity's properties: it is what equilibrium at the
-horizon reduces to, and it belongs on the input list without belonging in the ledger.
+horizon reduces to, and it belongs on the input list without belonging in the count.
 
 Two things that read like postulates about gravity are not on the root list, and the reason in
 each case is that what the argument uses is narrower than the name. The equivalence principle is
@@ -5093,9 +5093,9 @@ The cosmology paper this accompanies carries the thanks; they hold here too.
 **AI disclosure.** The author is responsible for every claim and decision in this paper.
 Anthropic's Claude Opus 5 and Claude Sonnet 5 drafted prose the author then rewrote, wrote and
 revised the R and Python in the release, and ran the checking pass over both manuscripts.
-MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi K3, Zhipu's
-GLM-5.2 and OpenAI's GPT-5.6 (Sol, Terra and Luna) searched the literature and listed objections
-and alternatives to work through. These are large language models, nothing a model proposed was kept
+MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi K3 and
+OpenAI's GPT-5.6 (Sol, Terra and Luna) searched the literature and listed objections and
+alternatives to work through. These are large language models, nothing a model proposed was kept
 until it had been redone in a script or checked against a source, and no model is an author.
 Every number here
 is produced by a script in the release, and each check over those scripts was validated by

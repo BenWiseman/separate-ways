@@ -146,12 +146,12 @@ checks/calc/kappa_is_not_order_unity.R	The order-unity factor that used to stand
 checks/calc/the_pattern_is_rank_one.R	What does not carry over is the component pattern	5.8;5.7
 checks/calc/outside_is_suppressed_not_zero.R	Outside the horizon the pair is spacelike too	1.53;1.50;2.7;2.0
 checks/calc/the_bang_term_is_radiation.R	Read the other way round, an $a^{-4}$ density is radiation	7.5
-checks/calc/the_band_excludes_a_thermal_profile.R	The band is doing work here, though, and the rival the fold itself suggests is where that shows	0.3898;1.81;1.11;31;0.02284;389.5;194.7
+checks/calc/the_band_excludes_a_thermal_profile.R	The band does exclude something, and the clearest case is the rival the fold itself suggests	0.3898;1.81;1.11;31;0.02284;389.5;194.7
 checks/calc/the_phase_freedom_has_a_price.R	The residual phase is the falsifier, and its effect is bounded on one side only	3.75;289.7;1.14
 checks/calc/the_in_vacuum_leaves_the_band.R	$\Theta$-invariance settles it before any integral is done	0.5364
 checks/calc/conservation_admits_one_scaling.R	Nothing in that is chosen. Writing the three as powers of $D$, conservation matches them as	1.1
 checks/calc/the_phase_freedom_has_a_price.R	the release retains $I=0.0127596673634$ as a quadrature check	0.0127596673634
-checks/calc/decoherence_power_is_exact.R	a power carrying no free parameter, and exact rather than fitted	1e-15
+checks/calc/decoherence_power_is_exact.R	a power with no free parameter. Given the two laws it is exact	1e-15
 checks/calc/entropy_release_moves_the_line.py	The last of those has a number, and it is about as tight as the compact-object one above	1.02 324.3
 checks/calc/half_period_match.R	What the step establishes turns on a distinction the companion draws	6.2831853072
 checks/calc/lifetime_from_planck_breaking.py	The first question about a decaying relic is why it is still present	1.58e31 3.14e29

@@ -408,6 +408,21 @@ def main():
         missing += [(f"{os.path.basename(doc)}: {sc}", lit) for sc, lit in m]
         print(f"  {os.path.basename(doc):22} {c:4d} claims checked, {len(m)} not found")
 
+    # A cited script with no output in the cache used to be skipped without a word, so a cache
+    # folder with the wrong file names gave "0 claims checked, 0 not found" and exit 0. That is a
+    # pass that checked nothing (2026-10-01: outputs saved as calc_p3_spectrum.out where the tool
+    # looks for calc_p3_spectrum.R.out). Name the missing outputs, and refuse to pass on nothing.
+    cited = sorted({m.group(1) for doc in DOCS if os.path.exists(doc)
+                    for m in re.finditer(r'`([^`\n]*?\.R)`', io.open(doc, encoding="utf-8").read())})
+    absent = [c for c in cited if not os.path.exists(os.path.join(cache, c.replace('/', '_') + ".out"))]
+    if absent:
+        print(f"\n  NO OUTPUT in {cache} for {len(absent)} of {len(cited)} cited scripts; nothing beside them was checked:")
+        for c in absent:
+            print(f"      {c}   (looked for {c.replace('/', '_')}.out)")
+    if cited and checked == 0:
+        print("\n  NOTHING WAS CHECKED: the documents cite scripts and no claim was compared with any output.")
+        return 2
+
     strong = [l for l in seen if re.fullmatch(r'\d+\.\d{3,}', l) or '\\times' in l]
     print(f"\n  {checked} number-claims checked against the output of the script cited beside them")
     print(f"  {len(strong)} of them carry three or more decimals or an exponent, which is where")

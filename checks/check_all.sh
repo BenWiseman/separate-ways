@@ -374,14 +374,18 @@ def last_para(c, head, nxt):
     body = c[c.index(head):c.index(nxt)]
     return " ".join([b for b in body.split("\n\n") if b.strip()][-1].split())
 
-cases = [("the abstract's last sentence",
-          re.split(r"(?<=[.!?]) +", abstract(cos))[-1],
-          # "owes" was Ben's word to cut on 2026-09-28: a thing a theory "owes" is Claude-ish
-          # and the plain verb is "needs". The position this gate defends is unchanged.
-          "a quantum theory of gravity still needs"),
+cases = [("the abstract",
+          abstract(cos),
+          # Ben, 2026-10-01, for v5: a plainer abstract in case of another desk rejection. The
+          # closing "not as something a quantum theory of gravity still needs" went, and the
+          # position is now one flat sentence inside the abstract, which ends on the
+          # black-hole shell. The position this gate defends is unchanged.
+          "The gravitational field is not quantised at any step"),
          ("section 5's last paragraph",
           last_para(cos, "## 5. Conclusions", "## Appendix A"),
-          "waiting on a quantum theory of gravity"),
+          # Ben, 2026-10-01: "were never waiting on" was overreach. The claim is about this
+          # derivation, and the closing sentence now says so.
+          "did not need a quantum theory of gravity"),
          ("the companion's last paragraph",
           last_para(com, "## 9. Conclusions", "## Appendices"),
           "gravity did not have to be quantised")]
