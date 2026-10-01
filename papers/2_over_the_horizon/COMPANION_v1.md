@@ -25,26 +25,26 @@ it, and falls short above. No parameter enters either side of the comparison.*
 A horizon surrounds every observer, and the mathematics sealing its far side seals a black hole.
 The cosmology paper this accompanies takes CPT to hold of the universe, so the Big Bang has a far
 side and Einstein's equations follow with nothing quantised. That fixes everything at our horizon
-and more than one at a hole's, beginning with where the halves can touch.
+and more than one at a hole's, starting with where the halves touch.
 
 Nothing is chosen at our horizon and a reciprocal law follows: the correlation across a reflected
-separation over the direct one, times the same with it applied again, is
-one for every state, metric and involution. Its logarithm is odd, so all even multipoles vanish
-exactly. The fold's map is the square root of the thermal transformation at the primitive period.
-Its parity is the classical-quantum split, and its squeeze at a horizon is fixed by the
+separation over the direct one, times the same reflected again, is one
+for every state, metric and involution. Its logarithm is odd, so all even multipoles vanish. The fold's map is the square root of the thermal transformation at the primitive period.
+Its parity is the classical-quantum split and its horizon squeeze is fixed by
 temperature. Three readings of it as a copy of our own fail: positivity, the first law,
-the Hulse-Taylor pulsar.
+the binary pulsar.
 
 They cannot touch outside a horizon, where the commutator vanishes, and can inside a hole with a
-past. Reaching it needs half a turn of the sphere as well as a fall, and causality caps the turn
+past. Reaching it needs half a turn of the sphere and a fall, and causality caps the turn
 at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$ required,
 so contact fills the inner half at any charge, and the quotient carries closed causal curves. Five give exactly $\pi$, never attained: only four large ones let the sheets touch.
+Where they touch it turns imaginary: a decay rate, pair creation.
 
 A hole with a past takes matter from our side and antimatter from the mirror, and the fold
-must map it to itself, forcing the map and a second exterior. In Schwarzschild-de Sitter only
-the maximal hole qualifies, horizon ten billion light years in radius; charge and spin widen
-it to a branch ending at $a/M=1.10092$. Contact fills $0.991$ of its interior. Only the transparent
-seam absorbs no momentum, and it is the one adopted. It predicts zero ringdown damping-time
+must map it to itself, forcing a second exterior. In Schwarzschild-de Sitter only
+the maximal hole qualifies, ten billion light years in radius; charge and spin widen
+it to a branch ending at $a/M=1.10092$. Contact fills $0.991$ of the interior. Only the transparent
+seam absorbs no momentum, and it is adopted; it predicts zero ringdown damping-time
 deviation, testable at twice present exposure.
 
 ## 1. Introduction
@@ -132,6 +132,14 @@ dimensions gives four large spacetime dimensions and no others, with small ones 
 than forbids. Since the fold is a free involution, that region is also where the quotient carries
 closed causal curves, so what is being located is the causality-violating core of the folded hole,
 sealed behind a horizon and then behind half of what is left.
+
+What happens inside that core is the strongest statement the fold makes about matter. The image term
+is finite and real between the horizon and the contact radius, diverges as $\delta^{-3/2}$ at
+the radius itself, and inside it the geodesic interval turns negative, so $\sigma^{-3/2}$
+continues to $i|\sigma|^{-3/2}$ and the term becomes imaginary. An imaginary energy is a decay
+rate, and a vacuum decay rate is pair creation. Where the two sheets touch, the touching makes
+matter and antimatter, and it does so because of the causal structure and not because anything
+was added to produce it. A.19 computes it.
 
 ![Kruskal diagram of an eternal hole. The fold's wedge reflection is the point reflection through
 the origin, so it swaps the two exteriors and swaps the two interiors. Under it the null
@@ -1756,6 +1764,13 @@ else when the hole is uncharged, the mass cancels, and the one curve that does i
 horizon once, at the bifurcation surface, which at the outer edge of the region is the only route
 there is. Since the fold is a free involution, that region is where the quotient carries closed
 causal curves, so what the calculation locates is the folded hole's causality-violating core.
+
+And the core is not inert. Outside the contact radius the image term is real; at the radius it
+diverges as $\delta^{-3/2}$; inside it the interval is spacelike no longer and the term turns
+imaginary. An imaginary energy is a decay rate and a vacuum decay rate is pair creation, so the
+region where the sheets touch is a region that makes matter and antimatter, from the causal
+structure alone. Of everything in this paper that is the result we would most like to see
+someone find a way to test, and we see none.
 
 The same calculation run in $D$ dimensions selects the dimension. A Schwarzschild interior
 supplies exactly $\pi/(D-3)$ of turning to any causal curve crossing it, whatever the mass, and
