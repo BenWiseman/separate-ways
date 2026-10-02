@@ -40,14 +40,15 @@ is predicted. The classical-quantum split is §2.1, the horizon temperature §3.
 equations §3.6, and the count line by line Appendix E.*
 
 
-A horizon hides part of spacetime from an observer, and a bang hides the far side of time. Suppose
-what is hidden behind the Big Bang is our own universe over again, with matter swapped for
-antimatter, space reflected and time running the other way. That is CPT, the combination of charge
-conjugation, spatial reflection and reversal of time orientation, and every particle experiment so
-far has respected it. Boyle, Finn and Turok applied CPT to the universe as a whole and built a
-cosmology on it [9,10,11]. The map relating the two sheets undoes itself when applied twice, which
-makes it an involution. Throughout this paper *the fold* names that involution, and also the
-two-sheeted universe built on it.
+Boyle, Finn and Turok proposed that CPT, the combination of charge conjugation, spatial reflection
+and reversal of time orientation, is a symmetry of the universe itself and not only of its laws
+[9,10,11]. The Big Bang then has a far side, our own universe over again with matter swapped for
+antimatter, space reflected and time running the other way. This paper adds one thing to their
+proposal, a result from algebraic quantum field theory that fixes the map between the two sides, and
+follows what comes out. What comes out includes Einstein's field equations, with the metric a fixed
+background throughout, and an upper bound on the mass of their dark-matter particle. The map
+relating the two sheets undoes itself when applied twice, which makes it an involution. Throughout
+this paper *the fold* names that involution, and also the two-sheeted universe built on it.
 
 Their cosmology needs no inflaton. Two sheets meet at a radiation bang, CPT relates them, and the
 dark matter is a heavy right-handed neutrino produced gravitationally at the bang, its mass fixed by
@@ -2755,7 +2756,8 @@ Gravitational-wave Background," Astrophys. J. Lett. 951 (2023) L8, arXiv:2306.16
 submitted 8 June 2026, arXiv:2606.09986.
 
 32\. B. H. Wiseman, "Somewhere Over the Horizon: causal contact under the antipodal identification of
-horizons, and why it needs four dimensions," companion paper to this one.
+horizons, and why it needs four dimensions," preprint, Zenodo (2026),
+https://doi.org/10.5281/zenodo.23030633.
 
 33\. T. Jacobson, "Thermodynamics of Spacetime: The Einstein Equation of State," Phys. Rev.
 Lett. **75** (1995) 1260, arXiv:gr-qc/9504004.
@@ -2784,12 +2786,13 @@ Noah, Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or e
 rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
 is no more loyal configuration of matter in the cosmos. You are a good dog.
 
-**AI disclosure.** The author is responsible for every claim and decision in this paper.
-Anthropic's Claude Opus 5 and Claude Sonnet 5 drafted prose the author then rewrote, wrote and
-revised the R and Python in the release, and ran the checking pass over both manuscripts.
-MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi K3 and
-OpenAI's GPT-5.6 (Sol, Terra and Luna) searched the literature and listed objections and
-alternatives to work through. These are large language models, nothing a model proposed was kept
+**AI disclosure.** The author originated the central ideas, directed the work, and is responsible for
+every claim and decision in this paper. Anthropic's Claude Opus 5, Claude Opus 5.5 and Claude Sonnet 5
+were used under the author's direction to draft and edit text from the author's outlines, to write
+and revise the R and Python in the release, and to run repeated checking passes over both
+manuscripts. MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi
+K3 and OpenAI's GPT-5.6 (Sol, Terra and Luna) were used as independent readers, to search the
+literature and to list objections and alternatives to work through. These are large language models, nothing a model proposed was kept
 until it had been redone in a script or checked against a source, and no model is an author. Every
 number in this paper is produced by one of the 175 calculation files or 22 figure generators in
 the release, and each check over them was validated by planting an error it had to catch, since a
@@ -2813,7 +2816,7 @@ another. Each gate carries a planted case it has to catch, because a check that 
 reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.1), archived at
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.2), archived at
 <https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
 every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the
