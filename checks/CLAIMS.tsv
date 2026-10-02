@@ -1,7 +1,7 @@
 # Provenance for a manuscript that carries no script paths. One row per passage.
 # script	anchor: the first words of the passage it backs	numbers it must reproduce
 tangents/info/wdw_weights.R	$A$ asymptote $-(\pi/12)N_fA^3$. Appendix A.7 derives the sum. Summed over all harmonics, for one minimally c	1.95376;1.28984
-checks/calc/restricted_exponent_ratio.R	Recorded for	0.4999;0.4998
+checks/calc/restricted_exponent_ratio.R	For the restricted counting, the ratio	0.4999;0.4998
 checks/fig_reciprocal_law.R	The even bars are drawn at the panel floor because they are zero, the	3\times10^{-17};0.52
 checks/calc/half_period_match.R	Away from $B$ the boost separation has not yet dropped out, and there, requiring the geometric image kernel to	ten per cent;4\times10^{-17};2.6\times10^{15};0.115
 checks/calc/horizon_reflectivity_spin.R	$0.444$ at $a=0.9$, where the horizon returns about a fifth of the incident energy, against the $10^{-6}$ of [13]	0.444;0.9;0.662;0.95;0.372;0.99
@@ -75,7 +75,6 @@ checks/calc/image_stress_sign.py	which the assembled sum reproduces to	2.6\times
 checks/calc/image_stress_sign.py	so it is checked by differencing on the sphere rather than by the projection argument alone, and agrees for $\ell$ up to twelve to	3.9\times10^{-5}
 checks/calc/image_stress_flat.py	the image energy density there is $(8r^2+6\xi^2)/4\pi^2D^3$ with $D=4r^2-\xi^2$, positive everywhere and diverging positively at contact. The exponent is the generic	8;6;4;2;3
 checks/calc/image_stress_flat.py	at a fitted power of	3.000052;31.994;32
-checks/calc/port_cutoff_ratio.py	It falls steadily as the cutoff is lifted, running	0.958;0.603;0.497;0.441;0.371;0.315;0.02
 checks/calc/horizon_reflectivity_spin.R	vanishes and the two expressions agree, then	0.148;0.7;0.444;0.9
 checks/calc/contact_charged.R	runs from $0.250$ at $Q=0$ to	0.250;0.768;0.99
 checks/calc/fold_map_classification.R	The contact radius of Section 5, swept against $\Lambda$, runs from half the horizon radius	0.778;0.919;0.991
@@ -101,8 +100,7 @@ checks/calc/image_stress_conformal.R	appendix's own flat inversion it gives	32;4
 checks/calc/image_stress_conformal.R	both reproducing the assembled operator at	6
 checks/calc/contact_conjugacy_general.R	numerically built Riemann tensor to	3\times10^{-8};3
 checks/calc/contact_conjugacy_general.R	area ratio $A_c/A_+$ runs from	0.25;0.77
-checks/calc/jacobson_ledger.R	random boosts and orientations to	3\times10^{-14}
-checks/calc/jacobson_ledger.R	sits a proper time $(\pi/2+1)M$ inside the	2;1
+checks/calc/jacobson_ledger.R	Composing the two in two hundred randomly boosted and rotated frames returns	3\times10^{-14}
 checks/calc/contact_world_function.py	reproduced to	1.1\times10^{-9};2.1\times10^{-14}
 checks/calc/contact_world_function.py	control pair with no caustic returns	1.0095;1
 checks/calc/contact_world_function.py	its image pair returns	1.49874
@@ -110,36 +108,35 @@ checks/calc/antipodal_sphere_family.R	Abel-summed modes match that to	8\times10^
 checks/calc/caustic_amplitude.R	heat kernel at the antipode agree on it to	3\times10^{-6};1;2;3;4
 checks/calc/caustic_amplitude_form.R	running over	2;4;2;8;3
 checks/calc/caustic_amplitude_profile.R	would need between	0.73;1.50
-checks/calc/universality_local_fold.R	Measured by geodesic shooting on a surface with	2.9994;0.168936;0.168939;5.0406;1.4435
+checks/calc/universality_local_fold.R	the residual $G_{\mu\nu}(v)-G_{\mu\nu}(-v)$ has exponent	2.9994;0.168936;0.168939;5.0406;1.4435
 checks/calc/desitter_contact_sweep.R	The same sweep answers a different question at the other horizon	27.47;50.08
-checks/calc/bang_image_scale.R	Rescaling $\eta=s/\sqrt\gamma$, $p=q\sqrt\gamma$ removes	81.4
+checks/calc/bang_image_scale.R	Against the observed $\rho_\Lambda=2.52\times10^{-11}$ eV$^4$ that is	81.4
 checks/calc/perp_is_unique.R	A free involutive isometry of a round $B$ is an element of	0.998
-checks/calc/eta_is_universal.R	Both halves of that input, since Jacobson needs the	251;0.025
-checks/calc/derivation_is_acyclic.R	That the argument does not assume its own conclusion is a graph property	24
-checks/calc/equivalence_from_one_metric.R	not assumed, because the eikonal characteristics of a field on a metric are that metric's	0.5
-checks/calc/bianchi_is_a_theorem.R	Bianchi identity, is a theorem about the Levi-Civita connection of any metric, measured at	0.05
-checks/calc/signature_or_the_fold_is_nothing.R	The signature entry is not indifferent either	1.0000001;4969
-checks/calc/eta_is_universal.R	One condition comes with it. Because of that	52;2.137;1.629;1.931
+checks/calc/eta_is_universal.R	$S/A$ does not move to one part in $10^9$ while	251;0.025
+checks/calc/derivation_is_acyclic.R	leaves eleven of the thirty-five nodes, roots included, unorderable	24
+checks/calc/equivalence_from_one_metric.R	Its weak form is what the eikonal limit of any field on the shared metric does	0.5
+checks/calc/bianchi_is_a_theorem.R	measured on a generic curved metric it sits at	0.05
+checks/calc/signature_or_the_fold_is_nothing.R	confirmed over twenty thousand sampled boosts and rotations	1.0000001;4969
+checks/calc/eta_is_universal.R	a cutoff allowed to track the surface gravity as	52;2.137;1.629;1.931
 checks/calc/opposite_orientation.R	That reversal is a theorem of the fold	4000
-checks/calc/one_time_direction.R	Counted over all five four-dimensional signatures the rule is	4
-checks/calc/sign_through_the_mass_slot.R	The sign of the image stress no longer rests on a single Hadamard slot	2.005;1.018
-checks/calc/one_metric_is_forced.R	Two metrics differing by a constant factor share a connection	1.7
+checks/calc/one_time_direction.R	A four-dimensional manifold can carry	4
+checks/calc/sign_through_the_mass_slot.R	The sign of the image stress does not rest on a single Hadamard slot	2.005;1.018
 checks/calc/contour_shift_is_forced.R	The superscript on $G_{+-}$ is not a convention here	0.216;0.256;0.496;0.0259;0.2872;0.905
 checks/calc/equilibrium_is_leading_order.R	And equilibrium at the horizon is not a theorem about every state	3.2898681;2.000000;1.999972;3.57\times10^{6}
 checks/calc/alpha_is_total_inversion.R	and the embedding settles that: on the de Sitter hyperboloid	0.210;1.1
-checks/calc/interior_focusing_threshold.R	The negative null-null component has a second consequence and it is larger than the first	1.1997;1.439;11.5138
+checks/calc/interior_focusing_threshold.R	The sign of the null-null component matters beyond the contact region	1.1997;1.439;11.5138
 checks/calc/caustic_amplitude_profile.R	A.19 closes the larger part of that coefficient	3.9004
 checks/calc/image_stress_shell.R	Both of those are requirements on a constant stress and the stress is not constant	11.5138
 checks/calc/caustic_power_at_a_hole.R	The power decides the answer and $\kappa$ barely enters it, and the power is $5/2$	0.956;0.976;0.968;0.33018;0.16746
 checks/calc/mass_softening_is_one_sigma.R	One power of $\sigma$ is one power of the distance here and two in flat space	34.85;3.14158765
-checks/calc/image_stress_coefficient.R	At $p=5/2$, $\kappa$ is no longer open either	3.9004;17.425;0.030956;0.0039329;0.1091
+checks/calc/image_stress_coefficient.R	At $p=5/2$, $\kappa$ is not open either	3.9004;17.425;0.030956;0.0039329;0.1091
 checks/calc/radial_sign_reduction.R	The reduction that sign goes through is pure algebra	1.4;0.0014423
 checks/calc/contact_and_radial_are_orthogonal.R	Following that through changes the reading of the sign	1.056;1.005;1.0005;1.00005
 checks/calc/which_combination_the_esu_measures.R	Which combination the computed sign belongs to is settled by a symmetry	1.3333333333;0.50000
 checks/calc/image_stress_components.R	The same sum gives the components	1.9997;0.0003;1.5003;4.8;501.9;1.4916;0.9934;2.999;0.059525
 checks/calc/caustic_multiplicity.R	A hole would have a second if a second direction refocused	2.268;0.0777
-checks/calc/seam_image_cancellation.R	The route argues that a constant reflectivity	0.5;0.2785
-checks/calc/interior_radial_is_jacobi.R	Its hardest ingredient is now in hand	0.0040;1.9991
+checks/calc/seam_image_cancellation.R	One might argue that a constant reflectivity	0.5;0.2785
+checks/calc/interior_radial_is_jacobi.R	Its hardest ingredient is in hand	0.0040;1.9991
 checks/calc/amplitude_rule_meets_the_mode_sum.R	And it carries, because the quantity whose phase	2.773;0.428;0.564
 checks/calc/the_shell_has_a_floor.R	That reading has a limit, and it is the parametrix's own	0.0592;3.19;1.1;7.8
 checks/calc/kappa_is_not_order_unity.R	The order-unity factor that used to stand beside	1.012649;1.002214

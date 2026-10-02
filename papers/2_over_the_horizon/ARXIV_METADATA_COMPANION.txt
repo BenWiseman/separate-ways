@@ -4,7 +4,7 @@
 # below drifts from the manuscript's, so regenerate rather than hand-edit the abstract.
 
 TITLE
-Somewhere Over the Horizon: where the two halves of a folded universe touch, and where the classical world comes from
+Somewhere Over the Horizon: causal contact under the antipodal identification of horizons, and why it needs four dimensions
 
 AUTHORS
 B. H. Wiseman
@@ -25,34 +25,26 @@ JOURNAL REFERENCE
 [none]
 
 COMMENTS
-Companion to arXiv:[Separate Ways identifier, once assigned]. about 58800 words, of which about 34900 are
-the appendices; 17 figures; 38 references. Code, figure sources and checks:
+Companion to arXiv:[Separate Ways identifier, once assigned]. about 51400 words, of which about 34300 are
+the appendices; 17 figures; 41 references. Code, figure sources and checks:
 https://github.com/BenWiseman/separate-ways
 
 ABSTRACT
-A horizon surrounds every observer, and the mathematics that seals its far side seals a black hole.
-Its companion paper takes CPT as a symmetry of the universe, so the Big Bang has a far side, a
-mirror sheet, and Einstein's equations follow with nothing quantised. Here we ask what the fold does
-at horizons and where the sheets touch.
-
-At our own horizon nothing is left to choose, and a reciprocal law follows: the correlation across a
-reflected separation over the direct one, times the same ratio reflected, is one for every state,
-metric and involution. Its logarithm is odd, so even multipoles vanish. The fold's map is the square
-root of the thermal transformation, its parity is the classical-quantum split, and its horizon
-squeeze is fixed by temperature. Three readings of the mirror as a copy of ours fail, on positivity,
-the first law and the binary pulsar.
-
-The sheets cannot touch outside a horizon, where the commutator vanishes. They can inside a hole
-with a past. Reaching the image takes half a turn of the sphere and a fall, and causality caps the
-turn at $\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$
-required, so contact fills the inner half at any charge, and the quotient carries closed causal
-curves. Five dimensions give exactly $\pi$, never attained, so only four large ones let the sheets
-touch. Where they touch the image term turns imaginary, a decay rate, so pairs form.
-
-Such a hole takes matter from our side and antimatter from the mirror, and the fold must map it to
-itself, forcing a second exterior. In Schwarzschild-de Sitter only the maximal hole qualifies, ten
-billion light years in radius; charge and spin widen it to a branch ending at $a/M=1.10092$. Contact
-fills $0.991$ of the interior. Only the transparent seam absorbs no momentum, and it is adopted,
-predicting zero ringdown damping-time deviation, testable at twice present exposure.
+The antipodal, or CPT, identification of a spacetime pairs every point with an image. At a
+cosmological horizon it underlies the CPT-symmetric universe of Boyle, Finn and Turok, and at a
+black hole the elliptic interpretation of Gibbons and of Sanchez and Whiting. We ask where a point
+can be causally connected to its own image. Outside every horizon it cannot: the two are spacelike
+separated and their commutator vanishes. Inside a black hole with a past it can, but reaching the
+image takes half a turn of the transverse sphere as well as a fall, and causality caps the turn at
+$\pi/(D-3)$ per leg whatever the mass. Two legs give $2\pi/(D-3)$ against the $\pi$ required, so in
+four dimensions contact fills the inner half of the interior at any charge, and in five or more
+large dimensions it never occurs. In that region the identified spacetime has closed causal curves.
+At our own horizon the same map gives a reciprocal law for correlators that holds in every state,
+with all even multipoles vanishing, and it is the square root of the thermal transformation. Three
+ways of treating the image region as a second copy of our own space fail, on positivity, the first
+law and the binary pulsar. How the two regions join at a black-hole horizon is not fixed. The one
+join that absorbs no momentum is adopted, and it predicts zero ringdown damping-time deviation,
+testable at twice present exposure. Within the Kerr-Newman-de Sitter family only maximal holes are
+mapped to themselves, out to a spin $a/M=1.10092$.
 
 # Abstract length: 1918 characters, against arXiv's 1920-character limit.

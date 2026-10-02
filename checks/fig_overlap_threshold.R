@@ -10,8 +10,8 @@
 # Section 2.1 settles it: the branch states are Gaussian in each mode coordinate, and a Gaussian
 # in q^2 cannot tell +q from -q, so the projector acts as the identity on every mode whatever
 # the parity of its harmonic. Restricting the physical states removes no oscillator, and the
-# ungauged count is the one that applies. An earlier draft used the gauged one and put the
-# threshold 19 per cent later, and that delay is withdrawn.
+# ungauged count is the one that applies. The gauged count would put the
+# threshold 19 per cent later, and that delay is not adopted.
 # Arithmetic: separate_ways/tangents/info/wdw_weights.R
 
 dn_ungauged <- function(n) n^2
@@ -31,7 +31,7 @@ cat(sprintf("  ungauged (every oscillator):   aH = %.5f,  Ht = acosh(aH) = %.5f\
 cat(sprintf("  gauged   (invariant harmonics): aH = %.5f,  Ht = acosh(aH) = %.5f\n", Aga, acosh(Aga)))
 cat(sprintf("  the gauged reading is %.1f per cent later in aH and %.1f per cent later in Ht,\n",
             100*(Aga/Aun - 1), 100*(acosh(Aga)/acosh(Aun) - 1)))
-cat("  and it is the one withdrawn. The paper quotes the Ht figure, which is the proper time.\n")
+cat("  and it is the one not adopted. The paper quotes the Ht figure, which is the proper time.\n")
 stopifnot(abs(Aun - 1.95376) < 5e-6, abs(Aga - 2.43912) < 5e-6,
           abs(acosh(Aun) - 1.28984) < 1e-4, abs(acosh(Aga) - 1.53984) < 1e-4)
 cat("\n  at n = 2 the four harmonics split one invariant and three not:")
@@ -65,7 +65,7 @@ draw <- function() {
   segments(1.80, 0.955, 1.96, 0.955, col = c1, lwd = 2.8)
   text(2.00, 0.955, "every oscillator counted, as 2.1 argues", col = c1, cex = 0.82, adj = 0)
   segments(1.80, 0.875, 1.96, 0.875, col = c2, lwd = 2.4, lty = 2)
-  text(2.00, 0.875, "invariant harmonics only, withdrawn", col = c2, cex = 0.82, adj = 0)
+  text(2.00, 0.875, "invariant harmonics only, not adopted", col = c2, cex = 0.82, adj = 0)
   mtext("when the two time directions stop being one state", side = 3, line = 0.7,
         cex = 0.88, col = ink)
 }

@@ -79,7 +79,7 @@ The pass itself runs <!--N:gates-->28<!--/N--> gates over both manuscripts:
 bash checks/check_all.sh
 ```
 
-It reproduces <!--N:claims-->157<!--/N--> claims against the scripts named for them,
+It reproduces <!--N:claims-->154<!--/N--> claims against the scripts named for them,
 checking every number each one names, and it also measures prose. It
 catches an abstract over the arXiv character cap, a cross-reference to a section that does
 not exist, a citation that does not say what the sentence says it says, a figure label

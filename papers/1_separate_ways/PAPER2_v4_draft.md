@@ -2754,8 +2754,8 @@ Gravitational-wave Background," Astrophys. J. Lett. 951 (2023) L8, arXiv:2306.16
 31\. KM3NeT Collaboration, "Testing Heavy Dark Matter Decay as the Origin of KM3-230213A,"
 submitted 8 June 2026, arXiv:2606.09986.
 
-32\. B. H. Wiseman, "Somewhere Over the Horizon: where the two halves of a folded universe touch,
-and where the classical world comes from," companion paper to this one.
+32\. B. H. Wiseman, "Somewhere Over the Horizon: causal contact under the antipodal identification of
+horizons, and why it needs four dimensions," companion paper to this one.
 
 33\. T. Jacobson, "Thermodynamics of Spacetime: The Einstein Equation of State," Phys. Rev.
 Lett. **75** (1995) 1260, arXiv:gr-qc/9504004.
@@ -2813,7 +2813,7 @@ another. Each gate carries a planted case it has to catch, because a check that 
 reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.0), archived at
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.1), archived at
 <https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
 every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the
