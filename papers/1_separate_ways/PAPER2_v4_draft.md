@@ -2815,7 +2815,7 @@ contradicted in another. Each gate carries a planted case it has to catch, becau
 matches nothing reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.4), archived at
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.5), archived at
 <https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
 every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the
