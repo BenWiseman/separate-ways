@@ -4563,17 +4563,17 @@ Noah, Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or e
 rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
 is no more loyal configuration of matter in the cosmos. You are a good dog.
 
-**AI disclosure.** The author originated the central ideas, directed the work, and is responsible for
-every claim and decision in this paper. Anthropic's Claude Opus 5, Claude Opus 5.5 and Claude Sonnet 5
-were used under the author's direction to draft and edit text from the author's outlines, to write
-and revise the R and Python in the release, and to run repeated checking passes over both
-manuscripts. MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi
-K3 and OpenAI's GPT-5.6 (Sol, Terra and Luna) were used as independent readers, to search the
-literature and to list objections and alternatives to work through. These are large language models, nothing a model proposed was kept
-until it had been redone in a script or checked against a source, and no model is an author.
-Every number here
-is produced by a script in the release, and each check over those scripts was validated by
-planting an error it had to catch, since a check that matches nothing reports success.
+**AI disclosure.** The author originated the central ideas, directed the work, and is responsible
+for the writing, claims, and decisions in this paper. Anthropic's Claude Opus 5, Claude Opus 5.5 and
+Claude Sonnet 5 were used under the author's direction to edit drafts, correct spelling and grammar,
+format references, perform general edits from the author's outlines, to write and revise the
+graphical and numerical code in R and Python in the release, and to run repeated fact and
+consistency checking passes over both manuscripts. MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner,
+Alibaba's Qwen3.8-Max, Moonshot's Kimi K3 and OpenAI's GPT-5.6 (Sol, Terra and Luna) were used as
+independent readers, to search the literature and to list objections and alternatives to work
+through. These are large language models, nothing a model proposed was kept until it had been redone
+in a script and/or checked against a source, and no model is an author. Every number in this paper
+is produced by a script in the release.
 
 ## Code and data availability
 

@@ -2786,34 +2786,33 @@ Noah, Leah, Leyre, Hannah, and everyone else who has lovingly engaged with, or e
 rabbit holes. Aroha ahau ki a koutou katoa. And to Winston, fat and shameless as you are: there
 is no more loyal configuration of matter in the cosmos. You are a good dog.
 
-**AI disclosure.** The author originated the central ideas, directed the work, and is responsible for
-every claim and decision in this paper. Anthropic's Claude Opus 5, Claude Opus 5.5 and Claude Sonnet 5
-were used under the author's direction to draft and edit text from the author's outlines, to write
-and revise the R and Python in the release, and to run repeated checking passes over both
-manuscripts. MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner, Alibaba's Qwen3.8-Max, Moonshot's Kimi
-K3 and OpenAI's GPT-5.6 (Sol, Terra and Luna) were used as independent readers, to search the
-literature and to list objections and alternatives to work through. These are large language models, nothing a model proposed was kept
-until it had been redone in a script or checked against a source, and no model is an author. Every
-number in this paper is produced by one of the 175 calculation files or 22 figure generators in
-the release, and each check over them was validated by planting an error it had to catch, since a
-check that matches nothing reports success. 5 of those files carry a banner at both ends saying
-the result they compute has been superseded, and print it when run, with the reason kept in the
-file.
+**AI disclosure.** The author originated the central ideas, directed the work, and is responsible
+for the writing, claims, and decisions in this paper. Anthropic's Claude Opus 5, Claude Opus 5.5 and
+Claude Sonnet 5 were used under the author's direction to edit drafts, correct spelling and grammar,
+format references, perform general edits from the author's outlines, to write and revise the
+graphical and numerical code in R and Python in the release, and to run repeated fact and
+consistency checking passes over both manuscripts. MiniMax-M3, DeepSeek-V4-Pro, DeepSeek-Reasoner,
+Alibaba's Qwen3.8-Max, Moonshot's Kimi K3 and OpenAI's GPT-5.6 (Sol, Terra and Luna) were used as
+independent readers, to search the literature and to list objections and alternatives to work
+through. These are large language models, nothing a model proposed was kept until it had been redone
+in a script and/or checked against a source, and no model is an author. Every number in this paper
+is produced by one of the 175 calculation files or 22 figure generators in the release.
 
 ## Code and data availability
 
-Every quantitative claim in this paper is reproduced by a script in the release. There are 197
-of them, 24903 lines in total: 175 calculations and 22 figure generators, each naming in its
-header what it computes and what it does not settle. 19 of the generators and 149 of the
-calculations are R, and none of them loads a package, so base R is enough; they run to
-completion under R 4.5.2, one taking several minutes. The remaining 26 calculations and 3
-generators are Python, run under 3.12. 7 use only the standard library and the rest import
-numpy, scipy, sympy or mpmath, at the versions the release records. A checking pass runs 28 gates over both
-manuscripts and fails if a quoted number has drifted from the script that produces it, if a
-cross-reference points at a section that does not exist, if a figure is absent or unused, if a
-label runs off the edge of its panel, or if a position stated in one place is contradicted in
-another. Each gate carries a planted case it has to catch, because a check that matches nothing
-reports success.
+Every quantitative claim in this paper is reproduced by a script in the release. There are 197 of
+them, 24903 lines in total: 175 calculations and 22 figure generators, each naming in its header
+what it computes and what it does not settle. 5 of those files carry a banner at both ends saying
+the result they compute has been superseded, and print it when run, with the reason kept in the
+file. 19 of the generators and 149 of the calculations are R, and none of them loads a package, so
+base R is enough; they run to completion under R 4.5.2, one taking several minutes. The remaining 26
+calculations and 3 generators are Python, run under 3.12. 7 use only the standard library and the
+rest import numpy, scipy, sympy or mpmath, at the versions the release records. A checking pass runs
+28 gates over both manuscripts and fails if a quoted number has drifted from the script that
+produces it, if a cross-reference points at a section that does not exist, if a figure is absent or
+unused, if a label runs off the edge of its panel, or if a position stated in one place is
+contradicted in another. Each gate carries a planted case it has to catch, because a check that
+matches nothing reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
 code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.2), archived at

@@ -783,7 +783,7 @@ for name, t in docs.items():
         print("   %s carries no AI-use statement  <-- ISSUE" % name); ok = False
     elif "Claude" not in t:
         print("   %s discloses AI use without naming a model  <-- ISSUE" % name); ok = False
-    elif "responsible for every claim" not in t:
+    elif not __import__("re").search(r"is\s+responsible\s+for\s+the\s+writing,\s+claims", t):
         print("   %s discloses the tools but does not take responsibility  <-- ISSUE" % name)
         ok = False
     else:
