@@ -33,7 +33,7 @@ mass, where relativity predicts its own breakdown.
 
 ## 1. Introduction
 
-![](graphical_abstract_v5.png){width=100%}
+![](graphical_abstract_v6.png){width=100%}
 *Graphical abstract. One postulate goes in: CPT is a symmetry of the universe itself, not
 just of the laws inside it. The fold relating the two sheets is an involution, a relation between the sheets with nothing travelling along it, so no matter crosses it and no white-hole population or traversable connection
 is predicted. The classical-quantum split is §2.1, the horizon temperature §3.1, the field
@@ -2815,7 +2815,7 @@ contradicted in another. Each gate carries a planted case it has to catch, becau
 matches nothing reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.2), archived at
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.4), archived at
 <https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
 every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the
