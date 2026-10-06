@@ -5,6 +5,10 @@
 # each step checked rather than asserted. The fold's contribution is the temperature and the
 # horizons; what is being checked is that those two plus an area-proportional entropy really do
 # force the field equations, and with which assumptions.
+#
+# 2026-10-06: written when (ii) and the universality half of (iv) were still assumed. Both are
+# derived now, in area_law_from_fold.R, eta_is_universal.R and universality_local_fold.R, and
+# sections 1 and 6 say so after the original wording. Nothing computed here changed.
 
 cat("=== 1. the construction, stated so the assumptions are countable ===\n")
 cat("   At a point p pick a null direction k. Erect the past horizon of a uniformly accelerated\n")
@@ -18,6 +22,10 @@ cat("      (iv)  every point and every null direction admits such a horizon\n")
 cat("   The fold supplies (i) and supplies the horizons of (iv) at every boost and orientation,\n")
 cat("   since J P = -Id is frame-independent. (ii) and the universality half of (iv) are assumed\n")
 cat("   here exactly as they are assumed in the original.\n")
+cat("   That was so when this was written and is not now: area_law_from_fold.R derives (ii)'s\n")
+cat("   area law, eta_is_universal.R the universality of its coefficient, and\n")
+cat("   universality_local_fold.R the horizons of (iv) away from the fold's fixed locus. This\n")
+cat("   script checks the Clausius step itself, which is the same either way.\n")
 
 cat("\n=== 2. the area change, from Raychaudhuri, integrated rather than quoted ===\n")
 cat("   dtheta/dlambda = -theta^2/2 - sigma_shear^2 - R_kk. Near the bifurcation surface theta\n")
@@ -104,9 +112,11 @@ cat("   Lambda is an integration constant of this derivation and is not predicte
 cat("\n=== 6. what the re-derivation changes about the claim ===\n")
 cat("   Nothing in the conclusion and something in the standing. The three inputs the fold\n")
 cat("   supplies are (i) and the horizons of (iv), and those are now used rather than cited.\n")
-cat("   What remains assumed is (ii), an area-proportional entropy with a universal coefficient,\n")
-cat("   and the universality half of (iv). Both are assumptions of the original and neither is\n")
-cat("   supplied by the fold, and the manuscript says so.\n")
+cat("   When this was written, what remained assumed was (ii), an area-proportional entropy with\n")
+cat("   a universal coefficient, and the universality half of (iv), both as in the original. Both\n")
+cat("   are derived now (area_law_from_fold.R, eta_is_universal.R, universality_local_fold.R),\n")
+cat("   and the manuscript counts them as derived. What remains assumed is (iii), the Clausius\n")
+cat("   relation itself, and the measured value of eta.\n")
 cat("   One thing the re-derivation makes visible that a citation would not: the acceleration\n")
 cat("   kappa cancels between the two sides, so the result does not depend on how hard the\n")
 cat("   observer accelerates, which is what lets a local statement become a field equation.\n")

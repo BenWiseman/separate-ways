@@ -8,6 +8,12 @@
 # CONJUGATE LOCUS and suggested that, since a conjugate locus is where the Van Vleck
 # determinant diverges and therefore where an induced-gravity cutoff would have to sit, the
 # fold draws its own cutoff. That suggestion is tested here before anything is built on it.
+#
+# 2026-10-06: section 4's verdict is the state of the argument when this was written. Two of its
+# NOT-supplied lines have since been supplied: area_law_from_fold.R gives the entropy law from the
+# entanglement of the state the fold requires, eta_is_universal.R gives the same eta at every
+# horizon, and universality_local_fold.R gives horizons away from the fold's fixed locus. The
+# section now says so after its verdict; nothing computed here changed.
 
 M <- 1
 
@@ -95,6 +101,10 @@ cat("   field equations become a consequence of the fold plus one constant, rath
 cat("   consequence of the fold plus a temperature plus an entropy law plus a constant.\n")
 cat("   That is the whole claim. It is one input short of a derivation and it is not\n")
 cat("   presented as one.\n")
+cat("   That was the ledger when this was written and is not the ledger now. The entropy law\n")
+cat("   and its coefficient's universality are derived in area_law_from_fold.R and\n")
+cat("   eta_is_universal.R, and the horizons off the fixed locus in universality_local_fold.R.\n")
+cat("   What the fold does not supply is the value of eta, 1/4G, which is measured.\n")
 
 cat("\n=== 5. what the fold's own stress does to that ledger ===\n")
 cat("   image_stress_conformal.R found the fold's image stress proportional to (1 - 6 xi).\n")
