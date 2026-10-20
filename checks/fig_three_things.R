@@ -105,7 +105,10 @@ draw <- function() {
 }
 
 for (dev in c("pdf", "png")) {
-  out <- sprintf("pub/paper2/fig_three_things.%s", dev)
+  # No manuscript draws this figure. In the exported repository there is no pub/paper2, and
+  # writing there failed gate 7 of the public pass; there it goes to a temporary directory.
+  odir <- if (dir.exists("pub/paper2")) "pub/paper2" else tempdir()
+  out <- sprintf("%s/fig_three_things.%s", odir, dev)
   if (dev == "pdf") pdf(out, width = 10.2, height = 4.9, pointsize = 12)
   else png(out, width = 10.2, height = 4.9, units = "in", res = 200, pointsize = 12)
   draw(); invisible(dev.off())

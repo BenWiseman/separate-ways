@@ -1,0 +1,50 @@
+=== two half-crossings with a massless stretch between them ===
+   x = 0.6: n_vac = 0.06539; in-vacuum P from 3.99e-06 to 0.24445 (4n(1-n) = 0.24446);
+            phase-averaged n* = 0.032123, elliptic formula 0.032123, n_vac/2 = 0.032695
+   x = 0.6: in-vacuum oscillates between 0 and 4n(1-n)                      yes
+   x = 0.6: phase average of n* equals the elliptic formula                 yes
+   plant: dropping the (1 - n) factor fails                                 yes
+   x = 0.6: no phase lets the bound exceed the massless vacuum's n          yes
+   x = 1.2: n_vac = 0.01312; in-vacuum P from 1.29e-06 to 0.05177 (4n(1-n) = 0.05177);
+            phase-averaged n* = 0.006536, elliptic formula 0.006536, n_vac/2 = 0.006558
+   x = 1.2: in-vacuum oscillates between 0 and 4n(1-n)                      yes
+   x = 1.2: phase average of n* equals the elliptic formula                 yes
+   plant: dropping the (1 - n) factor fails                                 yes
+   x = 1.2: no phase lets the bound exceed the massless vacuum's n          yes
+
+=== the sudden limit: massless vacuum at the start of the radiation era ===
+   I = 0.0642, C_M = I/pi^1.5 = 0.0115, M = 491.6 (I_*/I)^(2/5) = 257.6 PeV, I/I_BNNP(0.06305) = 1.018
+   sudden limit gives 257.6 PeV                                             yes
+
+=== the ceiling over all CPT-invariant states, against the massless vacuum ===
+   t_rh =  0.001: I_vac = 0.06405, I_ceiling = 0.03125, mass ratio (I_vac/I_ceil)^(2/5) = 1.333
+   t_rh =  0.100: I_vac = 0.05193, I_ceiling = 0.02531, mass ratio (I_vac/I_ceil)^(2/5) = 1.333
+   t_rh =  0.374: I_vac = 0.02765, I_ceiling = 0.01362, mass ratio (I_vac/I_ceil)^(2/5) = 1.327
+   t_rh =  1.000: I_vac = 0.00307, I_ceiling = 0.00154, mass ratio (I_vac/I_ceil)^(2/5) = 1.320
+   t_rh =  2.000: I_vac = 0.00011, I_ceiling = 0.00005, mass ratio (I_vac/I_ceil)^(2/5) = 1.320
+   t_rh =  4.000: I_vac = 0.00001, I_ceiling = 0.00000, mass ratio (I_vac/I_ceil)^(2/5) = 1.320
+   the ceiling state always makes fewer particles than the massless vacuum  yes
+
+=== what a population at the bang weighs, against the plasma ===
+   N1 at the bang has energy (30/(pi^4 g*)) kappa^4 Int x^3 p dx relative to the plasma. The e-folds
+   above which that exceeds the plasma, for the state that saturates the bound and for the least
+   population that moves production by ten per cent up (random phases) or down (tuned phases):
+      T_rh 1.87e+13, H_inf 1e+10: Int x^3 p = 1.4e-02, 1.6e-03, 1.2e-04 -> N = 12.7 (bound), 13.2 (up), 13.8 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 1.0e-04 -> N = 13.9; at N = 15 the largest allowed change is 1.1% (10% e^{-2(15 - N)})
+      T_rh 1.87e+13, H_inf 1e+12: Int x^3 p = 1.3e-02, 2.3e-03, 1.3e-04 -> N = 11.9 (bound), 12.3 (up), 13.1 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 1.1e-04 -> N = 13.1; at N = 15 the largest allowed change is 0.2% (10% e^{-2(15 - N)})
+      T_rh 1.87e+13, H_inf 1e+13: Int x^3 p = 1.3e-02, 2.3e-03, 1.2e-04 -> N = 11.5 (bound), 12.0 (up), 12.7 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 1.1e-04 -> N = 12.7; at N = 15 the largest allowed change is 0.1% (10% e^{-2(15 - N)})
+      T_rh 5.00e+13, H_inf 1e+10: Int x^3 p = 4.9e-02, 5.0e-03, 3.9e-04 -> N = 12.9 (bound), 13.4 (up), 14.1 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 3.1e-04 -> N = 14.1; at N = 15 the largest allowed change is 1.8% (10% e^{-2(15 - N)})
+      T_rh 5.00e+13, H_inf 1e+12: Int x^3 p = 4.7e-02, 6.6e-03, 4.1e-04 -> N = 12.1 (bound), 12.6 (up), 13.3 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 3.4e-04 -> N = 13.3; at N = 15 the largest allowed change is 0.4% (10% e^{-2(15 - N)})
+      T_rh 5.00e+13, H_inf 1e+13: Int x^3 p = 4.7e-02, 6.6e-03, 4.1e-04 -> N = 11.7 (bound), 12.2 (up), 12.9 (down)
+         tuned phases raising production ten per cent: Int x^3 p = 3.4e-04 -> N = 13.0; at N = 15 the largest allowed change is 0.2% (10% e^{-2(15 - N)})
+   the tuned-phase optimum reaches the ten per cent target                  yes
+   at N = 12.6, H_inf = 1e12, T_rh = 1.87e13: x at the bang = 1.06e+06 x; P = exp(-pi 1.1e+12); 1/(16 x^4) = 5.0e-26
+   without inflation kappa = sqrt(pi M sqrt(g*/15)/mu) = 2.63e-05 (M = 491.6 PeV)
+   with 60 e-folds the dark-matter modes sit at k/(aT) = 8.0e+21 at the bang
+   at 14 e-folds a ten per cent change either way outweighs the plasma (last case) yes
+   plant: at 8 e-folds it does not, so the test can fail                    yes
+exit 0

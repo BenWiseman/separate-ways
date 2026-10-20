@@ -1,0 +1,1208 @@
+---
+title: "Independent check of Separate Ways v6 in R"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_folding: hide
+params:
+  full_modes: false
+  author_checker_timeout: 900
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, comment = "")
+T_START <- Sys.time(); CPU_START <- proc.time()
+suppressPackageStartupMessages(library(cubature))
+for (f in c("verify_v6_core.R", "verify_v6_amplitudes.R", "verify_v6_modes.R")) source(f)
+```
+
+```{css, echo = FALSE}
+td code { white-space: pre-wrap; word-break: break-word; }
+```
+
+# About this report
+
+This report recomputes the numbers that Sections 2 to 5 and Appendices A, B and C of *Separate
+Ways and the Upside Down* print, in R and without running the author's Python. The Python scripts were
+read only for the method and the inputs. Each number the paper prints stands beside the value
+computed here, with a tolerance, and is marked PASS or FAIL; the words of the paper that carry the
+number are quoted beside it. A section of planted errors then shows that each check can fail.
+
+To run it, from the directory that holds this file:
+
+```
+Rscript -e 'rmarkdown::render("VERIFY_v6.Rmd")'
+```
+
+It needs R with rmarkdown, knitr and cubature, and the three helper files `verify_v6_core.R`,
+`verify_v6_amplitudes.R` and `verify_v6_modes.R` beside it. The R code takes about 10 s of
+processor time on one core, and the author's checker in the last section a few seconds more. The
+parameter `full_modes`, off by default, repeats the mode integration with twice the nodes, a later
+end time and half the step, and doubles the R time:
+
+```
+Rscript -e 'rmarkdown::render("VERIFY_v6.Rmd", params = list(full_modes = TRUE))'
+```
+
+Numbers from Section 6 of the paper (observations) are left out, except the neutrino line at half
+the ceiling mass, which follows from the ceiling. Literature values that the paper compares with
+(Clery et al., Bernal et al., Garny et al., Tang and Wu, Boyle, Turok and Vaibhav, Han, Lykken and
+Zhang, Shaposhnikov et al.) are read from those papers and marked as quoted.
+
+# Comparison rule
+
+Every comparison goes through one function, `judge()`. A check passes when the computed value lies
+within the tolerance of the paper's value, and fails otherwise, including when the computed value
+is missing or infinite. For a number the paper prints, the tolerance is half a unit in its last
+printed digit, so `1.20e-2` admits 1.195e-2 to 1.205e-2. Exact forms such as π/15 are compared at a
+relative tolerance of 1e-10 or as stated, and identities that should vanish at an absolute
+tolerance. The column *In text* says whether the quoted words occur, verbatim up to white space, in
+the paper source found beside this file: **`r if (is.na(PAPER_FILE)) "none found" else PAPER_FILE`**.
+
+# Code
+
+The helper files hold the comparison rule, the inputs, the Dirac algebra and stress tensors, and
+the mode solver. They are sourced, in this order, before anything else runs, and shown here.
+
+```{r core, code = readLines("verify_v6_core.R"), eval = FALSE}
+```
+
+```{r amplitudes, code = readLines("verify_v6_amplitudes.R"), eval = FALSE}
+```
+
+```{r modes-code, code = readLines("verify_v6_modes.R"), eval = FALSE}
+```
+
+# Inputs
+
+Physical constants, as the author's scripts and the paper state them. Only these enter below.
+
+```{r inputs}
+const_table()
+```
+
+```{r inputs-derived}
+s0_GeV3 <- K("s0_cm3") * K("hbarc")^3
+kT0 <- K("kB") * K("T0_K") * 1e-9                                  # GeV
+s0_from_T0 <- (2 * pi^2 / 45) * (43 / 11) * (kT0 / K("hbarc"))^3    # cm^-3, g*s = 43/11
+rho_s <- K("rho_DM") / s0_GeV3                                     # rho_DM,0 / s0 in GeV
+
+chk("inp-1", "inp", "mu = (4 pi G/3)^(-1/2) = sqrt(3/4 pi) M_Pl, GeV", MU, "5.965e18",
+    quote = r"($\mu=(4\pi G/3)^{-1/2}=\sqrt6\,M_P=5.965\times10^{18}$ GeV)", where = "Section 4.2")
+chk("inp-2", "inp", "sqrt(6) M_P with M_P = 2.435e18 GeV", sqrt(6) * K("M_P"), "5.965e18",
+    quote = r"($\mu=(4\pi G/3)^{-1/2}=\sqrt6\,M_P=5.965\times10^{18}$ GeV)", where = "Section 4.2")
+chk("inp-3", "inp", "s0 = 2891.2 cm^-3 in GeV^3", s0_GeV3, "2.2215e-38",
+    quote = r"($s_0=2891.2$ cm$^{-3}=2.2215\times10^{-38}$ GeV$^3$)", where = "Section 4.2")
+chk("inp-4", "inp", "s0 rebuilt from T0 = 2.7255 K, (2 pi^2/45)(43/11) T0^3, cm^-3, against the standard 2891.2", s0_from_T0, 2891.2,
+    rel = 1e-4, label = "2891.2 to 1e-4", quote = r"($s_0=2891.2$ cm$^{-3}=2.2215\times10^{-38}$ GeV$^3$ for $T_0=2.7255$ K)", where = "Section 4.2")
+show_checks("inp")
+```
+
+With $g_{*s}=43/11$ the stated $T_0=2.7255$ K gives `r sprintf("%.2f", s0_from_T0)` cm$^{-3}$, and
+with $g_{*s}$ rounded to 3.909 it gives `r sprintf("%.2f", s0_from_T0 * 3.909 / (43 / 11))` cm$^{-3}$.
+The standard value, 2891.2 cm$^{-3}$, uses $g_{*s}=3.909$. Everything below uses it; the larger value would lower the mass ceiling by
+`r sprintf("%.4f", 100 * (1 - (K("s0_cm3") / s0_from_T0)^0.4))` per cent.
+
+# Mode equation near the bang
+
+Section 3 writes each helicity component of a mode as
+$i\,\partial_t\psi=(t\,\sigma_z+x\,\sigma_x)\psi$ with $t=\sqrt{Ma_1}\,\eta$ and
+$x=p/\sqrt{Ma_1}$. The solver here is a fourth-order Runge-Kutta integration written in R
+(`rk4_modes`), with each end point corrected to first order in the adiabatic expansion. Three
+states are followed:
+
+* the in-vacuum: a full sweep from $t=-T$ to $+T$, started in the ground level;
+* the family $\psi(0)\propto(1,e^{i\varphi})$: the two basis states are evolved from $t=0$, and the
+  late occupation $n(\varphi)$ is minimised and maximised over $\varphi$ in closed form;
+* the massless vacuum at the bang, $\varphi=\pi$, the ground state of $x\sigma_x$.
+
+```{r modes-run}
+t_modes <- Sys.time()
+fm <- isTRUE(params$full_modes)
+## Gauss-Legendre nodes: two panels of 24 on [0, 4], 24 on [4, 10], 24 on [0, 3] (twice as many with full_modes)
+nq <- if (fm) 48 else 24
+q_main <- gl_nodes(0, 4, nq, 2); q_tail <- gl_nodes(4, 10, nq); q_sweep <- gl_nodes(0, 3, nq)
+x_main <- q_main$x; x_tail <- q_tail$x
+T_main <- if (fm) 40 else 30
+step_c <- if (fm) 0.01 else 0.02
+sweep <- full_sweep(q_sweep$x, T = 20, c = 1.5 * step_c)
+hc <- half_crossing(x_main, T = T_main, c = step_c)
+hc_tail <- half_crossing(x_tail, T = 40, c = 1.5 * step_c)
+glq <- function(q, y) sum(q$w * y)
+
+## full sweep: excitation probability against Landau-Zener
+dev_P <- max(abs(sweep$P - exp(-pi * sweep$x^2)))
+I_in_rk <- glq(q_sweep, sweep$x^2 * sweep$P) / sqrt(pi)            # tail beyond x = 3 is below 1e-12
+I_in_cf <- 1 / (4 * pi^1.5)
+
+## the family: least occupation over the phase, against the half-angle formula
+dev_nstar <- max(abs(hc$nmin - n_star(x_main)))
+dev_edge <- max(abs(hc$nmin + hc$nmax - 1))
+I_star_cf <- integrate(function(x) x^2 * n_star(x), 0, Inf, rel.tol = 1e-13)$value / sqrt(pi)
+I_star_rk <- glq(q_main, x_main^2 * hc$nmin) / sqrt(pi)            # tail beyond x = 4 is below 1e-20
+
+## massless vacuum: mode integration against the Gamma-function form, the 1/(16 x^4) tail, and I
+hc10 <- half_crossing(10, T = 40, c = 1.5 * step_c)
+dev_nvac <- max(abs(c(hc$nvac - n_vac_cf(x_main), hc_tail$nvac - n_vac_cf(x_tail), hc10$nvac - n_vac_cf(10))))
+tail16 <- 16 * 10^4 * hc10$nvac
+I_vac_rk <- (glq(q_main, x_main^2 * hc$nvac) + glq(q_tail, x_tail^2 * hc_tail$nvac) +
+             1 / (16 * 10)) / sqrt(pi)                              # beyond x = 10: Int x^2/(16 x^4)
+I_vac_cf <- (integrate(function(x) x^2 * n_vac_cf(x), 0, 40, rel.tol = 1e-11, subdivisions = 500)$value +
+             1 / (16 * 40)) / sqrt(pi)
+t_modes <- as.numeric(difftime(Sys.time(), t_modes, units = "secs"))
+
+chk("mode-1", "mode", "full sweep: largest |P - exp(-pi x^2)| at the nodes", dev_P, 0, tol = 1e-6, label = "0",
+    quote = r"(ends in the excited state with probability $P=e^{-\pi x^2}$)", where = "Section 3.1")
+chk("mode-2", "mode", "I_in from the mode integration", I_in_rk, "0.04490",
+    quote = r"($I_{\rm in}=1/(4\pi^{3/2})=0.04490$)", where = "Section 3.2")
+chk("mode-3", "mode", "I_in = 1/(4 pi^(3/2))", I_in_cf, "0.04490",
+    quote = r"($I_{\rm in}=1/(4\pi^{3/2})=0.04490$)", where = "Section 3.2")
+chk("mode-4", "mode", "least occupation over the family: largest |n_min - n_*| at the nodes", dev_nstar, 0,
+    tol = 1e-6, label = "0", quote = r"(n_*(x)=\tfrac12\Bigl(1-\sqrt{1-e^{-\pi x^2}}\Bigr))", where = "Section 3.2")
+chk("mode-5", "mode", "upper edge of the family: largest |n_min + n_max - 1|", dev_edge, 0, tol = 1e-6, label = "0",
+    quote = r"(the late occupation of a mode runs between $n_*$ and $1-n_*$)", where = "Appendix A")
+chk("mode-6", "mode", "I_* from the closed form", I_star_cf, "0.0127597",
+    quote = r"(which for this state is $I_*=0.0127597$)", where = "Section 3.2")
+chk("mode-7", "mode", "I_* from the mode integration", I_star_rk, "0.0127597",
+    quote = r"(which for this state is $I_*=0.0127597$)", where = "Section 3.2")
+chk("mode-8", "mode", "massless vacuum: largest |n_vac(RK) - Gamma-function form|, x from 0 to 10", dev_nvac, 0,
+    tol = 1e-6, label = "0", where = "cross-check")
+chk("mode-9", "mode", "massless vacuum: 16 x^4 n_vac at x = 10", tail16, 1, rel = 1e-3, label = "1",
+    quote = r"(its occupation falls only as $1/(16x^4)$)", where = "Section 3.2")
+chk("mode-10", "mode", "massless vacuum: I from the mode integration plus the 1/(16 x^4) tail", I_vac_rk, "0.0642",
+    quote = r"(its occupation falls only as $1/(16x^4)$, and $I=0.0642$)", where = "Section 3.2")
+chk("mode-11", "mode", "massless vacuum: I from the Gamma-function form", I_vac_cf, "0.0642",
+    quote = r"(its occupation falls only as $1/(16x^4)$, and $I=0.0642$)", where = "Section 3.2")
+show_checks("mode")
+```
+
+The half crossing took `r hc$nstep` Runge-Kutta steps to the end time $T=`r T_main`$ for
+`r length(x_main)` momenta at once, and the whole section `r sprintf("%.1f", t_modes)` s. The
+integrals over $x$ use Gauss-Legendre nodes, at which the solver is evaluated directly. The Gamma-function form of the
+massless-vacuum occupation,
+$n=\tfrac12[1-\sqrt{1-e^{-\pi x^2}}\cos\vartheta]$ with
+$\vartheta=\tfrac\pi4+\arg\Gamma(\tfrac12+\tfrac{ix^2}4)-\arg\Gamma(1+\tfrac{ix^2}4)$, is evaluated
+with a complex log-gamma written here; the mode integration does not use it, and the two agree to
+`r tex_sci(dev_nvac, 2)`.
+
+# Mass ceiling
+
+Section 4.2 turns the production integral into a mass,
+$M^{5/2}=(\rho_{\rm DM,0}/s_0)(2\pi^2/45)\,g_*^{1/4}\,15^{3/4}\mu^{3/2}/I$. The formula is first
+rebuilt from its parts: the comoving number $na^3=(Ma_1/\pi)^{3/2}I$, the radiation-era slope
+$a_1=(aT)^2\pi\sqrt{g_*/15}/\mu$ and the entropy $sa^3=(2\pi^2/45)g_*(aT)^3$, solved for $M$ at two
+values of $aT$ to show that $aT$ drops out.
+
+```{r mass}
+mass_by_parts <- function(I, aT) {
+  a1 <- function(M) aT^2 * pi * sqrt(K("gstar") / 15) / MU
+  f <- function(lM) { M <- exp(lM); M * (M * a1(M) / pi)^1.5 * I / ((2 * pi^2 / 45) * K("gstar") * aT^3) - rho_s }
+  exp(uniroot(f, c(log(1e3), log(1e12)), tol = 1e-14)$root)
+}
+M_star <- mass_from_I(I_star_cf)
+M_star_rk <- mass_from_I(I_star_rk)
+M_parts <- c(mass_by_parts(I_star_cf, 1), mass_by_parts(I_star_cf, 7.3))
+Omega_from_rho <- K("rho_DM") / (K("rho_crit") * K("hbarc")^3)
+M_planck <- M_star * (K("Omega_c") / Omega_from_rho)^0.4
+dM_planck <- 0.4 * K("Omega_err") / K("Omega_c") * M_planck
+M_bft_s0 <- mass_from_I(I_star_cf, s0 = K("s0_BFT"))
+M_F2 <- M_star * 2^0.4
+dM_g <- mass_from_I(I_star_cf, g = 110.25) - M_star
+
+chk("mass-1", "mass", "M from the formula against M from its parts, aT = 1 and 7.3 (largest relative gap)",
+    max(abs(M_parts / M_star - 1)), 0, tol = 1e-9, label = "0",
+    quote = r"(Since the factors of $aT$ cancel)", where = "Section 4.2")
+chk("mass-2", "mass", "M_* from I_* (closed form), PeV", M_star / 1e6, "491.6",
+    quote = r"(M_*=491.6\ {\rm PeV})", where = "Section 4.2")
+chk("mass-3", "mass", "M_* from I_* (mode integration), PeV", M_star_rk / 1e6, "491.6",
+    quote = r"(M_*=491.6\ {\rm PeV})", where = "Section 4.2")
+chk("mass-4", "mass", "Omega_c h^2 of rho_DM,0 = 9.7e-48 GeV^4", Omega_from_rho, "0.1198",
+    quote = r"(Boyle, Finn and Turok's $\rho_{\rm DM,0}$ corresponds to $\Omega_ch^2=0.1198$)", where = "Section 4.2")
+chk("mass-5", "mass", "M at Planck's Omega_c h^2 = 0.1200, PeV", M_planck / 1e6, "491.9",
+    quote = r"(gives $491.9\pm2.0$ PeV)", where = "Section 4.2")
+chk("mass-6", "mass", "its error from 0.0012, PeV", dM_planck / 1e6, "2.0",
+    quote = r"(gives $491.9\pm2.0$ PeV)", where = "Section 4.2")
+chk("mass-7", "mass", "every mass at Planck's value over the same at the paper's: 491.9 over 491.6", M_planck / M_star,
+    491.9 / 491.6, rel = 2e-4, label = "491.9/491.6", quote = r"(would rise in the same proportion)", where = "Section 4.2")
+chk("mass-8", "mass", "M with s0 = 2.3e-38 GeV^3, PeV", M_bft_s0 / 1e6, "484.8",
+    quote = r"(which on its own gives 484.8 PeV)", where = "Section 4.2")
+chk("mass-9", "mass", "the same, GeV, against Boyle, Finn and Turok's figure", M_bft_s0, "4.8e8",
+    quote = r"(Their own $4.8\times10^8$ GeV)", where = "Section 4.2")
+chk("mass-10", "mass", "entropy release F = 2: M_* 2^(2/5), PeV", M_F2 / 1e6, "648.7",
+    quote = r"($F=2$ gives 648.7 PeV)", where = "Section 4.2")
+chk("mass-11", "mass", "g* = 110.25: rise of the ceiling, PeV", dM_g / 1e6, "1.6",
+    quote = r"($g_*=110.25$ and the ceiling rises by 1.6 PeV)", where = "Section 4.2")
+chk("mass-12", "mass", "neutrino line at M_*/2, PeV", M_star / 2e6, "245.8",
+    quote = r"(its neutrino line lies at or below 245.8 PeV)", where = "Abstract")
+show_checks("mass")
+```
+
+With $\mu$ from Newton's constant, $M_*=`r sprintf("%.3f", M_star/1e6)`$ PeV. With
+$\mu=\sqrt6\times2.435\times10^{18}$ GeV instead it is
+`r sprintf("%.3f", mass_from_I(I_star_cf, mu = sqrt(6) * K("M_P"))/1e6)` PeV, the same to the
+printed digit.
+
+# Operator inequality
+
+Section 4.1 and Appendix A: the Fock space of one pair is built by a Jordan-Wigner construction,
+the before-region operators $a_-=c\,a_++s\,b_+^\dagger$ and $b_-=c\,b_+-s\,a_+^\dagger$ are formed
+with $c^2+s^2=1$ and $s^2=P$, and the statements of the lemma are checked for
+$P=0.05,0.2,0.5,0.8,0.95$. Each entry below is the worst case over these values of $P$.
+
+```{r lemma}
+sm <- matrix(c(0, 0, 1, 0), 2)           # lowering operator on one mode, basis (|0>, |1>)
+Zp <- diag(c(1, -1)); Id2 <- diag(2)
+jw <- function(k, n) Reduce(kronecker, c(rep(list(Zp), k), list(sm), rep(list(Id2), n - k - 1)))
+dag <- function(A) t(Conj(A))
+acomm <- function(A, B) A %*% B + B %*% A
+set.seed(7)
+worst <- c(car = 0, formula = 0, eig = 0, block = 0, saturate = 0, below = 0, qblock = 0)
+vac_below <- TRUE
+for (P in c(0.05, 0.2, 0.5, 0.8, 0.95)) {
+  cc <- sqrt(1 - P); ss <- sqrt(P); ns <- (1 - sqrt(1 - P)) / 2
+  a <- jw(0, 2); b <- jw(1, 2)
+  am <- cc * a + ss * dag(b); bm <- cc * b - ss * dag(a)
+  car <- max(Mod(acomm(am, dag(am)) - diag(4)), Mod(acomm(bm, dag(bm)) - diag(4)),
+             Mod(acomm(am, bm)), Mod(acomm(am, dag(bm))))
+  Np <- (dag(a) %*% a + dag(b) %*% b) / 2; Nm <- (dag(am) %*% am + dag(bm) %*% bm) / 2
+  Q <- (Np + Nm) / 2
+  form <- max(Mod(Nm - ((1 - 2 * P) * Np + P * diag(4) + cc * ss * (dag(a) %*% dag(b) + b %*% a))))
+  ev <- sort(eigen(Q, symmetric = TRUE)$values)
+  even <- Q[c(1, 4), c(1, 4)]
+  qblock <- max(abs(abs(even) - matrix(c(P / 2, cc * ss / 2, cc * ss / 2, 1 - P / 2), 2)))
+  v0 <- eigen(Q, symmetric = TRUE)$vectors[, 4]
+  sat <- max(abs(c(t(v0) %*% Np %*% v0, t(v0) %*% Nm %*% v0) - ns))
+  ## random density matrices, mixed with an eigenvector of N+ - N- so that <N+> = <N->
+  D <- Np - Nm; eD <- eigen(D, symmetric = TRUE)
+  low <- Inf
+  for (k in 1:2000) {
+    X <- matrix(rnorm(16), 4) + 1i * matrix(rnorm(16), 4); rho <- X %*% dag(X); rho <- rho / Re(sum(diag(rho)))
+    d <- Re(sum(diag(rho %*% D)))
+    u <- if (d > 0) eD$vectors[, 4] else eD$vectors[, 1]; du <- Re(sum(Conj(u) * (D %*% u)))
+    lam <- d / (d - du); rho <- (1 - lam) * rho + lam * outer(u, Conj(u))
+    low <- min(low, Re(sum(diag(rho %*% Np))) - ns)
+  }
+  vac <- c(1, 0, 0, 0)
+  vac_below <- vac_below && (sum(vac * (Np %*% vac)) < ns)
+  worst <- pmax(worst, c(car, form, max(abs(ev - c(ns, 0.5, 0.5, 1 - ns))),
+                         max(abs(sum(diag(even)) - 1), abs(det(even) - P / 4)), sat, max(0, -low), qblock))
+}
+## both helicities of one momentum pair: four modes, sixteen states
+worst16 <- c(min_eig = 0, sp = 0, sm = 0, vacs = 0); helicity_below <- TRUE
+for (P in c(0.2, 0.5, 0.8)) {
+  cc <- sqrt(1 - P); ss <- sqrt(P); ns <- (1 - sqrt(1 - P)) / 2
+  A1 <- jw(0, 4); B1 <- jw(1, 4); A2 <- jw(2, 4); B2 <- jw(3, 4)
+  sector <- function(a, b) { am <- cc * a + ss * dag(b); bm <- cc * b - ss * dag(a)
+    list(Np = (dag(a) %*% a + dag(b) %*% b) / 2, Nm = (dag(am) %*% am + dag(bm) %*% bm) / 2, am = am, bm = bm) }
+  s1 <- sector(A1, B1); s2 <- sector(A2, B2)
+  Qsum <- (s1$Np + s1$Nm + s2$Np + s2$Nm) / 2
+  me <- min(eigen(Qsum, symmetric = TRUE)$values)
+  ## after-vacuum in helicity h, before-vacuum (c - s A2^dag B2^dag)|0> in helicity -h
+  psi <- (cc * diag(16) - ss * dag(A2) %*% dag(B2))[, 1]
+  ex <- function(O) Re(sum(Conj(psi) * (O %*% psi)))
+  vacs <- max(Mod(s2$am %*% psi), Mod(s2$bm %*% psi), Mod(A1 %*% psi), Mod(B1 %*% psi))
+  worst16 <- pmax(worst16, c(abs(me - 2 * ns), abs(ex(s1$Np + s2$Np) - P), abs(ex(s1$Nm + s2$Nm) - P), vacs))
+  helicity_below <- helicity_below && ex(s1$Np) < ns - 1e-6
+}
+
+chk("lem-1", "lem", "anticommutation relations of a_-, b_- (largest error)", worst[["car"]], 0, tol = 1e-14, label = "0",
+    quote = r"(the anticommutation relations hold to $10^{-14}$)", where = "Appendix A")
+chk("lem-2", "lem", "N_- = (1-2P) N_+ + P + cs(a^dag b^dag + b a) (largest error)", worst[["formula"]], 0, tol = 1e-13,
+    label = "0", quote = r"(N_-=(1-2P)\,N_++P+cs\,\bigl(a_+^\dagger b_+^\dagger+b_+a_+\bigr))", where = "Section 4.1")
+chk("lem-3", "lem", "even block of Q: trace 1 and determinant P/4 (largest error)", worst[["block"]], 0, tol = 1e-13,
+    label = "0", quote = r"(with trace 1 and determinant $P/4$)", where = "Section 4.1")
+chk("lem-3b", "lem", "even block of Q against [[P/2, cs/2], [cs/2, 1 - P/2]] (largest error, off-diagonal in modulus)",
+    worst[["qblock"]], 0, tol = 1e-13, label = "0",
+    quote = r"(Q=\bigl(\begin{smallmatrix}P/2&cs/2\\cs/2&1-P/2\end{smallmatrix}\bigr))", where = "Section 4.1")
+chk("lem-4", "lem", "eigenvalues of Q against {n_*, 1/2, 1/2, 1 - n_*} (largest error)", worst[["eig"]], 0,
+    tol = 1e-13, label = "0", quote = r"(Q\ \text{has eigenvalues}\ \{n_*,\tfrac12,\tfrac12,1-n_*\})", where = "Section 4.1")
+chk("lem-5", "lem", "eigenvector at n_*: <N+> = <N-> = n_* (largest error)", worst[["saturate"]], 0, tol = 1e-12,
+    label = "0", quote = r"(the eigenvector at $n_*$ has $\langle N_+\rangle=\langle N_-\rangle=n_*$)", where = "Appendix A")
+chk("lem-6", "lem", "2000 random states per P with <N+> = <N->: depth below n_*", worst[["below"]], 0, tol = 1e-12,
+    label = "0", quote = r"(Q\succeq n_*\,\mathbf 1)", where = "Section 4.1")
+chk("lem-7", "lem", "the after-vacuum, not invariant, sits below n_* (1 = yes)", as.numeric(vac_below), 1, tol = 0,
+    label = "1", quote = r"(the vacuum of the after-region, which is not invariant, sits below $n_*$)", where = "Appendix A")
+chk("lem-8", "lem", "16 states: least eigenvalue of Q(h) + Q(-h) minus 2 n_*", worst16[["min_eig"]], 0, tol = 1e-12,
+    label = "0", quote = r"($Q^{(h)}+Q^{(-h)}$ has least eigenvalue $2n_*$)", where = "Appendix A")
+chk("lem-9", "lem", "after-vacuum in h, before-vacuum in -h: |<S+> - P| and |<S-> - P|",
+    max(worst16[["sp"]], worst16[["sm"]]), 0, tol = 1e-12, label = "0",
+    quote = r"(has $\langle S_+\rangle=\langle S_-\rangle=P\ge2n_*$)", where = "Appendix A")
+chk("lem-10", "lem", "that state is annihilated by a_+, b_+ (h) and a_-, b_- (-h) (largest residual)",
+    worst16[["vacs"]], 0, tol = 1e-12, label = "0", where = "construction")
+chk("lem-11", "lem", "its first helicity alone sits below n_* (1 = yes)", as.numeric(helicity_below), 1, tol = 0,
+    label = "1", quote = r"(while its first helicity alone sits below $n_*$)", where = "Appendix A")
+show_checks("lem")
+```
+
+# No floor
+
+Section 4.3 and Table A.1: a state at the upper edge of the family, $n=1-n_*$, below $x_c$ and at
+the half-angle state above. The rows of Table A.1 sit at $x_c=k/\sqrt\pi$ with
+$k=0.25,0.5,0.75,1,1.5,2,3$, Boyle, Finn and Turok's variable $\sqrt\pi\,x$; the printed $x_c$ are
+these values to three decimals, and the integrals below use the unrounded ones.
+
+```{r no-floor}
+I_state <- function(xc) {
+  lo <- if (xc > 0) integrate(function(x) x^2 * (1 - n_star(x)), 0, xc, rel.tol = 1e-12)$value else 0
+  hi <- integrate(function(x) x^2 * n_star(x), xc, Inf, rel.tol = 1e-12)$value
+  (lo + hi) / sqrt(pi)
+}
+tabA1 <- data.frame(k = c(0.25, 0.5, 0.75, 1, 1.5, 2, 3),
+                    xc_p = c("0.141", "0.282", "0.423", "0.564", "0.846", "1.128", "1.693"),
+                    r_p = c("1.008", "1.119", "1.574", "2.700", "8.312", "20.256", "70.467"),
+                    M_p = c("490.1", "470.0", "410.0", "330.4", "210.7", "147.6", "89.6"))
+tabA1$xc <- tabA1$k / sqrt(pi)
+tabA1$ratio <- vapply(tabA1$xc, I_state, 0) / I_star_cf
+tabA1$M <- M_star * tabA1$ratio^-0.4 / 1e6
+for (i in seq_len(nrow(tabA1))) {
+  row <- with(tabA1[i, ], sprintf("| %s | %s | %s |", xc_p, r_p, M_p))
+  chk(sprintf("floor-%da", i), "floor", sprintf("x_c = %.2f / sqrt(pi)", tabA1$k[i]), tabA1$xc[i], tabA1$xc_p[i],
+      quote = row, where = "Table A.1")
+  chk(sprintf("floor-%db", i), "floor", sprintf("I/I_* at x_c = %.4f", tabA1$xc[i]), tabA1$ratio[i], tabA1$r_p[i],
+      quote = row, where = "Table A.1")
+  chk(sprintf("floor-%dc", i), "floor", sprintf("M at x_c = %.4f, PeV", tabA1$xc[i]), tabA1$M[i], tabA1$M_p[i],
+      quote = row, where = "Table A.1")
+}
+chk("floor-8", "floor", "M at x_c = 1/sqrt(pi), PeV (text)", tabA1$M[4], "330.4",
+    quote = r"(gives 330.4 PeV at $x_c=0.564$, 89.6 PeV at $x_c=1.693$)", where = "Section 4.3")
+chk("floor-9", "floor", "M at x_c = 3/sqrt(pi), PeV (text)", tabA1$M[7], "89.6",
+    quote = r"(gives 330.4 PeV at $x_c=0.564$, 89.6 PeV at $x_c=1.693$)", where = "Section 4.3")
+show_checks("floor")
+```
+
+# Helicity sums
+
+Appendix B: an $s$-channel graviton with $\mathcal L=-h_{\mu\nu}T^{\mu\nu}/M_P$ and the de Donder
+propagator gives $\mathcal M=[T_i^{\mu\nu}T_{f\,\mu\nu}-\tfrac12T_iT_f]/(M_P^2s)$. The stress-tensor
+matrix elements come from explicit helicity spinors in the chiral basis and from helicity
+polarisation vectors; nothing is traced. The tools are checked first: the Clifford algebra, the
+massless Dirac equation, the completeness sums $\sum u\bar u=\sum v\bar v=\not p$, and the helicity
+of the spinors.
+
+```{r tools}
+cliff <- 0
+for (m in 1:4) for (n in 1:4)
+  cliff <- max(cliff, Mod(GAM[[m]] %*% GAM[[n]] + GAM[[n]] %*% GAM[[m]] - 2 * ETA[m, n] * diag(4)))
+th <- 1.1; ph <- 0.7; E <- 0.8; p <- mom(E, th, ph)
+dirac_eq <- max(sapply(c(1, -1), function(h) max(Mod(slash(p) %*% u_sp(E, th, ph, h)), Mod(slash(p) %*% v_sp(E, th, ph, h)))))
+compl <- max(Mod(Reduce(`+`, lapply(c(1, -1), function(h) u_sp(E, th, ph, h) %*% dbar(u_sp(E, th, ph, h)))) - slash(p)),
+             Mod(Reduce(`+`, lapply(c(1, -1), function(h) v_sp(E, th, ph, h) %*% dbar(v_sp(E, th, ph, h)))) - slash(p)))
+Sn <- Reduce(`+`, Map(`*`, SIGMA, nvec(th, ph))); Sig <- blk(Sn, Z2, Z2, Sn)
+heli <- max(Mod(Sig %*% u_sp(E, th, ph, 1) - u_sp(E, th, ph, 1)), Mod(Sig %*% u_sp(E, th, ph, -1) + u_sp(E, th, ph, -1)))
+chk("tool-1", "tool", "Clifford algebra {g^m, g^n} = 2 eta^mn (largest error)", cliff, 0, tol = 1e-14, label = "0", where = "identity")
+chk("tool-2", "tool", "massless Dirac equation for u and v (largest residual)", dirac_eq, 0, tol = 1e-14, label = "0", where = "identity")
+chk("tool-3", "tool", "completeness sums equal p-slash (largest error)", compl, 0, tol = 1e-14, label = "0", where = "identity")
+chk("tool-4", "tool", "helicity of u: Sigma.n u = h u (largest error)", heli, 0, tol = 1e-14, label = "0", where = "identity")
+show_checks("tool")
+```
+
+Each channel ends in one Dirac pair, summed over all spins; $c=\cos\theta$ in the centre of mass,
+$s=1$.
+
+```{r helicity}
+shape <- list(scalar = function(c) c^2 * (1 - c^2) / 8,
+              dirac  = function(c) (4 * c^4 - 3 * c^2 + 1) / 16,
+              vector = function(c) (1 - c^4) / 4)
+cs <- c(-0.9, -0.3, 0.2, 0.7, 0.95)
+dev_shape <- sapply(names(shape), function(ch) max(abs(sapply(cs, function(c) spin_sum(ch, "dirac", c)) - shape[[ch]](cs))))
+phi_dep <- max(abs(sapply(names(shape), function(ch) spin_sum(ch, "dirac", 0.37, phi = 0.3) - spin_sum(ch, "dirac", 0.37, phi = 2.2))))
+## the full matrix of angular integrals: plasma channel (rows) into each kind of dark matter (columns)
+DM <- list(scalar0 = c("scalar", 0), scalar16 = c("scalar", 1 / 6), dirac = c("dirac", 0), vector = c("vector", 0))
+Kmat <- sapply(DM, function(d) sapply(c("scalar", "dirac", "vector"), function(ch)
+  ang_int(function(c) spin_sum(ch, d[[1]], c, xi_out = as.numeric(d[[2]])))))
+Kd <- Kmat[, "dirac"]
+## forward direction
+fwd <- sapply(names(shape), function(ch) spin_sum(ch, "dirac", 1 - 1e-12))
+## gauge-boson vertex with a polarisation replaced by its momentum, and the Feynman-gauge sum
+E <- 0.5; p1 <- mom(E, 0, 0); p2 <- mom(E, pi, 0)
+ward <- max(sapply(final_T("dirac", 0.4), function(Tf) Mod(amp(T_vector(p1, p1, p2, eps_h(pi, 0, 1)), Tf))),
+            sapply(final_T("dirac", 0.4), function(Tf) Mod(amp(T_vector(p1, eps_h(0, 0, -1), p2, p2), Tf))))
+feyn <- 0
+for (Tf in final_T("dirac", 0.4)) {
+  A <- matrix(0i, 4, 4)
+  for (i in 1:4) for (j in 1:4) A[i, j] <- amp(T_vector(p1, as.vector(ETA[, i]), p2, as.vector(ETA[, j])), Tf)
+  feyn <- feyn + Re(sum(A * Conj(A) * outer(diag(ETA), diag(ETA))))
+}
+feyn_ratio <- feyn / spin_sum("vector", "dirac", 0.4)
+
+q_shapes <- r"(\textstyle\sum|\mathcal M|^2=\tfrac18c^2(1-c^2),\quad\tfrac1{16}(4c^4-3c^2+1),\quad\tfrac14(1-c^4))"
+q_ints <- r"(the angular integrals are $\pi/15$, $\pi/5$ and $4\pi/5$)"
+chk("hel-1", "hel", "real scalars: largest |sum|M|^2 - c^2(1-c^2)/8| at five angles", dev_shape[["scalar"]], 0, tol = 1e-14, label = "0", quote = q_shapes, where = "Appendix B")
+chk("hel-2", "hel", "Dirac pair: largest |sum|M|^2 - (4c^4-3c^2+1)/16|", dev_shape[["dirac"]], 0, tol = 1e-14, label = "0", quote = q_shapes, where = "Appendix B")
+chk("hel-3", "hel", "gauge bosons: largest |sum|M|^2 - (1-c^4)/4|", dev_shape[["vector"]], 0, tol = 1e-14, label = "0", quote = q_shapes, where = "Appendix B")
+chk("hel-4", "hel", "real scalars: angular integral", Kd[["scalar"]], pi / 15, rel = 1e-10, label = "pi/15", quote = q_ints, where = "Appendix B")
+chk("hel-5", "hel", "Dirac pair: angular integral", Kd[["dirac"]], pi / 5, rel = 1e-10, label = "pi/5", quote = q_ints, where = "Appendix B")
+chk("hel-6", "hel", "gauge bosons: angular integral", Kd[["vector"]], 4 * pi / 5, rel = 1e-10, label = "4 pi/5", quote = q_ints, where = "Appendix B")
+chk("hel-7", "hel", "no dependence on the azimuth (largest difference)", phi_dep, 0, tol = 1e-14, label = "0", where = "identity")
+chk("hel-8", "hel", "scalar and gauge channels vanish along the beam (largest value at c = 1)",
+    max(fwd[["scalar"]], fwd[["vector"]]), 0, tol = 1e-10, label = "0",
+    quote = r"(so the scalar and gauge-boson channels vanish in the forward direction and the fermion channel does not)", where = "Appendix B")
+chk("hel-9", "hel", "fermion channel along the beam", fwd[["dirac"]], 1 / 8, rel = 1e-8, label = "1/8 (nonzero)",
+    quote = r"(so the scalar and gauge-boson channels vanish in the forward direction and the fermion channel does not)", where = "Appendix B")
+chk("hel-10", "hel", "gauge vertex with e -> p, either boson (largest |M|)", ward, 0, tol = 1e-14, label = "0",
+    quote = r"(the vertex built from the field strength vanishes when a polarisation is replaced by its momentum)", where = "Appendix B")
+chk("hel-11", "hel", "Feynman-gauge sum -eta over physical sum", feyn_ratio, 1, rel = 1e-10, label = "1",
+    quote = r"(for it the Feynman-gauge sum $-\eta_{\mu\nu}$ equals the physical one)", where = "Appendix B")
+show_checks("hel")
+```
+
+# Spin-2 universality
+
+With the factor 1/2 for identical particles, the three angular integrals stand
+$\tfrac12\cdot\tfrac\pi{15}:\tfrac\pi5:\tfrac12\cdot\tfrac{4\pi}5=1:6:12$. Because the final pair's
+stress tensor is traceless, only the spin-2 part of the propagator acts, so the same ratio must
+appear in the widths of a massive spin-2 particle into a real scalar pair, a Dirac pair and a pair
+of gauge bosons. The widths are computed here from the same stress tensors, contracted with the
+five polarisation tensors of a massive spin-2 particle at rest, and set beside two published sets,
+quoted and not derived:
+
+* Han, Lykken and Zhang, hep-ph/9811350 (arXiv v4): Eq. (46) $N\kappa^2m^3/160\pi$ for massless gauge
+  bosons; Eq. (49) $\delta\,\kappa^2m^3/80\pi\,(1-4r)^{1/2}(\tfrac{13}{12}+\dots)$ for massive ones, with
+  $\delta=1/2$ for identical particles; Eq. (52) $N_c\kappa^2m^3/320\pi$ for a fermion pair; Eq. (53)
+  $\kappa^2m^3/960\pi$ for a pair of Higgs bosons, with the scalar coupling written for a complex
+  field in their Eq. (34), so that one real scalar pair has half of it;
+* Bernal et al., arXiv:1803.01866, Eqs. (21) to (23) (PRD Eqs. A5 to A7): $g^2m^3/960\pi\Lambda^2$ for a
+  real scalar pair, $g^2m^3/160\pi\Lambda^2$ for a Dirac pair and $13\,g^2m^3/960\pi\Lambda^2$ for a
+  massive vector pair at $r\to0$.
+
+Only ratios are compared, so the normalisation of each paper's coupling drops out.
+
+```{r spin2}
+unit3 <- function(i, j) { M <- matrix(0, 3, 3); M[i, j] <- 1; M }
+pol3 <- list((unit3(1, 2) + unit3(2, 1)) / sqrt(2), (unit3(1, 3) + unit3(3, 1)) / sqrt(2),
+             (unit3(2, 3) + unit3(3, 2)) / sqrt(2), (unit3(1, 1) - unit3(2, 2)) / sqrt(2),
+             (unit3(1, 1) + unit3(2, 2) - 2 * unit3(3, 3)) / sqrt(6))
+pol4 <- lapply(pol3, function(b) { M <- matrix(0, 4, 4); M[2:4, 2:4] <- b; M })
+pol_ok <- max(sapply(seq_along(pol3), function(i) sapply(seq_along(pol3), function(j)
+  abs(sum(pol3[[i]] * pol3[[j]]) - (i == j)))))
+## |eps_{mu nu} T^{mu nu}|^2 for a decay at rest (mass 1) into the pair along n(theta, phi), summed over the
+## final spins and averaged over the five polarisations; the width is S times its angular integral, up to a
+## common factor, with S = 1/2 for identical particles
+decay_sq <- function(kind, c, phi = 0.4) {
+  tot <- 0
+  for (e in pol4) for (T in final_T(kind, c, phi)) tot <- tot + Mod(sum((ETA %*% e %*% ETA) * T))^2
+  tot / 5
+}
+Gam <- c(scalar = 0.5, dirac = 1, vector = 0.5) *
+       sapply(c("scalar", "dirac", "vector"), function(k) ang_int(function(c) decay_sq(k, c)))
+q_univ <- r"(stand $\pi/30:\pi/5:2\pi/5=1:6:12$)"
+q_hlz <- r"(stand 12 to 6 to 2 for a gauge-boson pair, a Dirac pair and a complex scalar pair)"
+chk("spin2-0", "spin2", "polarisation tensors orthonormal (largest error)", pol_ok, 0, tol = 1e-14, label = "0", where = "identity")
+chk("spin2-1", "spin2", "widths: Dirac over real scalar, against the angular integrals", Gam[["dirac"]] / Gam[["scalar"]],
+    Kd[["dirac"]] / (Kd[["scalar"]] / 2), rel = 1e-10, label = "6", quote = q_univ, where = "Appendix C")
+chk("spin2-2", "spin2", "widths: gauge bosons over real scalar, against the angular integrals", Gam[["vector"]] / Gam[["scalar"]],
+    Kd[["vector"]] / Kd[["scalar"]], rel = 1e-10, label = "12", quote = q_univ, where = "Appendix C")
+chk("spin2-3", "spin2", "widths: gauge bosons over Dirac, against Han et al. (46)/(52)", Gam[["vector"]] / Gam[["dirac"]],
+    (1 / 160) / (1 / 320), rel = 1e-10, label = "2 (quoted)", quote = q_hlz, where = "Appendix C")
+chk("spin2-4", "spin2", "widths: complex scalar pair (two real) over Dirac, against Han et al. (53)/(52)",
+    2 * Gam[["scalar"]] / Gam[["dirac"]], (1 / 960) / (1 / 320), rel = 1e-10, label = "1/3 (quoted)", quote = q_hlz, where = "Appendix C")
+chk("spin2-5", "spin2", "massive vector pair at r -> 0 (gauge bosons plus one real scalar) over gauge bosons, against Han et al. (49)/(46)",
+    (Gam[["vector"]] + Gam[["scalar"]]) / Gam[["vector"]], 13 / 12, rel = 1e-10, label = "13/12 (quoted)", where = "literature")
+chk("spin2-6", "spin2", "widths: real scalar over Dirac, against Bernal et al. (21)/(22)", Gam[["scalar"]] / Gam[["dirac"]],
+    (1 / 960) / (1 / 160), rel = 1e-10, label = "1/6 (quoted)", where = "literature")
+chk("spin2-7", "spin2", "massive vector pair at r -> 0 over real scalar, against Bernal et al. (23)/(21)",
+    (Gam[["vector"]] + Gam[["scalar"]]) / Gam[["scalar"]], 13, rel = 1e-10, label = "13 (quoted)",
+    quote = r"(give 13 in place of 12 for vectors far above their mass)", where = "Appendix C")
+chk("spin2-8", "spin2", "the same, for the paper's statement on massive vector dark matter", (Gam[["vector"]] + Gam[["scalar"]]) / Gam[["scalar"]],
+    13, rel = 1e-10, label = "12 + 1", quote = r"(one made far above its mass adds a longitudinal mode)", where = "Section 2")
+show_checks("spin2")
+```
+
+The computed widths stand `r paste(sprintf("%.4g", Gam / Gam[["scalar"]]), collapse = " : ")`, the
+ratio of the angular integrals. Han, Lykken and Zhang's Eq. (53) is the width into a complex scalar
+pair, two real scalars, since their Eq. (34) writes the scalar's stress tensor for a complex field;
+with that reading all four of their widths agree, and so do Bernal et al.'s.
+
+# Thermal integrals
+
+The rate density is
+$R=(1024\pi^6)^{-1}\int f_1f_2E_1E_2\,dE_1\,dE_2\,d\cos\theta_{12}\int\sum|\mathcal M|^2d\Omega$, with
+$\int\sum|\mathcal M|^2d\Omega=K s^2/M_P^4$ from the helicity sums and $s=2E_1E_2(1-\cos\theta_{12})$,
+a factor 1/2 for identical initial bosons, and energies in units of $T$. Each coefficient is done
+two ways: the three-dimensional integral by adaptive cubature, and the closed form
+$\int_0^\infty E^3f\,dE=\Gamma(4)\zeta(4)$ for bosons and $\tfrac78\Gamma(4)\zeta(4)$ for fermions,
+with $\zeta(4)$ summed here, so that the energy and angle integrals give $\tfrac{32}3J_1J_2$.
+
+```{r thermal}
+fB <- function(E) 1 / expm1(E); fF <- function(E) 1 / (exp(E) + 1); fMB <- function(E) exp(-E)
+z4 <- zeta_num(4); z3 <- zeta_num(3)
+moment <- function(f) integrate(function(E) E^3 * f(E), 0, Inf, rel.tol = 1e-12)$value
+JB <- 6 * z4; JF <- (7 / 8) * 6 * z4
+triple <- function(f, tol = 1e-8) hcubature(function(X) {
+  E1 <- X[1, ]; E2 <- X[2, ]; s <- 2 * E1 * E2 * (1 - X[3, ])
+  matrix(f(E1) * f(E2) * E1 * E2 * s^2, nrow = 1) }, c(0, 0, -1), c(50, 50, 1), tol = tol,
+  vectorInterface = TRUE)$integral
+W <- c(B = triple(fB), F = triple(fF), MB = triple(fMB))
+w_ch <- c(scalar = 0.5, dirac = 1, vector = 0.5)       # identical initial bosons; a Dirac pair is not
+per_num <- w_ch * Kd * W[c("B", "F", "B")] / (1024 * pi^6)
+per <- w_ch * Kd * (32 / 3) * c(JB, JF, JB)^2 / (1024 * pi^6)
+names(per_num) <- names(per) <- names(w_ch)
+N_SM <- c(scalar = 4, dirac = 22.5, vector = 12)        # 45 Weyl fermions count as 22.5 Dirac
+alpha_num <- sum(N_SM * per_num)
+alpha <- sum(N_SM * per)
+alpha_exact <- pi^3 * (1 / 162000 + 49 / 307200 + 1 / 4500)
+alpha_sec4 <- pi^3 * (4 / 648000 + 49 * 45 / 13824000 + 12 / 54000)
+alpha47 <- sum(c(4, 23.5, 12) * per)
+
+q_per <- r"(give $\pi^3/648000$ per real scalar, $49\pi^3/6912000$ per Dirac fermion and $\pi^3/54000$ per gauge boson)"
+chk("therm-1", "therm", "zeta(4) by summation against pi^4/90", z4, pi^4 / 90, rel = 1e-13, label = "pi^4/90", where = "closed form")
+chk("therm-2", "therm", "Int E^3/(e^E - 1) dE by quadrature", moment(fB), JB, rel = 1e-10, label = "6 zeta(4) = pi^4/15", where = "closed form")
+chk("therm-3", "therm", "Int E^3/(e^E + 1) dE by quadrature", moment(fF), JF, rel = 1e-10, label = "(7/8) 6 zeta(4) = 7 pi^4/120", where = "closed form")
+chk("therm-4", "therm", "per real scalar, cubature", per_num[["scalar"]], pi^3 / 648000, rel = 1e-7, label = "pi^3/648000", quote = q_per, where = "Appendix B")
+chk("therm-5", "therm", "per Dirac fermion, cubature", per_num[["dirac"]], 49 * pi^3 / 6912000, rel = 1e-7, label = "49 pi^3/6912000", quote = q_per, where = "Appendix B")
+chk("therm-6", "therm", "per gauge boson, cubature", per_num[["vector"]], pi^3 / 54000, rel = 1e-7, label = "pi^3/54000", quote = q_per, where = "Appendix B")
+chk("therm-7", "therm", "per real scalar, closed form", per[["scalar"]], pi^3 / 648000, rel = 1e-12, label = "pi^3/648000", quote = q_per, where = "Appendix B")
+chk("therm-8", "therm", "per Dirac fermion, closed form", per[["dirac"]], 49 * pi^3 / 6912000, rel = 1e-12, label = "49 pi^3/6912000", quote = q_per, where = "Appendix B")
+chk("therm-9", "therm", "per gauge boson, closed form", per[["vector"]], pi^3 / 54000, rel = 1e-12, label = "pi^3/54000", quote = q_per, where = "Appendix B")
+chk("therm-10", "therm", "alpha (4, 22.5 Dirac, 12) by cubature", alpha_num, alpha_exact, rel = 1e-7,
+    label = "pi^3(1/162000 + 49/307200 + 1/4500)", quote = r"(\alpha=\pi^3\Bigl(\frac{1}{162000}+\frac{49}{307200}+\frac1{4500}\Bigr))", where = "Appendix B")
+chk("therm-11", "therm", "alpha, closed form", alpha, "1.2027e-2",
+    quote = r"(\frac{49}{307200}+\frac1{4500}\Bigr)=1.2027\times10^{-2})", where = "Appendix B")
+chk("therm-12", "therm", "alpha from Section 2's formula with 4, 45 Weyl, 12", alpha_sec4, "1.20e-2",
+    quote = r"(\frac{N_{\rm s}}{648000}+\frac{49\,N_{\rm f}}{13824000}+\frac{N_{\rm v}}{54000}\Bigr)=1.20\times10^{-2})", where = "Section 2")
+chk("therm-13", "therm", "the two forms of alpha agree", alpha_sec4, alpha, rel = 1e-12, label = "alpha above", where = "identity")
+chk("therm-14", "therm", "47 Weyl fermions (N2, N3 in the plasma): rise of alpha, per cent", 100 * (alpha47 / alpha - 1), "1.8",
+    quote = r"(47 Weyl fermions enter and $\alpha$ rises by 1.8 per cent)", where = "Section 5")
+show_checks("therm")
+```
+
+# Rates for other dark matter
+
+Table 1 replaces the final Dirac pair by a real scalar pair with $\xi=0$ or $1/6$ (improvement term
+$-2\xi(P^\mu P^\nu-\eta^{\mu\nu}P^2)$ in the scalar's stress tensor), by a Dirac pair, or by a pair
+of massless vectors, keeps the plasma's scalars minimally coupled, and puts 1/2 in the event rate
+for identical final particles. Per Weyl fermion of the plasma the weight is half the Dirac spin sum.
+The angular integrals, in units of π, are:
+
+```{r table1-K}
+Kfrac <- apply(Kmat / pi, c(1, 2), as_fraction)
+html_table(data.frame(`plasma pair` = c("real scalars", "Dirac pair", "gauge bosons"), Kfrac, check.names = FALSE),
+           col.names = c("plasma pair", "real scalar, xi = 0", "real scalar, xi = 1/6", "Dirac pair", "massless vectors"))
+```
+
+```{r table1}
+ident <- c(scalar0 = 0.5, scalar16 = 0.5, dirac = 1, vector = 0.5)       # identical final particles
+w_in <- c(scalar = 0.5, dirac = 0.5, vector = 0.5)  # identical initial bosons; per Weyl, half a Dirac sum
+Jin <- c(scalar = JB, dirac = JF, vector = JB)
+rtab <- sapply(names(DM), function(d) ident[[d]] * w_in * Kmat[, d] * (32 / 3) * Jin^2 / (1024 * pi^6) / pi^3)
+R_SM <- apply(rtab, 2, function(r) pi^3 * sum(c(4, 45, 12) * r))
+R_45 <- apply(rtab, 2, function(r) pi^3 * sum(c(4, 90, 12) * r))
+paper_t1 <- list(
+  scalar0  = list(r = c(1 / 648000, 49 / 82944000, 1 / 324000), lab = c("1/648000", "49/82944000", "1/324000"), R = "2.16e-3", x = "1.38",
+                  row = r"(| real scalar, $\xi=0$ | $\pi^3/648000$ | $49\pi^3/82944000$ | $\pi^3/324000$ | $2.16\times10^{-3}$ | 1.38 |)"),
+  scalar16 = list(r = c(1 / 3888000, 49 / 82944000, 1 / 324000), lab = c("1/3888000", "49/82944000", "1/324000"), R = "2.00e-3", x = "1.41",
+                  row = r"(| real scalar, $\xi=1/6$ | $\pi^3/3888000$ | $49\pi^3/82944000$ | $\pi^3/324000$ | $2.00\times10^{-3}$ | 1.41 |)"),
+  dirac    = list(r = c(1 / 648000, 49 / 13824000, 1 / 54000), lab = c("1/648000", "49/13824000", "1/54000"), R = "1.20e-2", x = "1.41",
+                  row = r"(| Dirac fermion | $\pi^3/648000$ | $49\pi^3/13824000$ | $\pi^3/54000$ | $1.20\times10^{-2}$ | 1.41 |)"),
+  vector   = list(r = c(1 / 324000, 49 / 6912000, 1 / 27000), lab = c("1/324000", "49/6912000", "1/27000"), R = "2.41e-2", x = "1.41",
+                  row = r"(| massless vector | $\pi^3/324000$ | $49\pi^3/6912000$ | $\pi^3/27000$ | $2.41\times10^{-2}$ | 1.41 |)"))
+cols <- c("per real scalar", "per Weyl fermion", "per gauge boson")
+dm_name <- c(scalar0 = "real scalar, xi = 0", scalar16 = "real scalar, xi = 1/6", dirac = "Dirac fermion",
+             vector = "massless vector")
+for (d in names(DM)) {
+  pt <- paper_t1[[d]]
+  for (j in 1:3) chk(sprintf("tab1-%s-%d", d, j), "tab1", sprintf("%s: %s (units pi^3), = %s", dm_name[[d]], cols[j],
+                     as_fraction(rtab[j, d])), rtab[j, d], pt$r[j], rel = 1e-10, label = pt$lab[j], quote = pt$row, where = "Table 1")
+  chk(sprintf("tab1-%s-R", d), "tab1", sprintf("%s: Standard Model sum (4, 45, 12)", dm_name[[d]]), R_SM[[d]], pt$R,
+      quote = pt$row, where = "Table 1")
+  chk(sprintf("tab1-%s-x", d), "tab1", sprintf("%s: with 45 Dirac, ratio", dm_name[[d]]), R_45[[d]] / R_SM[[d]], pt$x,
+      quote = pt$row, where = "Table 1")
+}
+## xi enters only the channel with plasma scalars; fermion and gauge stress tensors are traceless
+xi_only <- max(abs(Kmat["dirac", "scalar0"] - Kmat["dirac", "scalar16"]), abs(Kmat["vector", "scalar0"] - Kmat["vector", "scalar16"]))
+tr_f <- max(sapply(final_T("dirac", 0.3), function(T) Mod(trT(T))), sapply(final_T("vector", 0.3), function(T) Mod(trT(T))))
+tr_s16 <- Mod(trT(final_T("scalar", 0.3, xi = 1 / 6)[[1]]))
+chk("tab1-xi-1", "tab1", "xi changes the fermion and gauge channels by (largest)", xi_only, 0, tol = 1e-14, label = "0",
+    quote = r"(enters only the channel with plasma scalars, since the fermion and gauge-boson stress tensors are traceless)", where = "Section 2")
+chk("tab1-xi-2", "tab1", "xi changes the scalar channel (relative change)", abs(Kmat["scalar", "scalar16"] / Kmat["scalar", "scalar0"] - 1),
+    5 / 6, rel = 1e-10, label = "nonzero (5/6)", where = "Section 2")
+chk("tab1-xi-3", "tab1", "trace of fermion and gauge stress tensors (largest)", tr_f, 0, tol = 1e-14, label = "0",
+    quote = r"(since the fermion and gauge-boson stress tensors are traceless)", where = "Section 2")
+chk("tab1-xi-4", "tab1", "trace of the scalar stress tensor at xi = 1/6", tr_s16, 0, tol = 1e-14, label = "0", where = "identity")
+chk("tab1-v2", "tab1", "vector row over Dirac row", R_SM[["vector"]] / R_SM[["dirac"]], 2, rel = 1e-12, label = "2",
+    quote = r"(The vector row is twice the Dirac row)", where = "Section 2")
+chk("tab1-maj", "tab1", "Dirac row (event rate) equals alpha, the Majorana number rate", R_SM[["dirac"]], alpha, rel = 1e-12,
+    label = "alpha", quote = r"(The Dirac-fermion row is also the number rate of one Majorana $N_1$)", where = "Table 1")
+show_checks("tab1")
+```
+
+# Double count in published rates
+
+Counting 45 Dirac fermions in place of 22.5 gives the sums that Clery et al. and Bernal et al.
+print. Their printed coefficients are quoted from the papers: Clery et al., PRD 105 (2022) 075005,
+Eqs. (A8) and (A12), $3997\pi^3/20736000$ and $11351\pi^3/10368000$; Bernal et al.,
+arXiv:1803.01866, Eq. (41), $11351\pi^3/331776000$ for the massless graviton.
+
+```{r double-count}
+S45 <- sum(c(4, 45, 12) * per)
+S45_scalar <- R_45[["scalar0"]]
+clery_A12 <- 11351 * pi^3 / 10368000; clery_A8 <- 3997 * pi^3 / 20736000; bernal_41 <- 11351 * pi^3 / 331776000
+q45 <- r"($11351\pi^3/20736000=1.697\times10^{-2}$ per event, 1.41 times $\alpha$)"
+chk("dbl-1", "dbl", "45-Dirac sum against 11351 pi^3/20736000", S45, 11351 * pi^3 / 20736000, rel = 1e-12,
+    label = "11351 pi^3/20736000", quote = q45, where = "Section 2")
+chk("dbl-2", "dbl", "45-Dirac sum", S45, "1.697e-2", quote = q45, where = "Section 2")
+chk("dbl-3", "dbl", "45-Dirac sum over alpha", S45 / alpha, "1.41", quote = q45, where = "Section 2")
+chk("dbl-4", "dbl", "Clery et al. Eq. (A12) over the 45-Dirac sum", clery_A12 / S45, 2, rel = 1e-12, label = "2 (exactly twice)",
+    quote = r"(and Clery et al.'s Eq. (A12) is exactly twice that)", where = "Section 2")
+chk("dbl-5", "dbl", "45-Dirac sum for a minimally coupled scalar", S45_scalar, 3997 * pi^3 / 41472000, rel = 1e-12,
+    label = "3997 pi^3/41472000", quote = r"(that sum, $3997\pi^3/41472000$, is 1.38 times the corrected value)", where = "Section 2")
+chk("dbl-6", "dbl", "the same over the corrected scalar rate", S45_scalar / R_SM[["scalar0"]], "1.38",
+    quote = r"(that sum, $3997\pi^3/41472000$, is 1.38 times the corrected value)", where = "Section 2")
+chk("dbl-7", "dbl", "Clery et al. Eq. (A8) over the 45-Dirac scalar sum", clery_A8 / S45_scalar, 2, rel = 1e-12, label = "2",
+    quote = r"(is likewise twice our 45-Dirac sum)", where = "Section 2")
+chk("dbl-8", "dbl", "abundance factor, fermion dark matter (count alone)", S45 / alpha, "1.41",
+    quote = r"(so their thermal abundances are 1.41 times too high for Dirac fermion dark matter and 1.38 times)", where = "Section 2")
+chk("dbl-9", "dbl", "abundance factor, minimally coupled scalar", S45_scalar / R_SM[["scalar0"]], "1.38",
+    quote = r"(so their thermal abundances are 1.41 times too high for Dirac fermion dark matter and 1.38 times)", where = "Section 2")
+chk("dbl-10", "dbl", "Bernal et al.'s coefficient 11351 pi^3/331776000", bernal_41, "1.06e-3",
+    quote = r"($11351\pi^3/331776000=1.06\times10^{-3}$, exactly $1/16$ of)", where = "Appendix C")
+chk("dbl-11", "dbl", "Bernal et al. over the 45-Dirac sum", bernal_41 / S45, 1 / 16, rel = 1e-12, label = "1/16",
+    quote = r"($11351\pi^3/331776000=1.06\times10^{-3}$, exactly $1/16$ of)", where = "Appendix C")
+chk("dbl-12", "dbl", "fermion dark matter: highest temperature rises by (45-Dirac/alpha)^(1/3)", (S45 / alpha)^(1 / 3), "1.12",
+    quote = r"(by $1.41^{1/3}=1.12$ for fermion dark matter)", where = "Section 2")
+show_checks("dbl")
+```
+
+Bernal et al.'s Eq. (8) is the weighting $4|M_0|^2+45|M_{1/2}|^2+12|M_1|^2$; the coefficient
+$11351\pi^3/331776000$ is their Eq. (41) in the arXiv numbering and Eq. (B17) in the PRD, and their
+Table I rounds it to $1.1\times10^{-3}$.
+
+# Einstein limit of Boyle, Turok and Vaibhav
+
+Their rate is rebuilt from what they print in Appendix E of arXiv:2609.11750: (E1)
+$\dot n=2\sum_in_i^2\langle\sigma v\rangle_i$; (E2) $n_i=\xi_i\zeta(3)T^3/\pi^2$ with $\xi_i=1$ for
+bosons and 3/4 for fermions; (E24) $\langle\sigma v\rangle_i=24A_iT^2/M_P^4$ with (E22)
+$A=4,3,29$ in units of $1/3840\pi$ for spin 0, 1/2 and 1; (E12) 4 scalar states, 94 fermion
+states and 24 vector states, $g_{*n}=98.5$; and (E27b) $C_{\rm IR}=1393/(25216\pi^3)\approx2.1\times10^{-3}$.
+Their $M_{\rm pl}=(8\pi G)^{-1/2}$ is the reduced Planck mass. The same $A$ follow from the helicity
+sums here, $A=60K/(\pi n_{\rm init})$ with $n_{\rm init}$ the initial spin states averaged over.
+
+```{r btv}
+A_ours <- 60 * Kd / (pi * c(1, 4, 4))
+btv <- function(A = c(4, 3, 29), pair = 2, scalar_half = 1, nf = 94, stats = "quantum") {
+  n2 <- if (stats == "quantum") c(1, 9 / 16, 1) * (z3 / pi^2)^2 else rep(1 / pi^4, 3)
+  pair * 24 * sum(c(4 * scalar_half, nf, 24) * n2 * A) / (3840 * pi)
+}
+b0 <- btv(); b1 <- btv(A = A_ours); b2 <- btv(A = A_ours, pair = 1); b3 <- btv(A = A_ours, pair = 1, scalar_half = 0.5)
+ours_mb <- sum(N_SM * w_ch * Kd * W[["MB"]] / (1024 * pi^6))
+btv_mb <- btv(A = A_ours, pair = 1, scalar_half = 0.5, stats = "MB")
+btv_mb45 <- btv(A = A_ours, pair = 1, scalar_half = 0.5, stats = "MB", nf = 90)
+ours_mb_cf <- sum(N_SM * w_ch * Kd * (32 / 3) * 36 / (1024 * pi^6))      # Int E^3 e^-E dE = 6
+C_IR <- b0 / (2 * 98.5 * z3 / pi^2)
+C_IR_printed <- 1393 / (25216 * pi^3)
+row <- function(a, b, c) sprintf("| %s | %s | %s |", a, b, c)
+chk("btv-1", "btv", "A from the helicity sums, spin 0, units 1/(3840 pi)", A_ours[[1]], 4, rel = 1e-10, label = "4 (theirs)", where = "their (E22)")
+chk("btv-2", "btv", "A from the helicity sums, spin 1/2", A_ours[[2]], 3, rel = 1e-10, label = "3 (theirs)", where = "their (E22)")
+chk("btv-3", "btv", "their spin-1 A over the one from the helicity sums", 29 / A_ours[[3]], 29 / 12, rel = 1e-10, label = "29/12",
+    quote = r"(Their gauge-boson cross-section is 29/12 of ours)", where = "Appendix B")
+chk("btv-4", "btv", "as printed", b0, "5.14e-2", quote = row("as printed", r"($5.14\times10^{-2}$)", "4.27"), where = "Table B.1")
+chk("btv-5", "btv", "as printed, over alpha", b0 / alpha, "4.27", quote = row("as printed", r"($5.14\times10^{-2}$)", "4.27"), where = "Table B.1")
+chk("btv-6", "btv", "transverse gauge-boson vertex", b1, "2.73e-2", quote = row("transverse gauge-boson vertex", r"($2.73\times10^{-2}$)", "2.27"), where = "Table B.1")
+chk("btv-7", "btv", "the same over alpha", b1 / alpha, "2.27", quote = row("transverse gauge-boson vertex", r"($2.73\times10^{-2}$)", "2.27"), where = "Table B.1")
+chk("btv-8", "btv", "one Majorana N1 per Dirac-pair event", b2, "1.37e-2", quote = row(r"(one Majorana $N_1$ per Dirac-pair event)", r"($1.37\times10^{-2}$)", "1.135"), where = "Table B.1")
+chk("btv-9", "btv", "the same over alpha", b2 / alpha, "1.135", quote = row(r"(one Majorana $N_1$ per Dirac-pair event)", r"($1.37\times10^{-2}$)", "1.135"), where = "Table B.1")
+chk("btv-10", "btv", "1/2 for identical real scalars", b3, "1.34e-2", quote = row(r"($1/2$ for identical real scalars)", r"($1.34\times10^{-2}$)", "1.115"), where = "Table B.1")
+chk("btv-11", "btv", "the same over alpha", b3 / alpha, "1.115", quote = row(r"($1/2$ for identical real scalars)", r"($1.34\times10^{-2}$)", "1.115"), where = "Table B.1")
+chk("btv-12", "btv", "alpha, Bose-Einstein and Fermi-Dirac", alpha, "1.20e-2", quote = row("ours, Bose-Einstein and Fermi-Dirac", r"($1.20\times10^{-2}$)", "1"), where = "Table B.1")
+chk("btv-13", "btv", "Maxwell-Boltzmann throughout: theirs, corrected", btv_mb, "1.1805e-2",
+    quote = row("both in Maxwell-Boltzmann statistics", r"($1.1805$ against $1.1560\times10^{-2}$)", "1.021"), where = "Table B.1")
+chk("btv-14", "btv", "Maxwell-Boltzmann throughout: alpha", ours_mb, "1.1560e-2",
+    quote = row("both in Maxwell-Boltzmann statistics", r"($1.1805$ against $1.1560\times10^{-2}$)", "1.021"), where = "Table B.1")
+chk("btv-15", "btv", "theirs over alpha, both in Maxwell-Boltzmann statistics", btv_mb / ours_mb, "1.021",
+    quote = row("both in Maxwell-Boltzmann statistics", r"($1.1805$ against $1.1560\times10^{-2}$)", "1.021"), where = "Table B.1")
+chk("btv-16", "btv", "with 45 Weyl fermions (90 states) in their bath, over alpha (closed form, Maxwell-Boltzmann)", btv_mb45 / ours_mb_cf, 1, rel = 1e-12, label = "1 (agree exactly)",
+    quote = r"(With equal species they agree exactly.)", where = "Appendix B")
+chk("btv-17", "btv", "factor from the gauge-boson vertex", b0 / b1, "1.88", quote = r"(gives a factor 1.88)", where = "Section 2")
+chk("btv-18", "btv", "factor from two N1 per Dirac-pair event", b1 / b2, 2, rel = 1e-12, label = "2",
+    quote = r"(counting two $N_1$ per Dirac-pair event gives 2)", where = "Section 2")
+chk("btv-19", "btv", "remaining factor (scalar 1/2 and statistics)", b2 / alpha, "1.135", quote = r"(the remaining 1.135 is 1.018 from the missing)", where = "Section 2")
+chk("btv-20", "btv", "C_IR from their rate equation", C_IR, "2.1e-3", quote = r"($C_{\rm IR}\approx2.1\times10^{-3}$)", where = "Appendix B")
+chk("btv-21", "btv", "their printed closed form 1393/(25216 pi^3)", C_IR_printed, "1.78e-3",
+    quote = r"($1393/(25216\pi^3)=1.78\times10^{-3}$, lacks a factor $\zeta(3)$)", where = "Appendix B")
+chk("btv-22", "btv", "C_IR over the printed closed form", C_IR / C_IR_printed, z3, rel = 1e-10, label = "zeta(3)",
+    quote = r"($1393/(25216\pi^3)=1.78\times10^{-3}$, lacks a factor $\zeta(3)$)", where = "Appendix B")
+## their contracted gauge-boson vertex as printed, Eq. (D3), lower indices, with a_(g b_d) read either as
+## (a_g b_d + a_d b_g)/2 or as a_g b_d + a_d b_g; e1 for the boson of momentum p, e2 for the one of momentum q
+btv_vertex <- function(p, e1, q, e2, half = TRUE) {
+  lo <- function(v) as.vector(ETA %*% v)
+  sym <- function(a, b) (if (half) 0.5 else 1) * (outer(lo(a), lo(b)) + outer(lo(b), lo(a)))
+  V <- 0.5 * (mdot(e1, e2) * (ETA * mdot(p, q) - sym(p, q)) - mdot(e1, q) * mdot(e2, p) * ETA -
+              2 * mdot(p, q) * sym(e1, e2) + mdot(e1, q) * sym(e2, p) + mdot(e2, p) * sym(e1, q))
+  ETA %*% V %*% ETA                                  # upper indices, to contract with T_f
+}
+btv_ward <- sapply(c(TRUE, FALSE), function(h) max(sapply(final_T("dirac", 0.4), function(Tf)
+  Mod(amp(btv_vertex(p1, p1, p2, eps_h(pi, 0, 1), half = h), Tf)))))
+btv_phys <- max(sapply(final_T("dirac", 0.4), function(Tf) Mod(amp(btv_vertex(p1, eps_h(0, 0, 1), p2, eps_h(pi, 0, -1)), Tf))))
+## their (D4) and (D5): Int (f2^4/512)(15 + 5c^2 - 6c^4) dOmega / (64 pi^2 s), in units f2^4/(3840 pi s)
+D4_int <- integrate(function(c) 15 + 5 * c^2 - 6 * c^4, -1, 1, rel.tol = 1e-13)$value
+D5_from_D4 <- 2 * pi * D4_int / 512 / (64 * pi^2) * 3840 * pi
+chk("btv-28", "btv", "their vertex (D3), (a b + b a)/2, with e -> p: |M| above 1e-6 (1 = yes)", as.numeric(btv_ward[1] > 1e-6), 1,
+    tol = 0, label = "1", quote = r"(when the polarisation $\xi$ is replaced by the photon's momentum $p$)", where = "Appendix B")
+chk("btv-29", "btv", "the same with a b + b a (1 = yes)", as.numeric(btv_ward[2] > 1e-6), 1, tol = 0, label = "1",
+    quote = r"(when the polarisation $\xi$ is replaced by the photon's momentum $p$)", where = "Appendix B")
+chk("btv-30", "btv", "their (D4) integrated over angle, in units f2^4/(3840 pi s), against their (D5)", D5_from_D4, 29 / 4,
+    rel = 1e-10, label = "29/4 (their D5)", where = "their (D4), (D5)")
+chk("btv-31", "btv", "their angular shape 15 + 5c^2 - 6c^4 along the beam, c = 1", 15 + 5 - 6, 14, tol = 0, label = "14 (nonzero)",
+    quote = r"($15+5\cos^2\theta-6\cos^4\theta$, does not vanish along the beam)", where = "Appendix B")
+show_checks("btv")
+```
+
+With a physical polarisation their vertex gives amplitudes of size `r tex_sci(btv_phys, 2)` here, and
+with a polarisation replaced by its momentum `r tex_sci(btv_ward[1], 2)` and `r tex_sci(btv_ward[2], 2)`
+for the two readings of the symmetrisation, where the vertex built from field strengths gives zero.
+
+Their yield, from their Eqs. (6), (8) and (11), is proportional to $\Gamma/H$ at
+$T_*=(C_{\rm UV}/C_{\rm IR})^{1/4}f_2M_{\rm pl}$, that is to $C_{\rm IR}^{1/4}C_{\rm UV}^{3/4}f_2^3$. The
+bound therefore moves as the rate to the power $-1/3$ only if their quadratic-gravity rate $C_{\rm UV}$
+changes by the same factor as the Einstein limit. Their $A^{\rm UV}_i=A^{\rm IR}_i/4$ species by
+species (Eqs. E17, E22), so the vertex and the two counting corrections carry over unchanged. The
+statistics do not: with $\sigma\propto1/s$ the thermal rate takes the first moment
+$\int_0^\infty Ef\,dE$ ($\zeta(2)$ for bosons, $\zeta(2)/2$ for fermions) in place of the third.
+The same corrections, applied to their UV rate with Bose-Einstein and Fermi-Dirac statistics, give:
+
+```{r btv-uv}
+J1 <- c(B = integrate(function(E) E * fB(E), 0, Inf, rel.tol = 1e-12)$value,
+        F = integrate(function(E) E * fF(E), 0, Inf, rel.tol = 1e-12)$value)
+chk("btv-27", "btv", "Int E/(e^E - 1) dE and Int E/(e^E + 1) dE against zeta(2) and zeta(2)/2 (largest relative error)",
+    max(abs(J1 / c(zeta_num(2), zeta_num(2) / 2) - 1)), 0, tol = 1e-10, label = "0", where = "closed form")
+## printed rate over the corrected one, per unit of the common factors: states x weight x A x statistics
+lam <- function(stat_true) 2 * sum(c(4, 94, 24) * c(1, 9 / 16, 1) * z3^2 * c(4, 3, 29)) /
+                           sum(c(4 * 0.5, 90, 24) * c(4, 3, 12) * stat_true)
+lam_IR <- lam(c(JB, JF, JB)^2 / 36)                  # MB third moment Gamma(4) = 6
+lam_UV <- lam(c(J1[["B"]], J1[["F"]], J1[["B"]])^2)  # MB first moment Gamma(2) = 1
+uv <- data.frame(
+  case = c("both coefficients moved by the Einstein-limit factor", "Einstein limit alone corrected",
+           "C_UV corrected with its own statistics (the paper's reading)"),
+  `yield factor` = c(lam_IR, lam_IR^0.25, lam_IR^0.25 * lam_UV^0.75), check.names = FALSE)
+uv$`bound factor` <- uv$`yield factor`^(1 / 3)
+uv$`f2 bound` <- K("f2_BTV") * uv$`bound factor`
+uv$`f2 at a one per cent share` <- 0.01^(1 / 3) * uv$`f2 bound`
+chk("btv-26", "btv", "Einstein-limit factor from the species sums (same as b0/alpha)", lam_IR, b0 / alpha, rel = 1e-10,
+    label = "b0/alpha", where = "identity")
+chk("btv-23", "btv", "their rate above T* over the corrected one (first moments)", lam_UV, "2.56",
+    quote = r"(lower $C_{\rm UV}$ by 2.56)", where = "Section 2")
+chk("btv-24", "btv", "their f2 bound 7e-5 with both coefficients corrected", uv[["f2 bound"]][3], "1.0e-4",
+    quote = r"(coefficients to $1.0\times10^{-4}$; it keeps)", where = "Section 2")
+chk("btv-25", "btv", "plasma's share (f2/bound)^3 at one per cent: f2", uv[["f2 at a one per cent share"]][3], "2.15e-5",
+    quote = r"(falls under one per cent for $f_2<2.15\times10^{-5}$)", where = "Section 2")
+chk("btv-32", "btv", "the same bound in the conclusions", uv[["f2 bound"]][3], "1.0e-4",
+    quote = r"(with the Weyl coupling well below $1.0\times10^{-4}$)", where = "Section 7")
+html_table(data.frame(lapply(uv, function(v) if (is.numeric(v)) vapply(v, fmt, "", d = 4) else v), check.names = FALSE))
+```
+
+The UV rate as printed is `r sprintf("%.2f", lam_UV)` times the corrected one, against
+`r sprintf("%.2f", lam_IR)` in the Einstein limit, which puts the bound at
+`r tex_sci(uv[["f2 bound"]][3], 2)`, the value Section 2 gives. This rests on their UV formulas
+(E16) to (E20) as printed. Moving both coefficients by the Einstein-limit factor alone would give
+`r tex_sci(uv[["f2 bound"]][1], 2)`.
+
+# Published rates, channel by channel
+
+Appendix C sets each published rate for fermion dark matter beside the paper's, channel by
+channel. The squared amplitudes are read from the papers in the massless limit, with $s=1$,
+$t=-(1-c)/2$ and units of $1/M_P^4$:
+
+* Garny et al., JCAP 02 (2018) 027, Eqs. (3.14) to (3.16), with $m_X$ the dark-matter mass and
+  $G=m_p^{-2}$, so that $8\pi G=1/M_P^2$ and $G^2\pi^2=1/(64M_P^4)$; the journal text, whose
+  equations pdftotext damages, was rebuilt by hand as
+  (3.14) $8G^2\pi^2\,(m_X^2-t)(-m_X^2+s+t)(-2m_X^2+s+2t)^2/s^2$,
+  (3.15) $(8G^2\pi^2/s^2)\,[32m_X^8-32m_X^6(s+4t)+2m_X^4(5s^2+64st+96t^2)-4m_X^2(s^3+13s^2t+40st^2+32t^3)+s^4+10s^3t+42s^2t^2+64st^3+32t^4]$ and
+  (3.16) $-32G^2\pi^2\,(m_X^4-2m_X^2t+t(s+t))\,[s^2+2(m_X^4-2m_X^2t+t(s+t))]/s^2$,
+  used at $m_X=0$; their cross-section, Eq. (3.3), integrates over all angles with no factor 1/2,
+  and Eq. (3.1) weights the fermion channel by 45;
+* Bernal et al., arXiv:1803.01866, Eqs. (35) to (37) (PRD Eqs. B11 to B13):
+  $(-t(s+t))(s+2t)^2/32s^2$, $(s^4+10s^3t+42s^2t^2+64st^3+32t^4)/128s^2$ and
+  $(-t(s+t))(s^2+2t(s+t))/8s^2$; their rate is Eq. (41) (PRD Eq. B17);
+* Clery et al., PRD 105 (2022) 075005, Eqs. (A9) to (A11), which include the symmetry factors:
+  $(-t(s+t))(s+2t)^2/4s^2$, $(s^4+10s^3t+42s^2t^2+64st^3+32t^4)/8s^2$ and
+  $(-t(s+t))(s^2+2t(s+t))/s^2$; their rate is Eq. (A12);
+* Tang and Wu, their Table I at $m,M\to0$: $s^2/480$, $s^2/160$ and $s^2/40$ into a fermion pair from
+  a scalar, a fermion and a massless vector, angle-integrated, with $\kappa^4=16/M_P^4$ taken out.
+
+```{r published}
+tt <- function(c) -(1 - c) / 2
+G2pi2 <- 1 / 64
+g314 <- function(c, mX = 0) { s <- 1; t <- tt(c); m2 <- mX^2
+  8 * G2pi2 * (m2 - t) * (-m2 + s + t) * (-2 * m2 + s + 2 * t)^2 / s^2 }
+g315 <- function(c, mX = 0) { s <- 1; t <- tt(c); m2 <- mX^2
+  8 * G2pi2 / s^2 * (32 * m2^4 - 32 * m2^3 * (s + 4 * t) + 2 * m2^2 * (5 * s^2 + 64 * s * t + 96 * t^2) -
+    4 * m2 * (s^3 + 13 * s^2 * t + 40 * s * t^2 + 32 * t^3) + s^4 + 10 * s^3 * t + 42 * s^2 * t^2 + 64 * s * t^3 + 32 * t^4) }
+g316 <- function(c, mX = 0) { s <- 1; t <- tt(c); m2 <- mX^2; q <- m2^2 - 2 * m2 * t + t * (s + t)
+  -32 * G2pi2 * q * (s^2 + 2 * q) / s^2 }
+pub <- list(
+  garny  = list(scalar = g314, dirac = g315, vector = g316),
+  bernal = list(scalar = function(c) { t <- tt(c); (-t * (1 + t)) * (1 + 2 * t)^2 / 32 },
+                dirac  = function(c) { t <- tt(c); (1 + 10 * t + 42 * t^2 + 64 * t^3 + 32 * t^4) / 128 },
+                vector = function(c) { t <- tt(c); (-t * (1 + t)) * (1 + 2 * t * (1 + t)) / 8 }),
+  clery  = list(scalar = function(c) { t <- tt(c); (-t * (1 + t)) * (1 + 2 * t)^2 / 4 },
+                dirac  = function(c) { t <- tt(c); (1 + 10 * t + 42 * t^2 + 64 * t^3 + 32 * t^4) / 8 },
+                vector = function(c) { t <- tt(c); (-t * (1 + t)) * (1 + 2 * t * (1 + t)) }))
+## ratio of each printed squared amplitude to the helicity sum here, at five angles: the value farthest from the target
+far <- function(v, target) v[which.max(abs(v - target))]
+pr <- lapply(pub, function(p) sapply(names(p), function(ch) sapply(cs, function(c) p[[ch]](c) / spin_sum(ch, "dirac", c))))
+gr <- t(pr$garny)       # kept for the planted errors
+half <- c(scalar = 0.5, dirac = 1, vector = 0.5)              # the factor 1/2 for an identical pair
+rowtxt <- list(
+  self   = r"(| this paper | 1, 1, 1 | 1, 1, 1 | 22.5 Dirac | $1.20\times10^{-2}$ | 1 |)",
+  garny  = r"(| 1/4, 1, 1/4 | 1/2, 2, 1/2 | 45 Dirac | none |)",
+  bernal = r"(| 1/16 each | 1/16, 1/8, 1/16 | 45 Dirac | $1.06\times10^{-3}$ | 0.088 |)",
+  clery  = r"(| 1, 1, 1 | 1, 2, 1 | 45 Dirac | $3.39\times10^{-2}$ | 1.41 |)",
+  btv    = r"(| 1, 1, 29/12 | Table B.1 | 47 Weyl | $5.14\times10^{-2}$ | 2.14 |)")
+chn <- c(scalar = "scalar", dirac = "fermion", vector = "gauge-boson")
+## Garny et al.: squared amplitudes, then the channels in their rate (no 1/2 for an identical pair; 45 Dirac)
+garny_sq <- c(scalar = 0.25, dirac = 1, vector = 0.25); garny_rate <- c(scalar = 0.5, dirac = 2, vector = 0.5)
+for (ch in names(chn)) {
+  r <- far(pr$garny[, ch], garny_sq[[ch]])
+  chk(paste0("pub-g-", ch), "pub", sprintf("Garny et al. %s channel, squared amplitude over the one here", chn[[ch]]), r,
+      garny_sq[[ch]], tol = 1e-12, label = as_fraction(garny_sq[[ch]]), quote = rowtxt$garny, where = "Table C.1")
+  chk(paste0("pub-gr-", ch), "pub", sprintf("Garny et al. %s channel in their rate: squared amplitude x %s", chn[[ch]],
+      if (ch == "dirac") "2 (45 Dirac)" else "2 (no 1/2 for the identical pair)"), r * 2, garny_rate[[ch]], tol = 1e-12,
+      label = as_fraction(garny_rate[[ch]]), quote = rowtxt$garny, where = "Table C.1")
+}
+## Bernal et al.: squared amplitudes a sixteenth; their rate 1/16 of the 45-Dirac sum, so channels 1/16, 1/8, 1/16
+for (ch in names(chn)) {
+  r <- far(pr$bernal[, ch], 1 / 16)
+  chk(paste0("pub-b-", ch), "pub", sprintf("Bernal et al. %s channel, squared amplitude over the one here", chn[[ch]]), r,
+      1 / 16, tol = 1e-12, label = "1/16", quote = rowtxt$bernal, where = "Table C.1")
+}
+chk("pub-b-rate", "pub", "Bernal et al.'s Eq. (41) over alpha, per event", bernal_41 / alpha, "0.088", quote = rowtxt$bernal, where = "Table C.1")
+## Clery et al.: squared amplitudes equal the ones here with the 1/2 for an identical pair
+for (ch in names(chn)) {
+  r <- far(pr$clery[, ch] / half[[ch]], 1)
+  chk(paste0("pub-c-", ch), "pub", sprintf("Clery et al. %s channel over the one here%s", chn[[ch]],
+      if (ch == "dirac") "" else " with 1/2 for the identical pair"), r, 1, tol = 1e-12, label = "1", quote = rowtxt$clery,
+      where = "Table C.1")
+}
+chk("pub-c-coef", "pub", "Clery et al.'s Eq. (A12), 11351 pi^3/10368000", clery_A12, "3.39e-2", quote = rowtxt$clery, where = "Table C.1")
+chk("pub-c-rate", "pub", "the same per event, over alpha", clery_A12 / 2 / alpha, "1.41", quote = rowtxt$clery, where = "Table C.1")
+## Tang and Wu: angle-integrated channels in units of 16/M_P^4 (integral over cos(theta) only)
+tw <- c(scalar = 1 / 480, dirac = 1 / 160, vector = 1 / 40)
+for (ch in names(chn))
+  chk(paste0("pub-t-", ch), "pub", sprintf("Tang and Wu %s channel: Int dcos sum|M|^2 / 16 here", chn[[ch]]), Kd[[ch]] / (2 * pi) / 16,
+      tw[[ch]], rel = 1e-10, label = paste0("s^2/", 1 / tw[[ch]], " (quoted)"),
+      quote = r"(scalar, a fermion and a gauge boson going to a fermion pair, $s^2/480$, $s^2/160$ and $s^2/40$, are ours)", where = "Appendix C")
+## Boyle, Turok and Vaibhav: printed coefficient per event over alpha
+chk("pub-btv-rate", "pub", "Boyle, Turok and Vaibhav as printed, per event, over alpha", btv() / 2 / alpha, "2.14", quote = rowtxt$btv, where = "Table C.1")
+chk("pub-self", "pub", "this paper's coefficient", alpha, "1.20e-2", quote = rowtxt$self, where = "Table C.1")
+## Verner: 45 times the amplitude averaged over the four initial spin states, against 22.5 Dirac sums
+chk("pub-verner", "pub", "Verner's fermion weight, 45 x 1/4 of a Dirac sum, over 22.5", 45 / 4 / 22.5, 0.5, tol = 0, label = "1/2",
+    quote = r"(which gives the fermion channel half its weight)", where = "Appendix C")
+show_checks("pub")
+garny_total <- sum(N_SM * per * garny_rate) / alpha
+garny_total_half <- sum(N_SM * per * garny_rate * c(0.5, 1, 0.5)) / alpha
+```
+
+Garny et al. print no total. With the channel weights above their channels sum to
+`r sprintf("%.3f", garny_total)` $\alpha$; read with the factor 1/2 for an identical pair, to
+`r sprintf("%.3f", garny_total_half)` $\alpha$.
+
+# Abundance from the plasma
+
+Section 5: with $R=\alpha T^8/M_P^4$, $s=(2\pi^2/45)g_*T^3$ and $H=\sqrt{\pi^2g_*/90}\,T^2/M_P$, the
+yield $dY/dT=-R/(sHT)$ integrates to $Y=(\alpha/C)(T_{\max}/M_P)^3$. The integral is done here by
+quadrature as well as in closed form. Every number uses this report's $\alpha$ and $M_*$; the
+author's `v6_bath.py` uses $\alpha=1.2\times10^{-2}$ and $M_*=4.916\times10^8$ GeV, rounded.
+
+```{r abundance}
+g <- K("gstar"); MP <- K("M_P")
+CH <- sqrt(pi^2 * g / 90)
+Cc <- 3 * (2 * pi^2 / 45) * g * CH
+Tmax_test <- 3e15
+Y_quad <- integrate(function(T) (alpha * T^8 / MP^4) / ((2 * pi^2 / 45) * g * T^3 * CH * T^2 / MP * T),
+                    0, Tmax_test, rel.tol = 1e-12, abs.tol = 0)$value
+Y_need <- rho_s / M_star
+T_star <- MP * (Cc * Y_need / alpha)^(1 / 3)
+T_HM <- sqrt(M_star * MP / CH)
+over <- function(T) (alpha / Cc) * (T / MP)^3 / Y_need
+n_eq <- 0.75 * (z3 / pi^2) * 2                     # Majorana N1 in equilibrium, two helicities, units T^3
+Gamma_H <- alpha / (n_eq * CH)                      # R / (n_eq H) at T = M_P
+M_at <- function(T) rho_s / ((alpha / Cc) * (T / MP)^3)
+q_Tstar <- r"(a temperature 4.3 times the $1.87\times10^{13}$ GeV at which $H=M_*$, makes all the dark matter)"
+chk("abund-1", "abund", "C = 3 (2 pi^2/45) g* sqrt(pi^2 g*/90)", Cc, "480.6", quote = r"(C=3\,\frac{2\pi^2}{45}\,g_*\sqrt{\frac{\pi^2g_*}{90}}=480.6)", where = "Section 5")
+chk("abund-2", "abund", "Y by quadrature of dY/dT against (alpha/C)(T/M_P)^3", Y_quad / ((alpha / Cc) * (Tmax_test / MP)^3), 1,
+    rel = 1e-10, label = "1", quote = r"(Y_{\rm grav}=\frac{\alpha}{C}\left(\frac{T_{\max}}{M_P}\right)^3)", where = "Section 5")
+chk("abund-3", "abund", "yield needed at the ceiling, rho_DM/(s0 M_*)", Y_need, "8.9e-19", quote = r"(Y=\rho_{\rm DM,0}/(s_0M_*)=8.9\times10^{-19})", where = "Section 5")
+chk("abund-4", "abund", "T_star, GeV", T_star, "8.0e13", quote = r"(T_\star=8.0\times10^{13}\ {\rm GeV})", where = "Section 5")
+chk("abund-5", "abund", "T at which H = M_*, GeV", T_HM, "1.87e13", quote = q_Tstar, where = "Section 5")
+chk("abund-6", "abund", "T_star over that", T_star / T_HM, "4.3", quote = q_Tstar, where = "Section 5")
+chk("abund-7", "abund", "overproduction at 1e15 GeV", over(1e15), "1.95e3",
+    quote = r"($1.95\times10^3$ times the observed dark matter at $10^{15}$ GeV)", where = "Section 5")
+chk("abund-8", "abund", "overproduction at the reduced Planck temperature", over(MP), "2.8e13",
+    quote = r"($2.8\times10^{13}$ times at $T=M_P$)", where = "Section 5")
+chk("abund-9", "abund", "annihilation rate at the equilibrium density, R/n_eq, over H at T = M_P", Gamma_H, "1.9e-2",
+    quote = r"($\Gamma=1.9\times10^{-2}H$)", where = "Section 5")
+chk("abund-10", "abund", "mass if the plasma reached 1e16 GeV, GeV", M_at(1e16), "252",
+    quote = r"(252 GeV if the plasma reached $10^{16}$ GeV)", where = "Section 5")
+show_checks("abund")
+```
+
+The paper's rate of annihilation back to the plasma at the equilibrium density is, by detailed
+balance, the production rate divided by that density, $\Gamma=R/n_{\rm eq}$ with
+$n_{\rm eq}=\tfrac34\,(\zeta(3)/\pi^2)\,2\,T^3$ for a Majorana fermion, as in the author's
+`v6_bath.py`. With the rounded inputs of `v6_bath.py`
+($\alpha=1.2\times10^{-2}$, $M_*=4.916\times10^8$ GeV, $s_0=2.2215\times10^{-38}$ GeV$^3$),
+$T_\star=$ `r tex_sci(MP * (Cc * (K("rho_DM") / K("s0_GeV3") / 4.916e8) / 1.2e-2)^(1/3), 4)` GeV and the
+mass at $10^{16}$ GeV is `r sprintf("%.2f", K("rho_DM") / K("s0_GeV3") / ((1.2e-2 / Cc) * (1e16 / MP)^3))` GeV;
+with this report's inputs they are `r tex_sci(T_star, 4)` GeV and `r sprintf("%.2f", M_at(1e16))` GeV.
+
+# Higgs operator
+
+Section 5's operator $(c_H/2\Lambda)\,\overline{N_1^c}N_1H^\dagger H$ shifts the Majorana mass term
+$\tfrac12M\overline{N_1^c}N_1$ by $c_HH^\dagger H/\Lambda$. With $H^\dagger H=\tfrac12\sum_{a=1}^4\phi_a^2$
+the vertex for $\phi_a\phi_a\to N_1N_1$ is $c_H/\Lambda$, the same normalisation that gives the
+paper's $\Gamma(\phi\to N_1N_1)=y^2m_\phi/16\pi$ for $(y/2)\phi\overline{N_1^c}N_1$. The spin sum
+$\sum|\bar u(k_3)v(k_4)|^2$ comes from the spinors above; the rate carries 1/2 for the identical
+scalars, 1/2 for the identical Majorana pair and two $N_1$ per event, and with $|\mathcal M|^2\propto s$
+the thermal integral takes the second moment $\int E^2f\,dE=2\zeta(3)$. The yield then follows
+from $dY/dT=-R/(sHT)$ as for graviton exchange, now linear in $T_{\max}$.
+
+```{r higgs}
+## sum over the Majorana pair's spins of |ubar(k3) v(k4)|^2 at s = 1: should be 2 s, whatever the angle
+uv2 <- function(c, phi = 0.3) { E <- 0.5; th <- acos(c); tot <- 0
+  for (h3 in c(1, -1)) for (h4 in c(1, -1))
+    tot <- tot + Mod(as.complex(dbar(u_sp(E, th, phi, h3)) %*% v_sp(E, pi - th, phi + pi, h4)))^2
+  tot }
+uv2_dev <- max(abs(sapply(c(-0.7, 0.1, 0.9), uv2) - 2))
+J2 <- integrate(function(E) E^2 * fB(E), 0, Inf, rel.tol = 1e-12)$value
+## number rate per real scalar, units c_H^2 T^6 / Lambda^2: 2 N1 per event x 1/2 x 1/2 x (1024 pi^6)^-1 x
+## Int f1 f2 E1 E2 dE1 dE2 dcos12 [4 pi x 2 s], s = 2 E1 E2 (1 - cos12), Int (1 - cos12) dcos12 = 2
+W2 <- hcubature(function(X) { E1 <- X[1, ]; E2 <- X[2, ]; s <- 2 * E1 * E2 * (1 - X[3, ])
+  matrix(fB(E1) * fB(E2) * E1 * E2 * s, nrow = 1) }, c(0, 0, -1), c(50, 50, 1), tol = 1e-8, vectorInterface = TRUE)$integral
+R_higgs <- 4 * 2 * 0.5 * 0.5 * 4 * pi * 2 * W2 / (1024 * pi^6)
+R_higgs_cf <- 4 * 2 * 0.5 * 0.5 * 4 * pi * 2 * 2 * 2 * J2^2 / (1024 * pi^6)
+r_higgs <- R_higgs / ((2 * pi^2 / 45) * g * CH)
+c_all <- sqrt(Y_need / r_higgs)                         # T_max = Lambda = M_P
+chk("higgs-1", "higgs", "sum |ubar v|^2 over the pair's spins, against 2s (largest error)", uv2_dev, 0, tol = 1e-14, label = "0", where = "identity")
+chk("higgs-2", "higgs", "Int E^2/(e^E - 1) dE against 2 zeta(3)", J2, 2 * z3, rel = 1e-10, label = "2 zeta(3)", where = "closed form")
+chk("higgs-3", "higgs", "rate by cubature against the closed form", R_higgs / R_higgs_cf, 1, rel = 1e-7, label = "1", where = "identity")
+chk("higgs-4", "higgs", "yield coefficient, units c_H^2 T_max M_P / Lambda^2", r_higgs, "7.4e-6",
+    quote = r"(yield, $7.4\times10^{-6}\,c_H^2\,T_{\max}M_P/\Lambda^2$, grows only as $T_{\max}$)", where = "Section 5")
+chk("higgs-5", "higgs", "c_H that alone makes the dark matter at T_max = Lambda = M_P", c_all, "3.5e-7",
+    quote = r"(if $c_H>3.5\times10^{-7}$ for $\Lambda=M_P$)", where = "Section 5")
+chk("higgs-6", "higgs", "M_*/M_P", M_star / MP, "2e-10", quote = r"($c_H\sim M/\Lambda$, about $2\times10^{-10}$)", where = "Section 5")
+show_checks("higgs")
+```
+
+# Einstein-Cartan contact term
+
+Eliminating torsion with minimally coupled fermions leaves $-\tfrac3{16}A_\mu A^\mu/M_P^2$; the cross
+term between a Standard Model Dirac current and that of $N_1$ is the amplitude
+$\tfrac38\,[\bar v\gamma^\mu\gamma^5u][\bar u\gamma_\mu\gamma^5v]/M_P^2$, built from the same
+spinors as the graviton amplitude.
+
+```{r ec}
+ec_shape <- function(c) (9 / 8) * (((1 - c) / 2)^2 + ((1 + c) / 2)^2)    # (9/8)(t^2 + u^2), s = 1
+ec_cs <- c(-0.8, -0.1, 0.5, 0.95)
+ec_dev <- max(abs(sapply(ec_cs, function(c) sum(Mod(contact_and_graviton(c)[, "contact"])^2)) - ec_shape(ec_cs)))
+K_ec <- ang_int(function(c) sum(Mod(contact_and_graviton(c)[, "contact"])^2))
+inter <- function(c) { m <- contact_and_graviton(c); sum(m[, "contact"] * Conj(m[, "graviton"])) }
+inter_int <- max(abs(ang_int(function(c) Re(inter(c)))), abs(ang_int(function(c) Im(inter(c)))))
+inter_fixed <- Mod(inter(0.5))
+alpha_EC <- 22.5 * per[["dirac"]] * K_ec / Kd[["dirac"]]
+T_star_EC <- MP * (Cc * Y_need / (alpha + alpha_EC))^(1 / 3)
+## Shaposhnikov et al., PRL 126 (2021) 161301, Eq. (9): Omega_N/Omega_DM = 3.6e-2 C_M (M/10 keV)(T/M_P)^3,
+## C_M = (9/4)(24 a^4 + 21 b+^4) = (9/4) 45 for a Majorana N with alpha = beta = 0 (their Eq. 6)
+alpha_SST <- 3.6e-2 * (9 / 4) * 45 / 1e-5 * rho_s * Cc
+q_ec <- r"($\sum|\mathcal M|^2=\tfrac98(t^2+u^2)/M_P^4$ per Dirac pair, which integrates over angle to $3\pi$, fifteen times the graviton's Dirac channel)"
+q_ec2 <- r"(it gives $7.42\times10^{-2}$, 6.17 times $\alpha$)"
+chk("ec-1", "ec", "largest |sum|M|^2 - (9/8)(t^2+u^2)| at four angles", ec_dev, 0, tol = 1e-14, label = "0", quote = q_ec, where = "Appendix B")
+chk("ec-2", "ec", "angular integral", K_ec, 3 * pi, rel = 1e-10, label = "3 pi", quote = q_ec, where = "Appendix B")
+chk("ec-3", "ec", "over the graviton's Dirac channel", K_ec / Kd[["dirac"]], 15, rel = 1e-10, label = "15", quote = q_ec, where = "Appendix B")
+chk("ec-4", "ec", "alpha_EC with 22.5 Dirac fermions", alpha_EC, "7.42e-2", quote = q_ec2, where = "Appendix B")
+chk("ec-5", "ec", "alpha_EC over alpha", alpha_EC / alpha, "6.17", quote = q_ec2, where = "Appendix B")
+chk("ec-6", "ec", "alpha_EC over alpha (Section 5)", alpha_EC / alpha, "6.2",
+    quote = r"(it adds $7.42\times10^{-2}\,T^8/M_P^4$, 6.2 times $\alpha$)", where = "Section 5")
+chk("ec-7", "ec", "T_star with the contact term added, GeV", T_star_EC, "4.2e13",
+    quote = r"(and lowers $T_\star$ to $4.2\times10^{13}$ GeV)", where = "Section 5")
+chk("ec-8", "ec", "interference with graviton exchange, integrated over angle", inter_int, 0, tol = 1e-12, label = "0",
+    quote = r"(so their interference integrates to zero over angle)", where = "Appendix B")
+chk("ec-9", "ec", "the same at c = 0.5 is not zero (1 = yes)", as.numeric(inter_fixed > 1e-6), 1, tol = 0, label = "1",
+    quote = r"(and that it is not zero at fixed angle)", where = "Appendix B")
+chk("ec-10", "ec", "Shaposhnikov et al.'s formula over alpha_EC, excess in per cent (claim: about 3)", 100 * (alpha_SST / alpha_EC - 1), 3,
+    tol = 0.5, label = "about 3", quote = r"(3 per cent below what Shaposhnikov et al.'s abundance formula gives without non-minimal couplings)", where = "Appendix B")
+show_checks("ec")
+```
+
+$T_\star$ with the contact term is `r tex_sci(T_star_EC, 5)` GeV, which rounds to the printed
+$4.2\times10^{13}$ with `r tex_sci(T_star_EC - 4.15e13, 2)` GeV to spare. Shaposhnikov et al.'s formula gives
+`r sprintf("%.1f", 100 * (alpha_SST / alpha_EC - 1))` per cent more than the contact rate here,
+against the paper's "3 per cent"; their coefficient $3.6\times10^{-2}$ is printed to two
+digits, which alone carries about 1.4 per cent into the comparison.
+
+# Statistics and the KMS relation
+
+Appendix B describes the rate through the plasma's stress-tensor Wightman function, whose two-body
+part carries $f_1f_2$; the weight for the plasma to take energy carries $(1\pm f_1)(1\pm f_2)$, which
+by the KMS relation equals $e^{(E_1+E_2)/T}f_1f_2$. As a cross-check of Table B.1, the same rate in
+Maxwell-Boltzmann statistics, where each moment $\int E^3f\,dE$ becomes $\Gamma(4)=6$, is 0.961 of
+$\alpha$, the $1.1560\times10^{-2}$ of that table.
+
+```{r classical}
+kms <- 0
+for (a in c(0.3, 1, 4)) for (b in c(0.5, 2, 7))
+  kms <- max(kms, abs((1 + fB(a)) * (1 + fB(b)) / (exp(a + b) * fB(a) * fB(b)) - 1),
+             abs((1 - fF(a)) * (1 - fF(b)) / (exp(a + b) * fF(a) * fF(b)) - 1))
+ratio_mb <- ours_mb / alpha
+ratio_mb_cf <- sum(N_SM * w_ch * Kd * 36) / sum(N_SM * w_ch * Kd * c(JB, JF, JB)^2)
+chk("cl-1", "cl", "KMS: (1 +- f1)(1 +- f2) / (e^(E1+E2) f1 f2) - 1, largest", kms, 0, tol = 1e-12, label = "0", where = "identity")
+chk("cl-2", "cl", "classical gas (Maxwell-Boltzmann, cubature) over alpha", ratio_mb, "0.961", where = "cross-check")
+chk("cl-3", "cl", "the same from the moments, 36 over J1 J2", ratio_mb_cf, "0.961", where = "cross-check")
+show_checks("cl")
+```
+
+# Planted errors
+
+Each planted error below pushes one wrong input through the same calculation as a check above and
+compares the result with that check's paper value and tolerance. Every one must fail. The summary
+table at the end also moves every computed value by at least 1 per cent and 2.5 tolerances and shows
+that the comparison then fails.
+
+```{r plants}
+## alpha with the 45 Weyl fermions counted as 45 Dirac fermions
+plant("p-1", "therm-12", "alpha with 45 Dirac fermions in place of 22.5", S45)
+plant("p-2", "therm-11", "alpha off by 1 per cent", 1.01 * alpha)
+## real-scalar stress tensor with Garny et al.'s factor 1/2
+plant("p-3", "hel-4", "real-scalar stress tensor halved", ang_int(function(c) {
+  Ti <- 0.5 * initial_T("scalar")[[1]]; sum(sapply(final_T("dirac", c), function(Tf) Mod(amp(Ti, Tf))^2)) }))
+## fermion stress tensor built with k = p1 + p2 in place of p1 - p2
+plant("p-4", "hel-5", "fermion stress tensor with k = p1 + p2", ang_int(function(c) {
+  E <- 0.5; tot <- 0
+  for (h1 in c(1, -1)) for (h2 in c(1, -1)) {
+    vb <- dbar(v_sp(E, pi, 0, h2)); u <- u_sp(E, 0, 0, h1); k <- mom(E, 0, 0) + mom(E, pi, 0)
+    J <- vapply(GAM, function(g) as.complex(vb %*% g %*% u), 0i); Ti <- 0.25 * (outer(J, k) + outer(k, J))
+    for (Tf in final_T("dirac", c)) tot <- tot + Mod(amp(Ti, Tf))^2 }
+  tot }))
+## gauge vertex cut down to its (p1.p2)(e1 e2 + e2 e1) term, which is not built from field strengths
+part_vertex <- function(p1, e1, p2, e2) mdot(p1, p2) * (outer(e1, e2) + outer(e2, e1))
+plant("p-5", "hel-10", "gauge vertex with only its (p1.p2)(e1 e2 + e2 e1) term, e -> p", max(sapply(final_T("dirac", 0.4),
+  function(Tf) Mod(amp(part_vertex(p1, p1, p2, eps_h(pi, 0, 1)), Tf)))))
+## Bose-Einstein moment for the fermions
+plant("p-6", "therm-8", "fermions given the Bose-Einstein moment", Kd[["dirac"]] * (32 / 3) * JB^2 / (1024 * pi^6))
+## no 1/2 for identical initial bosons
+plant("p-7", "therm-7", "no 1/2 for identical initial scalars", Kd[["scalar"]] * (32 / 3) * JB^2 / (1024 * pi^6))
+## conformal coupling mistyped as 0.2
+plant("p-8", "tab1-scalar16-1", "scalar dark matter with xi = 0.2 in place of 1/6",
+      0.5 * 0.5 * ang_int(function(c) spin_sum("scalar", "scalar", c, xi_out = 0.2)) * (32 / 3) * JB^2 / (1024 * pi^6) / pi^3)
+plant("p-9", "pub-g-dirac", "Garny et al.'s Eq. (3.15) read with an extra factor 2", far(2 * gr["dirac", ], 1))
+## the in-vacuum's production integral in place of the half-angle state's
+plant("p-10", "mass-2", "M_* from I_in in place of I_*", mass_from_I(I_in_cf) / 1e6)
+## occupation without the factor 1/2
+plant("p-11", "mode-6", "I_* with n = 1 - sqrt(1 - P), no 1/2", 2 * I_star_cf)
+## the after-vacuum: how far it sits below n_*
+plant("p-12", "lem-6", "the after-vacuum, which is not invariant", (1 - sqrt(1 - 0.5)) / 2)
+## upper edge of the family taken as n_* (no excursion)
+plant("p-13", "floor-4b", "upper edge replaced by the half-angle state", I_state(0) / I_star_cf)
+## C with g* = 110.25
+plant("p-14", "abund-1", "C with g* = 110.25", 3 * (2 * pi^2 / 45) * 110.25 * sqrt(pi^2 * 110.25 / 90))
+## T_star with the 45-Dirac rate
+plant("p-15", "abund-4", "T_star with the 45-Dirac rate", MP * (Cc * Y_need / S45)^(1 / 3))
+## contact coupling 3/16 in place of 3/8
+plant("p-16", "ec-2", "contact amplitude with 3/16 in place of 3/8",
+      ang_int(function(c) sum(Mod(contact_and_graviton(c, coupling = 3 / 16)[, "contact"])^2)))
+## Maxwell-Boltzmann moment Gamma(3) = 2 in place of Gamma(4) = 6
+plant("p-17", "cl-3", "classical-gas moment 2 in place of 6", sum(N_SM * w_ch * Kd * 4) / sum(N_SM * w_ch * Kd * c(JB, JF, JB)^2))
+## their printed spin-1 coefficient replaced by the transverse one before the first step
+plant("p-18", "btv-5", "Boyle, Turok and Vaibhav with A = 12 already in the first row", btv(A = c(4, 3, 12)) / alpha)
+## Clery's Eq. (A12) compared with alpha in place of the 45-Dirac sum
+plant("p-19", "dbl-4", "Eq. (A12) over alpha in place of the 45-Dirac sum", clery_A12 / alpha)
+## a missing value must fail
+plant("p-20", "mass-2", "a missing value", NA_real_)
+
+pl <- REG$plants
+html_table(data.frame(
+  ID = names(pl), `Against check` = vapply(pl, `[[`, "", "check_id"),
+  `Planted error` = vapply(pl, function(p) html_escape(p$what), ""),
+  `Planted value` = vapply(pl, function(p) fmt(p$planted), ""),
+  `Paper` = vapply(pl, function(p) REG$checks[[p$check_id]]$shown, ""),
+  Verdict = vapply(pl, `[[`, "", "verdict"),
+  Caught = vapply(pl, function(p) if (p$caught) "yes" else "<b>NO</b>", ""),
+  check.names = FALSE))
+```
+
+$T_\star$ goes as $\alpha^{-1/3}$, so an error of 1 per cent in $\alpha$ moves it by 0.3 per cent,
+inside its printed precision; the check of $\alpha$ itself catches that error (p-2), and the
+45-Dirac count moves $T_\star$ far enough to fail (p-15).
+
+# Author's checker
+
+The author's `v6_numbers_check.py` pairs each sentence of the paper with the output of the script
+that makes its number. It runs here last, if python3 with numpy and scipy is present and the
+author's scripts are found at `../../far_side/calc` (working tree) or `../../checks/calc` (public
+release). The project's virtual environment, `../../.venv/bin/python3`, is preferred when it
+exists.
+
+```{r author-checker}
+py <- file.path("..", "..", ".venv", "bin", "python3")
+if (!file.exists(py)) py <- unname(Sys.which("python3"))
+calc_dirs <- c(file.path("..", "..", "far_side", "calc"), file.path("..", "..", "checks", "calc"))
+calc_found <- calc_dirs[file.exists(file.path(calc_dirs, "v6_grav_rate.py"))]
+why_skip <- NULL
+if (!nzchar(py)) {
+  why_skip <- "python3 was not found."
+} else if (!file.exists("v6_numbers_check.py")) {
+  why_skip <- "v6_numbers_check.py is not in this directory."
+} else if (!length(calc_found)) {
+  why_skip <- "the author's scripts are in neither ../../far_side/calc nor ../../checks/calc."
+} else {
+  mods <- suppressWarnings(system2(py, c("-c", shQuote("import numpy, scipy")), stdout = TRUE, stderr = TRUE,
+                                   env = "PYTHONDONTWRITEBYTECODE=1"))
+  if (!is.null(attr(mods, "status")) && attr(mods, "status") != 0)
+    why_skip <- paste("python3 at", py, "lacks numpy or scipy.")
+}
+author_status <- NA
+if (is.null(why_skip)) {
+  t_py <- Sys.time()
+  out <- suppressWarnings(system2(py, "v6_numbers_check.py", stdout = TRUE, stderr = TRUE,
+                                  env = "PYTHONDONTWRITEBYTECODE=1", timeout = params$author_checker_timeout))
+  author_status <- if (is.null(attr(out, "status"))) 0L else attr(out, "status")
+  cat(sprintf("python: %s\nscripts: %s\nexit status: %d (%s)\ntime: %.1f s\nlast lines:\n\n", py, calc_found[1], author_status,
+              if (author_status == 0) "no problems" else if (author_status == 124) "timed out" else "problems reported",
+              as.numeric(difftime(Sys.time(), t_py, units = "secs"))))
+  cat(tail(out, 15), sep = "\n")
+} else {
+  cat("Skipped:", why_skip, "\n")
+}
+```
+
+# Summary
+
+```{r summary-counts, echo = FALSE}
+ck <- REG$checks
+n_pass <- sum(vapply(ck, `[[`, TRUE, "ok"))
+gp <- lapply(ck, generic_plant)
+n_gcaught <- sum(vapply(gp, `[[`, TRUE, "caught"))
+n_pcaught <- sum(vapply(REG$plants, `[[`, TRUE, "caught"))
+fails <- names(ck)[!vapply(ck, `[[`, TRUE, "ok")]
+q_state <- vapply(ck, function(r) in_paper(r$quote), "")
+n_quoted <- sum(nzchar(q_state)); n_found <- sum(q_state == "yes")
+run_time <- as.numeric(difftime(Sys.time(), T_START, units = "secs"))
+cpu <- proc.time() - CPU_START
+cpu_r <- cpu[["user.self"]] + cpu[["sys.self"]]
+cpu_child <- sum(cpu[c("user.child", "sys.child")], na.rm = TRUE)
+```
+
+**`r length(ck)` checks: `r n_pass` PASS, `r length(ck) - n_pass` FAIL**`r if (length(fails)) paste0(" (", paste(fails, collapse = ", "), ")") else ""`.
+Planted errors caught: `r n_gcaught` of `r length(ck)` generic plants, one per check, and
+`r n_pcaught` of `r length(REG$plants)` named plants. `r if (is.na(PAPER_TEXT)) "Quoted words not checked: no paper source found beside this file." else sprintf("Quoted words found in the paper source: %d of %d.", n_found, n_quoted)` Author's checker:
+`r if (is.null(why_skip)) sprintf("exit status %d.", author_status) else paste("skipped,", why_skip)`
+Processor time `r sprintf("%.0f", cpu_r)` s in R and `r sprintf("%.0f", cpu_child)` s in the author's
+checker; `r sprintf("%.0f", run_time)` s on the clock.
+
+```{r summary-table, echo = FALSE}
+named <- split(names(REG$plants), vapply(REG$plants, `[[`, "", "check_id"))
+html_table(size = "85%", data.frame(
+  ID = names(ck),
+  Check = vapply(ck, function(r) html_escape(r$what), ""),
+  Computed = vapply(ck, function(r) fmt(r$computed), ""),
+  Paper = vapply(ck, `[[`, "", "shown"),
+  Tolerance = vapply(ck, function(r) fmt(r$tol, 2), ""),
+  Verdict = vapply(ck, function(r) if (r$ok) "PASS" else "<b>FAIL</b>", ""),
+  `Generic plant` = vapply(names(ck), function(i) paste0(fmt(gp[[i]]$planted), ": ",
+                           if (gp[[i]]$caught) "FAIL, caught" else "<b>PASS, not caught</b>"), ""),
+  `Named plants` = vapply(names(ck), function(i) {
+    ids <- named[[i]]
+    if (is.null(ids)) "" else paste(vapply(ids, function(p) paste0(p, if (REG$plants[[p]]$caught) " caught" else " <b>NOT caught</b>"), ""), collapse = "; ")
+  }, ""),
+  check.names = FALSE))
+```

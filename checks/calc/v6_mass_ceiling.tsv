@@ -1,0 +1,77 @@
+variant	T_rh_GeV	H_inf_GeV	M_GeV	bath_fraction
+ceiling, expansion only	2.0000e+12	1.0e+12	1.897791e+09	0.000000
+ceiling, expansion only	2.4900e+12	1.0e+12	1.701471e+09	0.000000
+ceiling, expansion only	3.0000e+12	1.0e+12	1.550551e+09	0.000000
+ceiling, expansion only	3.1100e+12	1.0e+12	1.522957e+09	0.000000
+ceiling, expansion only	3.8800e+12	1.0e+12	1.363848e+09	0.000000
+ceiling, expansion only	4.8400e+12	1.0e+12	1.221386e+09	0.000000
+ceiling, expansion only	5.0000e+12	1.0e+12	1.201736e+09	0.000000
+ceiling, expansion only	6.0300e+12	1.0e+12	1.094437e+09	0.000000
+ceiling, expansion only	7.5200e+12	1.0e+12	9.805233e+08	0.000000
+ceiling, expansion only	8.0000e+12	1.0e+12	9.509410e+08	0.000000
+ceiling, expansion only	9.3800e+12	1.0e+12	8.783902e+08	0.000000
+ceiling, expansion only	1.1700e+13	1.0e+12	7.843484e+08	0.000000
+ceiling, expansion only	1.2000e+13	1.0e+12	7.747529e+08	0.000000
+ceiling, expansion only	1.4600e+13	1.0e+12	7.080256e+08	0.000000
+ceiling, expansion only	1.8200e+13	1.0e+12	6.236057e+08	0.000000
+ceiling, expansion only	1.8700e+13	1.0e+12	6.126355e+08	0.000000
+ceiling, expansion only	2.2700e+13	1.0e+12	5.412626e+08	0.000000
+ceiling, expansion only	2.5000e+13	1.0e+12	5.127548e+08	0.000000
+ceiling, expansion only	2.8300e+13	1.0e+12	4.829232e+08	0.000000
+ceiling, expansion only	3.5000e+13	1.0e+12	4.455560e+08	0.000000
+ceiling, expansion only	3.5300e+13	1.0e+12	4.443371e+08	0.000000
+ceiling, expansion only	4.4000e+13	1.0e+12	4.183269e+08	0.000000
+ceiling, expansion only	5.0000e+13	1.0e+12	4.070002e+08	0.000000
+ceiling, expansion only	5.4800e+13	1.0e+12	4.001377e+08	0.000000
+ceiling, expansion only	6.8400e+13	1.0e+12	3.868639e+08	0.000000
+ceiling, expansion only	7.0000e+13	1.0e+12	3.857013e+08	0.000000
+ceiling, expansion only	8.5300e+13	1.0e+12	3.771014e+08	0.000000
+ceiling, expansion only	1.0000e+14	1.0e+12	3.716197e+08	0.000000
+ceiling, expansion only	1.0600e+14	1.0e+12	3.698709e+08	0.000000
+ceiling, expansion only	1.3300e+14	1.0e+12	3.641427e+08	0.000000
+ceiling, expansion only	1.4000e+14	1.0e+12	3.630531e+08	0.000000
+ceiling, expansion only	1.6500e+14	1.0e+12	3.599866e+08	0.000000
+ceiling, expansion only	2.0000e+14	1.0e+12	3.570885e+08	0.000000
+ceiling, expansion only	2.0600e+14	1.0e+12	3.567001e+08	0.000000
+ceiling, expansion only	2.5700e+14	1.0e+12	3.542035e+08	0.000000
+ceiling, expansion only	3.0000e+14	1.0e+12	3.528308e+08	0.000000
+ceiling, expansion only	3.2100e+14	1.0e+12	3.523138e+08	0.000000
+ceiling, expansion only	4.0000e+14	1.0e+12	3.509404e+08	0.000000
+ceiling, central	2.0000e+12	1.0e+12	1.897731e+09	0.000060
+ceiling, central	2.4900e+12	1.0e+12	1.701384e+09	0.000104
+ceiling, central	3.0000e+12	1.0e+12	1.550423e+09	0.000166
+ceiling, central	3.1100e+12	1.0e+12	1.522818e+09	0.000181
+ceiling, central	3.8800e+12	1.0e+12	1.363632e+09	0.000315
+ceiling, central	4.8400e+12	1.0e+12	1.221051e+09	0.000548
+ceiling, central	5.0000e+12	1.0e+12	1.201382e+09	0.000595
+ceiling, central	6.0300e+12	1.0e+12	1.093917e+09	0.000950
+ceiling, central	7.5200e+12	1.0e+12	9.797175e+08	0.001650
+ceiling, central	8.0000e+12	1.0e+12	9.500220e+08	0.001926
+ceiling, central	9.3800e+12	1.0e+12	8.771394e+08	0.002867
+ceiling, central	1.1700e+13	1.0e+12	7.824048e+08	0.004963
+ceiling, central	1.2000e+13	1.0e+12	7.727181e+08	0.005288
+ceiling, central	1.4600e+13	1.0e+12	7.049591e+08	0.008689
+ceiling, central	1.8200e+13	1.0e+12	6.187041e+08	0.014772
+ceiling, central	1.8700e+13	1.0e+12	6.074926e+08	0.015733
+ceiling, central	2.2700e+13	1.0e+12	5.342767e+08	0.024750
+ceiling, central	2.5000e+13	1.0e+12	5.046082e+08	0.031226
+ceiling, central	2.8300e+13	1.0e+12	4.728160e+08	0.042442
+ceiling, central	3.5000e+13	1.0e+12	4.301530e+08	0.073041
+ceiling, central	3.5300e+13	1.0e+12	4.286522e+08	0.074674
+ceiling, central	4.4000e+13	1.0e+12	3.926446e+08	0.132464
+ceiling, central	5.0000e+13	1.0e+12	3.722359e+08	0.184276
+ceiling, central	5.4800e+13	1.0e+12	3.567415e+08	0.232507
+ceiling, central	6.8400e+13	1.0e+12	3.123001e+08	0.395804
+ceiling, central	7.0000e+13	1.0e+12	3.068424e+08	0.416821
+ceiling, central	8.5300e+13	1.0e+12	2.518552e+08	0.619068
+ceiling, central	1.0000e+14	1.0e+12	1.975493e+08	0.782378
+ceiling, central	1.0600e+14	1.0e+12	1.765954e+08	0.832985
+ceiling, central	1.3300e+14	1.0e+12	1.024893e+08	0.954934
+ceiling, central	1.4000e+14	1.0e+12	8.907270e+07	0.967985
+ceiling, central	1.6500e+14	1.0e+12	5.564170e+07	0.989902
+ceiling, central	2.0000e+14	1.0e+12	3.148430e+07	0.997526
+ceiling, central	2.0600e+14	1.0e+12	2.882662e+07	0.998011
+ceiling, central	2.5700e+14	1.0e+12	1.486938e+07	0.999616
+ceiling, central	3.0000e+14	1.0e+12	9.350688e+06	0.999879
+ceiling, central	3.2100e+14	1.0e+12	7.633314e+06	0.999927
+ceiling, central	4.0000e+14	1.0e+12	3.945244e+06	0.999986

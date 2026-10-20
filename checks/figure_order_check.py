@@ -20,8 +20,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-DEFAULT = [os.path.join(ROOT, "pub", "paper2", "PAPER2_v4_draft.md"),
-           os.path.join(ROOT, "pub", "paper2", "COMPANION_v1.md")]
+DEFAULT = [os.path.join(ROOT, "papers/1_separate_ways/PAPER2_v4_draft.md"),
+           os.path.join(ROOT, "papers/2_over_the_horizon/COMPANION_v1.md")]
 
 
 def audit(text):

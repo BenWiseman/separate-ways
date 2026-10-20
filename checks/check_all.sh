@@ -830,10 +830,10 @@ hdr "26. the PRL Letter fits, and quotes nothing the paper does not"
 # second place for a number to live. Two ways that goes wrong: it grows past 3750 words while
 # nobody is counting equations and figures against the cap, and a number gets retyped a digit
 # short of the manuscript it came from. Writing it, 1.417e-32 s had already become 1.4e-32.
-if [ ! -f pub/paper2/LETTER_PRL_v1.md ]; then
+if [ ! -f papers/4_einstein_from_cpt/LETTER_CPT_Einstein_equation_of_state_v3.md ]; then
   echo "   not in this repository (duplicates paper 1); gate does not apply here"
 else
-LETTER=pub/paper2/LETTER_PRL_v1.md
+LETTER=papers/4_einstein_from_cpt/LETTER_CPT_Einstein_equation_of_state_v3.md
 python3 checks/letter_length_check.py || fail=$((fail+1))
 python3 checks/letter_numbers_check.py || fail=$((fail+1))
 lt=$(python3 "$BENLM/tools/llm_tics.py" "$LETTER" 2>&1 | grep -oE 'total hits: [0-9]+' | grep -oE '[0-9]+')

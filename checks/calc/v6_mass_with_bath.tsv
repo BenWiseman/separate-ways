@@ -1,0 +1,153 @@
+variant	T_rh_GeV	H_inf_GeV	M_GeV	bath_fraction
+expansion only	2.0000e+12	1.0e+12	1.319842e+09	0.000000
+expansion only	2.4900e+12	1.0e+12	1.182572e+09	0.000000
+expansion only	3.0000e+12	1.0e+12	1.077189e+09	0.000000
+expansion only	3.1100e+12	1.0e+12	1.057941e+09	0.000000
+expansion only	3.8800e+12	1.0e+12	9.470270e+08	0.000000
+expansion only	4.8400e+12	1.0e+12	8.478229e+08	0.000000
+expansion only	5.0000e+12	1.0e+12	8.341332e+08	0.000000
+expansion only	6.0300e+12	1.0e+12	7.595414e+08	0.000000
+expansion only	7.5200e+12	1.0e+12	6.797516e+08	0.000000
+expansion only	8.0000e+12	1.0e+12	6.594380e+08	0.000000
+expansion only	9.3800e+12	1.0e+12	6.080518e+08	0.000000
+expansion only	1.1700e+13	1.0e+12	5.469891e+08	0.000000
+expansion only	1.2000e+13	1.0e+12	5.407269e+08	0.000000
+expansion only	1.4600e+13	1.0e+12	4.874406e+08	0.000000
+expansion only	1.8200e+13	1.0e+12	4.228594e+08	0.000000
+expansion only	1.8700e+13	1.0e+12	4.157438e+08	0.000000
+expansion only	2.2700e+13	1.0e+12	3.733055e+08	0.000000
+expansion only	2.5000e+13	1.0e+12	3.572588e+08	0.000000
+expansion only	2.8300e+13	1.0e+12	3.405246e+08	0.000000
+expansion only	3.5000e+13	1.0e+12	3.192928e+08	0.000000
+expansion only	3.5300e+13	1.0e+12	3.185916e+08	0.000000
+expansion only	4.4000e+13	1.0e+12	3.034640e+08	0.000000
+expansion only	5.0000e+13	1.0e+12	2.967670e+08	0.000000
+expansion only	5.4800e+13	1.0e+12	2.926743e+08	0.000000
+expansion only	6.8400e+13	1.0e+12	2.846794e+08	0.000000
+expansion only	7.0000e+13	1.0e+12	2.839741e+08	0.000000
+expansion only	8.5300e+13	1.0e+12	2.787311e+08	0.000000
+expansion only	1.0000e+14	1.0e+12	2.753652e+08	0.000000
+expansion only	1.0600e+14	1.0e+12	2.742873e+08	0.000000
+expansion only	1.3300e+14	1.0e+12	2.707431e+08	0.000000
+expansion only	1.4000e+14	1.0e+12	2.700666e+08	0.000000
+expansion only	1.6500e+14	1.0e+12	2.681588e+08	0.000000
+expansion only	2.0000e+14	1.0e+12	2.663501e+08	0.000000
+expansion only	2.0600e+14	1.0e+12	2.661073e+08	0.000000
+expansion only	2.5700e+14	1.0e+12	2.645442e+08	0.000000
+expansion only	3.0000e+14	1.0e+12	2.636831e+08	0.000000
+expansion only	3.2100e+14	1.0e+12	2.633585e+08	0.000000
+expansion only	4.0000e+14	1.0e+12	2.624954e+08	0.000000
+central: alpha 1.2e-2, no boost	2.0000e+12	1.0e+12	1.319813e+09	0.000042
+central: alpha 1.2e-2, no boost	2.4900e+12	1.0e+12	1.182528e+09	0.000072
+central: alpha 1.2e-2, no boost	3.0000e+12	1.0e+12	1.077130e+09	0.000115
+central: alpha 1.2e-2, no boost	3.1100e+12	1.0e+12	1.057873e+09	0.000126
+central: alpha 1.2e-2, no boost	3.8800e+12	1.0e+12	9.469243e+08	0.000219
+central: alpha 1.2e-2, no boost	4.8400e+12	1.0e+12	8.476619e+08	0.000381
+central: alpha 1.2e-2, no boost	5.0000e+12	1.0e+12	8.339611e+08	0.000413
+central: alpha 1.2e-2, no boost	6.0300e+12	1.0e+12	7.592906e+08	0.000659
+central: alpha 1.2e-2, no boost	7.5200e+12	1.0e+12	6.793646e+08	0.001144
+central: alpha 1.2e-2, no boost	8.0000e+12	1.0e+12	6.590001e+08	0.001336
+central: alpha 1.2e-2, no boost	9.3800e+12	1.0e+12	6.074413e+08	0.001985
+central: alpha 1.2e-2, no boost	1.1700e+13	1.0e+12	5.460592e+08	0.003464
+central: alpha 1.2e-2, no boost	1.2000e+13	1.0e+12	5.397441e+08	0.003694
+central: alpha 1.2e-2, no boost	1.4600e+13	1.0e+12	4.859141e+08	0.005989
+central: alpha 1.2e-2, no boost	1.8200e+13	1.0e+12	4.206183e+08	0.010043
+central: alpha 1.2e-2, no boost	1.8700e+13	1.0e+12	4.134069e+08	0.010706
+central: alpha 1.2e-2, no boost	2.2700e+13	1.0e+12	3.701082e+08	0.017145
+central: alpha 1.2e-2, no boost	2.5000e+13	1.0e+12	3.534511e+08	0.021872
+central: alpha 1.2e-2, no boost	2.8300e+13	1.0e+12	3.356609e+08	0.030130
+central: alpha 1.2e-2, no boost	3.5000e+13	1.0e+12	3.115534e+08	0.052903
+central: alpha 1.2e-2, no boost	3.5300e+13	1.0e+12	3.106988e+08	0.054126
+central: alpha 1.2e-2, no boost	4.4000e+13	1.0e+12	2.900950e+08	0.097867
+central: alpha 1.2e-2, no boost	5.0000e+13	1.0e+12	2.783717e+08	0.137808
+central: alpha 1.2e-2, no boost	5.4800e+13	1.0e+12	2.694574e+08	0.175619
+central: alpha 1.2e-2, no boost	6.8400e+13	1.0e+12	2.436848e+08	0.308842
+central: alpha 1.2e-2, no boost	7.0000e+13	1.0e+12	2.404807e+08	0.326674
+central: alpha 1.2e-2, no boost	8.5300e+13	1.0e+12	2.072991e+08	0.509547
+central: alpha 1.2e-2, no boost	1.0000e+14	1.0e+12	1.719158e+08	0.680857
+central: alpha 1.2e-2, no boost	1.0600e+14	1.0e+12	1.572019e+08	0.741507
+central: alpha 1.2e-2, no boost	1.3300e+14	1.0e+12	9.835334e+07	0.916398
+central: alpha 1.2e-2, no boost	1.4000e+14	1.0e+12	8.640793e+07	0.939026
+central: alpha 1.2e-2, no boost	1.6500e+14	1.0e+12	5.507397e+07	0.979802
+central: alpha 1.2e-2, no boost	2.0000e+14	1.0e+12	3.140325e+07	0.994958
+central: alpha 1.2e-2, no boost	2.0600e+14	1.0e+12	2.876687e+07	0.995942
+central: alpha 1.2e-2, no boost	2.5700e+14	1.0e+12	1.486342e+07	0.999213
+central: alpha 1.2e-2, no boost	3.0000e+14	1.0e+12	9.349521e+06	0.999752
+central: alpha 1.2e-2, no boost	3.2100e+14	1.0e+12	7.632720e+06	0.999850
+central: alpha 1.2e-2, no boost	4.0000e+14	1.0e+12	3.945186e+06	0.999971
+high: alpha 1.7e-2, boost 2	2.0000e+12	1.0e+12	1.319763e+09	0.000118
+high: alpha 1.7e-2, boost 2	2.4900e+12	1.0e+12	1.182450e+09	0.000205
+high: alpha 1.7e-2, boost 2	3.0000e+12	1.0e+12	1.077016e+09	0.000326
+high: alpha 1.7e-2, boost 2	3.1100e+12	1.0e+12	1.057751e+09	0.000357
+high: alpha 1.7e-2, boost 2	3.8800e+12	1.0e+12	9.467342e+08	0.000621
+high: alpha 1.7e-2, boost 2	4.8400e+12	1.0e+12	8.473665e+08	0.001078
+high: alpha 1.7e-2, boost 2	5.0000e+12	1.0e+12	8.336449e+08	0.001169
+high: alpha 1.7e-2, boost 2	6.0300e+12	1.0e+12	7.588308e+08	0.001867
+high: alpha 1.7e-2, boost 2	7.5200e+12	1.0e+12	6.786513e+08	0.003238
+high: alpha 1.7e-2, boost 2	8.0000e+12	1.0e+12	6.581979e+08	0.003782
+high: alpha 1.7e-2, boost 2	9.3800e+12	1.0e+12	6.063237e+08	0.005615
+high: alpha 1.7e-2, boost 2	1.1700e+13	1.0e+12	5.443586e+08	0.009783
+high: alpha 1.7e-2, boost 2	1.2000e+13	1.0e+12	5.379453e+08	0.010431
+high: alpha 1.7e-2, boost 2	1.4600e+13	1.0e+12	4.831281e+08	0.016872
+high: alpha 1.7e-2, boost 2	1.8200e+13	1.0e+12	4.165458e+08	0.028178
+high: alpha 1.7e-2, boost 2	1.8700e+13	1.0e+12	4.091627e+08	0.030023
+high: alpha 1.7e-2, boost 2	2.2700e+13	1.0e+12	3.643259e+08	0.047820
+high: alpha 1.7e-2, boost 2	2.5000e+13	1.0e+12	3.465825e+08	0.060767
+high: alpha 1.7e-2, boost 2	2.8300e+13	1.0e+12	3.269230e+08	0.083146
+high: alpha 1.7e-2, boost 2	3.5000e+13	1.0e+12	2.977961e+08	0.143272
+high: alpha 1.7e-2, boost 2	3.5300e+13	1.0e+12	2.966765e+08	0.146435
+high: alpha 1.7e-2, boost 2	4.4000e+13	1.0e+12	2.668577e+08	0.255080
+high: alpha 1.7e-2, boost 2	5.0000e+13	1.0e+12	2.470924e+08	0.346582
+high: alpha 1.7e-2, boost 2	5.4800e+13	1.0e+12	2.308795e+08	0.426349
+high: alpha 1.7e-2, boost 2	6.8400e+13	1.0e+12	1.822895e+08	0.654587
+high: alpha 1.7e-2, boost 2	7.0000e+13	1.0e+12	1.764434e+08	0.679105
+high: alpha 1.7e-2, boost 2	8.5300e+13	1.0e+12	1.235146e+08	0.860207
+high: alpha 1.7e-2, boost 2	1.0000e+14	1.0e+12	8.415523e+07	0.944319
+high: alpha 1.7e-2, boost 2	1.0600e+14	1.0e+12	7.197336e+07	0.961894
+high: alpha 1.7e-2, boost 2	1.3300e+14	1.0e+12	3.758559e+07	0.992234
+high: alpha 1.7e-2, boost 2	1.4000e+14	1.0e+12	3.230350e+07	0.994653
+high: alpha 1.7e-2, boost 2	1.6500e+14	1.0e+12	1.980692e+07	0.998405
+high: alpha 1.7e-2, boost 2	2.0000e+14	1.0e+12	1.113543e+07	0.999618
+high: alpha 1.7e-2, boost 2	2.0600e+14	1.0e+12	1.019127e+07	0.999694
+high: alpha 1.7e-2, boost 2	2.5700e+14	1.0e+12	5.249735e+06	0.999941
+high: alpha 1.7e-2, boost 2	3.0000e+14	1.0e+12	3.300582e+06	0.999982
+high: alpha 1.7e-2, boost 2	3.2100e+14	1.0e+12	2.694278e+06	0.999989
+high: alpha 1.7e-2, boost 2	4.0000e+14	1.0e+12	1.392454e+06	0.999998
+central, H_inf 1e13	2.0000e+12	1.0e+13	1.319744e+09	0.000042
+central, H_inf 1e13	2.4900e+12	1.0e+13	1.182513e+09	0.000072
+central, H_inf 1e13	3.0000e+12	1.0e+13	1.077147e+09	0.000115
+central, H_inf 1e13	3.1100e+12	1.0e+13	1.057897e+09	0.000126
+central, H_inf 1e13	3.8800e+12	1.0e+13	9.469636e+08	0.000219
+central, H_inf 1e13	4.8400e+12	1.0e+13	8.477134e+08	0.000381
+central, H_inf 1e13	5.0000e+12	1.0e+13	8.340150e+08	0.000413
+central, H_inf 1e13	6.0300e+12	1.0e+13	7.593500e+08	0.000659
+central, H_inf 1e13	7.5200e+12	1.0e+13	6.794205e+08	0.001144
+central, H_inf 1e13	8.0000e+12	1.0e+13	6.590564e+08	0.001336
+central, H_inf 1e13	9.3800e+12	1.0e+13	6.075001e+08	0.001986
+central, H_inf 1e13	1.1700e+13	1.0e+13	5.461118e+08	0.003464
+central, H_inf 1e13	1.2000e+13	1.0e+13	5.397956e+08	0.003694
+central, H_inf 1e13	1.4600e+13	1.0e+13	4.859694e+08	0.005990
+central, H_inf 1e13	1.8200e+13	1.0e+13	4.206701e+08	0.010044
+central, H_inf 1e13	1.8700e+13	1.0e+13	4.134562e+08	0.010708
+central, H_inf 1e13	2.2700e+13	1.0e+13	3.701451e+08	0.017147
+central, H_inf 1e13	2.5000e+13	1.0e+13	3.534816e+08	0.021874
+central, H_inf 1e13	2.8300e+13	1.0e+13	3.356831e+08	0.030132
+central, H_inf 1e13	3.5000e+13	1.0e+13	3.115611e+08	0.052904
+central, H_inf 1e13	3.5300e+13	1.0e+13	3.107058e+08	0.054127
+central, H_inf 1e13	4.4000e+13	1.0e+13	2.900858e+08	0.097864
+central, H_inf 1e13	5.0000e+13	1.0e+13	2.783525e+08	0.137799
+central, H_inf 1e13	5.4800e+13	1.0e+13	2.694314e+08	0.175602
+central, H_inf 1e13	6.8400e+13	1.0e+13	2.436448e+08	0.308792
+central, H_inf 1e13	7.0000e+13	1.0e+13	2.404396e+08	0.326618
+central, H_inf 1e13	8.5300e+13	1.0e+13	2.072560e+08	0.509441
+central, H_inf 1e13	1.0000e+14	1.0e+13	1.718818e+08	0.680722
+central, H_inf 1e13	1.0600e+14	1.0e+13	1.571734e+08	0.741373
+central, H_inf 1e13	1.3300e+14	1.0e+13	9.834500e+07	0.916320
+central, H_inf 1e13	1.4000e+14	1.0e+13	8.640231e+07	0.938965
+central, H_inf 1e13	1.6500e+14	1.0e+13	5.507268e+07	0.979779
+central, H_inf 1e13	2.0000e+14	1.0e+13	3.140307e+07	0.994952
+central, H_inf 1e13	2.0600e+14	1.0e+13	2.876673e+07	0.995938
+central, H_inf 1e13	2.5700e+14	1.0e+13	1.486340e+07	0.999212
+central, H_inf 1e13	3.0000e+14	1.0e+13	9.349518e+06	0.999752
+central, H_inf 1e13	3.2100e+14	1.0e+13	7.632719e+06	0.999850
+central, H_inf 1e13	4.0000e+14	1.0e+13	3.945186e+06	0.999971

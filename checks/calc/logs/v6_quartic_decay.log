@@ -1,0 +1,6 @@
+   fermions (Gamma ~ 1/a)           plasma makes half at 3.13e+13 GeV (metric), 1.09e+13 GeV (Einstein-Cartan); yield at 1.87e13 GeV 37.97 x constant rate
+   constant rate                    plasma makes half at 9.11e+13 GeV (metric), 4.56e+13 GeV (Einstein-Cartan); yield at 1.87e13 GeV 1.00 x constant rate
+   bosons, trilinear (Gamma ~ a)    plasma makes half at 1.13e+14 GeV (metric), 5.84e+13 GeV (Einstein-Cartan); yield at 1.87e13 GeV 0.45 x constant rate
+   plant: a constant rate reproduces v6_mass_smooth.py --w13 (8.97e13 GeV)  yes
+   a rate that is faster early heats the plasma more: fermions lowest, bosons highest yes
+exit 0

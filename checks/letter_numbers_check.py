@@ -71,8 +71,8 @@ def split_body(text, what):
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-LETTER = os.path.join(ROOT, "pub", "paper2", "LETTER_PRL_v1.md")
-PAPER = os.path.join(ROOT, "pub", "paper2", "PAPER2_v4_draft.md")
+LETTER = os.path.join(ROOT, "papers/4_einstein_from_cpt/LETTER_CPT_Einstein_equation_of_state_v3.md")
+PAPER = os.path.join(ROOT, "papers/1_separate_ways/PAPER2_v4_draft.md")
 
 # A numeric expression: a decimal, optionally times a power of ten, optionally with a
 # +- error, optionally with a trailing unit word. The \times10^{..} part is glued on so
@@ -133,9 +133,22 @@ def _checked_region(letter_text):
     return body
 
 
+# In-text citations, "[3]", "[9,10]", "[11-14]", are reference numbers and not physics. Until
+# 2026-10-06 they were scanned like any number and passed only because "1,2" and "9,10" happen
+# to occur somewhere in the manuscript; "[15,16]" did not, and the gate failed on a citation.
+# Blanked to spaces of the same length so every other position stays where it was. The cost:
+# an interval of bare integers in square brackets would be skipped too, and none is in the
+# Letter; a decimal or a power of ten inside brackets is still checked.
+CITE = re.compile(r"\[\d+(?:\s*[-,]\s*\d+)*\]")
+
+
+def _uncite(body):
+    return CITE.sub(lambda m: " " * len(m.group(0)), body)
+
+
 def unmatched(letter_text, paper_text):
     """Numeric expressions in the checked region that the manuscript does not carry."""
-    body = _checked_region(letter_text)
+    body = _uncite(_checked_region(letter_text))
     hay = _norm(paper_text)
     out = []
     for m in NUM.finditer(body):
@@ -151,7 +164,7 @@ def unmatched(letter_text, paper_text):
 
 def _counted(letter_text):
     """How many expressions the gate actually looked at, so the total cannot overstate it."""
-    body = _checked_region(letter_text)
+    body = _uncite(_checked_region(letter_text))
     return sum(1 for m in NUM.finditer(body)
                if not _skip(m.group(0), body[max(0, m.start() - 90):m.end() + 30]))
 
@@ -169,8 +182,11 @@ def _plants(letter_text, paper_text):
         ("a sentence-final number", "moves to 5.04", "moves to 5.07"),
         # The appendix section is all small integers, which a substring test cannot discriminate,
         # so this plant inserts a distinctive value there instead of corrupting one.
-        ("a number in the appendices", "Two of the four are what writing a metric theory means",
-                                   "Two of the four, to $7.3194\\times10^{-8}$, are what writing a metric theory means"),
+        # Re-anchored 2026-10-06: v2.1 deleted the sentence this used to plant into, so it printed
+        # NOT APPLICABLE and the appendix went unvalidated. The anchor now sits in Appendix A.
+        ("a number in the appendices", "Each derived line names the mechanism that produces it",
+                                   "Each derived line, to $7.3194\\times10^{-8}$, names the mechanism that produces it"),
+        ("a citation is not a number", "induced gravity [15,16]", "induced gravity 15.16 [15,16]"),
     ]
     # Every one of the seven above names a literal from LETTER_PRL_v1.md. Run against any
     # other Letter they all print NOT APPLICABLE, and the gate then validates nothing at all
@@ -242,7 +258,7 @@ def main():
     # Penrose generator and belongs in no manuscript at all. Read the companion and the
     # figure generators too, so a real orphan stands out instead of being lost in three
     # false ones.
-    corpus = [PAPER, os.path.join(ROOT, "pub", "paper2", "COMPANION_v1.md")]
+    corpus = [PAPER, os.path.join(ROOT, "papers/2_over_the_horizon/COMPANION_v1.md")]
     corpus += [os.path.join(HERE, f) for f in sorted(os.listdir(HERE))
                if f.startswith("fig_letter_") and f.endswith((".py", ".R"))]
     paper = "\n".join(io.open(f, encoding="utf-8").read()

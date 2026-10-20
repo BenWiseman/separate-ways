@@ -13,23 +13,24 @@
 We study what follows if CPT is a symmetry of the universe itself and not only of its laws, as
 Boyle, Finn and Turok proposed: the big bang is then a fold, with a mirror-image sheet on its far
 side. We combine it with a standard result of algebraic quantum field theory, that the modular
-conjugation of a wedge is a reflection, and find that each fills a gap in the other. Because the
-fold is a reflection, every field splits into the average of its two copies and their difference,
-and these behave as the classical and the quantum variable. At a horizon the fold relates the two
-sides by half a thermal period, so the state across it is a thermofield double, pure as a whole,
-thermal to each side. This supplies the three inputs Jacobson's 1995 derivation of Einstein's
-equations takes beyond the Clausius relation, a horizon temperature, an entropy proportional to
-area, and horizons through every point. The entropy is the entanglement entropy of that state and is
-not taken from black-hole thermodynamics, so the argument does not assume its result; the dependency
-graph of the derivation is given and checked. Nineteen properties of general relativity follow,
-including $G>0$, four dimensions and $\Lambda$ as an integration constant, from four inputs: two
-that define a metric theory and two measured constants. The gravitational field is not quantised at
-any step. Applied at the bang, the same construction sets a minimum on particle production, and the
-observed dark-matter abundance turns it into predictions that can fail: a dark-matter fermion of at
-most $491.6\pm2.0$ PeV, a neutrino line from its decay at $245.8\pm1.0$ PeV, and a neutrino-mass sum
-of at least 58.8 meV, which the model cannot relax because it keeps dark energy constant. The model
-departs from general relativity only inside black holes, in a shell 2.1 microns thick at one solar
-mass, where relativity predicts its own breakdown.
+conjugation of a wedge is a reflection. Because the fold is a reflection, every field splits into
+the average of its two copies and their difference, and these behave as the classical and the
+quantum variable. At a horizon the fold relates the two sides by half a thermal period, so the
+state across it is a thermofield double, pure as a whole and thermal to each side. At a flat wedge
+the fold's map is the CPT operator, and the Bisognano-Wichmann theorem that says so also makes the
+vacuum thermal on every wedge. That thermal state is where the Unruh temperature and the
+entanglement area law come from, the two inputs Jacobson's 1995 derivation of Einstein's equations
+took from quantum field theory. We re-derive his argument from the fold. The gravitational field is
+not quantised at any step. Nineteen properties of general
+relativity follow from four inputs, two that define a metric theory and two measured constants.
+Nine were already in Jacobson's argument and four are standard; six need the folded universe,
+among them four dimensions and the classical-quantum split. Applied at the bang, the same
+construction sets a minimum on particle production, and the observed dark-matter abundance turns it
+into predictions that can fail: a dark-matter fermion of at most $491.6\pm2.0$ PeV, a neutrino line
+from its decay at $245.8\pm1.0$ PeV, and a neutrino-mass sum of at least 58.8 meV, which the model
+cannot relax because it keeps dark energy constant. The model departs from general relativity only
+inside black holes, in a shell 2.1 microns thick at one solar mass, where relativity predicts its
+own breakdown.
 
 ## 1. Introduction
 
@@ -45,8 +46,9 @@ and reversal of time orientation, is a symmetry of the universe itself and not o
 [9,10,11]. The Big Bang then has a far side, our own universe over again with matter swapped for
 antimatter, space reflected and time running the other way. This paper adds one thing to their
 proposal, a result from algebraic quantum field theory that fixes the map between the two sides, and
-follows what comes out. What comes out includes Einstein's field equations, with the metric a fixed
-background throughout, and an upper bound on the mass of their dark-matter particle. The map
+follows what comes out. What comes out includes Einstein's field equations, by Jacobson's
+thermodynamic route with the metric a fixed background throughout, and an upper bound on the mass of
+their dark-matter particle. The map
 relating the two sheets undoes itself when applied twice, which makes it an involution. Throughout
 this paper *the fold* names that involution, and also the two-sheeted universe built on it.
 
@@ -85,25 +87,34 @@ what the combination predicts. The dark-matter results came first, and the gravi
 came out of stress-testing them. General relativity is a demanding test. If CPT read through the
 modular structure of a wedge is physics, the field equations should follow without being put in.
 
-Three things usually expected of a quantum theory of gravity come out with the metric held fixed as
-a background. First comes the divide between classical and quantum, which is whether a field is even
+Three things often expected of a quantum theory of gravity follow with the metric held fixed as a
+background. First comes the divide between classical and quantum, which is whether a field is even
 or odd under the fold and has nothing to do with scale. The second is a horizon temperature: the
-fold relates the two sides of a horizon by half a thermal period, and that shift is what makes the
-state on either side thermal. Third is the Einstein equation.
+fold relates the two sides of a horizon by half a thermal period, and that shift makes the state
+across it a thermofield double, a state that is pure taken whole and thermal to either side alone.
+Quantum field theory on a fixed background has given that temperature
+since Hawking and Unruh [42,37]; what the fold adds is that it comes from the same map as the first.
+Third is the Einstein equation.
 
-Jacobson showed in 1995 that a horizon temperature and an entropy proportional to area give the
-field equations, and took both as inputs [33]. Here both come from the fold. The fold's map forces
-the state across a horizon to be a thermofield double, a state that is pure taken whole and thermal
-to either side alone, and the area law is the entanglement entropy of that state. It is not taken
-from the Bekenstein-Hawking formula, so general relativity is not used in its own derivation; §4.1
-checks the dependency graph for exactly that and names the four places the derivation could have
-failed. Jacobson's remaining input, a horizon at every point in every null direction, is derived in
-§3.6. Nothing gravitational is quantised at any step. Newton's constant and the cosmological
-constant remain measured inputs.
+Jacobson showed in 1995 that the Clausius relation, applied to the local horizons an accelerated
+observer sees, gives the field equations [33]. He took the horizon temperature from the Unruh effect
+[37], the entropy proportional to area from the entanglement of vacuum fluctuations across the
+horizon that Bombelli, Koul, Lee and Sorkin had computed [38], and the horizons themselves from local flatness, and he argued that an equation of
+state need not be quantised. A line of work followed that obtains the field equations from horizon
+thermodynamics and entanglement [45,46,40,47]. What the fold adds is where Jacobson's inputs come
+from. At a flat wedge its map is the CPT operator: Bisognano and Wichmann showed that the modular
+conjugation of a wedge is CPT composed with a rotation by $\pi$ in the transverse plane [28], and the
+transverse antipode is that rotation. The same theorem makes the vacuum thermal on the wedge, and the
+temperature and the area law are read off that thermal state. So the involution that defines the
+folded cosmology is the one behind Jacobson's two inputs. §3.6 re-derives his argument from it, with
+nothing gravitational quantised and with Newton's constant and the cosmological constant left as
+measured inputs, and §4.1 checks the dependency graph for any use of general relativity in its own
+derivation.
 
 §3.6 works the derivation through. Appendix E lists what comes out and what goes in, nineteen
-properties of general relativity from four inputs, and a script produces the list so the count can
-be checked.
+properties of general relativity from four inputs. Nine of them were already in Jacobson's argument
+and four are standard results; six need the folded universe, and the fold also adds one non-local
+term to the field equations. A script produces the list so the count can be checked.
 
 The dark-matter results are what make the model falsifiable, and most of the arithmetic goes there.
 At a radiation bang the equation for each field mode is an avoided crossing, the two-level problem a
@@ -1037,8 +1048,16 @@ Q=T\,dS$, applied to local Rindler horizons, the horizons an accelerated observe
 that step carries the whole of what follows, it is re-derived here. It rests on four things: the
 Clausius relation itself, a temperature at every such horizon, an entropy proportional to that
 horizon's area with a universal coefficient $\eta$, and a horizon of the kind at every point in
-every null direction. The first is the thermodynamic postulate the argument is made of. The fold has
-to supply the other three.
+every null direction. The first is the thermodynamic postulate the argument is made of. Jacobson
+took two of the other three from quantum field theory, the temperature from the Unruh effect [37] and the area
+law from vacuum entanglement with a single cutoff, after Bombelli and coauthors and Srednicki
+[38,39], and the third, the horizons, from local flatness.
+Here each is re-derived from the fold's map. At a flat wedge that map is the CPT operator. Bisognano
+and Wichmann's modular conjugation of a wedge is CPT composed with a rotation by $\pi$ in the
+transverse plane [28], and $P_\perp$ is that rotation, so $\alpha=J\circ P_\perp$ is CPT, with the
+usual $(-1)^F$ on fermions; on coordinates it is the $-\mathrm{Id}$ of §2.1. The derivation below is
+therefore Jacobson's, run on the map that also defines the folded cosmology, and the end of this
+section says what the fold adds to it.
 
 Raychaudhuri's equation tracks how a bundle of null rays converges. Integrating it near the
 bifurcation surface, where the expansion and shear are first order so their squares are second,
@@ -1059,7 +1078,8 @@ constant of the derivation rather than a prediction of it.
 *Two objections.* Two objections to the 1995 argument have to be met here. Eling, Guedens and
 Jacobson showed that the equilibrium Clausius relation fails once the entropy is not proportional to
 area with a universal coefficient, and that an entropy-production term is needed in its place [34];
-their worked case is $f(R)$. In the fold $\eta$ is not available to choose. It comes out of the
+their worked case is $f(R)$. In the fold, as in Jacobson's argument with its single cutoff, $\eta$ is
+not available to choose. It comes out of the
 transverse mode count with the surface gravity cancelling, which the entropy paragraphs below
 compute, so the derivation is shown to sit in the case the equilibrium relation was written for.
 
@@ -1069,15 +1089,16 @@ the expansion and the shear are both first order, and the Raychaudhuri measureme
 far out that survives, the linear behaviour holds to $4\times10^{-4}$ at $\lambda=0.05$ and visibly
 worse beyond. What is still assumed is the equilibrium reading itself, taken near the bifurcation
 surface of each local wedge, and that is the first of the four things listed above, the one the fold
-does not supply. The fold removes the freedom in $\eta$ and in the temperature and leaves that
-assumption standing.
+does not supply. The fold, like the vacuum Jacobson used, leaves no freedom in $\eta$ or in the
+temperature and leaves that assumption standing.
 
 *The temperature.* The temperature comes first, and nothing in it is left to choose. §2.1's map is
 an involution and its action at a bifurcate Killing horizon is the half-period shift, so the
 equilibrium cross-sheet correlator is the direct one displaced by $i\beta/2$, which is a thermofield
-double at $\tanh r=e^{-\beta\omega/2}$. No temperature is put in by hand; what the fold supplies is
-that the map is a half-period shift rather than a whole one, which makes it the square root of the
-thermal transformation and lets primitivity pick the fundamental period.
+double at $\tanh r=e^{-\beta\omega/2}$. No temperature is put in by hand, and none is in the Unruh
+effect either [37]: by Bisognano-Wichmann the two are one statement. In modular language the
+half-period shift is the $\Delta^{1/2}$ of Tomita-Takesaki theory, which makes the map the square
+root of the thermal transformation and lets primitivity pick the fundamental period.
 
 What the step establishes turns on a distinction the companion draws and this section needs too.
 Squaring the map gives $\alpha^2=1$, which reads $W(t-i\beta)=W(t)$, the KMS condition, and
@@ -1111,7 +1132,9 @@ Clausius act on.
 
 *The entropy.* The entropy law decides whether any of this is circular. If $S\propto A$ were taken
 from Bekenstein-Hawking it would have come out of general relativity and been fed back into a
-derivation of it. It is not taken from there. Tracing out one wedge of the thermofield double the
+derivation of it. Jacobson did not take it from there either: he motivated it from the entanglement
+of vacuum fluctuations across the horizon, as Bombelli and coauthors and Srednicki had [38,39], and
+that entanglement is what is computed here. Tracing out one wedge of the thermofield double the
 fold forces leaves an occupation $\sinh^2r$, and with $\tanh r=e^{-\beta\omega/2}$ that is exactly
 the Bose factor, so the entanglement entropy of a wedge is the thermal entropy of its modes,
 $s=(1+n)\ln(1+n)-n\ln n$. A horizon's modes carry a transverse momentum, the transverse directions
@@ -1142,10 +1165,12 @@ a factor of $52$ over the same range, so $\eta$ is the same at every horizon pro
 ultraviolet cutoff is one length and not one per horizon, which is what a cutoff is. The mode count
 is not a condition: weighting the transverse density by $e^{-k\epsilon}$ or by $1/(1+k^2\epsilon^2)$
 moves $S/A$ from $2.137$ to $1.629$ and $1.931$ and leaves the $\kappa$ independence at four parts
-in $10^{10}$, so the cancellation belongs to the boost structure and not to one prescription. The
-fold fixes that $\eta$ is the same everywhere. What it is remains measured.
+in $10^{10}$, so the cancellation belongs to the boost structure and not to one prescription. So
+$\eta$ is the same at every horizon given one cutoff, which is what Jacobson's single fundamental
+length already assumed. Whether the cutoff is finite and the same for every species is the input his
+later work names as still open [40], and it stays open here. What $\eta$ is remains measured.
 
-That last sentence separates this from induced gravity, which uses the same object. Induced gravity
+That last sentence separates this from induced gravity [44,43], which uses the same object. Induced gravity
 computes $1/G$ from a given matter content and cutoff, and stands or falls on whether the species
 count comes out; walked as a route to $\eta$ here, it does not, and no such claim is made here. The
 argument needs only that the coefficient is the same at every horizon, which is the previous
@@ -1154,15 +1179,15 @@ Jacobson's step requires only the weaker claim, and only the weaker claim is mad
 
 Because $\eta$ is fixed by the modular temperature and a transverse mode count, and neither is
 cosmological, it carries no dependence on epoch or location, so nothing in the fold can make
-Newton's constant run. That is a commitment of the same kind as $w_0=-1$, arrived at the same way,
+Newton's constant run, any more than a single fundamental length could in Jacobson's argument. That is a commitment of the same kind as $w_0=-1$, arrived at the same way,
 and a securely measured variation in $G$ would end this reading of the fold with nothing available
 to absorb it.
 
 The sign of Newton's constant comes with it. Since $8\pi G=2\pi/\eta$ and $\eta$ is an entropy
-per unit area, which is positive at every frequency, $G>0$, so gravity attracts here because entanglement entropy is positive. A priori that sign is free.
+per unit area, which is positive at every frequency, $G>0$, so gravity attracts here because entanglement entropy is positive. A priori that sign is free; Jacobson's $G=1/4\hbar\eta$ fixes it the same way.
 
 *A horizon at every point.* That leaves the fourth input. Jacobson needs a horizon at every point in
-every null direction, and the fold's own fixed points are isolated, so at a generic point there is
+every null direction, and took it from local flatness. The fold's own fixed points are isolated, so at a generic point there is
 no global fold to act. What the balance needs there is weaker than a global symmetry. It needs a map
 whose differential is $-\mathrm{Id}$, and it needs that map to be an isometry to the order the
 balance is computed at.
@@ -1179,7 +1204,8 @@ figures with the closed form $\tfrac13(\nabla K\cdot v)(|v|^2\delta_{\mu\nu}-v_\
 surface whose cubic part is harmonic, so that the curvature varies while $\nabla K$ vanishes at the
 point, the cubic disappears and the exponent moves to $5.04$, what the residual tracks is $\nabla R$
 at the point and nothing else. Set against the second-order term the balance uses, the ratio is
-$1.4435$ times the patch size and vanishes with it. The field equation is that limit.
+$1.4435$ times the patch size and vanishes with it. The field equation is that limit, the same one
+Jacobson took by working in a locally flat patch.
 
 The parity gives a second reason the balance cannot feel the failure. A map with differential
 $-\mathrm{Id}$ multiplies a rank-$n$ tensor by $(-1)^n$, and the balance contains $R_{kk}$, $T_{kk}$
@@ -1462,6 +1488,15 @@ write a metric theory at all: a Lorentzian signature, and one metric carrying bo
 horizons and a covariant matter action. Matter conservation is not among
 them, since Noether's second
 theorem gives $\nabla^aT_{ab}=0$ from diffeomorphism invariance for any matter whatever.
+
+*What the fold adds.* Jacobson's argument and the fold's version share every step from the Clausius
+relation to his equation (6) [33], and Appendix E marks the nine lines of general relativity that his
+argument already had. What differs is where the inputs come from and what comes with them. He took
+the temperature and the area law from the quantum field theory of the vacuum; at a flat wedge that
+theory's CPT operator is the fold's map, so here the inputs come from the involution that also
+defines the folded cosmology and fixes the dark-matter state of §2. And the fold brings what a single
+sheet cannot: the image stress above, a non-local term with no free parameter that acts only inside
+black holes, the classical-quantum split with its weight, and four large dimensions.
 
 ### 3.7 Commitments
 
@@ -1844,16 +1879,19 @@ parts in a thousand. The neutrino row spans fewer decades, about half of one, an
 the prediction is that the sum sits exactly on the oscillation floor, at the edge of the allowed
 band, and one established absolute mass ends it. And $w_0$, $w_a$ collapse from a plane to a point.
 
-The other half of the count is postulates. Three things usually put in by hand come out. The Unruh
-temperature at a horizon, because the fold's map is the half-period shift and the cross-sheet
-correlator is therefore a thermofield double. The divide between classical and quantum behaviour,
-because $\Theta^2=1$ makes the sheet average the fold-even part and the difference the fold-odd
-part, which are the Keldysh classical and quantum variables. And the field equations themselves, by
-§3.6. All three come from the one supposition, that CPT is a symmetry of the universe itself, not
-just of the laws inside it.
+The other half of the count is postulates. The divide between classical and quantum behaviour comes
+out, because $\Theta^2=1$ makes the sheet average the fold-even part and the difference the
+fold-odd part, which obey the algebra of the Keldysh classical and quantum variables on the
+half-period contour of §2.1. So do the Unruh temperature
+and the field equations, though neither was ever put in by hand: quantum field theory gave the
+first [37] and Jacobson derived the second from it [33]. What the fold changes for those two is
+their source, the one supposition that CPT is a symmetry of the universe itself, not just of the
+laws inside it.
 
 Counted line by line, nineteen separate properties of general relativity come out and four go in;
-Appendix E is the list. Each of the nineteen names the file in the release that produces it. Three
+Appendix E is the list. Nine of the nineteen were already in Jacobson's argument and four are
+standard results. Six need the folded universe: the black-hole involution, the contact surfaces, four
+dimensions, the classical-quantum split, the sheets' opposite time orientation and the hot bang. Each of the nineteen names the file in the release that produces it. Three
 of the four name the file that examines them rather than one that derives them, and the fourth is
 the value of $G$, which no script can supply. The script that produces the list stops without
 printing if a named file is absent. Those four are a Lorentzian signature, one metric carrying both
@@ -1880,9 +1918,9 @@ the assumed side is nothing substantive about gravity. Figure 5 draws the whole 
 **Figure 5.** What goes in and what comes out. On the left is everything the fold is given: a Lorentzian
 signature and one metric carrying both the fold's horizons and a covariant matter action, which
 between them are what writing a metric theory means, and the measured values of $G$ and $\Lambda$.
-In the middle is the single postulate, that CPT is a symmetry of the universe and not only of its
-laws. On the right are the nineteen properties of general relativity that follow, the metric
-staying a fixed background throughout. The dependency graph behind the two columns is acyclic and
+In the middle is the single postulate, that CPT is a symmetry of the universe, fused with the algebraic quantum field theory that fixes the map. On the right are the nineteen properties of general relativity that follow, the metric
+staying a fixed background throughout, grouped by where each stood before: nine in Jacobson's 1995
+argument, four standard, and six that need the folded universe. The dependency graph behind the two columns is acyclic and
 no path from the field equations reaches general relativity or Bekenstein-Hawking entropy, which
 is what stops the argument assuming its own conclusion. The labels are the list's own lines and their counts are read from it, so the figure cannot drift from the text, and Appendix E gives
 the same lines at full wording. What the figure does not
@@ -1928,9 +1966,10 @@ are structural and are fitted to nothing, so they are not free parameters in the
 here. The entropy coefficient $\eta$ is likewise not an extra input, since $\eta=1/4G$ and a theory
 of gravity cannot avoid one dimensionful constant.
 
-The count, then, is this. One symmetry assumption goes in. Four numbers that used to be fitted and
-three postulates come out, the dark-matter mass alone narrowing from fifty decades to four parts in
-a thousand. Nothing is added in their place. That is the sense in which this paper claims to unify.
+The count, then, is this. One symmetry assumption goes in. Four numbers that used to be fitted come
+out, the dark-matter mass alone narrowing from fifty decades to four parts in a thousand, and so does
+the classical-quantum divide, while Jacobson's two inputs gain a single source. Nothing is added in
+their place. That is the sense in which this paper claims to unify.
 
 ### 4.5 What would refute it, and what no test can take away
 
@@ -1990,20 +2029,24 @@ Where the classical world comes from. The two mirror copies of a field have an a
 difference, and those are exactly the classical and quantum variables physics already uses, so the
 divide between them is the mirror's own parity and not a scale that anything has to cross. Why a
 horizon is hot: the mirror's map at a horizon is a shift by half the thermal period, which makes the
-correlation between the copies a thermal one, and no temperature was put in anywhere. Those two turn
+correlation between the copies a thermal one. That is the Unruh and Hawking temperature reached
+from the mirror's side, and no temperature was put in anywhere. Those two turn
 out to be one fact. The weight the quantum half carries is $4\tanh^2(\beta\omega/4)$, so it fades
 out for modes softer than the horizon's own temperature, and the classical world is a horizon seen
 from below.
 
 Third, the field equations themselves. Jacobson's 1995 argument gets Einstein's equations out of
-thermodynamics, provided someone hands it a horizon temperature and an entropy proportional to
-horizon area. Someone has always had to. Here the mirror supplies both, and supplies the horizons as
-well, at every point and in every direction, so the argument runs with nothing borrowed from
-relativity in order to prove relativity. What comes out is listed in §4.4; what goes in is two
+thermodynamics, given a horizon temperature and an entropy proportional to horizon area, and he took
+both from the quantum field theory of the vacuum. That theory has the mirror in it already: at a
+horizon its CPT symmetry is the mirror's map, and the same map makes the horizon hot and its entropy
+an area. So the argument runs on the symmetry that splits the classical from the quantum, with
+nothing taken from relativity in order to prove relativity. Of the nineteen properties of general
+relativity counted in §4.4, nine were in Jacobson's argument already and four are standard; the
+mirror adds six. What comes out is listed in §4.4; what goes in is two
 statements about what a spacetime theory is and the two numbers, Newton's constant and the
-cosmological constant, that every theory of gravity has to be told. Four large dimensions, one time
-direction and a single shared metric are on the output side of that list, and §4.4 gives each its
-own line. The metric is a fixed background on every page of this paper.
+cosmological constant, that every theory of gravity has to be told. Four large dimensions are on the
+output side of that list. The signature and the single shared metric are inputs, and §4.4 shows the
+fold has content only with one time direction. The metric is a fixed background on every page of this paper.
 
 Now the matter half, where two ideas that had never been set side by side do what neither does
 alone. If the mirror is a symmetry of the universe itself, the Big Bang has a far side, a whole
@@ -2538,96 +2581,121 @@ preserves its vanishing connected three-point function, so the fold adds no bisp
 calculation; a full primordial prediction also needs the interaction terms, initial state and
 conversion to the observable curvature perturbation.
 
-## Appendix E. The count, line by line
+## Appendix E. Inputs and outputs, line by line
 
 §3.6 counts nineteen properties of general relativity out and four in, and Figure 5 draws the
-count with the lines compressed to labels. Here they are at full wording, so the count can be checked without the release. Each derived line also names, in the release, the file that
-produces it; the checking pass fails if this list and that file's list come apart.
+count with the lines compressed to labels. Here they are at full wording, grouped by where each
+stood before this paper. Nine were already in Jacobson's 1995 argument [33], which took its
+temperature from the Unruh effect [37], its area law from vacuum entanglement with a fixed cutoff
+as in Bombelli, Koul, Lee and Sorkin [38], and its local horizons from local flatness. They are re-derived here from the fold's map,
+which at a flat wedge is the CPT operator itself (§3.6), so what is new in them is where they come
+from and not that they hold. Four are standard results of general relativity and of quantum field
+theory in curved spacetime. Six need the folded universe itself. Each derived line names, in the
+release, the file that produces it, and the checking pass fails if this list and that file's list
+come apart or put a line in different groups.
 
-**E.1 The nineteen that come out.**
+**E.1 Nineteen that come out.**
+
+*Already in Jacobson's 1995 argument.*
 
 1. **The form of the field equations,** $R_{ab}-\tfrac12Rg_{ab}+\Lambda g_{ab}$ proportional to
-   $T_{ab}$. Clausius run on the fold's own horizons, with Raychaudhuri integrated, the null-vector algebra checked, and the Bianchi step written out.
+   $T_{ab}$. Jacobson's equation (6) [33]. Clausius run on the fold's own horizons, with
+   Raychaudhuri integrated, the null-vector algebra checked, and the Bianchi step written out.
 
-2. **A temperature at every local Rindler horizon.** The fold's map is the half-period shift, so
-   the cross-sheet correlator is a thermofield double.
+2. **A temperature at every local Rindler horizon.** Jacobson took it from the Unruh effect
+   [37]. Here the fold's map is the half-period shift, so the cross-sheet correlator is a
+   thermofield double; by Bisognano-Wichmann [28] that is the same statement.
 
-3. **Those horizons, at every boost and orientation.** The wedge reflection and the transverse
-   antipode are each frame-dependent and their composition $-\mathrm{Id}$ is not.
+3. **Those horizons, at every boost and orientation.** Jacobson had them from the local Poincaré
+   symmetry at any point. Here the wedge reflection and the transverse antipode are each
+   frame-dependent and their composition $-\mathrm{Id}$ is not.
 
-4. **An entropy proportional to the horizon area.** The entanglement entropy of the state the
-   fold forces, with flat-space transverse mode counting. Bekenstein-Hawking is never invoked,
-   which is what keeps the argument out of a loop.
+4. **An entropy proportional to the horizon area.** Jacobson motivated it from the entanglement of
+   vacuum fluctuations across the horizon, with a cutoff, as Bombelli and coauthors and Srednicki
+   computed it [38,39]. Here it is the entanglement
+   entropy of the state the fold forces, with flat-space transverse mode counting. Neither
+   argument uses Bekenstein-Hawking.
 
 5. **The same entropy coefficient at every horizon,** which is what makes the result Einstein's
-   rather than one equation of state per observer. The surface gravity cancels between the
-   occupation and the WKB mode density, because the wedge metric in boost coordinates carries
-   none and Bisognano-Wichmann fixes the modular temperature at $2\pi$. $S/A$ holds to $10^{-9}$
-   while $\beta$ runs over four decades, and the cancellation survives three different transverse
-   weightings. One condition attaches. The cutoff must be a single proper length, since one
-   tracking $\kappa$ moves $S/A$ by a factor of fifty.
+   rather than one equation of state per observer. Jacobson's single cutoff length gives it, and
+   Jacobson's later work names a finite, universal coefficient as the input still assumed [40].
+   Here the surface gravity cancels between the occupation and the WKB mode density, because the
+   wedge metric in boost coordinates carries none and Bisognano-Wichmann fixes the modular
+   temperature at $2\pi$. $S/A$ holds to $10^{-9}$ while $\beta$ runs over four decades, and the
+   cancellation survives three different transverse weightings. The condition is the one
+   Jacobson's cutoff already carried: it must be a single proper length, since one tracking
+   $\kappa$ moves $S/A$ by a factor of fifty.
 
-6. **The transverse involution $P_\perp$ at a black hole.** The only free involutive isometry of
-   a round bifurcation sphere is $-\mathrm{Id}$, and of Kerr's axisymmetric surface the antipodal
-   map; the uniqueness theorems make those the whole stationary vacuum case.
+6. **That Newton's constant does not run** with epoch or location. Immediate from a single
+   coefficient, as in Jacobson's $G=1/4\hbar\eta$. Here $\eta$ is fixed by the modular
+   temperature and a transverse mode count, neither of them cosmological.
 
-7. **That Newton's constant does not run** with epoch or location. $\eta$ is fixed by the modular
-   temperature and a transverse mode count, neither of them cosmological, so the fold has
-   no dial that could make $G$ vary.
+7. **The sign of Newton's constant,** so that gravity attracts. $8\pi G=2\pi/\eta$ and $\eta$ is
+   an entropy density, which is positive; the same holds in Jacobson's argument.
 
-8. **The sign of Newton's constant,** so that gravity attracts. $8\pi G=2\pi/\eta$ and $\eta$ is
-   an entropy density, which is positive.
+8. **$\Lambda$ appearing at all, as an integration constant.** Jacobson's equation (6) has it in
+   the same place. The contracted Bianchi identity and matter conservation leave exactly one
+   constant of integration, and both of those are derived below, at lines 11 and 12.
 
-9. **$\Lambda$ appearing at all, as an integration constant.** The contracted Bianchi identity
-   and matter conservation leave exactly one constant of integration, and both of those are
-   themselves derived, at lines 16 and 17.
+9. **Local Rindler horizons away from the fold's own fixed locus.** Jacobson's local flatness.
+   Here the geodesic symmetry at any point has the fold's differential $-\mathrm{Id}$ and is an
+   isometry through second order, which is the order the balance is computed at. Its failure is
+   third order in $\nabla R$ and its weight against the balance vanishes linearly in the patch
+   size.
 
-10. **Null-focusing surfaces for Raychaudhuri to act on.** Contact is conjugacy, so the fold's own
-    contact surfaces are caustics, at every charge and in every dimension.
+*Standard results.*
 
-11. **Four large spacetime dimensions and no others.** The turning available for contact closes only
-    at $D=4$: a half turn is required because the antipode is an involution of a sphere, and the
-    interior supplies $\pi/(D-3)$ per leg, which at $D=5$ reaches it only in a limit that is no
-    point of the spacetime and from $D=6$ falls short outright. What is derived is that four is
-    the only dimension in which the sheets touch anywhere, so a higher-dimensional fold is
-    allowed and has nothing to add.
+10. **Black-hole thermodynamics.** Hawking [42] and Israel [7]; Sewell derived the Hawking
+    temperature from PCT [2], and Kay and Wald proved the thermal state unique at a bifurcate
+    Killing horizon [41]. The fold reads it as the same half-period shift as line 2.
 
-12. **The classical-quantum divide, and its amplitude.** The fold's own parity, carrying weight
-    $4\tanh^2(\beta\omega/4)$.
-
-13. **Black-hole thermodynamics.** The same half-period shift, read at a bifurcate Killing
-    horizon.
-
-14. **The opposite time orientation of the two sheets,** which the cosmological accounts assume.
-    The modular flow of a wedge is the boost, whose generator gives $dX_0/ds=X_1$, positive at
-    every point of the right static patch and negative at every point of its antipode. Two limits
-    hold with it: the flow preserves the state, so no arrow of time is derived, and the relation
-    doing the work is $\Delta_{A'}=\Delta_A^{-1}$ between an algebra and its commutant rather
-    than any property of $J$.
-
-15. **A hot bang, with no cold component at the fold's fixed slice.** $\Theta$ invariance needs
-    $a$ odd in conformal time, which admits a fluid only where $-3w$ is an odd integer and
-    excludes dust, so the bang must be hot. §2.2 assumed that and no longer needs to.
-
-16. **The contracted Bianchi identity,** which is what leaves exactly one integration constant. A
+11. **The contracted Bianchi identity,** which is what leaves exactly one integration constant. A
     theorem about the Levi-Civita connection of any metric, measured at $2.2\times10^{-5}$
     relative on a generic curved metric and falling as $h^2$; a connection with torsion breaks it
     at order unity.
 
-17. **Matter conservation,** $\nabla^aT_{ab}=0$. Noether's second theorem applied to a covariant
-    matter action. The divergence of the stress tensor is the matter field equation contracted
-    with the field, checked off shell in a generic curved metric.
+12. **Matter conservation,** $\nabla^aT_{ab}=0$. Noether's second theorem applied to a covariant
+    matter action, which Jacobson assumed outright. The divergence of the stress tensor is the
+    matter field equation contracted with the field, checked off shell in a generic curved metric.
 
-18. **Matter following the metric's geodesics,** the weak equivalence principle. The eikonal
+13. **Matter following the metric's geodesics,** the weak equivalence principle. The eikonal
     characteristics of a field on that metric are its geodesics, checked against the Christoffel
     system to $2.4\times10^{-12}$, with the mass cancelling out of the path.
 
-19. **Local Rindler horizons away from the fold's own fixed locus.** The geodesic symmetry at any
-    point has the fold's differential $-\mathrm{Id}$ and is an isometry through second order,
-    which is the order the balance is computed at. Its failure is third order in $\nabla R$ and
-    its weight against the balance vanishes linearly in the patch size.
+*Added by the fold.*
 
-**E.2 The four that go in.**
+14. **The transverse involution $P_\perp$ at a black hole.** The only free involutive isometry of
+    a round bifurcation sphere is $-\mathrm{Id}$, and of Kerr's axisymmetric surface the antipodal
+    map; the uniqueness theorems make those the whole stationary vacuum case.
+
+15. **Null-focusing surfaces for Raychaudhuri to act on.** Contact is conjugacy, so the fold's own
+    contact surfaces are caustics, at every charge and in every dimension.
+
+16. **Four large spacetime dimensions and no others.** The turning available for contact closes
+    only at $D=4$: a half turn is required because the antipode is an involution of a sphere, and
+    the interior supplies $\pi/(D-3)$ per leg, which at $D=5$ reaches it only in a limit that is
+    no point of the spacetime and from $D=6$ falls short outright. What is derived is that four is
+    the only dimension in which the sheets touch anywhere, so a higher-dimensional fold is
+    allowed and has nothing to add.
+
+17. **The classical-quantum divide, and its amplitude.** The variables of Schwinger and Keldysh
+    are standard [16,17], and so is the symmetric thermal contour of Niemi and Semenoff [18] on which the odd part's weight
+    against the even one comes out as $4\tanh^2(\beta\omega/4)$. What is the fold's is that the two
+    parts are its even and odd sectors, so the divide is a parity of the universe.
+
+18. **The opposite time orientation of the two sheets,** which the cosmological accounts assume.
+    The modular flow of a wedge is the boost, whose generator gives $dX_0/ds=X_1$, positive at
+    every point of the right static patch and negative at every point of its antipode. That flow
+    is Bisognano and Wichmann's; what the fold adds is that the antipode is the other sheet. Two
+    limits hold with it: the flow preserves the state, so no arrow of time is derived, and the
+    relation doing the work is $\Delta_{A'}=\Delta_A^{-1}$ between an algebra and its commutant
+    rather than any property of $J$.
+
+19. **A hot bang, with no cold component at the fold's fixed slice.** $\Theta$ invariance needs
+    $a$ odd in conformal time, which admits a fluid only where $-3w$ is an odd integer and
+    excludes dust, so the bang must be hot. §2.2 assumed that and no longer needs to.
+
+**E.2 Four that go in.**
 
 1. **The value of Newton's constant.** Dimensionally impossible for a symmetry to supply: every
    structural input of the fold has mass dimension zero and $\eta=1/4G$ has dimension
@@ -2654,10 +2722,8 @@ to sit on this side have moved across. The equivalence principle went, because i
 what the eikonal limit of a field on the shared metric does, and diffeomorphism invariance went
 because its two uses have different status. The contracted Bianchi identity is a theorem about
 any metric, and the covariance of the matter action is part of the metric postulate rather than
-beside it. What this list does not touch: special relativity is input rather than output, and
-nothing here bears on the gauge structure of matter. Those are not gaps in the derivation, they
-are what it is a derivation from.
-
+beside it. Special relativity is input rather than output, and nothing here bears on the gauge
+structure of matter; the derivation starts from both.
 
 ## References
 
@@ -2771,6 +2837,37 @@ gravitational dissipation," Phys. Rev. D **81** (2010) 024016, arXiv:0909.4194.
 36\. Telescope Array Collaboration, "An extremely energetic cosmic ray observed by a surface
 detector array," Science **382** (2023) 903.
 
+37\. W. G. Unruh, "Notes on black-hole evaporation," Phys. Rev. D **14** (1976) 870.
+
+38\. L. Bombelli, R. K. Koul, J. Lee and R. D. Sorkin, "Quantum source of entropy for black
+holes," Phys. Rev. D **34** (1986) 373.
+
+39\. M. Srednicki, "Entropy and area," Phys. Rev. Lett. **71** (1993) 666, hep-th/9303048.
+
+40\. T. Jacobson, "Entanglement equilibrium and the Einstein equation," Phys. Rev. Lett. **116**
+(2016) 201101, arXiv:1505.04753.
+
+41\. B. S. Kay and R. M. Wald, "Theorems on the uniqueness and thermal properties of stationary,
+nonsingular, quasifree states on spacetimes with a bifurcate Killing horizon," Phys. Rep. **207**
+(1991) 49.
+
+42\. S. W. Hawking, "Particle creation by black holes," Commun. Math. Phys. **43** (1975) 199.
+
+43\. L. Susskind and J. Uglum, "Black hole entropy in canonical quantum gravity and superstring
+theory," Phys. Rev. D **50** (1994) 2700, hep-th/9401070.
+
+44\. A. D. Sakharov, "Vacuum quantum fluctuations in curved space and the theory of gravitation,"
+Dokl. Akad. Nauk SSSR **177** (1967) 70; reprinted in Gen. Rel. Grav. **32** (2000) 365.
+
+45\. T. Padmanabhan, "Thermodynamical aspects of gravity: new insights," Rep. Prog. Phys. **73**
+(2010) 046901, arXiv:0911.5004.
+
+46\. E. Verlinde, "On the origin of gravity and the laws of Newton," JHEP **04** (2011) 029,
+arXiv:1001.0785.
+
+47\. T. Faulkner, M. Guica, T. Hartman, R. C. Myers and M. Van Raamsdonk, "Gravitation from
+entanglement in holographic CFTs," JHEP **03** (2014) 051, arXiv:1312.7856.
+
 
 ## Acknowledgements
 
@@ -2815,7 +2912,7 @@ contradicted in another. Each gate carries a planted case it has to catch, becau
 matches nothing reports success.
 
 The release accompanying this version, with the manuscript source, the figure assets and drawing
-code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.5), archived at
+code, those scripts and a SHA-256 manifest, is at <https://github.com/BenWiseman/separate-ways> (tag v5.6), archived at
 <https://doi.org/10.5281/zenodo.23034297>, the concept DOI of the code deposit, which covers
 every release. It is not the complete private development history. The exploratory dark-energy fits
 and Kerr-barrier calculations have separate Python sources and dependencies and are not among the

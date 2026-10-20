@@ -10,8 +10,20 @@ import re, sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 PUB  = os.path.join(os.path.dirname(HERE), 'pub', 'paper2')
 
+
+def _where(name):
+    # The working tree keeps every manuscript in pub/paper2; the exported repository splits them
+    # across papers/<paper>/, and this gate failed there on a path it could not find. Look in
+    # both, and refuse rather than guess if the name is in neither or in more than one.
+    import glob
+    hits = [h for h in [os.path.join(PUB, name)] if os.path.exists(h)] or \
+           glob.glob(os.path.join(os.path.dirname(HERE), 'papers', '*', name))
+    if len(hits) != 1:
+        raise SystemExit("first_use_gloss: %s found %d times  <-- ISSUE" % (name, len(hits)))
+    return hits[0]
+
 def body_of(name):
-    s = open(os.path.join(PUB, name)).read()
+    s = open(_where(name)).read()
     m = re.search(r'^## 1[.\s]', s, flags=re.M)
     a = re.search(r'^## Appendix A', s, flags=re.M)
     if not m:

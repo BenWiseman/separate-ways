@@ -1,0 +1,14 @@
+background at T_rh = 1.87e13 GeV, H_inf = 1e12 GeV: radiation-era slope settled to 5.2e-08
+   the late-time scale factor is linear in conformal time                 yes
+
+   T_rh (GeV)   sudden (PeV)   smooth decay (PeV)   ratio
+   1.20e+13        540.7           557.8           1.031
+   1.87e+13        415.7           450.8           1.084
+   3.00e+13        333.9           368.1           1.102
+   5.00e+13        296.8           315.6           1.064
+   smooth decay at H_inf = 1e13 GeV, T_rh = 1.87e13: 450.8 PeV
+   largest difference between the two reheating models: 10.2%
+   plant, decay within two Hubble times of the end of inflation (T_rh = 5.9e14 GeV): ratio 1.005
+   plant: a fast decay reproduces the sudden model                        yes
+   the two reheating models agree to within a factor 1.5                  yes
+exit 0

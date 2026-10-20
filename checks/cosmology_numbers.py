@@ -80,7 +80,7 @@ def collect():
             failed.append(os.path.relpath(sc, os.path.expanduser("~")))
     return outs, failed
 
-CACHE = os.path.join(ROOT, "far_side", ".cosmology_numbers_cache.txt")
+CACHE = os.path.join(ROOT, "checks", ".cosmology_numbers_cache.txt")
 
 def cached_outputs(refresh):
     """Collecting costs the better part of an hour, so it is cached. --refresh recollects."""

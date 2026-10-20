@@ -1,8 +1,19 @@
 # How much of general relativity the construction produces, itemised, with the assumptions named.
 #
-# A claim to derive a theory is worth what its ledger is worth. This lists what general relativity
+# A claim to derive a theory can be checked only line by line. This lists what general relativity
 # consists of, marks each line derived or assumed, and says by what. No line is marked derived
 # unless a script in this release produces it.
+#
+# 2026-10-06. Each derived line now also says whether it is new. Jacobson's 1995 paper
+# (gr-qc/9504004) already took the horizon temperature from the Unruh effect, the area law from
+# vacuum entanglement with a fixed cutoff (Bombelli, Koul, Lee and Sorkin 1986), and local Rindler
+# horizons through every point from local flatness, and it wrote Lambda as the integration constant
+# of the Bianchi step and G as 1/(4 hbar eta). By Bisognano-Wichmann the wedge conjugation is
+# CPT times a rotation by pi in the transverse plane, so J composed with P_perp is CPT itself. The
+# manuscripts had said those inputs were assumed in 1995 and supplied here. They were supplied in
+# 1995, by the same quantum field theory. So every derived line carries a group: "Jacobson 1995"
+# (in his argument or immediate from the inputs he cited), "standard" (textbook general relativity
+# or quantum field theory in curved spacetime), or "fold" (needs the fold's global structure).
 
 item <- function(what, status, by) list(what = what, status = status, by = by)
 
@@ -28,7 +39,7 @@ L <- list(
   item("null-focusing surfaces for Raychaudhuri to act on",
        "derived", "contact is conjugacy; the fold's own contact surfaces are caustics, at every charge and dimension"),
   item("four large spacetime dimensions and no others",
-       "derived", "the causal budget for contact closes only at D = 4; the bill is pi because the antipode is an involution of a sphere and the interior pays pi/(D-3), which at D = 5 climbs to the bill only in a limit that is no point of the spacetime and from D = 6 falls short outright. What is derived is that four is the only dimension in which the sheets touch anywhere, so a higher-dimensional fold is allowed and has nothing to add"),
+       "derived", "the turning available for contact closes only at D = 4; contact needs a turning of pi because the antipode is an involution of a sphere, and the interior supplies pi/(D-3) per leg, which at D = 5 reaches pi only in a limit that is no point of the spacetime and from D = 6 falls short outright. What is derived is that four is the only dimension in which the sheets touch anywhere, so a higher-dimensional fold is allowed and has nothing to add"),
   item("the classical-quantum divide, and its amplitude",
        "derived", "the fold's parity, with weight 4 tanh^2(beta omega/4)"),
   item("black-hole thermodynamics",
@@ -84,12 +95,40 @@ SRC <- c(
 stopifnot(length(SRC) == length(L))
 for (i in seq_along(L)) L[[i]]$src <- SRC[i]
 
+# Where each derived line stood before this paper. "input" marks the four assumed lines.
+GROUP <- c(
+  "Jacobson 1995",  # 1  his eq. (6): Clausius, Raychaudhuri, null-vector algebra, Bianchi
+  "Jacobson 1995",  # 2  the Unruh temperature; Bisognano-Wichmann is what makes it exact
+  "Jacobson 1995",  # 3  local Poincare symmetry gives the local Rindler horizon in every null direction
+  "Jacobson 1995",  # 4  entanglement entropy across the horizon, with a cutoff, citing BKLS 1986
+  "Jacobson 1995",  # 5  one fundamental cutoff length, so area in units of l_c^2 everywhere
+  "fold",           # 6  the transverse involution at a black hole is the fold's choice of map
+  "Jacobson 1995",  # 7  eta a constant fixed by the cutoff, so G = 1/(4 hbar eta) is constant
+  "Jacobson 1995",  # 8  G = 1/(4 hbar eta) with eta an entropy density
+  "Jacobson 1995",  # 9  "f = -R/2 + Lambda for some constant Lambda"
+  "fold",           # 10 the fold's own contact surfaces
+  "fold",           # 11 contact closes only at D = 4
+  "fold",           # 12 the fold's parity as the Keldysh split, and its weight
+  "standard",       # 13 Hawking 1975, Israel 1976, Sewell 1982 (from PCT), Kay-Wald 1991
+  "fold",           # 14 the sheets' opposite time orientation
+  "fold",           # 15 Theta invariance at the bang excludes dust
+  "input", "input", "input", "input",
+  "standard",       # 20 eikonal limit: a field on a metric follows its geodesics
+  "standard",       # 21 the contracted Bianchi identity is a theorem
+  "standard",       # 22 Noether's second theorem; Jacobson assumed it outright
+  "Jacobson 1995")  # 23 local flatness gives local Rindler horizons at every point
+stopifnot(length(GROUP) == length(L))
+for (i in seq_along(L)) L[[i]]$group <- GROUP[i]
+GROUPS <- c("Jacobson 1995", "standard", "fold")
+stopifnot(all(sapply(L, function(x) (x$status == "assumed") == (x$group == "input"))),
+          all(sapply(L, function(x) x$group %in% c(GROUPS, "input"))))
+
 cat("=== the ledger ===\n\n")
 der <- Filter(function(x) x$status == "derived", L)
 asu <- Filter(function(x) x$status == "assumed", L)
 cat(sprintf("DERIVED (%d)\n", length(der)))
 for (x in der) { cat(sprintf("   %s\n", x$what)); cat(sprintf("        by: %s\n", x$by))
-                 cat(sprintf("        in: %s\n", x$src)) }
+                 cat(sprintf("        in: %s\n", x$src)); cat(sprintf("        before: %s\n", x$group)) }
 cat(sprintf("\nASSUMED (%d)\n", length(asu)))
 for (x in asu) { cat(sprintf("   %s\n", x$what)); cat(sprintf("        why: %s\n", x$why <- x$by)) }
 
@@ -97,7 +136,7 @@ cat("\n=== every derived line names a file, and every file is there ===\n")
 miss <- character(0)
 for (x in L) {
   if (x$src == "-") { stopifnot(x$status == "assumed"); next }
-  if (!file.exists(file.path("far_side", x$src))) miss <- c(miss, x$src)
+  if (!file.exists(paste0("checks/", x$src))) miss <- c(miss, x$src)
 }
 if (length(miss)) { cat("   MISSING:", paste(unique(miss), collapse=", "), "\n"); stop("a ledger line names a file that is not there") }
 cat(sprintf("   %d derived lines, %d distinct files, all present\n",
@@ -122,14 +161,21 @@ cat("   contracted Bianchi identity is a theorem about any metric, and the covar
 cat("   matter action is part of the metric postulate rather than beside it. Nothing\n")
 cat("   substantive about gravity is left on the assumed side.\n")
 
-cat("\n=== what moved, and when ===\n")
-cat("   The entropy line was assumed and is derived, which matters more than one line suggests:\n")
-cat("   it was the last place where something derived FROM general relativity could have been\n")
-cat("   fed back into a derivation OF it. With it supplied by entanglement the loop is shut.\n")
-cat("   Universality was the assumption inherited from Jacobson, and it is derived now too: the\n")
-cat("   geodesic symmetry at any point carries the fold's own differential and is an isometry\n")
-cat("   to exactly the order the balance uses. Matter conservation came off the list with it,\n")
-cat("   since Noether's second theorem already had it from diffeomorphism invariance.\n")
+cat("\n=== what is new, line by line ===\n")
+ng <- sapply(GROUPS, function(g) sum(sapply(der, function(x) x$group == g)))
+for (g in GROUPS) {
+  cat(sprintf("   %-14s %2d\n", g, ng[[g]]))
+  for (x in der) if (x$group == g) cat(sprintf("      %s\n", x$what))
+}
+stopifnot(sum(ng) == length(der), all(ng > 0))
+cat("   Jacobson's 1995 argument already had the temperature, the area law, the horizons and the\n")
+cat("   integration constant, from the quantum field theory he cited. What the fold does with\n")
+cat("   those lines is trace them to one map: by Bisognano-Wichmann the wedge conjugation\n")
+cat("   composed with the transverse antipode is CPT, so the same involution that defines the\n")
+cat("   folded cosmology is the one behind Jacobson's two inputs. The fold's own lines are the\n")
+cat("   ones that need a second sheet: the black-hole involution, the contact surfaces, four\n")
+cat("   dimensions, the classical-quantum split, the sheets' time orientation and the hot bang.\n")
+cat("   The non-local image stress is the fold's too, and sits in the field equations, not here.\n")
 
 cat("\n=== the reading ===\n")
 # TWO STALE LINES FIXED 2026-09-28. The count said three of the four assumed lines are what a
@@ -141,13 +187,11 @@ n_units <- sum(grepl("^the VALUE of", sapply(asu, function(a) a$what)))
 n_kin   <- length(asu) - n_units
 cat(sprintf("   %d lines of general relativity come out; %d go in, of which %d are what a metric\n",
             length(der), length(asu), n_kin))
-cat(sprintf("   theory is and %d are units. So the claim is that the dynamics of general relativity,\n",
-            n_units))
-cat("   its thermodynamics, its dimensionality and the classical world itself follow from one\n")
-cat("   discrete symmetry, given the kinematics of a Lorentzian manifold and two measured\n")
-cat("   constants. What it does not touch: special relativity is input rather than output, and\n")
-cat("   nothing here bears on the gauge structure of matter. Those are not gaps in the\n")
-cat("   derivation, they are what it is a derivation from.\n")
+cat(sprintf("   theory is and %d are units. Of the %d, %d were in Jacobson's 1995 argument and %d are\n",
+            n_units, length(der), ng[["Jacobson 1995"]], ng[["standard"]]))
+cat(sprintf("   standard results; %d need the fold. What it does not touch: special relativity is\n",
+            ng[["fold"]]))
+cat("   input rather than output, and nothing here bears on the gauge structure of matter.\n")
 stopifnot(n_kin == 2, n_units == 2)
 
 cat("\n=== the plant ===\n")
@@ -158,3 +202,8 @@ cat(sprintf("      derived lines with a thin justification: %d\n", thin))
 cat("   And the assumed list must be non-empty, or the ledger is not a ledger:\n")
 cat(sprintf("      assumed lines: %d\n", length(asu)))
 stopifnot(thin == 0, length(asu) >= 3, length(der) >= 10)
+cat("   And a derived line filed under a group the paper does not name must stop the count:\n")
+bad <- GROUP; bad[1] <- "new here"
+cat(sprintf("      line 1 relabelled 'new here' -> %s\n",
+            ifelse(all(bad %in% c(GROUPS, "input")), "would pass", "STOPS, as it must")))
+stopifnot(!all(bad %in% c(GROUPS, "input")))

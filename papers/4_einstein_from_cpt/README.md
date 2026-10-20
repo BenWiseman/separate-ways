@@ -1,63 +1,61 @@
-# Einstein's equations from CPT, with nothing quantised (letter)
+# What a CPT-symmetric universe adds to the Einstein equation of state (letter)
 
-Submitted to Nature Physics on 29 September 2026 (NPHYS-2026-09-04663); declined by the editor for
-insufficient contribution. Moved here for a Zenodo deposit and an alternative venue.
+Submitted to Nature Physics on 29 September 2026 (NPHYS-2026-09-04663) as "Einstein's equations
+from CPT, with nothing quantised"; declined by the editor for insufficient contribution. v3 corrects
+how every earlier version described Jacobson's 1995 derivation, and is retitled to match.
 
 ## Files
 
-- `LETTER_Einstein_from_CPT_v2.1.md`: current source.
-- `Letter_Einstein_from_CPT_v2.1.pdf`: built from that source with the vector ledger figure
-  (pandoc, xelatex, 1 inch margins, US letter, 8 pages). This is the version for Zenodo.
-- `Letter_Einstein_from_CPT_v1_as_sent_to_NaturePhysics_20260929.pdf`: the PDF exactly as submitted,
-  for the record.
-- `fig_ledger.pdf`, `fig_ledger.png`: the ledger figure as redrawn on 4 October 2026 (no diagonal
-  connector; centre box "CPT of the universe, fused with algebraic QFT"). The PDF uses the vector
-  `.pdf`; the markdown points to the `.png`.
+- `LETTER_CPT_Einstein_equation_of_state_v3.md`: current source.
+- `Letter_CPT_Einstein_equation_of_state_v3.pdf`: built from that source with the vector ledger
+  figure (pandoc, xelatex, 1 inch margins, US letter, 8 pages). This is the version for Zenodo.
+- `fig_ledger.pdf`, `fig_ledger.png`: the ledger figure as redrawn on 6 October 2026, with the
+  nineteen outputs grouped by where each stood before. The PDF uses the vector `.pdf`; the markdown
+  points to the `.png`.
 
-v2, source and PDF, is in `archive/`. Its source is `nobel_shot/claude/pub/paper2/LETTER_PRL_v1.md`
-as last edited on 1 October 2026.
+v2 and v2.1, source and PDF, are in `archive/`.
 
 To rebuild the PDF from this directory:
 
-    sed 's/!\[\](fig_ledger.png)/![](fig_ledger.pdf)/' LETTER_Einstein_from_CPT_v2.1.md > build.md
-    pandoc build.md -o Letter_Einstein_from_CPT_v2.1.pdf --pdf-engine=xelatex -V geometry:margin=1in
+    sed 's/!\[\](fig_ledger.png)/![](fig_ledger.pdf)/' LETTER_CPT_Einstein_equation_of_state_v3.md > build.md
+    pandoc build.md -o Letter_CPT_Einstein_equation_of_state_v3.pdf --pdf-engine=xelatex \
+        -V geometry:margin=1in -V papersize=letter
 
-## v2 against the version sent
+## v3 against v2.1 (6 October 2026)
 
-- Figure 1: the redrawn ledger.
-- "The first property is worth a moment" now reads "needs a moment".
-- "the contact budget in the late universe" now reads "the turning available in the late universe".
-- The AI disclosure now points to Appendix C for where the scripts live, instead of to the release of
-  ref. 5.
+v2.1 and every version before it said Jacobson's derivation assumed a horizon temperature, an area
+law and horizons through every point, that the fold supplies all three, and that the fold's entropy
+is not taken from Bekenstein-Hawking. That misdescribes his paper (gr-qc/9504004, checked at
+source). He took the temperature from the Unruh effect, the area law from the entanglement of vacuum
+fluctuations with a fixed cutoff (citing Bombelli, Koul, Lee and Sorkin 1986), and the horizons
+from local flatness. He wrote $\Lambda$ as the integration constant of the Bianchi step, gave
+$G=1/4\hbar\eta$, and argued that an equation of state need not be quantised. Neither he nor the fold
+uses Bekenstein-Hawking. By Bisognano-Wichmann the wedge conjugation composed with the transverse
+antipode is CPT itself, so the fold's map at a flat wedge is the operator behind his inputs.
 
-Nothing else in the text changed.
+- Title: was "Einstein's equations from CPT, with nothing quantised".
+- Abstract and opening rewritten on that basis: one map underlies Jacobson's quantum inputs and
+  defines the folded cosmology; the letter re-derives his argument from it and says what the fold
+  adds.
+- Each re-derivation paragraph now says where Jacobson had the same input. "What the derivation
+  needs" is now "Jacobson's argument, run on the fold"; "Why the entropy law is not circular" is now
+  "An entropy proportional to area".
+- The nineteen outputs are grouped: nine in Jacobson's argument, four standard results, six that
+  need the folded universe. Figure 1 and Appendix A carry the groups. The gate that checks
+  Appendix A against `relativity_ledger.R` now also checks each line's group.
+- Row 17 no longer calls the weight $4\tanh^2(\beta\omega/4)$ the fold's. The weight follows from
+  the standard symmetric thermal contour; what is the fold's is that the two parts are its even and
+  odd sectors.
+- The closing claim that the field equations need not wait on a quantum theory of gravity is
+  credited to Jacobson.
+- Twelve references added, each checked on Crossref or arXiv: Unruh 1976, Bombelli, Koul, Lee and
+  Sorkin 1986, Srednicki 1993, Jacobson 2016, Padmanabhan 2010, Verlinde 2011, Faulkner, Guica,
+  Hartman, Myers and Van Raamsdonk 2014, Sakharov 1967, Susskind and Uglum 1994, Hawking 1975,
+  Sewell 1982, Kay and Wald 1991.
+- Appendix A's tables carry weighted column widths, so the first column no longer takes a third of
+  the page.
 
-## v2.1 against v2 (6 October 2026)
-
-Prose only. No number, equation, reference or claim changed, and every number still matches the
-manuscript of ref. 5.
-
-- The last financial words are out. "The result would be worth nothing" now reads "the derivation
-  would assume what it set out to prove", and Appendix A row 11 now reads "Contact needs a turning
-  of $\pi$ and the interior supplies $\pi/(D-3)$ per leg, which closes only at $D=4$".
-- Headings and labels no longer open on "The": "A temperature at every horizon", "Horizons at every
-  boost and orientation", "Why the entropy law is not circular", "Inputs and outputs", "Nineteen
-  that come out", "Four that go in", "Two objections to the 1995 argument".
-- The sentence calling the entropy step load-bearing, and saying the danger is stated before the
-  answer, is gone.
-- Terms a reader met before their definition are now defined where they are used: $\Phi_c$ and
-  $\Phi_q$, $W(0)$ and $W_{\rm cross}$, $M_1$ and the production integral $I$, the function $f$,
-  and $J$ and $P_\perp$ in the horizons paragraph. "Exact stabilisation", never defined in the
-  letter, is gone, and the abstract no longer uses "the fold" before saying what it is.
-- Fewer contrastive "X rather than Y" and "X and not Y" constructions (23 to 15), and no "is not X.
-  It is Y."
-- "differing by $3\times10^{15}$" now reads "larger than its tenth by a factor of
-  $3\times10^{15}$", which is what `checks/calc/jacobson_rederived.R` prints.
-- Appendix A's closing line ("two are units") is gone; the caption and the main text already say two
-  of the inputs are measured constants.
-- Long sentences split at their joins, and the source reflowed to 100 columns.
-
-Checked with the benlm prose tools, tidyhumanize, a paragraph-by-paragraph pass with M3 and DeepSeek
-each reading a paragraph after everything before it, and the letter gates in
-`nobel_shot/claude/far_side`: numbers against the manuscript, length, editorial voice, and the
-ledger table against `relativity_ledger.R`.
+No number changed. Every number still matches the manuscript of ref. 5:
+`checks/letter_numbers_check.py` checks 152 numeric expressions and finds none missing. That gate
+no longer reads citation brackets as numbers, and its appendix plant was re-anchored after v2.1
+deleted the sentence it used to plant into.

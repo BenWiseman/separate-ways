@@ -1,0 +1,54 @@
+   T_rh 1.87e+13 GeV: plasma yield 1.128e-20, sudden formula 1.133e-20, ratio 1.00; T_max = 7.47e+13 GeV
+   T_rh 5.00e+13 GeV: plasma yield 2.009e-19, sudden formula 2.166e-19, ratio 0.93; T_max = 1.22e+14 GeV
+   T_rh 5.90e+14 GeV: plasma yield 1.121e-16, sudden formula 3.560e-16, ratio 0.31; T_max = 4.08e+14 GeV
+wrote checks/calc/v6_mass_smooth_w13.tsv
+
+=== expansion only (perturbative reheating, w = 0.33, H_inf = 1e12 GeV) ===
+   T_rh (GeV)    M (PeV)   line (PeV)   from the plasma   T_max (GeV)
+   3.00e+12       261.8      130.9        0.0%         2.99e+13
+   5.00e+12       261.8      130.9        0.0%         3.86e+13
+   8.00e+12       261.8      130.9        0.0%         4.88e+13
+   1.20e+13       261.8      130.9        0.0%         5.98e+13
+   1.87e+13       261.8      130.9        0.0%         7.47e+13
+   2.50e+13       261.8      130.9        0.0%         8.63e+13
+   3.50e+13       261.8      130.9        0.0%         1.02e+14
+   5.00e+13       261.8      130.9        0.0%         1.22e+14
+   7.00e+13       261.8      130.9        0.0%         1.44e+14
+   1.00e+14       261.8      130.9        0.0%         1.73e+14
+   1.40e+14       261.8      130.9        0.0%         2.04e+14
+   2.00e+14       261.8      130.9        0.0%         2.43e+14
+
+=== with plasma (perturbative reheating, w = 0.33, H_inf = 1e12 GeV) ===
+   T_rh (GeV)    M (PeV)   line (PeV)   from the plasma   T_max (GeV)
+   3.00e+12       261.8      130.9        0.0%         2.99e+13
+   5.00e+12       261.8      130.9        0.0%         3.86e+13
+   8.00e+12       261.7      130.9        0.1%         4.88e+13
+   1.20e+13       261.6      130.8        0.2%         5.98e+13
+   1.87e+13       261.1      130.5        0.7%         7.47e+13
+   2.50e+13       260.1      130.0        1.6%         8.63e+13
+   3.50e+13       257.3      128.7        4.2%         1.02e+14
+   5.00e+13       249.3      124.6       11.5%         1.22e+14
+   7.00e+13       229.7      114.9       27.7%         1.44e+14
+   1.00e+14       181.5       90.7       59.8%         1.73e+14
+   1.40e+14       107.5       53.7       89.1%         2.04e+14
+   2.00e+14        46.4       23.2       98.7%         2.43e+14
+
+=== bound, with plasma (perturbative reheating, w = 0.33, H_inf = 1e12 GeV) ===
+   T_rh (GeV)    M (PeV)   line (PeV)   from the plasma   T_max (GeV)
+   3.00e+12       349.5      174.7        0.0%         2.99e+13
+   5.00e+12       349.5      174.7        0.0%         3.86e+13
+   8.00e+12       349.4      174.7        0.1%         4.88e+13
+   1.20e+13       349.1      174.6        0.2%         5.98e+13
+   1.87e+13       348.2      174.1        0.9%         7.47e+13
+   2.50e+13       346.5      173.3        2.1%         8.63e+13
+   3.50e+13       341.5      170.8        5.6%         1.02e+14
+   5.00e+13       327.3      163.6       15.1%         1.22e+14
+   7.00e+13       293.1      146.6       35.4%         1.44e+14
+   1.00e+14       213.9      107.0       70.5%         1.73e+14
+   1.40e+14       113.3       56.6       93.9%         2.04e+14
+   2.00e+14        46.7       23.3       99.3%         2.43e+14
+   radiation-like reheating: expansion-only mass from 261.8 to 261.8 PeV over the grid
+   w = 1/3: the expansion-only mass does not depend on T_rh (within 2 per cent) yes
+   near-instant decay (T_rh = 5.9e14 GeV): yield / sudden formula at T_max = 0.95
+   plant: near-instant decay gives a yield close to the sudden formula at T_max yes
+exit 0

@@ -1,0 +1,18 @@
+=== plants: the solver must reproduce the two production integrals of Separate Ways v6, section 3 ===
+   full sweep returns P = exp(-pi x^2) (to the finite-T error)    yes
+   and I_in = 1/(4 pi^1.5) = 0.044897                             yes
+   the half-angle state gives I_min = 0.0127596674                yes
+
+=== the sudden limit: radiation from the crossing point, massless vacuum entering ===
+   x = 0.5   exact 2.177648e-01   first order 2.449135e-01   1/(16 x^4) 1.000e+00
+   x = 1.0   exact 6.423134e-02   first order 6.902957e-02   1/(16 x^4) 6.250e-02
+   x = 3.0   exact 7.844961e-04   first order 7.867865e-04   1/(16 x^4) 7.716e-04
+   x = 6.0   exact 4.849037e-05   first order 4.818198e-05   1/(16 x^4) 4.823e-05
+   first-order tail matches the exact solution at x = 6           yes
+   fast transition t_rh = 0.0001: tail formula matches exact at x = 6 (ratio 0.9945) yes
+   fast transition t_rh = 0.1: tail formula matches exact at x = 6 (ratio 0.9976) yes
+   slow transition t_rh = 0.5: tail beyond x = 6 carries 0.93% of I yes
+   slow transition t_rh = 1: tail beyond x = 6 carries 0.22% of I yes
+   slow transition t_rh = 2: tail beyond x = 6 carries 0.33% of I yes
+   plant: the sudden limit's tail carries 9.1% of I, so the share test can fail yes
+exit 0

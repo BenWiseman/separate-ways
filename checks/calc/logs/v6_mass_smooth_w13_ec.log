@@ -1,0 +1,23 @@
+   T_rh 1.87e+13 GeV: plasma yield 8.084e-20, sudden formula 8.124e-20, ratio 1.00; T_max = 7.47e+13 GeV
+   T_rh 5.00e+13 GeV: plasma yield 1.440e-18, sudden formula 1.553e-18, ratio 0.93; T_max = 1.22e+14 GeV
+   T_rh 5.90e+14 GeV: plasma yield 8.033e-16, sudden formula 2.552e-15, ratio 0.31; T_max = 4.08e+14 GeV
+wrote checks/calc/v6_mass_smooth_w13_ec.tsv
+
+=== with plasma (perturbative reheating, w = 0.33, H_inf = 1e12 GeV) ===
+   T_rh (GeV)    M (PeV)   line (PeV)   from the plasma   T_max (GeV)
+   3.00e+12       261.8      130.9        0.0%         2.99e+13
+   5.00e+12       261.7      130.8        0.1%         3.86e+13
+   8.00e+12       261.4      130.7        0.4%         4.88e+13
+   1.20e+13       260.4      130.2        1.3%         5.98e+13
+   1.87e+13       256.7      128.4        4.8%         7.47e+13
+   2.50e+13       249.9      125.0       10.9%         8.63e+13
+   3.50e+13       230.7      115.3       27.0%         1.02e+14
+   5.00e+13       181.4       90.7       59.8%         1.22e+14
+   7.00e+13       103.9       52.0       90.0%         1.44e+14
+   1.00e+14        41.9       20.9       99.0%         1.73e+14
+   1.40e+14        16.8        8.4       99.9%         2.04e+14
+   2.00e+14         6.6        3.3      100.0%         2.43e+14
+   rate 8.6212e-02 T^8/M_P^4 (graviton exchange plus the minimal Einstein-Cartan contact term)
+   near-instant decay (T_rh = 5.9e14 GeV): yield / sudden formula at T_max = 0.95
+   plant: near-instant decay gives a yield close to the sudden formula at T_max yes
+exit 0

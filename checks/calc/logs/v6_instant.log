@@ -1,0 +1,7 @@
+   H_inf = 1e+11 GeV: radiation-like from the end of inflation, M = 269.4 PeV
+   H_inf = 1e+12 GeV: radiation-like from the end of inflation, M = 261.3 PeV
+   H_inf = 1e+13 GeV: radiation-like from the end of inflation, M = 258.8 PeV
+   H_inf = 1e+15 GeV: radiation-like from the end of inflation, M = 257.7 PeV
+   large H_inf approaches the sudden limit, 257.6 PeV                 yes
+   a lower H_inf gives a heavier N1                                   yes
+exit 0

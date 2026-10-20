@@ -17,18 +17,18 @@ symmetries in physics. Take it to hold of the universe as a whole rather than on
 laws inside it. The Big Bang then has a far side, a mirror sheet running the other way,
 and the two sheets are related by an antilinear fold.
 
-The main result is that Einstein's field equations follow from that fold. Jacobson showed
-in 1995 that the field equations can be derived from the Clausius relation applied to
-local Rindler horizons, given three things he had to assume: a temperature at every such
-horizon, an entropy proportional to that horizon's area with the same coefficient
-everywhere, and a horizon of that kind at every point in every null direction. The fold
-supplies all three. The entropy law comes from the entanglement of the state the fold
-forces rather than from Bekenstein-Hawking, so nothing is borrowed back from the theory
-being derived. The metric is a fixed background at every step, and no gravitational
-degree of freedom is quantised anywhere. Nineteen properties of general relativity come
-out against four inputs, among them the sign of Newton's constant, four large spacetime
-dimensions, and the cosmological constant as an integration constant rather than a
-coupling.
+Jacobson showed in 1995 that Einstein's field equations follow from the Clausius relation
+applied to local Rindler horizons. He took the horizon temperature from the Unruh effect,
+the entropy proportional to area from the entanglement of vacuum fluctuations, and the
+horizons from local flatness. At a flat wedge the fold's map is the CPT operator, and by the
+Bisognano-Wichmann theorem that operator is what makes the vacuum thermal on a wedge, so
+Jacobson's two quantum inputs and the folded cosmology rest on one symmetry. The papers
+re-derive his argument from the fold, with the metric a fixed background at every step and
+no gravitational degree of freedom quantised. Nineteen properties of general relativity
+come out against four inputs. Nine of them were in Jacobson's argument and four are
+standard results; six need the folded universe, among them four large spacetime dimensions
+and the split between classical and quantum. The fold also adds one non-local term to the
+field equations, which acts only inside black holes.
 
 The same fold fixes matter, which is what makes the construction breakable. Treating the
 two sides as related by an antilinear fold, rather than assuming the single
@@ -39,7 +39,7 @@ neutrino line at half that mass, **245.8 ± 1.0 PeV**, sharp enough that one wel
 event above it refutes the model. It floors the neutrino-mass sum at **58.8 meV** and
 commits to constant dark energy, which shuts the $w_0w_a$ escape that relaxes the present
 cosmological bound to 163 meV. And it gives JWST's overweight early black holes a growth
-channel for free.
+channel.
 
 Four observations would end it: a securely measured variation in Newton's constant at any
 level, a robust detection of evolving dark energy, a cosmological neutrino-mass sum below
@@ -47,14 +47,17 @@ level, a robust detection of evolving dark energy, a cosmological neutrino-mass 
 
 ## The papers
 
-Three. Paper 1 is the foundation and paper 2 depends on it; paper 3 is a Letter carrying
-one result of paper 2 on its own. Read them in that order.
+Four. Paper 1 is the foundation and paper 2 depends on it; paper 3 is a Letter carrying
+one result of paper 2 on its own, and paper 4 a Letter carrying paper 1's section 3.6 on its
+own. Read them in that order.
 
 | | |
 |---|---|
 | **1. Separate Ways and the Upside Down** | The fold, the field equations, the matter sector and the tests. 50 pages. `papers/1_separate_ways/` · [doi:10.5281/zenodo.22888119](https://doi.org/10.5281/zenodo.22888119) |
+| **1a. Separate Ways and the Upside Down, version 6** | Paper 1 revised and confined to the dark matter, under a new subtitle: graviton exchange and the dark matter of a CPT-symmetric universe. It corrects a line of published graviton-exchange rates, which count the Standard Model's fermions twice, and gives the dark-matter mass with and without inflation. Version 5.6 stays in `papers/1_separate_ways/`. 19 pages. `papers/1_separate_ways_v6/` |
 | **2. Somewhere Over the Horizon** | Where the two halves of a folded universe can touch, why only in four dimensions, and where the classical world comes from. Carries the interior results the first paper cites. 88 pages. `papers/2_over_the_horizon/` · [doi:10.5281/zenodo.23030633](https://doi.org/10.5281/zenodo.23030633) |
 | **3. Road to Nowhere** | A Letter. Where a point can reach its own image on the far side, and why the answer picks out four dimensions. Paper 2 states the result and keeps the extensions; this derives it. 5 pages. `papers/3_road_to_nowhere/` · [doi:10.5281/zenodo.23056601](https://doi.org/10.5281/zenodo.23056601) |
+| **4. What a CPT-symmetric universe adds to the Einstein equation of state** | A Letter. Jacobson's derivation of the field equations run on the fold, and what the fold adds to it. 8 pages. `papers/4_einstein_from_cpt/` |
 
 Each directory holds one paper and everything that belongs to it: the PDF, the Markdown
 source it was built from, the figures that source references, and the arXiv metadata
@@ -64,10 +67,10 @@ actually deposited. Nothing else is in there, and nothing of a paper's is anywhe
 
 Every quantitative claim in the manuscripts is produced by a script in this repository,
 and a checking pass refuses to pass if a quoted number and the script that produces it
-come apart. There are <!--N:calc-->175<!--/N--> such scripts under `checks/calc/`.
+come apart. There are <!--N:calc-->197<!--/N--> such scripts under `checks/calc/`.
 
 <!--N:calcR-->149<!--/N--> of them are R, and not one loads a package, so base R runs them
-all. The remaining <!--N:calcpy-->26<!--/N--> are Python and do use numerical libraries:
+all. The remaining <!--N:calcpy-->48<!--/N--> are Python and do use numerical libraries:
 
 ```bash
 python3 -m pip install -r checks/requirements.txt

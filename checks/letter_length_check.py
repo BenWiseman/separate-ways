@@ -57,7 +57,7 @@ def split_body(text, what):
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-LETTER = os.path.join(ROOT, "pub", "paper2", "LETTER_PRL_v1.md")
+LETTER = os.path.join(ROOT, "papers/4_einstein_from_cpt/LETTER_CPT_Einstein_equation_of_state_v3.md")
 
 CAP = 3750
 PER_EQUATION = 16

@@ -1,0 +1,10 @@
+   T_rh (GeV)   M at H_inf = 1e10   1e11      1e12      1e13 GeV (PeV)
+   3.00e+12       1185.8    1082.5    1077.1    1077.1
+   1.20e+13        561.9     540.7     539.7     539.8
+   1.87e+13        424.8     413.8     413.4     413.5
+   5.00e+13        287.4     278.9     278.4     278.4
+   1.00e+14          -       172.3     171.9     171.9
+   largest shift from 1e12 GeV: 0.50% for H_inf = 1e11 or 1e13; 10.1% for H_inf = 1e10
+   between 1e11 and 1e13 GeV the mass moves by under 0.6 per cent     yes
+   plant: at 1e10 GeV it moves by more than 1 per cent, so the test can fail yes
+exit 0
